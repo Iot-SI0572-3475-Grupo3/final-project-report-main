@@ -365,6 +365,149 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 ### 4.1.2. Context Mapping
 
+#### Proceso para Crear el Context Mapping y Análisis de Alternativas
+
+##### 1. Pasos para Crear el Context Mapping
+
+###### 1.1. Identificación de los Bounded Contexts
+- **Identity and Access Management (IAM)**
+- **Reservation Management**
+- **Space & IoT Management**
+- **Time Tracking**
+- **Penalty Management**
+- **Analytics & Reporting**
+- **Notification**
+
+###### 1.2. Identificación de Relaciones entre Bounded Contexts
+
+1. **Reservation Management** → **Space & IoT Management**: Relación de **Customer/Supplier con ACL**.
+   - *Reservation Management* necesita asignar espacios físicos cuando se confirman reservas.
+   - *Space & IoT Management* provee control de espacios y dispositivos IoT.
+   - Anti-Corruption Layer protege la lógica de reservas de cambios en hardware.
+
+2. **Space & IoT Management** → **Time Tracking**: Relación de **Customer/Supplier**.
+   - *Space & IoT Management* inicia y detiene cronómetros basado en detección de sensores.
+   - *Time Tracking* provee servicios de cronometraje para sesiones de estacionamiento.
+
+3. **Time Tracking** → **Analytics & Reporting**: Relación de **Customer/Supplier**.
+   - *Time Tracking* provee datos de duración y patrones de uso.
+   - *Analytics & Reporting* consume estos datos para generar métricas y reportes.
+
+4. **Reservation Management** → **Penalty Management**: Relación de **Customer/Supplier**.
+   - *Reservation Management* reporta eventos de ausencias (no-shows).
+   - *Penalty Management* provee servicios de registro y gestión de penalizaciones.
+
+5. **Reservation Management** → **Notification**: Relación de **Open/Host Service**.
+   - *Reservation Management* utiliza servicios de notificación para confirmaciones.
+   - *Notification* proporciona un servicio público de mensajería.
+
+6. **Penalty Management** → **Notification**: Relación de **Open/Host Service**.
+   - *Penalty Management* utiliza servicios de notificación para alertas de ausencias.
+   - *Notification* proporciona servicios centralizados de comunicación.
+
+###### 1.3. Gestión de Identidad mediante Middleware
+
+**Identity and Access Management (IAM)** opera como middleware de infraestructura, proporcionando autenticación transparente sin crear dependencias directas en los bounded contexts de negocio. Este patrón:
+
+- **Separación de responsabilidades**: La autenticación es una preocupación transversal, no de dominio.
+- **Middleware transparente**: Validación automática de tokens JWT antes de llegar a los bounded contexts.
+- **Bounded contexts limpios**: Reciben información de usuario ya validada sin conocer detalles de autenticación.
+
+##### 2. Análisis de Alternativas y Preguntas Clave
+
+###### 2.1. ¿Qué pasaría si movemos este capability a otro bounded context?
+- **Caso Considerado:** Mover la capacidad de gestión de cronómetros desde *Time Tracking* hacia *Space & IoT Management*.
+- **Impacto:**
+  - *Space & IoT Management* tendría la responsabilidad de gestionar tanto sensores como cronómetros.
+  - Incrementaría el acoplamiento de *Space & IoT Management*.
+- **Discusión:**
+  - Es recomendable mantener la separación, ya que aunque ambos están relacionados con el uso físico del espacio, *Time Tracking* maneja lógica de negocio específica (métricas, históricos) mientras que *Space & IoT* se enfoca en hardware. Pueden interactuar mediante eventos bien definidos.
+
+###### 2.2. ¿Qué pasaría si descomponemos este capability y movemos uno de los sub-capabilities a otro bounded context?
+- **Caso Considerado:** Descomponer *Penalty Management* en sub-capabilities como *AbsenceDetection* y *SuspensionManagement* y mover *AbsenceDetection* a *Reservation Management*.
+- **Impacto:**
+  - Implicaría que *Reservation Management* pueda detectar ausencias directamente, liberando responsabilidades de *Penalty Management*.
+  - *SuspensionManagement* seguirá gestionando el sistema de "3 strikes".
+- **Discusión:**
+  - Esta descomposición podría ser beneficiosa ya que las ausencias están directamente relacionadas con las reservas. Sin embargo, mantener toda la lógica de penalizaciones unificada facilita la gestión del sistema de "3 strikes" y evita dispersar reglas de negocio relacionadas.
+
+###### 2.3. ¿Qué pasaría si partimos el bounded context en múltiples bounded contexts?
+- **Caso Considerado:** Partir *Space & IoT Management* en *Physical Spaces* y *IoT Device Management*.
+- **Impacto:**
+  - Separar la gestión física de espacios de la gestión de dispositivos IoT.
+  - Organizaría mejor las responsabilidades entre infraestructura física y tecnológica.
+- **Discusión:**
+  - Aunque son conceptos diferentes, están fuertemente acoplados en el dominio de SmartParking. Los sensores están físicamente asociados a espacios específicos y la lógica de detección requiere coordinar ambos aspectos. Dividirlos podría crear complejidad innecesaria en la comunicación.
+
+###### 2.4. ¿Qué pasaría si tomamos este capability de estos 3 contexts y lo usamos para formar un nuevo context?
+- **Caso Considerado:** Crear un nuevo Bounded Context llamado *Session Management* que combine capacidades de *Reservation Management*, *Time Tracking* y *Space & IoT Management* relacionadas con sesiones activas de estacionamiento.
+- **Impacto:**
+  - Unificaría toda la lógica de gestión de sesiones activas en un solo contexto.
+  - Reduciría la comunicación entre contextos durante el flujo principal de uso.
+- **Discusión:**
+  - Aunque la gestión de sesiones es central al negocio, combinar estos contextos violaría el principio de separación de responsabilidades. Cada contexto actual tiene un propósito claro y bien definido. Un contexto unificado sería demasiado grande y difícil de mantener.
+
+###### 2.5. ¿Qué pasaría si duplicamos una funcionalidad para romper la dependencia?
+- **Caso Considerado:** Duplicar la funcionalidad de notificaciones en funcionalidades específicas para cada tipo, tales como *ReservationNotification*, *PenaltyNotification*, *AlertNotification*, etc.
+- **Impacto:**
+  - Las funcionalidades estarían mejor desacopladas, pero se repetiría mucho código.
+  - Podría generar inconsistencias en el formato y entrega de notificaciones.
+- **Discusión:**
+  - No se recomienda, pues aumentaría la complejidad y la dificultad de mantenimiento. Es mejor utilizar el patrón Open/Host Service con un contexto de *Notification* centralizado que maneje todas las comunicaciones de manera consistente.
+
+###### 2.6. ¿Qué pasaría si creamos un shared service para reducir la duplicación entre múltiples bounded contexts?
+- **Caso Considerado:** Crear un servicio compartido de validación de reglas de negocio al que puedan acceder *Reservation Management* y *Penalty Management*.
+- **Impacto:**
+  - Reduciría la duplicación de validaciones comunes (ej: verificar estado del usuario).
+  - Permitiría centralizar reglas transversales del sistema.
+- **Discusión:**
+  - Esto podría ser beneficioso para reglas muy específicas y compartidas, pero debe hacerse con cuidado para no crear un "god service". Es preferible mantener las validaciones específicas dentro de cada contexto y solo compartir utilidades muy genéricas.
+
+###### 2.7. ¿Qué pasaría si aislamos los core capabilities y movemos los otros a un context aparte?
+- **Caso Considerado:** Aislar las capacidades core de gestión de espacios en *Space & IoT Management* y mover las funcionalidades de IoT a un contexto separado llamado *Device Management*.
+- **Impacto:**
+  - Se reduciría la complejidad de *Space & IoT Management*.
+  - Se especializarían mejor las responsabilidades.
+- **Discusión:**
+  - En el dominio de SmartParking, los espacios físicos y los dispositivos IoT están intrínsecamente relacionados. Separar estas capacidades requeriría mucha coordinación y comunicación entre contextos, añadiendo complejidad sin beneficios claros.
+
+##### 3. Alternativa Recomendada de Context Mapping
+
+1. **Mantener la estructura actual de 7 contextos** - cada uno tiene responsabilidades bien definidas.
+2. **Implementar Anti-Corruption Layer (ACL)** entre *Reservation Management* y *Space & IoT Management* para proteger de cambios en el hardware.
+3. **Usar Open/Host Service** para *Notification Context* - servicio público para todas las comunicaciones.
+4. **Establecer Customer/Supplier** entre contextos según el flujo de control del negocio.
+5. **Implementar middleware para IAM** - separación de concerns transversales de la lógica de dominio.
+
+##### 4. Patrones de Relaciones Aplicados
+
+- **Anti-corruption Layer (ACL)**: Para proteger *Reservation Management* de cambios en hardware IoT.
+- **Open/Host Service**: *Notification* como servicio público para múltiples contextos.
+- **Customer/Supplier**: Relaciones direccionales claras para flujo de datos según modelo de negocio.
+- **Middleware Pattern**: IAM como concern transversal implementado en la capa de infraestructura.
+
+##### 5. Implementación Técnica
+
+###### 5.1. Middleware de Autenticación
+
+El sistema implementa autenticación mediante middleware Express que:
+
+- Intercepta todas las requests a endpoints protegidos
+- Valida tokens JWT con IAM
+- Inyecta información de usuario validada en el request
+- Permite que bounded contexts operen con datos ya autenticados
+
+###### 5.2. Arquitectura Monolítica Modular
+
+Aunque implementa una arquitectura monolítica, los Bounded Contexts identificados sirven como módulos organizacionales que:
+
+- Definen la estructura interna del código
+- Establecen la división de responsabilidades del equipo  
+- Determinan las interfaces entre componentes
+- Facilitan la evolución futura hacia microservicios si fuera necesario
+
+![Context Mapping](./assets/img/Chapter-IV/context-mapping-map.png)
+
 ### 4.1.3. Software Architecture
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
