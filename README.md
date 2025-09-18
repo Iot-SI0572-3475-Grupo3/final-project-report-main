@@ -408,10 +408,48 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
 ### 4.2.4. Bounded Context: Time Tracking
+
+El contexto de **Time Tracking** se encarga de registrar y gestionar el tiempo de uso de los espacios de estacionamiento sin límites temporales, iniciando y deteniendo cronómetros de manera automática a partir de los eventos de llegada y salida provenientes del contexto **Space & IoT Management**.
+
 #### 4.2.4.1. Domain Layer
+Clases de dominio que encapsulan las reglas de negocio principales:
+
+| Clase | Tipo | Propósito | Atributos Clave | Métodos Clave |
+|------|------|----------|-----------------|---------------|
+| **TimeSession** | Entity / Aggregate Root | Representa la sesión de tiempo de un usuario en un espacio de estacionamiento. | `id`, `userId`, `parkingSpaceId`, `startTime`, `endTime`, `duration` | `start()`, `stop()`, `calculateDuration()` |
+| **Timer** | Value Object | Cronómetro en tiempo real vinculado a una sesión. | `startTimestamp`, `running` | `start()`, `stop()`, `elapsedTime()` |
+| **TimeRecord** | Entity | Registro histórico de cada sesión finalizada. | `id`, `sessionId`, `totalDuration`, `date` | `generateReport()` |
+| **Duration** | Value Object | Encapsula la duración total de una sesión. | `hours`, `minutes`, `seconds` | `toHumanReadable()`, `add()` |
+| **ITimeSessionRepository** | Repository Interface | Define la persistencia de sesiones y registros de tiempo. | — | `save()`, `findByUser()`, `findActiveBySpace()` |
+
 #### 4.2.4.2. Interface Layer
+Exposición de funcionalidades hacia consumidores externos:
+
+| Clase | Tipo | Propósito |
+|------|------|----------|
+| **TimeTrackingController** | REST Controller | Ofrece endpoints para consultar sesiones activas, históricos y reportes de tiempo. |
+| **RealTimeDisplayConsumer** | WebSocket Consumer | Envía actualizaciones de tiempo en vivo al frontend para mostrar el cronómetro en ejecución. 
+
 #### 4.2.4.3. Application Layer
+Orquesta los procesos de negocio y maneja los eventos entrantes:
+
+| Clase | Tipo | Propósito |
+|------|------|----------|
+| **StartTimerCommandHandler** | Command Handler | Inicia una sesión de tiempo al recibir un evento de llegada desde *Space & IoT Management*. |
+| **StopTimerCommandHandler** | Command Handler | Finaliza la sesión y calcula la duración al recibir un evento de salida. |
+| **GenerateTimeReportService** | Application Service | Genera reportes de uso para el contexto *Analytics & Reporting*. |
+| **ArrivalEventHandler** | Event Handler | Escucha y procesa el evento de llegada para iniciar el cronómetro. |
+| **DepartureEventHandler** | Event Handler | Escucha y procesa el evento de salida para detener el cronómetro. |
+
 #### 4.2.4.4. Infrastructure Layer
+Implementación técnica de persistencia, mensajería y conexión con servicios externos:
+
+| Clase | Tipo | Propósito |
+|------|------|----------|
+| **TimeSessionRepository** | Repository Implementation | Implementa la interfaz `ITimeSessionRepository` usando una base de datos relacional (p. ej., PostgreSQL). |
+| **TimeTrackingMessageBroker** | Message Broker Adapter | Suscripción a los eventos de llegada y salida publicados por *Space & IoT Management* (RabbitMQ/Kafka). |
+| **TimeTrackingDBContext** | ORM Context | Configura el mapeo de entidades de dominio a las tablas de la base de datos. |
+
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
