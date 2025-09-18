@@ -47,24 +47,22 @@
   <tbody>
     <tr>
       <td rowspan="6">V1</td>
-      <td>xx</td>
-      <td>xx</td>
+      <td>08/09/2025</td>
+      <td>Luciano Ruiz</td>
       <td>
         <ul>
-          <li>xx</li>
-          <li>xx</li>
-          <li>xx</li>
+          <li>Creación de plantilla en readme</li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td>xx</td>
-      <td>xx</td>
+      <td>18/09/2025</td>
+      <td>Luciano Ruiz</td>
       <td>
         <ul>
-          <li>xx</li>
-          <li>xx</li>
-          <li>xx</li>
+          <li>Implementación del context mapping</li>
+          <li>Implementacion student outcome</li>
+          <li>Implementación de diagramas c4</li>
         </ul>
       </td>
     </tr>
@@ -250,7 +248,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p>
         TB1:
         <p/>
-        Luciano Ruiz :
+        Luciano Ruiz : Distribui tareas equitativas y por fortalezas de cada miembro del equipo. Además, proporcione apoyo a mis companeros de equipo en sus tareas para un mejor desenvolvimiento.
         <p/>
         Fernando: 
         <p/>
@@ -270,7 +268,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
       <p>
         TB1:
         <p/>
-        Luciano Ruiz :
+        Luciano Ruiz : Estableci los sprints, participe en el capitulo IV apoyando en la planificación de nuestra solución.
         <p/>
         Fernando: 
         <p/>
@@ -510,11 +508,27 @@ Aunque implementa una arquitectura monolítica, los Bounded Contexts identificad
 
 ### 4.1.3. Software Architecture
 
+URL Structurizr para apreciar mejor los diagramas C4: <a href="https://structurizr.com/share/106335">https://structurizr.com/share/106335</a>
+<br><br>
+
 #### 4.1.3.1. Software Architecture System Landscape Diagram
+El System Landscape Diagram ilustra la arquitectura general del sistema SmartParking, mostrando los diferentes actores y componentes que lo componen en el contexto universitario. Este diagrama proporciona una visión general de cómo se organizan los distintos usuarios y servicios en el ecosistema del sistema, así como las relaciones entre ellos. Los miembros universitarios (estudiantes, docentes y personal administrativo) no se consideran actores internos del sistema, sino como actores externos que interactúan y se benefician del sistema de gestión inteligente de estacionamientos. En este caso, el sistema SmartParking se despliega como una solución integral que puede ser implementada en cualquier campus universitario, manteniendo la flexibilidad para futuras integraciones con sistemas institucionales como Active Directory. El diagrama incluye dos grupos principales de usuarios: Miembros Universitarios (que utilizan el sistema para encontrar y reservar espacios) y Administradores (que gestionan y supervisan el funcionamiento del sistema). La arquitectura está diseñada para ser escalable y adaptable a diferentes entornos universitarios, proporcionando un servicio gratuito de estacionamiento inteligente mediante tecnología IoT.<br>
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/systemLandscape-c4.png" alt="System Landscape Diagram" width="90%" />
+</div><br><br>
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
+El diagrama de contexto del sistema ilustra la interacción entre el sistema SmartParking y los actores externos que interactúan con él. Este diagrama proporciona una visión general de cómo el sistema se integra como una solución autónoma para la gestión de estacionamientos universitarios. En este caso, el sistema SmartParking opera de manera independiente sin dependencias críticas de sistemas externos, manteniendo toda la funcionalidad core internamente. Los Miembros Universitarios interactúan con el sistema para realizar reservas de espacios de estacionamiento, consultar disponibilidad en tiempo real, recibir notificaciones automáticas de confirmación de llegada/salida y gestionar sus reservas activas. Los Administradores utilizan el sistema para configurar espacios de estacionamiento, supervisar la ocupación en tiempo real, gestionar usuarios del sistema y generar reportes operacionales. El sistema mantiene un diseño limpio sin integraciones complejas, enfocándose en proporcionar una experiencia de usuario fluida y una gestión eficiente de recursos de estacionamiento mediante tecnología IoT avanzada.<br>
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/systemcontext-c4.png" alt="Context Diagram" width="90%" />
+</div><br><br>
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
+A continuación, se presenta el diagrama de contenedores del sistema SmartParking, que ilustra los diferentes componentes y su interacción dentro de la arquitectura del software. Este diagrama proporciona una visión detallada de cómo se organizan los distintos servicios y aplicaciones en el sistema, así como las relaciones entre ellos. El sistema SmartParking se basa en una arquitectura híbrida RESTful API + Edge Computing que se divide en varios contenedores especializados, cada uno con funcionalidades y responsabilidades específicas. Los usuarios podrán utilizar la Landing Page estática para conocer las características del sistema y acceder a las aplicaciones. Una vez registrados, tendrán acceso a una aplicación web (Angular) y aplicación móvil (Flutter), las cuales consumirán datos desde la RESTful API principal desarrollada en Spring Boot + Java con base de datos MySQL.
+En el contexto de IoT, existen dispositivos ESP32 físicos con sensores ultrasónicos que funcionan como sistemas externos hardware. Los datos de estos dispositivos son procesados a través de una Embedded Application (C++ + ESP32 Framework) que actúa como intermediario, enviando información procesada hacia el Edge API (Flask + Python) con base de datos SQLite local para procesamiento en tiempo real con latencia mínima. El Edge API sincroniza los datos relevantes con la RESTful API principal, creando un flujo de datos eficiente: Hardware IoT → Embedded App → Edge API → RESTful API → Frontend Applications. Esta arquitectura garantiza escalabilidad distribuida, procesamiento local de sensores, y una experiencia de usuario fluida tanto para reservas como para detección automática de vehículos.<br>
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/containers-c4.png" alt="Container Diagram" width="90%" />
+</div><br><br>
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
