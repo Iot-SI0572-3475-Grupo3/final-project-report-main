@@ -575,49 +575,184 @@ Implementación de Repositories y adaptadores externos.
 
 ### 4.2.5. Bounded Context: Penalty Management
 
-El contexto de **Penalty Management** se encarga de la detección, registro y cálculo de penalidades por infracciones de estacionamiento, tales como exceder el tiempo permitido, estacionar en zonas prohibidas o incumplir normas específicas. Este bounded context se integra con *Time Tracking* (para verificar exceso de tiempo) y con *Payment & Billing* (para aplicar y cobrar la multa).
+El **Bounded Context Penalty Management** administra el sistema de penalizaciones “3 Strikes” configurable basado en **ausencias automáticas**, sin intervención manual.  
+Su objetivo es detectar usuarios que no se presenten en el estacionamiento dentro de la ventana configurada, acumular “strikes” y aplicar suspensiones temporales, enviando advertencias y reactivaciones según las reglas de negocio.
 
-#### 4.2.5.1. Domain Layer
-Clases que representan el núcleo de las reglas de negocio para la gestión de penalidades:
+#### 4.2.5.1. Domain Layer.
 
-| Clase | Tipo | Propósito | Atributos Clave | Métodos Clave |
-|------|------|----------|-----------------|---------------|
-| **Penalty** | Entity / Aggregate Root | Representa una penalidad aplicada a un usuario por una infracción específica. | `id`, `userId`, `violationType`, `amount`, `status`, `issuedAt`, `resolvedAt` | `calculateAmount()`, `markAsPaid()`, `resolveDispute()` |
-| **Violation** | Entity | Describe el tipo de infracción detectada. | `code`, `description`, `baseAmount`, `rules` | `getPenaltyAmount()` |
-| **PenaltyPolicy** | Domain Service | Contiene las reglas de negocio para determinar las penalidades según el tipo de infracción. | — | `applyPolicy(violationType, contextData)` |
-| **IPenaltyRepository** | Repository Interface | Define las operaciones de persistencia de penalidades. | — | `save()`, `findByUser()`, `findPending()` |
-| **IPolicyRepository** | Repository Interface | Permite la actualización y consulta de políticas de penalización. | — | `findByViolationCode()`, `updatePolicy()` |
+Agregados y Entidades del Dominio **Penalty Management** en nuestra Web/Mobile Application.
 
-#### 4.2.5.2. Interface Layer
-Clases de exposición para interactuar con servicios externos y el usuario:
+En la carpeta `domain` de este Bounded Context se encuentran las clases principales que encapsulan la lógica de negocio para la detección de ausencias, emisión de advertencias y suspensión de usuarios.
 
-| Clase | Tipo | Propósito |
-|------|------|----------|
-| **PenaltyController** | REST Controller | Provee endpoints para registrar infracciones, consultar penalidades y actualizar su estado (pagado, en disputa, resuelto). |
-| **PenaltyNotificationConsumer** | Event/Message Consumer | Recibe eventos de *Time Tracking* (exceso de tiempo) o de *Space & IoT Management* (detección de estacionamiento indebido) para iniciar el proceso de penalización. |
-| **PenaltyViewModel** | DTO / Response Model | Estructura de datos para presentar penalidades al frontend. |
+##### Absence
+Representa una ausencia registrada cuando un usuario no llega en el tiempo establecido.
 
-#### 4.2.5.3. Application Layer
-Orquesta el flujo de aplicación y manejo de eventos:
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único de la ausencia |
+| UserId | int | ID del usuario ausente |
+| ReservationId | int | ID de la reserva no utilizada |
+| DetectedAt | DateTime | Fecha y hora en que se detectó la ausencia |
 
-| Clase | Tipo | Propósito |
-|------|------|----------|
-| **RegisterPenaltyCommandHandler** | Command Handler | Crea una nueva penalidad al recibir un evento de infracción. |
-| **UpdatePenaltyStatusCommandHandler** | Command Handler | Cambia el estado de la penalidad (pagada, disputada, cancelada). |
-| **PenaltyEventHandler** | Event Handler | Gestiona eventos de tiempo excedido u otros disparadores externos para iniciar la lógica de penalización. |
-| **PenaltyReportService** | Application Service | Genera reportes de penalidades para *Analytics & Reporting*. |
-| **DisputeResolutionService** | Application Service | Maneja el flujo de disputa de una penalidad, coordinando con *Customer Support* o *Admin Tools*. |
+**Constructores**  
+- Por parámetros individuales  
+- Desde `RegisterAbsenceCommand`
 
-#### 4.2.5.4. Infrastructure Layer
-Implementación técnica y conectores externos:
+##### AbsenceCounter
+Contador de ausencias acumuladas por usuario.
 
-| Clase | Tipo | Propósito |
-|------|------|----------|
-| **PenaltyRepository** | Repository Implementation | Implementa `IPenaltyRepository` en una base de datos relacional (PostgreSQL/MySQL). |
-| **PolicyRepository** | Repository Implementation | Implementa `IPolicyRepository` para administrar políticas dinámicas de penalización. |
-| **PenaltyMessageBrokerAdapter** | Message Broker Adapter | Suscripción a eventos de infracción provenientes de otros contextos (RabbitMQ/Kafka). |
-| **PenaltyDBContext** | ORM Context | Mapeo de las entidades de penalización y políticas a tablas relacionales. |
-| **EmailNotificationAdapter** | External Service Adapter | Envía correos o notificaciones push al usuario para informar de nuevas penalidades. |
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador del contador |
+| UserId | int | ID del usuario |
+| StrikeCount | int | Número de ausencias registradas |
+| MaxStrikes | int | Límite de strikes configurable (2–5) |
+| LastUpdated | DateTime | Última fecha de actualización |
+
+**Métodos de dominio**  
+- `IncrementStrike()` – Incrementa el número de ausencias.  
+- `ResetCounter()` – Reinicia el contador tras suspensión.
+
+##### Suspension
+Entidad que representa la suspensión de un usuario por alcanzar el máximo de strikes.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único |
+| UserId | int | ID del usuario suspendido |
+| StartDate | DateTime | Fecha de inicio de la suspensión |
+| EndDate | DateTime | Fecha de reactivación automática |
+| Status | string | Estado (ACTIVE, COMPLETED) |
+
+**Métodos de dominio**  
+- `Activate()` – Activa suspensión.  
+- `Complete()` – Marca la suspensión como finalizada.
+
+##### Warning
+Advertencia emitida antes de la suspensión.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único |
+| UserId | int | ID del usuario |
+| Message | string | Mensaje de advertencia |
+| CreatedAt | DateTime | Fecha de emisión |
+
+##### PenaltyRules (Value Object)
+Objeto de valor que define las reglas de penalización configurables.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| MaxStrikes | int | Límite de ausencias antes de suspensión |
+| SuspensionDays | int | Días de suspensión automática |
+| WindowMinutes | int | Minutos de ventana de llegada antes de marcar ausencia |
+
+**Comandos**
+
+| Comando | Descripción |
+|---------|------------|
+| RegisterAbsenceCommand.cs | Registra una nueva ausencia al no detectar llegada |
+| IssueWarningCommand.cs | Emite una advertencia por ausencia |
+| SuspendUserCommand.cs | Suspende usuario tras alcanzar máximo de strikes |
+| ReactivateUserCommand.cs | Reactiva usuario al finalizar período de suspensión |
+| ResetAbsenceCounterCommand.cs | Reinicia el contador de ausencias |
+| ConfigurePenaltyRulesCommand.cs | Actualiza las reglas de penalización |
+
+**Queries**
+
+| Archivo | Descripción |
+|---------|------------|
+| GetAbsenceHistoryByUserQuery.cs | Lista las ausencias de un usuario |
+| GetCurrentSuspensionQuery.cs | Obtiene información de la suspensión actual |
+| GetPenaltyRulesQuery.cs | Consulta las reglas de penalización vigentes |
+| GetAbsenceCounterQuery.cs | Devuelve el contador de ausencias actual de un usuario |
+
+**Repositories (Interfaces)**
+
+| Archivo | Descripción |
+|---------|------------|
+| IAbsenceRepository.cs | CRUD de ausencias |
+| IAbsenceCounterRepository.cs | Maneja contador de ausencias por usuario |
+| ISuspensionRepository.cs | Persiste y consulta suspensiones activas o completadas |
+| IWarningRepository.cs | Registra advertencias enviadas |
+| IPenaltyRulesRepository.cs | Gestiona las reglas de penalización configurables |
+
+**Domain Services**
+
+| Archivo | Descripción |
+|---------|------------|
+| IPenaltyCommandService.cs | Orquesta la lógica para registrar ausencias, emitir advertencias y suspender usuarios |
+| IPenaltyQueryService.cs | Consulta histórico de ausencias, suspensiones y reglas |
+
+#### 4.2.5.2. Interface Layer.
+
+Interface Layer – Presentación de la Aplicación.
+
+La carpeta `interfaces/REST` expone endpoints que permiten al sistema y a los administradores consultar o actualizar las penalizaciones y reglas.
+
+**Resources**
+
+| Archivo | Función |
+|---------|--------|
+| RegisterAbsenceResource.cs | Datos para registrar una ausencia automática |
+| WarningResource.cs | Devuelve datos de advertencias emitidas |
+| SuspensionResource.cs | Devuelve información de suspensiones activas |
+| PenaltyRulesResource.cs | Muestra las reglas actuales de penalización |
+| UpdatePenaltyRulesResource.cs | Permite a un administrador actualizar las reglas (strikes, días de suspensión, ventana de llegada) |
+
+**Transform/Assemblers**
+
+| Archivo | Función |
+|---------|--------|
+| RegisterAbsenceCommandFromResourceAssembler.cs | Convierte RegisterAbsenceResource en RegisterAbsenceCommand |
+| UpdatePenaltyRulesCommandFromResourceAssembler.cs | Convierte UpdatePenaltyRulesResource en ConfigurePenaltyRulesCommand |
+| SuspensionResourceFromEntityAssembler.cs | Convierte entidad Suspension en SuspensionResource |
+| WarningResourceFromEntityAssembler.cs | Convierte entidad Warning en WarningResource |
+
+**Controllers**
+
+| Controlador | Ruta base típica | Responsabilidad principal |
+|-------------|------------------|--------------------------|
+| PenaltyController.cs | /api/penalty | Expone endpoints para registro de ausencias y emisión de advertencias |
+| SuspensionController.cs | /api/penalty/suspension | Consulta y gestión de suspensiones de usuarios |
+| PenaltyRulesController.cs | /api/penalty/rules | Consulta y actualización de reglas de penalización |
+
+#### 4.2.5.3. Application Layer.
+
+Servicios de Aplicación – Gestión de Flujos de Negocio.
+
+**Command Services**
+
+| Clase | Descripción |
+|-------|------------|
+| PenaltyCommandService.cs | Orquesta la lógica para registrar ausencias, emitir advertencias, suspender usuarios y reactivar automáticamente. |
+
+**Query Services**
+
+| Clase | Descripción |
+|-------|------------|
+| PenaltyQueryService.cs | Permite consultas de ausencias, suspensiones y reglas de penalización. |
+
+**Eventos clave**
+
+- ✅ **Absence Detected Event**: Disparado por Reservation Management cuando no hay llegada dentro de la ventana configurada.  
+- ✅ **Warning Issued Event**: Notifica al Notification Context sobre la advertencia al usuario.  
+- ✅ **User Suspended Event**: Marca y comunica la suspensión.  
+- ✅ **User Reactivated Event**: Reactiva el acceso del usuario tras el período configurado.  
+
+#### 4.2.5.4. Infrastructure Layer.
+
+Implementación de Repositories y adaptadores externos.
+
+| Clase | Interfaz Implementada | Función Principal |
+|-------|----------------------|------------------|
+| AbsenceRepository.cs | IAbsenceRepository | Persiste ausencias registradas y permite filtrado por usuario o fecha |
+| AbsenceCounterRepository.cs | IAbsenceCounterRepository | Gestiona el conteo de ausencias de cada usuario |
+| SuspensionRepository.cs | ISuspensionRepository | Persiste suspensiones activas, fechas y reactivaciones automáticas |
+| WarningRepository.cs | IWarningRepository | Almacena advertencias emitidas |
+| PenaltyRulesRepository.cs | IPenaltyRulesRepository | Mantiene la configuración de reglas de penalización |
+| PenaltyEventPublisher.cs | — | Publica eventos hacia Notification Context para envío de alertas |
+| SchedulerAdapter.cs | — | Programa tareas automáticas para reactivación de usuarios después del período de suspensión |
 
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
