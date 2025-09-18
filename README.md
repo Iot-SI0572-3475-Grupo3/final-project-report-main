@@ -534,23 +534,550 @@ En el contexto de IoT, existen dispositivos ESP32 físicos con sensores ultrasó
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
-### 4.2.X. Bounded Context: <Bounded Context Name>
+### 4.2.1. Bounded Context: Identity & Access Management Context
 
-#### 4.2.X.1. Domain Layer
+## Introducción
 
-#### 4.2.X.2. Interface Layer
+El Bounded Context **Identity & Access Management** es responsable de gestionar la identidad, autenticación y autorización de usuarios en el sistema SmartParking UPC. Este contexto opera como un contexto de soporte que proporciona capacidades transversales de seguridad a todos los demás bounded contexts del sistema.
 
-#### 4.2.X.3. Application Layer
+Como se identificó en el Context Mapping, IAM actúa como middleware de infraestructura, proporcionando autenticación transparente sin crear dependencias directas en los bounded contexts de negocio. Esto permite una separación clara de responsabilidades donde la autenticación es tratada como una preocupación transversal.
 
-#### 4.2.X.4. Infrastructure Layer
+#### 4.2.1.1. Domain Layer
 
-#### 4.2.X.5. Bounded Context Software Architecture Component Level Diagrams
+La capa de dominio contiene las reglas de negocio fundamentales y las entidades core relacionadas con la identidad y acceso en el contexto universitario UPC.
 
-#### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams
+##### Entidades (Entities)
 
-##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams
+###### **User**
+Representa un usuario del sistema SmartParking UPC (datos de autenticación).
 
-##### 4.2.X.6.2. Bounded Context Database Design Diagram
+**Atributos:**
+- `userId`: Identificador único del usuario
+- `email`: Email institucional (@upc.edu.pe)
+- `passwordHash`: Hash de la contraseña del usuario
+- `role`: Rol del usuario (UNIVERSITY_MEMBER, ADMINISTRATOR)
+- `status`: Estado del usuario (ACTIVE, INACTIVE, SUSPENDED)
+- `createdAt`: Fecha de creación de la cuenta
+- `lastLoginAt`: Fecha del último acceso
+- `failedLoginAttempts`: Contador de intentos fallidos de login
+
+**Métodos:**
+- `authenticate(password: string): boolean`
+- `suspend(): void`
+- `reactivate(): void`
+- `updateLastLogin(): void`
+- `incrementFailedAttempts(): void`
+- `resetFailedAttempts(): void`
+- `hasRole(role: UserRole): boolean`
+
+**Invariantes de Negocio:**
+- El email debe ser válido y del dominio @upc.edu.pe
+- El usuario solo puede ser suspendido si está activo
+- Los intentos fallidos se reinician tras un login exitoso
+
+###### **UserProfile**
+Representa el perfil e información personal del usuario.
+
+**Atributos:**
+- `profileId`: Identificador único del perfil
+- `userId`: Referencia al usuario propietario
+- `firstName`: Nombre del usuario
+- `lastName`: Apellido del usuario
+- `createdAt`: Fecha de creación del perfil
+- `updatedAt`: Fecha de última actualización
+
+**Métodos:**
+- `updatePersonalInfo(firstName: string, lastName: string): void`
+- `getFullName(): string`
+
+**Invariantes de Negocio:**
+- Debe existir exactamente un perfil por usuario
+- Los nombres no pueden estar vacíos
+
+###### **Session**
+Representa una sesión activa de usuario en el sistema.
+
+**Atributos:**
+- `sessionId`: Identificador único de sesión
+- `userId`: Referencia al usuario propietario
+- `token`: Token JWT de la sesión
+- `createdAt`: Fecha de creación de la sesión
+- `expiresAt`: Fecha de expiración del token
+- `isActive`: Estado de la sesión
+
+**Métodos:**
+- `isExpired(): boolean`
+- `invalidate(): void`
+- `refreshToken(): string`
+
+**Invariantes de Negocio:**
+- Una sesión no puede estar activa si ha expirado
+- Solo pueden existir tokens válidos para usuarios activos
+
+##### Value Objects
+
+###### **Email**
+Value Object que encapsula y valida emails institucionales.
+
+**Atributos:**
+- `value`: El valor del email
+
+**Métodos:**
+- `isValid(): boolean`
+- `getDomain(): string`
+- `getLocalPart(): string`
+
+**Invariantes:**
+- Debe ser un email válido con formato correcto
+- Debe pertenecer al dominio @upc.edu.pe
+- No requiere verificación adicional
+
+###### **UserRole**
+Value Object que representa los roles del sistema.
+
+**Atributos:**
+- `value`: UNIVERSITY_MEMBER | ADMINISTRATOR
+
+**Métodos:**
+- `hasPermission(permission: string): boolean`
+- `isAdministrator(): boolean`
+
+###### **PasswordHash**
+Value Object que maneja el hash seguro de contraseñas.
+
+**Atributos:**
+- `hashedValue`: Hash de la contraseña
+- `algorithm`: Algoritmo usado para el hash
+- `salt`: Salt utilizado
+
+**Métodos:**
+- `verify(plainPassword: string): boolean`
+- `needsRehash(): boolean`
+
+##### Aggregates
+
+###### **UserAccount**
+Aggregate Root que encapsula la lógica completa de cuenta de usuario.
+
+**Entidades contenidas:**
+- User (Root)
+- UserProfile
+- Conjunto de Sessions
+
+**Métodos del Aggregate:**
+- `register(email: Email, password: string, firstName: string, lastName: string): UserAccount`
+- `login(email: Email, password: string): Session`
+- `logout(sessionId: string): void`
+- `updateProfile(firstName: string, lastName: string): void`
+- `changePassword(oldPassword: string, newPassword: string): void`
+- `assignRole(role: UserRole): void`
+
+##### Domain Services
+
+###### **AuthenticationService**
+Servicio de dominio que maneja la lógica compleja de autenticación.
+
+**Métodos:**
+- `authenticateUser(email: Email, password: string): AuthenticationResult`
+- `generateToken(user: User): string`
+- `validateToken(token: string): TokenValidationResult`
+- `handleFailedLogin(user: User): void`
+
+###### **PasswordPolicyService**
+Servicio que valida políticas de contraseñas institucionales.
+
+**Métodos:**
+- `validatePassword(password: string): ValidationResult`
+- `generateSecureHash(password: string): PasswordHash`
+
+##### Repository Interfaces
+
+###### **IUserRepository**
+Interface para persistencia de usuarios.
+
+**Métodos:**
+- `findByEmail(email: Email): User | null`
+- `findById(userId: string): User | null`
+- `save(user: User): void`
+- `delete(userId: string): void`
+
+###### **IUserProfileRepository**
+Interface para persistencia de perfiles de usuario.
+
+**Métodos:**
+- `findByUserId(userId: string): UserProfile | null`
+- `save(userProfile: UserProfile): void`
+- `update(userProfile: UserProfile): void`
+
+###### **ISessionRepository**
+Interface para persistencia de sesiones.
+
+**Métodos:**
+- `findByToken(token: string): Session | null`
+- `findActiveByUserId(userId: string): Session[]`
+- `save(session: Session): void`
+- `invalidateAllForUser(userId: string): void`
+
+#### 4.2.1.2. Interface Layer
+
+La capa de interfaz expone las capacidades del bounded context mediante controllers REST y maneja la comunicación HTTP.
+
+##### Controllers
+
+###### **AuthenticationController**
+Controlador REST que maneja endpoints de autenticación.
+
+**Endpoints:**
+- `POST /api/auth/login`: Autenticar usuario
+- `POST /api/auth/logout`: Cerrar sesión
+- `POST /api/auth/refresh-token`: Renovar token
+- `GET /api/auth/validate`: Validar token actual
+
+**Métodos:**
+- `login(loginRequest: LoginRequest): LoginResponse`
+- `logout(logoutRequest: LogoutRequest): void`
+- `refreshToken(refreshRequest: RefreshTokenRequest): TokenResponse`
+- `validateToken(request: HttpRequest): ValidationResponse`
+
+###### **UserRegistrationController**
+Controlador para registro de nuevos usuarios UPC.
+
+**Endpoints:**
+- `POST /api/users/register`: Registrar nuevo usuario
+
+**Métodos:**
+- `register(registrationRequest: UserRegistrationRequest): RegistrationResponse`
+
+###### **UserProfileController**
+Controlador para gestión de perfiles de usuario.
+
+**Endpoints:**
+- `GET /api/users/profile`: Obtener perfil actual
+- `PUT /api/users/profile`: Actualizar perfil
+- `PUT /api/users/change-password`: Cambiar contraseña
+
+**Métodos:**
+- `getProfile(userId: string): UserProfileResponse`
+- `updateProfile(profileRequest: UpdateProfileRequest): void`
+- `changePassword(passwordRequest: ChangePasswordRequest): void`
+
+##### DTOs (Data Transfer Objects)
+
+###### **LoginRequest**
+```typescript
+{
+  email: string,
+  password: string,
+  rememberMe: boolean
+}
+```
+
+###### **LoginResponse**
+```typescript
+{
+  accessToken: string,
+  refreshToken: string,
+  expiresIn: number,
+  user: UserProfileResponse
+}
+```
+
+###### **UserRegistrationRequest**
+```typescript
+{
+  email: string,
+  password: string,
+  firstName: string,
+  lastName: string
+}
+```
+
+##### Middleware
+
+###### **JWTAuthenticationMiddleware**
+Middleware que intercepta requests para validar autenticación.
+
+**Funcionalidades:**
+- Extrae token JWT del header Authorization
+- Valida firma y expiración del token
+- Inyecta información de usuario en el contexto de request
+- Maneja errores de autenticación
+
+#### 4.2.1.3. Application Layer
+
+La capa de aplicación orchestla los casos de uso y coordina entre la capa de dominio e infraestructura.
+
+##### Command Handlers
+
+###### **RegisterUserCommandHandler**
+Maneja el proceso completo de registro de usuario.
+
+**Command:** `RegisterUserCommand`
+**Responsabilidades:**
+- Validar unicidad del email
+- Aplicar políticas de contraseña
+- Crear cuenta de usuario activa
+- Publicar evento de registro
+
+**Método:**
+```typescript
+handle(command: RegisterUserCommand): Promise<RegisterUserResult>
+```
+
+###### **LoginUserCommandHandler**
+Maneja el proceso de autenticación de usuario.
+
+**Command:** `LoginUserCommand`
+**Responsabilidades:**
+- Validar credenciales
+- Generar sesión y token
+- Registrar evento de login
+- Manejar intentos fallidos
+
+###### **LogoutUserCommandHandler**
+Maneja el proceso de cierre de sesión.
+
+**Command:** `LogoutUserCommand`
+**Responsabilidades:**
+- Invalidar sesión actual
+- Limpiar tokens
+- Registrar evento de logout
+
+##### Query Handlers
+
+###### **GetUserProfileQueryHandler**
+Obtiene información del perfil de usuario.
+
+**Query:** `GetUserProfileQuery`
+**Método:**
+```typescript
+handle(query: GetUserProfileQuery): Promise<UserProfileResult>
+```
+
+###### **ValidateTokenQueryHandler**
+Valida tokens de autenticación.
+
+**Query:** `ValidateTokenQuery`
+**Responsabilidades:**
+- Verificar firma del token
+- Validar expiración
+- Comprobar estado del usuario
+- Retornar información de usuario
+
+##### Event Handlers
+
+###### **UserRegisteredEventHandler**
+Maneja evento cuando un usuario se registra.
+
+**Event:** `UserRegisteredEvent`
+**Responsabilidades:**
+- Inicializar configuraciones por defecto
+- Registrar métricas de registro
+
+###### **UserLoginEventHandler**
+Maneja evento de login exitoso.
+
+**Event:** `UserLoggedInEvent`
+**Responsabilidades:**
+- Actualizar último acceso
+- Registrar métricas de uso
+- Verificar ubicación de acceso
+
+##### Application Services
+
+###### **UserRegistrationService**
+Orchestla el proceso completo de registro.
+
+**Métodos:**
+- `registerUniversityMember(request: RegisterUserRequest): Promise<void>`
+- `validateInstitutionalEmail(email: string): Promise<boolean>`
+
+###### **TokenService**
+Maneja generación y validación de tokens JWT.
+
+**Métodos:**
+- `generateAccessToken(user: User): string`
+- `generateRefreshToken(user: User): string`
+- `validateToken(token: string): TokenValidationResult`
+- `extractUserFromToken(token: string): User`
+
+#### 4.2.1.4. Infrastructure Layer
+
+La capa de infraestructura implementa las interfaces definidas en el dominio y maneja persistencia, servicios externos y configuración.
+
+##### Repository Implementations
+
+###### **MySQLUserRepository**
+Implementación concreta del repositorio de usuarios para MySQL.
+
+**Dependencias:**
+- JPA/Hibernate para ORM
+- MySQL Database Connection
+
+**Métodos implementados:**
+- `findByEmail(email: Email): User | null`
+- `save(user: User): void`
+- `findById(userId: string): User | null`
+
+**Mapeo de Entidades:**
+- Mapea entidades de dominio User a tabla users de MySQL
+- Convierte Value Objects a tipos de columna apropiados
+
+###### **MySQLUserProfileRepository**
+Implementación del repositorio de perfiles de usuario.
+
+**Funcionalidades:**
+- Persistencia de información personal del usuario
+- Manejo de relación 1:1 con User
+- Actualizaciones de perfil
+
+###### **MySQLSessionRepository**
+Implementación del repositorio de sesiones.
+
+**Funcionalidades:**
+- Persistencia de tokens JWT
+- Gestión de expiración automática
+- Cleanup de sesiones inactivas
+
+##### External Service Integrations
+
+###### **JWTTokenProvider**
+Implementación concreta para manejo de tokens JWT.
+
+**Configuración:**
+- Algoritmo HS256
+- Secret key configurable
+- Tiempo de expiración: 24 horas
+- Refresh token: 30 días
+
+**Métodos:**
+- `generateToken(user: User, expirationTime: Duration): string`
+- `validateTokenSignature(token: string): boolean`
+- `extractClaims(token: string): Claims`
+
+##### Configuration
+
+###### **SecurityConfiguration**
+Configuración de seguridad y políticas.
+
+**Configuraciones:**
+- Password policy (mínimo 8 caracteres, mayúsculas, números)
+- Failed login attempts limit (5 intentos)
+- Account lockout duration (30 minutos)
+- Session timeout (24 horas)
+
+###### **DatabaseConfiguration**
+Configuración de conexión a base de datos.
+
+**Configuraciones:**
+- Connection pool settings
+- Transaction management
+- Entity mappings
+- Migration scripts
+
+##### Infrastructure Services
+
+###### **PasswordHashingService**
+Servicio que implementa hash seguro de contraseñas.
+
+**Algoritmo:** BCrypt con salt
+**Métodos:**
+- `hashPassword(plainPassword: string): string`
+- `verifyPassword(plainPassword: string, hash: string): boolean`
+
+###### **AuditLoggingService**
+Servicio para logging de eventos de seguridad.
+
+**Funcionalidades:**
+- Log de intentos de login
+- Registro de cambios en cuentas
+- Tracking de sesiones
+- Alertas de seguridad
+
+##### Database Schema (Resumen para la capa)
+
+**Tabla: users**
+- user_id (VARCHAR(36), PK)
+- email (VARCHAR(255), UNIQUE)
+- password_hash (VARCHAR(255))
+- role (ENUM: UNIVERSITY_MEMBER, ADMINISTRATOR)
+- status (ENUM: ACTIVE, INACTIVE, SUSPENDED)
+- created_at (TIMESTAMP)
+- last_login_at (TIMESTAMP)
+- failed_login_attempts (INT)
+
+**Tabla: user_profiles**
+- profile_id (VARCHAR(36), PK)
+- user_id (VARCHAR(36), FK)
+- first_name (VARCHAR(100))
+- last_name (VARCHAR(100))
+- created_at (TIMESTAMP)
+- updated_at (TIMESTAMP)
+
+**Tabla: user_sessions**
+- session_id (VARCHAR(36), PK)
+- user_id (VARCHAR(36), FK)
+- token_hash (VARCHAR(255))
+- created_at (TIMESTAMP)
+- expires_at (TIMESTAMP)
+- is_active (BOOLEAN)
+
+---
+
+##### Conclusión
+
+El Bounded Context Identity & Access Management implementa una arquitectura limpia siguiendo principios DDD, proporcionando capacidades robustas de autenticación y autorización específicamente diseñadas para el entorno universitario UPC. 
+
+**Características clave:**
+- **Seguridad institucional:** Validación estricta de emails @upc.edu.pe
+- **Gestión de sesiones:** Manejo seguro de tokens JWT con expiración
+- **Arquitectura desacoplada:** Interfaces claras entre capas
+- **Middleware transparente:** Autenticación como concern transversal
+- **Escalabilidad:** Diseño preparado para crecimiento del sistema
+
+Este diseño asegura que la autenticación opere como un servicio de infraestructura confiable, permitiendo que otros bounded contexts se enfoquen en su lógica de dominio específica sin preocuparse por los detalles de seguridad.
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+URL Structurizr para apreciar mejor los diagramas de componentes IAM: <a href="https://structurizr.com/share/106368/diagrams#IAM-MobileComponents">https://structurizr.com/share/106368/diagrams#IAM-MobileComponents</a>
+<br><br>
+
+**IAM Web Services Component Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/iam-webservice-component-c4.png" alt="IAM Web Service Component Diagram" width="90%" />
+</div><br><br>
+
+**IAM Mobile Application Component Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/iam-mobile-component-c4.png" alt="IAM Mobile Component Diagram" width="90%" />
+</div><br><br>
+
+**IAM Web Application Component Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/iam-webapplication-component-c4.png" alt="IAM Web Application Component Diagram" width="90%" />
+</div><br><br>
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+URL para apreciar mejor el diagrama de clases del dominio IAM: <a href="#">[Enlace pendiente]</a>
+<br><br>
+
+**IAM Domain Layer Class Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/iam-diagramclass.png" alt="IAM Domain Layer Class Diagram" width="90%" />
+</div><br><br>
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+URL Vertabelo para apreciar mejor el diagrama de base de datos IAM: <a href="https://my.vertabelo.com/doc/G39D0hVaSi9Fl9cHFAsuUyP4761M1Nit">https://my.vertabelo.com/doc/G39D0hVaSi9Fl9cHFAsuUyP4761M1Nit</a>
+<br><br>
+
+**IAM Database Design Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/iam-database-diagram.png" alt="IAM Database Design Diagram" width="90%" />
+</div><br><br>
 
 
 # Capítulo V: Solution UI/UX Design
