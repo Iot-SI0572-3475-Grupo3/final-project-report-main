@@ -409,46 +409,164 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 ### 4.2.4. Bounded Context: Time Tracking
 
-El contexto de **Time Tracking** se encarga de registrar y gestionar el tiempo de uso de los espacios de estacionamiento sin límites temporales, iniciando y deteniendo cronómetros de manera automática a partir de los eventos de llegada y salida provenientes del contexto **Space & IoT Management**.
+El **Bounded Context Time Tracking** registra y gestiona el tiempo de uso de los espacios de estacionamiento sin límites temporales.  
+Su objetivo es iniciar, detener y calcular la duración de cada sesión de estacionamiento a partir de los eventos de llegada y salida enviados por el **Space & IoT Management**.  
+Los datos generados se utilizan para métricas, reportes y, eventualmente, procesos de facturación o penalización.
 
-#### 4.2.4.1. Domain Layer
-Clases de dominio que encapsulan las reglas de negocio principales:
+---
 
-| Clase | Tipo | Propósito | Atributos Clave | Métodos Clave |
-|------|------|----------|-----------------|---------------|
-| **TimeSession** | Entity / Aggregate Root | Representa la sesión de tiempo de un usuario en un espacio de estacionamiento. | `id`, `userId`, `parkingSpaceId`, `startTime`, `endTime`, `duration` | `start()`, `stop()`, `calculateDuration()` |
-| **Timer** | Value Object | Cronómetro en tiempo real vinculado a una sesión. | `startTimestamp`, `running` | `start()`, `stop()`, `elapsedTime()` |
-| **TimeRecord** | Entity | Registro histórico de cada sesión finalizada. | `id`, `sessionId`, `totalDuration`, `date` | `generateReport()` |
-| **Duration** | Value Object | Encapsula la duración total de una sesión. | `hours`, `minutes`, `seconds` | `toHumanReadable()`, `add()` |
-| **ITimeSessionRepository** | Repository Interface | Define la persistencia de sesiones y registros de tiempo. | — | `save()`, `findByUser()`, `findActiveBySpace()` |
+#### 4.2.4.1. Domain Layer.
 
-#### 4.2.4.2. Interface Layer
-Exposición de funcionalidades hacia consumidores externos:
+Agregados y Entidades del Dominio **Time Tracking** en nuestra Web/Mobile Application.
 
-| Clase | Tipo | Propósito |
-|------|------|----------|
-| **TimeTrackingController** | REST Controller | Ofrece endpoints para consultar sesiones activas, históricos y reportes de tiempo. |
-| **RealTimeDisplayConsumer** | WebSocket Consumer | Envía actualizaciones de tiempo en vivo al frontend para mostrar el cronómetro en ejecución. 
+En la carpeta `domain` dentro de este Bounded Context se definen las entidades, agregados y servicios de dominio que encapsulan la lógica de negocio principal.
 
-#### 4.2.4.3. Application Layer
-Orquesta los procesos de negocio y maneja los eventos entrantes:
+##### TimeSession
+Representa una sesión de tiempo de uso de un espacio de estacionamiento.
 
-| Clase | Tipo | Propósito |
-|------|------|----------|
-| **StartTimerCommandHandler** | Command Handler | Inicia una sesión de tiempo al recibir un evento de llegada desde *Space & IoT Management*. |
-| **StopTimerCommandHandler** | Command Handler | Finaliza la sesión y calcula la duración al recibir un evento de salida. |
-| **GenerateTimeReportService** | Application Service | Genera reportes de uso para el contexto *Analytics & Reporting*. |
-| **ArrivalEventHandler** | Event Handler | Escucha y procesa el evento de llegada para iniciar el cronómetro. |
-| **DepartureEventHandler** | Event Handler | Escucha y procesa el evento de salida para detener el cronómetro. |
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único de la sesión |
+| UserId | int | ID del usuario que ocupa el espacio |
+| ParkingSpaceId | int | ID del espacio de estacionamiento utilizado |
+| StartTime | DateTime | Fecha y hora de inicio |
+| EndTime | DateTime? | Fecha y hora de finalización (puede ser nulo mientras la sesión está activa) |
+| Duration | TimeSpan? | Duración total calculada cuando la sesión termina |
+| Status | string | Estado de la sesión (ACTIVE, COMPLETED, CANCELLED) |
 
-#### 4.2.4.4. Infrastructure Layer
-Implementación técnica de persistencia, mensajería y conexión con servicios externos:
+**Constructores**  
+- Por parámetros individuales  
+- A partir de `StartTimerCommand` y `StopTimerCommand`
 
-| Clase | Tipo | Propósito |
-|------|------|----------|
-| **TimeSessionRepository** | Repository Implementation | Implementa la interfaz `ITimeSessionRepository` usando una base de datos relacional (p. ej., PostgreSQL). |
-| **TimeTrackingMessageBroker** | Message Broker Adapter | Suscripción a los eventos de llegada y salida publicados por *Space & IoT Management* (RabbitMQ/Kafka). |
-| **TimeTrackingDBContext** | ORM Context | Configura el mapeo de entidades de dominio a las tablas de la base de datos. |
+##### Timer
+Entidad que representa el cronómetro interno de la sesión.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único del cronómetro |
+| TimeSessionId | int | Relación con la sesión de tiempo |
+| StartTick | DateTime | Momento exacto en que se inició |
+| StopTick | DateTime? | Momento exacto en que se detuvo |
+| Elapsed | TimeSpan? | Tiempo transcurrido |
+
+**Constructores**  
+- Por parámetros individuales  
+- Desde evento `TimerStartedEvent` y `TimerStoppedEvent`
+
+##### TimeRecord
+Registro histórico de uso de un espacio, derivado de una sesión completada.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único |
+| UserId | int | ID del usuario |
+| ParkingSpaceId | int | ID del espacio |
+| Duration | TimeSpan | Duración final |
+| DateRecorded | DateTime | Fecha de registro del historial |
+
+##### DurationCalculator (Domain Service)
+Servicio de dominio que encapsula la lógica para calcular la duración de una sesión.
+
+**Métodos**  
+- `Calculate(TimeSession session): TimeSpan`
+
+**Comandos**
+
+| Comando | Descripción |
+|---------|------------|
+| StartTimerCommand.cs | Inicia una nueva sesión de tiempo al recibir evento de llegada |
+| StopTimerCommand.cs | Detiene la sesión al recibir evento de salida |
+| CalculateDurationCommand.cs | Calcula la duración total de la sesión y actualiza el registro |
+
+**Queries**
+
+| Archivo | Descripción |
+|---------|------------|
+| GetActiveSessionByUserQuery.cs | Obtiene la sesión activa de un usuario |
+| GetTimeHistoryByUserQuery.cs | Lista histórico de tiempos de un usuario |
+| GetSpaceUsageQuery.cs | Devuelve uso de tiempo por espacio |
+
+**Repositories (Interfaces)**
+
+| Archivo | Descripción |
+|---------|------------|
+| ITimeSessionRepository.cs | Operaciones CRUD y búsqueda por usuario o espacio |
+| ITimeRecordRepository.cs | Persistencia de registros históricos |
+| ITimerRepository.cs | Persistencia de cronómetros activos |
+
+**Domain Services**
+
+| Archivo | Descripción |
+|---------|------------|
+| ITimeTrackingCommandService.cs | Comandos: iniciar, detener, calcular duración |
+| ITimeTrackingQueryService.cs | Consultas: historial, sesiones activas |
+
+#### 4.2.4.2. Interface Layer.
+
+Interface Layer – Presentación de la Aplicación.
+
+Esta capa expone los endpoints REST y transforma las solicitudes HTTP en comandos/queries para la capa de aplicación.
+
+**Resources**
+
+| Archivo | Función |
+|---------|--------|
+| StartTimerResource.cs | Recibe datos para iniciar cronómetro (UserId, ParkingSpaceId) |
+| StopTimerResource.cs | Recibe datos para detener cronómetro |
+| TimeSessionResource.cs | Devuelve información de una sesión (inicio, fin, duración) |
+| TimeRecordResource.cs | Devuelve información histórica de uso |
+
+**Transform/Assemblers**
+
+| Archivo | Función |
+|---------|--------|
+| StartTimerCommandFromResourceAssembler.cs | Convierte StartTimerResource en StartTimerCommand |
+| StopTimerCommandFromResourceAssembler.cs | Convierte StopTimerResource en StopTimerCommand |
+| TimeSessionResourceFromEntityAssembler.cs | Convierte entidad TimeSession en TimeSessionResource |
+| TimeRecordResourceFromEntityAssembler.cs | Convierte entidad TimeRecord en TimeRecordResource |
+
+**Controllers**
+
+| Controlador | Ruta base típica | Responsabilidad principal |
+|-------------|------------------|--------------------------|
+| TimeTrackingController.cs | /api/timetracking | Gestiona el inicio/detención de cronómetros y consulta de sesiones activas |
+| TimeHistoryController.cs | /api/timetracking/history | Expone el historial de uso de tiempo por usuario o espacio |
+
+#### 4.2.4.3. Application Layer.
+
+Servicios de Aplicación – Gestión de Flujos de Negocio.
+
+**Command Services**
+
+| Clase | Descripción |
+|-------|------------|
+| TimeTrackingCommandService.cs | Maneja inicio, detención y cálculo de duración de una sesión; utiliza `TimeSession` y `Timer`. |
+
+**Query Services**
+
+| Clase | Descripción |
+|-------|------------|
+| TimeTrackingQueryService.cs | Devuelve información de sesiones activas, histórico de tiempo por usuario o por espacio. |
+
+**Eventos clave**
+
+- ✅ **Timer Started Event**: Se dispara cuando el Space & IoT Management detecta llegada.  
+- ✅ **Timer Stopped Event**: Se dispara cuando se detecta salida.  
+- ✅ **Duration Calculated Event**: Calcula y persiste la duración final en `TimeRecord`.  
+- ✅ **Session Expired Event** (opcional): Maneja sesiones que no fueron cerradas correctamente.
+
+#### 4.2.4.4. Infrastructure Layer.
+
+Implementación de Repositories y adaptadores externos.
+
+| Clase | Interfaz Implementada | Función Principal |
+|-------|----------------------|------------------|
+| TimeSessionRepository.cs | ITimeSessionRepository | Persiste y consulta sesiones de tiempo en la base de datos relacional (PostgreSQL/MySQL). |
+| TimeRecordRepository.cs | ITimeRecordRepository | Persiste registros históricos para análisis posteriores. |
+| TimerRepository.cs | ITimerRepository | Gestiona datos de cronómetros en curso. |
+| TimeTrackingEventPublisher.cs | — | Publica eventos de inicio/detención a otros contextos (por ejemplo, Analytics & Reporting). |
+| RealTimeDisplayAdapter.cs | — | Actualiza pantallas o notificaciones en vivo para el usuario. |
+
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
