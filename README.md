@@ -456,10 +456,51 @@ Implementación técnica de persistencia, mensajería y conexión con servicios 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 
 ### 4.2.5. Bounded Context: Penalty Management
+
+El contexto de **Penalty Management** se encarga de la detección, registro y cálculo de penalidades por infracciones de estacionamiento, tales como exceder el tiempo permitido, estacionar en zonas prohibidas o incumplir normas específicas. Este bounded context se integra con *Time Tracking* (para verificar exceso de tiempo) y con *Payment & Billing* (para aplicar y cobrar la multa).
+
 #### 4.2.5.1. Domain Layer
+Clases que representan el núcleo de las reglas de negocio para la gestión de penalidades:
+
+| Clase | Tipo | Propósito | Atributos Clave | Métodos Clave |
+|------|------|----------|-----------------|---------------|
+| **Penalty** | Entity / Aggregate Root | Representa una penalidad aplicada a un usuario por una infracción específica. | `id`, `userId`, `violationType`, `amount`, `status`, `issuedAt`, `resolvedAt` | `calculateAmount()`, `markAsPaid()`, `resolveDispute()` |
+| **Violation** | Entity | Describe el tipo de infracción detectada. | `code`, `description`, `baseAmount`, `rules` | `getPenaltyAmount()` |
+| **PenaltyPolicy** | Domain Service | Contiene las reglas de negocio para determinar las penalidades según el tipo de infracción. | — | `applyPolicy(violationType, contextData)` |
+| **IPenaltyRepository** | Repository Interface | Define las operaciones de persistencia de penalidades. | — | `save()`, `findByUser()`, `findPending()` |
+| **IPolicyRepository** | Repository Interface | Permite la actualización y consulta de políticas de penalización. | — | `findByViolationCode()`, `updatePolicy()` |
+
 #### 4.2.5.2. Interface Layer
+Clases de exposición para interactuar con servicios externos y el usuario:
+
+| Clase | Tipo | Propósito |
+|------|------|----------|
+| **PenaltyController** | REST Controller | Provee endpoints para registrar infracciones, consultar penalidades y actualizar su estado (pagado, en disputa, resuelto). |
+| **PenaltyNotificationConsumer** | Event/Message Consumer | Recibe eventos de *Time Tracking* (exceso de tiempo) o de *Space & IoT Management* (detección de estacionamiento indebido) para iniciar el proceso de penalización. |
+| **PenaltyViewModel** | DTO / Response Model | Estructura de datos para presentar penalidades al frontend. |
+
 #### 4.2.5.3. Application Layer
+Orquesta el flujo de aplicación y manejo de eventos:
+
+| Clase | Tipo | Propósito |
+|------|------|----------|
+| **RegisterPenaltyCommandHandler** | Command Handler | Crea una nueva penalidad al recibir un evento de infracción. |
+| **UpdatePenaltyStatusCommandHandler** | Command Handler | Cambia el estado de la penalidad (pagada, disputada, cancelada). |
+| **PenaltyEventHandler** | Event Handler | Gestiona eventos de tiempo excedido u otros disparadores externos para iniciar la lógica de penalización. |
+| **PenaltyReportService** | Application Service | Genera reportes de penalidades para *Analytics & Reporting*. |
+| **DisputeResolutionService** | Application Service | Maneja el flujo de disputa de una penalidad, coordinando con *Customer Support* o *Admin Tools*. |
+
 #### 4.2.5.4. Infrastructure Layer
+Implementación técnica y conectores externos:
+
+| Clase | Tipo | Propósito |
+|------|------|----------|
+| **PenaltyRepository** | Repository Implementation | Implementa `IPenaltyRepository` en una base de datos relacional (PostgreSQL/MySQL). |
+| **PolicyRepository** | Repository Implementation | Implementa `IPolicyRepository` para administrar políticas dinámicas de penalización. |
+| **PenaltyMessageBrokerAdapter** | Message Broker Adapter | Suscripción a eventos de infracción provenientes de otros contextos (RabbitMQ/Kafka). |
+| **PenaltyDBContext** | ORM Context | Mapeo de las entidades de penalización y políticas a tablas relacionales. |
+| **EmailNotificationAdapter** | External Service Adapter | Envía correos o notificaciones push al usuario para informar de nuevas penalidades. |
+
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
