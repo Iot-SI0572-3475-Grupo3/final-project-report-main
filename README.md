@@ -342,9 +342,27 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 ## 1.1. Startup Profile
 
+En esta sección se ofrece una descripción del startup y se detallan los perfiles de los integrantes del equipo.
+
 ### 1.1.1. Descripción de la Startup
 
+SmartParking Solutions es una startup enfocada en el desarrollo de soluciones de Internet de las Cosas (IoT) aplicadas al ámbito universitario. Su producto principal, SafePark, es un sistema automatizado de reserva gratuita de estacionamientos universitarios, diseñado para optimizar el uso de espacios en campus mediante sensores IoT, una aplicación móvil y un dashboard administrativo web.
+
+El objetivo de la startup es ofrecer una solución tecnológica que simplifique la experiencia de los conductores y, al mismo tiempo, optimice la gestión de los administradores de estacionamientos. SafePark busca reducir el tiempo perdido en la búsqueda de espacios, incrementar la seguridad en la operación y generar un modelo de negocio escalable que aporte valor a usuarios, empresas y ciudades.
+
+Nuestra visión es consolidarnos como un referente en el ámbito de la movilidad inteligente en Latinoamérica, contribuyendo al desarrollo de ciudades más sostenibles, organizadas y seguras, donde el estacionamiento deje de ser un problema cotidiano y se convierta en un proceso ágil y confiable.
+
+Nuestra misión es brindar un sistema de estacionamiento automatizado que integre sensores IoT, plataformas móviles y paneles de control web, para ofrecer a los usuarios una experiencia rápida, transparente y segura. Entre sus funcionalidades destaca la posibilidad de reservar previamente un espacio con un tiempo límite de llegada, mientras que los administradores cuentan con herramientas en tiempo real para supervisar, controlar y maximizar el uso de los espacios, garantizando eficiencia operativa y rentabilidad.
+
 ### 1.1.2. Perfiles de integrantes del equipo
+
+| Miembros del Equipo                  | Código Estudiante | Carrera                | Descripción | Imagen |
+|-------------------------------------|------------------|-----------------------|-------------|--------|
+| Aquije Quiroga, Luis Enrique         | U202114936       | Ingeniería de Software |             |        |
+| Chávez Rojas, Carlos Raúl Guillermo  | U201910317       | Ingeniería de Software |             |        |
+| Linares Tejada, Leonardo Félix Jesús | U202211168       | Ingeniería de Software |             |        |
+| Ruiz Blas, Luciano Stefano           | U20211F978       | Ingeniería de Software |             |        |
+| Salgado Luna, Fernando Brian         | U202212023       | Ingeniería de Software | Soy Fernando Salgado, tengo 20 años y me apasiona la tecnología. Tengo experiencia en desarrollo frontend y backend, trabajando con lenguajes y tecnologías como Python, C++, C#, Java, HTML, CSS, JavaScript, MySQL, así como frameworks de frontend como Vue.js y Angular. Disfruto resolviendo problemas y buscando soluciones prácticas que contribuyan a los proyectos en los que participo. | |
 
 ## 1.2. Solution Profile
 
