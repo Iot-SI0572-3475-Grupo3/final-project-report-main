@@ -535,7 +535,21 @@ __Cierre del día:__ Revisa que todo quede en orden para el siguiente turno, per
 
 ## 3.1. User Stories
 
-## 3.2. Impact Mapping
+## 3.2. Impact Mapping  
+
+En el desarrollo de nuestro proyecto, aplicamos la metodología **Impact Mapping** como herramienta estratégica para asegurar que cada funcionalidad de **SafePark** se alinee con los objetivos de negocio y con las verdaderas necesidades de nuestros usuarios. Esta técnica permitió identificar con claridad qué queremos lograr, quiénes son los actores clave, cómo pueden influir en el resultado y qué acciones priorizar, evitando invertir recursos en características que no aporten valor directo.  
+
+__Business goal:__  
+Reducir en 30% el tiempo de búsqueda de estacionamiento en 3 meses
+<div style="text-align: center;">
+  <img src="assets/img/Chapter-III/impact-map-conductor.png" alt="Impact Map – Manuel (Conductor Universitario)" width="90%" />
+</div>  
+
+__Business goal:__  
+Incrementar en 25% la rotación de espacios en 6 meses mediante liberación automática de reservas no utilizadas.
+<div style="text-align: center;">
+  <img src="assets/img/Chapter-III/impact-map-admin.png" alt="Impact Map – Maricarmen (Administradora de Estacionamiento)" width="90%" />
+</div>  
 
 ## 3.3. Product Backlog
 
