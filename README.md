@@ -496,119 +496,288 @@ Representa una métrica puntual del uso de un espacio de estacionamiento.
 
 #### Atributos
 
-- `id`: Identificador unico del objeto 
+- `metricId`: Identificador único de métrica
+- `spaceId`: Identificador del espacio asociado
+- `vehicleId`: Identificador del vehículo (opcional, anonimizado)
+- `startTime`: Inicio de ocupación
+- `endTime`: Fin de ocupación
+- `duration`: Tiempo total de uso
 
-- `spaceId`: Identificador unico del espacio de estacionamiento al que pertenece este objeto.
+#### Métodos:
 
-- `vehicleId`: UUID
+- `calculateDuration()`: number
+- `isValid()`: boolean
 
-- `startTime`: Timestamp
+#### Invariantes de Negocio:
 
-- `endTime`: Timestamp
+- La duración debe ser mayor a 0
+- Los tiempos deben ser consistentes (startTime < endTime)
 
-- `duration`: Duration
-
-#### Métodos
-
-- `calculateDuration()`: Duration
-
-- `toDTO()`: UsageMetricDTO
 
 ##### **SpaceEfficiencyReport**
 
-Consolida métricas de uso de un espacio en un periodo determinado.
+Reporte de eficiencia por espacio en un rango de tiempo.
 
-#### Atributos
+#### Atributos:
 
-- `id`: UUID
+- `reportId`: Identificador único
+- `spaceId`: Identificador del espacio
+- `totalTimeOccupied`: Total de tiempo ocupado
+- `totalTimeAvailable`: Total de tiempo disponible
+- `efficiencyRate`: Porcentaje de eficiencia calculado
 
-- `spaceId`: UUID
+#### Métodos:
 
-- `totalTimeOccupied`: Duration
+- `calculateEfficiency()`: number
 
-- `totalTimeAvailable`: Duration
+#### Invariantes de Negocio:
 
-- `efficiencyPercentage`: Double
-
-- `period`: DateRange
-
-#### Métodos
-
-- `calculateEfficiency()`: Double
-
-- `generateSummary()`: String
+- `efficiencyRate = totalTimeOccupied / totalTimeAvailable`
+- La eficiencia debe estar en rango 0–100%
 
 
 ##### **UserBehaviorPattern**
 
-Describe patrones de uso detectados en un usuario o grupo de usuarios.
+Describe patrones de comportamiento detectados en usuarios.
 
-#### Atributos
+#### Atributos:
 
-- `userId`: UUID
+- `patternId`: Identificador único
+- `userId`: Usuario asociado (anonimizado en reportes agregados)
+- `frequentSpaces`: Lista de espacios más usados
+- `peakHours`: Horas de mayor uso
+- `averageDuration`: Tiempo promedio de ocupación
 
-- `frequentSpaces`: List<UUID>
+#### Métodos:
 
-- `peakHours`: List<TimeRange>
+- `detectPeakHours()`: void
+- `calculateAverageDuration()`: number
 
-- `avgDuration`: Duration
 
-#### Métodos
-
-- `identifyPeakHours()`: List<TimeRange>
-
-- `toVisualizationData()`: JSON
 
 ##### **AdminDashboard**
 
-Representa el tablero configurable de un administrador con KPIs seleccionados.
+Representa el dashboard administrativo configurable.
 
-#### Atributos
+#### Atributos:
 
-- `id`: UUID
+- `dashboardId`: Identificador único
+- `widgets`: Lista de KPIs y visualizaciones
+- `lastUpdatedAt`: Fecha de última actualización
 
-- `adminId`: UUID
+#### Métodos:
 
-- `selectedKPIs`: List<KPI>
+- `addWidget(widget: KPIWidget)`: void
+- `removeWidget(widgetId: string)`: void
+- `refreshData()`: void
 
-- `layoutConfig`: JSON
+##### Value Objects
 
-#### Métodos
+##### **KPIWidget**
+Value Object que encapsula un KPI configurable.
 
-- `addKPI(kpi: KPI)`: void
+#### Atributos:
 
-- `removeKPI(kpiId: UUID)`: void
+- `name`: Nombre del indicador
+- `value`: Valor actual
+- `target`: Meta establecida
+- `unit`: Unidad de medida (%) / min / horas
 
-- `exportView(format: ExportFormat)`: File
+#### Métodos:
+
+- `isTargetMet()`: boolean
+
+
+##### **ReportFormat**
+Define el formato de exportación de un reporte.
+
+#### Atributos:
+
+- `type`: PDF | CSV | XLSX
+
+#### Métodos:
+
+ - `validateFormat()`: boolean
+
+##### Aggregates
+##### **AnalyticsAggregate**
+Aggregate Root que orquesta la lógica de métricas, reportes y dashboards.
+
+#### Entidades contenidas:
+
+- UsageMetric
+- SpaceEfficiencyReport
+- UserBehaviorPattern
+- AdminDashboard
+
+#### Métodos del Aggregate:
+
+- `generateUsageMetrics(data: RawIoTData): UsageMetric[]`
+- `calculateEfficiencyReport(spaceId: string, period: DateRange): SpaceEfficiencyReport`
+- `analyzeUserPatterns(userId: string): UserBehaviorPattern`
+- `createDashboard(config: DashboardConfig): AdminDashboard`
+- `exportReport(reportId: string, format: ReportFormat): File`
+
 
 #### Domain Services
 
-##### **MetricsCalculatorService**
+##### **AnalyticsService**
+Servicio de dominio que maneja la lógica de análisis.
 
-- `generateUsageMetrics(spaceId, period)`: List<UsageMetric>
+#### Métodos:
 
-- `calculateEfficiency(report: SpaceEfficiencyReport)`: Double
+- `aggregateMetrics(period: DateRange): UsageMetric[]`
+- `generateSpaceReports(period: DateRange): SpaceEfficiencyReport[]`
+- `detectUserPatterns(users: User[]): UserBehaviorPattern[]`
 
-##### **PatternAnalysisService**
+##### Repository Interfaces
+##### **IUsageMetricsRepository**
 
-- `analyzeUserBehavior(userId, period)`: UserBehaviorPattern
+Persistencia de métricas de uso.
 
-#### Repositories (interfaces)
+##### **IReportsRepository**
 
-##### **UsageMetricRepository**
+Persistencia de reportes de eficiencia.
 
-- `save(metric: UsageMetric)`
+##### **IDashboardRepository**
 
-- `findBySpace(spaceId, period)`: List<UsageMetric>
-
-##### **SpaceEfficiencyReportRepository**
-##### **UserBehaviorPatternRepository**
-##### **AdminDashboardRepository**
+Persistencia de configuraciones de dashboard.
 
 
 #### 4.2.6.2. Interface Layer
+La capa de interfaz expone las capacidades del bounded context mediante APIs REST y endpoints de consulta.
+
+##### Controllers
+##### **AnalyticsController**
+Controlador REST para generación de métricas.
+
+#### Endpoints:
+
+- `GET /api/analytics/usage: Obtener métricas de uso`
+- `GET /api/analytics/efficiency: Obtener reportes de eficiencia`
+- `GET /api/analytics/patterns: Analizar patrones de usuario`
+
+##### **DashboardController**
+Controlador para administración de dashboards.
+
+#### Endpoints:
+
+- `POST /api/dashboard: Crear dashboard`
+- `PUT /api/dashboard/{id}: Actualizar configuración`
+- `GET /api/dashboard/{id}: Ver dashboard`
+
+##### **ReportExportController**
+
+Controlador para exportación de reportes.
+
+#### Endpoints:
+
+- `GET /api/reports/{id}/export?format=pdf: Exportar reporte en formato`
+
+##### DTOs
+
+##### **UsageMetricResponse**
+```
+{
+  spaceId: string,
+  duration: number,
+  startTime: string,
+  endTime: string
+}
+```
+##### **EfficiencyReportResponse**
+```
+{
+  spaceId: string,
+  efficiencyRate: number,
+  totalTimeOccupied: number,
+  totalTimeAvailable: number
+}
+```
+##### **DashboardResponse**
+```
+{
+  dashboardId: string,
+  widgets: KPIWidget[]
+}
+```
 #### 4.2.6.3. Application Layer
+Coordina casos de uso entre dominio e infraestructura.
+
+##### Command Handlers
+
+##### **GenerateUsageMetricsCommandHandler**
+##### **CalculateSpaceEfficiencyCommandHandler**
+##### **AnalyzeUserPatternsCommandHandler**
+##### **CreateAdminDashboardCommandHandler**
+
+##### Query Handlers
+
+##### **GetUsageMetricsQueryHandler**
+##### **GetEfficiencyReportQueryHandler**
+##### **GetUserPatternsQueryHandler**
+##### **GetDashboardQueryHandler**
+
+##### Event Handlers
+
+##### **SpaceOccupiedEventHandler**
+Actualiza métricas en tiempo real
+##### **ReservationCreatedEventHandler** 
+Impacta estadísticas de uso
+
 #### 4.2.6.4. Infrastructure Layer
+Implementa persistencia, integración y servicios externos.
+
+##### Repository Implementations
+
+##### **PostgresUsageMetricsRepository**
+##### **PostgresReportsRepository**
+##### **RedisDashboardRepository** (para dashboards en caché)
+
+##### External Integrations
+
+##### **IoTDataIngestionService** 
+Procesa datos crudos de sensores
+##### **ReportingExportService**
+Genera archivos PDF/CSV/XLSX
+
+##### Database Schema (Resumen)
+
+#### Tabla: usage_metrics
+
+- metric_id (UUID, PK)
+- space_id (UUID, FK)
+- start_time (TIMESTAMP)
+- end_time (TIMESTAMP)
+- duration (INT)
+
+#### Tabla: efficiency_reports
+
+- report_id (UUID, PK)
+- space_id (UUID, FK)
+- total_time_occupied (INT)
+- total_time_available (INT)
+- efficiency_rate (DECIMAL)
+
+#### Tabla: dashboards
+
+- dashboard_id (UUID, PK)
+- widgets (JSONB)
+- last_updated (TIMESTAMP)
+
+##### Conclusión
+
+El Bounded Context Analytics & Reporting proporciona una arquitectura robusta para la recolección, análisis y presentación de métricas.
+
+#### Características clave:
+
+- Visibilidad administrativa: KPIs y dashboards configurables
+- Optimización operativa: Reportes de eficiencia por espacio
+- Inteligencia de uso: Patrones de comportamiento de usuarios
+- Exportabilidad: Reportes en múltiples formatos
+
+Esto asegura que la gestión del sistema de estacionamientos no solo sea operativa, sino también estratégica, permitiendo decisiones basadas en datos.
+
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
