@@ -368,15 +368,186 @@ Nuestra misión es brindar un sistema de estacionamiento automatizado que integr
 
 ### 1.2.1. Antecedentes y problemática
 
+#### Uso de la técnica The 5'W's w Y 2'H's
+
+| LAS 5W y 2H | Pregunta                                   | Descripción                                                                                                                                                                                                                                                                                                                                                                      |
+|-------------|--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| What?       | ¿Cuál es el problema?                      | La falta de disponibilidad y control en los estacionamientos universitarios genera que los conductores pierdan tiempo dando vueltas en busca de espacios libres. Esto ocasiona estrés, congestión vehicular dentro del campus y dificulta el trabajo de los administradores, quienes no cuentan con herramientas para gestionar de forma eficiente. |
+| When?       | ¿Cuándo surge el problema?                 | Se presenta principalmente en las horas punta de ingreso y salida de clases, cuando la demanda de estacionamiento supera la capacidad. También ocurre en situaciones inesperadas, como ocupación irregular de espacios o ausencia de información actualizada sobre la disponibilidad. |
+| Where?      | ¿Dónde ocurren los problemas?              | En los estacionamientos de campus universitarios, especialmente en zonas de mayor afluencia. El problema se manifiesta en la búsqueda de espacios, la falta de señalización clara y la ausencia de datos en tiempo real. |
+| Who?        | ¿A quién le afecta el problema?            | A los conductores universitarios (estudiantes, docentes y personal administrativo), que pierden tiempo y llegan tarde a sus actividades. También a los administradores de los estacionamientos, que enfrentan desorden operativo, quejas constantes y poca capacidad de control. |
+| Why?        | ¿Por qué sucede el problema?               | Porque los procesos son manuales y no hay automatización en la detección de espacios libres. No existe control preciso de los tiempos de uso ni mecanismos de reserva anticipada, lo que genera errores, saturación y dependencia exclusiva de la disponibilidad inmediata. |
+| How?        | ¿Cómo se diferencia del estado óptimo?     | En un estado ideal, los usuarios encontrarían un espacio de forma rápida y ordenada, podrían planificar su estacionamiento sin incertidumbre y los administradores contarían con visibilidad en tiempo real. Actualmente, predominan las demoras, la desorganización y la falta de control operativo. |
+| How Much?   | ¿Cuál es la magnitud del problema?         | Los inconvenientes ocurren varias veces en un mismo día, especialmente en semanas de alta carga académica. A nivel mensual, se acumulan pérdidas significativas de tiempo para los usuarios e ineficiencias operativas para la universidad, convirtiéndose en un problema constante. |
+
+
 ### 1.2.2. Lean UX Process
+
+A través de la metodología Lean UX podemos desarrollar y comprobar propuestas de solución que priorizan al usuario, concentrándonos en generar valor mediante procesos ágiles y optimizados. En este apartado se identifican los desafíos fundamentales que experimentan los usuarios, las premisas comerciales y de experiencia de usuario, junto con las hipótesis que orientarán la construcción del sistema SafePark. Esta aproximación garantiza que todas las decisiones de diseño se fundamenten en datos concretos y en la verificación temprana con los usuarios objetivo.
 
 #### 1.2.2.1. Lean UX Problem Statements
 
+**Problem Statement:**  
+Actualmente, los estacionamientos universitarios continúan funcionando bajo modelos tradicionales donde los procesos son manuales y poco prácticos. Los conductores universitarios suelen perder tiempo buscando un espacio disponible, y los administradores carecen de herramientas tecnológicas que les permitan tener control en tiempo real de la operación.  
+La mayoría de las soluciones disponibles se limitan a ofrecer sistemas básicos de acceso, sin integrar una experiencia completa que automatice la asignación de espacios, el guiado al conductor, la reserva previa gratuita de un lugar con un tiempo límite de llegada.  
+
+**SafePark**, desarrollado por *SmartParking Solutions*, busca cubrir esta necesidad a través de un sistema que combina **sensores IoT**, una **aplicación móvil para usuarios** y un **panel de control web para administradores**. Con esta propuesta, se pretende optimizar la experiencia del conductor, reducir los tiempos de búsqueda y facilitar la gestión de los espacios en un solo ecosistema digital gratuito para la comunidad universitaria.  
+
+El punto de partida se orientará a **estacionamientos de campus universitarios**, donde la rapidez y la conveniencia son factores críticos tanto para usuarios como para operadores.  
+El éxito se reflejará en indicadores como una reducción del tiempo promedio de búsqueda de estacionamiento, un mayor aprovechamiento de los espacios disponibles y la satisfacción de los administradores al contar con reportes claros sobre ocupación.  
+
+---
+
+**Dominio:**  
+SafePark se ubica dentro del dominio de la **gestión inteligente de estacionamientos universitarios**, un área donde convergen la movilidad en campus, la experiencia del usuario y las tecnologías emergentes como el **Internet de las Cosas (IoT)**.  
+Su enfoque está en digitalizar la operación diaria de estacionamientos universitarios, ofreciendo **automatización, control remoto, opciones de reserva previa gratuita con tiempos límite de llegada y escalabilidad en la administración**.  
+
+---
+
+**Segmentos de Clientes:**  
+- **Conductores universitarios:** buscan estacionar rápido, con un proceso sencillo, la posibilidad de asegurar un espacio gratuito antes de llegar.  
+- **Administradores:** necesitan herramientas de monitoreo en tiempo real, control centralizado y gestión de reservas que se liberen automáticamente si no se cumplen los tiempos establecidos.  
+
+---
+
+**Puntos de Dolor:**  
+- **Conductores universitarios:** pérdida de tiempo en la búsqueda de espacios, procesos engorrosos y la incertidumbre de no saber si encontrarán un lugar disponible al llegar al campus.  
+- **Administradores:** operaciones manuales que generan errores, falta de métricas y poca eficiencia en la rotación de vehículos, especialmente cuando no se controla adecuadamente la ocupación de espacios reservados.  
+
+---
+
+**Visión / Estrategia:**  
+La visión de **SafePark** es ofrecer una **solución integral de estacionamiento universitario** que logre simplificar la vida de los conductores universitarios y al mismo tiempo brinde un control más inteligente a los administradores.  
+La estrategia se centra en combinar **sensores IoT** con **interfaces intuitivas** que hagan posible una experiencia fluida, confiable y escalable. Entre sus diferenciadores está la **gestión eficiente de reservas gratuitas**, que garantiza disponibilidad ordenada en contextos universitarios de alta demanda.  
+
+---
+
+**Segmento Inicial:**  
+El lanzamiento inicial se enfocará en **estacionamientos de campus universitarios**. Este segmento permitirá validar rápidamente la propuesta, mostrar beneficios tangibles en la operación, como reducción de la búsqueda de espacios y cumplimiento de tiempos de reserva y, a partir de allí, **escalar la solución hacia otros campus universitarios**.  
+
 #### 1.2.2.2. Lean UX Assumptions
+
+## **Features**
+
+### Para los Conductores universitarios (estudiantes, docentes y personal administrativo):
+- Registro e inicio de sesión con correo institucional UPC para garantizar acceso seguro.  
+- Creación de reservas gratuitas y anticipadas (máx. 24h antes), sin definir hora de salida.  
+- Confirmación automática de llegada y salida gracias a sensores IoT en cada espacio.  
+- Visualización en tiempo real del estado de los estacionamientos disponibles.  
+- Consulta del tiempo de uso en vivo y del historial de sesiones pasadas.  
+- Recepción de notificaciones sobre reservas activas, ventanas de llegada, finalización y penalizaciones.  
+- Configuración personalizada de notificaciones y recordatorios.  
+
+### Para los Administradores de estacionamiento:
+- Panel de control en tiempo real con la ocupación de los espacios y el estado de las reservas.  
+- Gestión de usuarios: visualización de perfiles, aplicación de suspensiones o reactivaciones automáticas y manuales.  
+- Configuración de reglas operativas (ventana de llegada, límite de reservas, penalizaciones, anticipación máxima).  
+- Generación de reportes automáticos (diarios, semanales y mensuales), exportables a PDF/Excel.  
+- Monitoreo de alertas sobre usuarios suspendidos, incidencias técnicas o espacios en mantenimiento.  
+- Estadísticas de eficiencia para optimizar el uso de espacios y reducir costos operativos.  
+
+---
+
+## **Business Outcomes**
+- **Incremento de la rotación de espacios:** Se espera al menos un 25% más de disponibilidad efectiva gracias a la liberación automática de reservas no utilizadas en 30 minutos.  
+- **Optimización del uso de espacios:** Los administradores proyectan un mejor aprovechamiento de espacios al reducir espacios ociosos.  
+- **Reducción de costos operativos:** Con la automatización, se estima un 30% menos de incidencias manuales en asignación de espacios.  
+- **Reputación y competitividad:** Los campus universitarios que implementen **SafePark** serán percibidos como modernos, confiables y organizados, mejorando la experiencia estudiantil.  
+
+---
+
+## **User Assumptions**
+
+**¿Quién es el usuario?**  
+- Conductores universitarios (estudiantes, docentes y personal administrativo) que buscan estacionar rápido y sin incertidumbre en el campus.  
+- Administradores de estacionamientos universitarios que requieren control en tiempo real.  
+
+**¿Dónde entra nuestro producto en su vida o trabajo?**  
+- Para los conductores universitarios: como una **aplicación móvil** que permite ver disponibilidad en tiempo real y reservar sin costo.  
+- Para los administradores: como un **panel web de control** con métricas de ocupación, gestión de reservas y liberación automática.  
+
+**¿Cuál es el problema que nuestro producto soluciona?**  
+- Pérdida de tiempo en la búsqueda de estacionamiento en campus.  
+- Espacios reservados pero no ocupados que quedan bloqueados.  
+- Procesos manuales de control, que generan errores y pérdidas de eficiencia.  
+
+**¿Cómo y cuándo nuestro producto es usado?**  
+- Durante la llegada al campus universitario en horarios académicos.  
+- Antes de salir de casa, mediante la reserva anticipada gratuita en la app.  
+- Al finalizar el uso del estacionamiento, con liberación manual del espacio.  
+
+**¿Qué características son importantes?**  
+- Precisión en la detección de espacios libres con **sensores IoT**.  
+- Notificaciones claras sobre el tiempo límite de reserva y cancelación automática.  
+- Proceso completamente gratuito para usuarios universitarios.  
+- Reportes en tiempo real para administradores.  
+
+---
+
+## **User Outcomes & Benefits**
+
+**Para los conductores:**  
+- Ahorro de tiempo y reducción del estrés al tener un espacio asegurado gratuitamente.  
+- Proceso transparente sin costos ocultos.  
+- Se espera que al menos el 70% de los usuarios frecuentes valoren la función de reserva como la característica principal.  
+
+**Para los administradores:**  
+- Gestión centralizada y menos errores manuales.  
+- Liberación automática de espacios no ocupados tras 30 minutos.  
+- Se proyecta que el 60% de los administradores reduzcan incidencias operativas en el primer trimestre.  
+
+---
+
+## **Business Assumptions**
+- Los usuarios universitarios aceptarán la política de cancelación automática si se comunica con claridad en la app.  
+- Los administradores universitarios percibirán valor en la reducción de espacios ociosos y mayor control en tiempo real.  
+- El modelo de negocio enfocado en el valor agregado para la universidad será percibido como una inversión rentable.  
+- La integración de IoT y software será percibida como una mejora significativa en la experiencia del campus.  
 
 #### 1.2.2.3. Lean UX Hypothesis Statements.
 
+Usando la información recolectada en los Business Outcomes, Usuarios, Beneficios y Features. Podemos formular nuestras hipótesis, cada una centrada en un Feature a desarrollar.
+
+---
+
+**Hipótesis 1**  
+Creemos que si la aplicación permite reservar un espacio gratuito con límite de llegada de 30 minutos,  
+esto logrará aumentar la confianza de los conductores universitarios y reducir la incertidumbre de disponibilidad,  
+y lo sabremos cuando al menos el **70% de los usuarios frecuentes** realice reservas anticipadas en lugar de depender únicamente de la disponibilidad inmediata.  
+
+---
+
+**Hipótesis 2**  
+Creemos que si el sistema cancela automáticamente las reservas no utilizadas y libera el espacio,  
+esto logrará mejorar la rotación de vehículos y el aprovechamiento de la capacidad,  
+y lo sabremos cuando la **tasa de ocupación efectiva aumente en un 25%** respecto al modelo tradicional.  
+
+---
+
+**Hipótesis 3**  
+Creemos que si los administradores tienen acceso a un panel web con reportes de ocupación y reservas activas,  
+esto logrará mejorar la toma de decisiones y la eficiencia operativa,  
+y lo sabremos cuando al menos el **60% de los administradores** use los reportes semanalmente para gestionar sus estacionamientos.  
+
+---
+
+**Hipótesis 4**  
+Creemos que si el servicio se ofrece de forma completamente gratuita para la comunidad universitaria,  
+esto logrará mayor adopción y satisfacción de los usuarios,  
+y lo sabremos cuando el **80% de los conductores universitarios** prefiera usar **SafePark** frente a buscar espacios manualmente.  
+
+---
+
+**Hipótesis 5**  
+Creemos que si la aplicación envía notificaciones claras y anticipadas sobre el vencimiento del tiempo límite de reserva,  
+esto logrará reducir la frustración de los usuarios y mejorar la aceptación de la política,  
+y lo sabremos cuando el **90% de los usuarios** confirme haber entendido las alertas y se reduzcan quejas por cancelaciones inesperadas.  
+
 #### 1.2.2.4. Lean UX Canvas
+
+Se ha utilizado el Lean UX Canvas como una herramienta estratégica clave para estructurar y validar ágilmente el concepto del producto. Este enfoque permite al equipo identificar con claridad el problema de negocio, definir a los usuarios objetivo, formular hipótesis comprobables y diseñar los experimentos mínimos necesarios para aprender e iterar rápidamente sobre la solución. De esta manera, se reduce significativamente el riesgo de desarrollar funcionalidades que no generen un valor real para el usuario final.
+
+
 
 ## 1.3. Segmentos objetivo
 
