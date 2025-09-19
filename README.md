@@ -547,7 +547,7 @@ y lo sabremos cuando el **90% de los usuarios** confirme haber entendido las ale
 
 Se ha utilizado el Lean UX Canvas como una herramienta estratégica clave para estructurar y validar ágilmente el concepto del producto. Este enfoque permite al equipo identificar con claridad el problema de negocio, definir a los usuarios objetivo, formular hipótesis comprobables y diseñar los experimentos mínimos necesarios para aprender e iterar rápidamente sobre la solución. De esta manera, se reduce significativamente el riesgo de desarrollar funcionalidades que no generen un valor real para el usuario final.
 
-
+<img src="./assets/img/Chapter-I/lean-ux-canvas.png">
 
 ## 1.3. Segmentos objetivo
 
