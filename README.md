@@ -482,7 +482,9 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 
 ### 4.2.6. Bounded Context: Analytics & Reporting
+Este bounded context es responsable de generar, almacenar y proveer métricas, reportes y análisis relacionados al uso del sistema de estacionamientos inteligentes. Sus objetivos son optimizar la gestión de los espacios, identificar patrones de comportamiento de los usuarios, medir la eficiencia de los espacios y ofrecer a los administradores un panel de control con indicadores clave de rendimiento (KPIs).
 #### 4.2.6.1. Domain Layer
+En esta capa definimos las entidades y objetos de valor que representan el núcleo del negocio de Analytics & Reporting.
 #### 4.2.6.2. Interface Layer
 #### 4.2.6.3. Application Layer
 #### 4.2.6.4. Infrastructure Layer
