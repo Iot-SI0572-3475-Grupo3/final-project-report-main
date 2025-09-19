@@ -487,7 +487,42 @@ En esta sección se presentarán las preguntas empleadas en las entrevistas, inc
 
 ### 2.3.2. User Task Matrix
 
-### 2.3.3. User Journey Mapping
+### 2.3.3. User Journey Mapping  
+
+En esta sección se presentan los **User Journey Mapping** de los dos perfiles de usuario principales, resaltando las etapas clave de interacción con **SafePark**, los puntos de contacto, así como las emociones y experiencias que viven en cada fase. El objetivo es identificar oportunidades de mejora para optimizar su experiencia.  
+
+__User Journey Map – Manuel Rojas – Conductor Universitario (As-Is)__  
+
+__Inicio de la mañana:__ Manuel se alista para sus clases y piensa en el tiempo que le tomará encontrar estacionamiento en el campus. Siente **ansiedad** porque en días de alta demanda suele dar varias vueltas antes de hallar un espacio.  
+
+__Camino a la universidad:__ Durante el trayecto revisa, sin éxito, si hay información en tiempo real sobre espacios libres. La **frustración** aumenta porque no cuenta con una app que le avise.  
+
+__Búsqueda de estacionamiento:__ Llega al campus y recorre el estacionamiento esperando encontrar un lugar. Experimenta **estrés** y **apuro** por no llegar tarde a su primera clase.  
+
+__Estacionamiento y asistencia a clases:__ Finalmente encuentra un espacio tras varios minutos. Se siente **aliviado**, aunque sabe que el proceso fue poco eficiente.  
+
+__Salida del campus:__ Al retirarse, piensa en lo útil que sería una aplicación que permita **reservar** o recibir **alertas en tiempo real**. Termina el día con **expectativa** de una futura solución tecnológica.  
+
+<div style="text-align: center;">
+  <img src="assets/img/Chapter-II/journey-conductor.png" alt="Journey Map Conductor" width="70%" />
+</div><br>
+
+__User Journey Map – Maricarmen Tejada – Administradora de Estacionamiento (As-Is)__  
+
+__Inicio de la jornada:__ Maricarmen comienza su día revisando manualmente el registro de espacios disponibles. Siente **presión** porque debe garantizar un flujo adecuado de vehículos sin errores.  
+
+__Control de ocupación:__ Atiende llamadas y mensajes de personal de seguridad para conocer la disponibilidad en tiempo real. La falta de un panel centralizado le genera **estrés** y posibles **confusiones**.  
+
+__Atención a incidencias:__ Se comunica con guardias y estudiantes cuando surgen reclamos o problemas de estacionamiento. Vive momentos de **tensión** por la dificultad de coordinar rápidamente.  
+
+__Elaboración de reportes:__ Al final del turno, recopila datos en hojas de cálculo para entregar un informe de ocupación. Esta tarea es **tediosa** y consume demasiado tiempo.  
+
+__Cierre del día:__ Revisa que todo quede en orden para el siguiente turno, pero se siente **agotada** y con la expectativa de contar con una herramienta que permita automatizar reservas, alertas y reportes.  
+
+<div style="text-align: center;">
+  <img src="assets/img/Chapter-II/journey-admin.png" alt="Journey Map Admin" width="70%" />
+</div>  
+
 
 ### 2.3.4. Empathy Mapping
 
