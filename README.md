@@ -317,6 +317,115 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 ### 2.1.1. Análisis competitivo
 
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="6" style="text-align: center;">Competitive Analysis Landscape</th>
+        </tr>
+        <tr>
+            <td colspan="2">¿Por qué llevar a cabo este análisis?</td>
+            <td colspan="4">
+                Para dar a conocer a los competidores que se presentan en nuestra Startup.
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="text-align: center;">
+            <td colspan="2">Empresas</td>
+            <td><strong>SafePark</strong><br><img src="./assets/img/Chapter-II/safepark-logo.png"></td>
+            <td><strong>ParkSmart</strong><br><img src="./assets/img/Chapter-II/parksmart-logo.png"></td>
+            <td><strong>ParkingDoor</strong><br><img src="./assets/img/Chapter-II/parkingdoor-logo.png"></td>
+            <td><strong>Parkealo</strong><br><img src="./assets/img/Chapter-II/parkealo-logo.png"></td>
+        </tr>
+        <!-- Perfil -->
+        <tr>
+            <td rowspan="2" style="writing-mode: vertical-lr; text-align: center;">Perfil</td>
+            <td>Overview</td>
+            <td>Sistema IoT para reservas y gestión gratuita de estacionamientos universitarios.</td>
+            <td>Solución global de smart parking con sensores, cámaras y software para ciudades.</td>
+            <td>Control de accesos a estacionamientos mediante app y dispositivos IoT.</td>
+            <td>Plataforma local peruana de gestión integral de estacionamientos con app móvil y reportes.</td>
+        </tr>
+        <tr>
+            <td>¿Qué valor ofrece a los clientes?</td>
+            <td>Reserva gratuita, optimización académica y sostenibilidad en campus universitarios.</td>
+            <td>Amplia experiencia internacional en proyectos de smart cities.</td>
+            <td>Simplicidad en accesos inteligentes y gestión de permisos.</td>
+            <td>Conocimiento del contexto local y soporte en Perú.</td>
+        </tr>
+        <!-- Perfil de Marketing -->
+        <tr>
+            <td rowspan="2" style="writing-mode: vertical-lr; text-align: center;">Perfil de Marketing</td>
+            <td>Mercado objetivo</td>
+            <td>Universidades en Latinoamérica.</td>
+            <td>Gobiernos municipales, centros comerciales, aeropuertos.</td>
+            <td>Empresas, residencias y oficinas privadas.</td>
+            <td>Estacionamientos privados y públicos en Perú.</td>
+        </tr>
+        <tr>
+            <td>Estrategias de marketing</td>
+            <td>Convenios con universidades y asociaciones estudiantiles (B2B2C).</td>
+            <td>Alianzas con gobiernos y concesionarias.</td>
+            <td>Promoción a través de inmobiliarias y comunidades.</td>
+            <td>Marketing digital local y convenios con estacionamientos.</td>
+        </tr>
+        <!-- Perfil de Producto -->
+        <tr>
+            <td rowspan="3" style="writing-mode: vertical-lr; text-align: center;">Perfil de Producto</td>
+            <td>Productos & Servicios</td>
+            <td>Sensores IoT, reservas anticipadas, notificaciones, panel web.</td>
+            <td>Sensores, cámaras, software de control de ocupación y pagos.</td>
+            <td>App, controladores IoT de acceso, llaves digitales.</td>
+            <td>App con mapa de estacionamientos, reservas y pagos.</td>
+        </tr>
+        <tr>
+            <td>Precios & Costos</td>
+            <td>Modelo de suscripción mensual a universidades.</td>
+            <td>Costos elevados, modelo SaaS con hardware.</td>
+            <td>Pago por dispositivo y suscripción mensual.</td>
+            <td>Comisiones por transacción a usuarios y estacionamientos.</td>
+        </tr>
+        <tr>
+            <td>Canales de distribución (Web o móvil)</td>
+            <td>App móvil y web, alianzas con universidades.</td>
+            <td>App, web, integraciones con ciudades inteligentes.</td>
+            <td>App móvil, hardware instalado.</td>
+            <td>Web, app móvil, soporte técnico local.</td>
+        </tr>
+        <!-- SWOT -->
+        <tr>
+            <td rowspan="4" style="writing-mode: vertical-lr; text-align: center;">Análisis SWOT</td>
+            <td>Fortalezas</td>
+            <td>Especialización en campus universitarios, bajo costo para usuarios.</td>
+            <td>Experiencia internacional y soporte tecnológico.</td>
+            <td>Seguridad y simplicidad en accesos.</td>
+            <td>Conocimiento del mercado local.</td>
+        </tr>
+        <tr>
+            <td>Debilidades</td>
+            <td>Mercado inicial limitado a universidades.</td>
+            <td>Costos altos, difícil de implementar en entornos pequeños.</td>
+            <td>No orientado a espacios públicos.</td>
+            <td>Cobertura geográfica reducida.</td>
+        </tr>
+        <tr>
+            <td>Oportunidades</td>
+            <td>Escalar a otras ciudades y campus corporativos.</td>
+            <td>Creciente interés en ciudades inteligentes.</td>
+            <td>Incremento de condominios y oficinas privadas.</td>
+            <td>Expansión nacional.</td>
+        </tr>
+        <tr>
+            <td>Amenazas</td>
+            <td>Entrada de competidores globales al segmento educativo.</td>
+            <td>Competencia de startups más ágiles.</td>
+            <td>Limitada escalabilidad en espacios públicos.</td>
+            <td>Competencia de soluciones globales más avanzadas.</td>
+        </tr>
+    </tbody>
+</table>
+
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
 ## 2.2. Entrevistas
