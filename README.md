@@ -482,9 +482,130 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 
 ### 4.2.6. Bounded Context: Analytics & Reporting
+
+#### Introduccion
 Este bounded context es responsable de generar, almacenar y proveer métricas, reportes y análisis relacionados al uso del sistema de estacionamientos inteligentes. Sus objetivos son optimizar la gestión de los espacios, identificar patrones de comportamiento de los usuarios, medir la eficiencia de los espacios y ofrecer a los administradores un panel de control con indicadores clave de rendimiento (KPIs).
 #### 4.2.6.1. Domain Layer
 En esta capa definimos las entidades y objetos de valor que representan el núcleo del negocio de Analytics & Reporting.
+
+#### Entities
+
+##### **UsageMetric**
+
+Representa una métrica puntual del uso de un espacio de estacionamiento.
+
+#### Atributos
+
+- `id`: Identificador unico del objeto 
+
+- `spaceId`: Identificador unico del espacio de estacionamiento al que pertenece este objeto.
+
+- `vehicleId`: UUID
+
+- `startTime`: Timestamp
+
+- `endTime`: Timestamp
+
+- `duration`: Duration
+
+#### Métodos
+
+- `calculateDuration()`: Duration
+
+- `toDTO()`: UsageMetricDTO
+
+##### **SpaceEfficiencyReport**
+
+Consolida métricas de uso de un espacio en un periodo determinado.
+
+#### Atributos
+
+- `id`: UUID
+
+- `spaceId`: UUID
+
+- `totalTimeOccupied`: Duration
+
+- `totalTimeAvailable`: Duration
+
+- `efficiencyPercentage`: Double
+
+- `period`: DateRange
+
+#### Métodos
+
+- `calculateEfficiency()`: Double
+
+- `generateSummary()`: String
+
+
+##### **UserBehaviorPattern**
+
+Describe patrones de uso detectados en un usuario o grupo de usuarios.
+
+#### Atributos
+
+- `userId`: UUID
+
+- `frequentSpaces`: List<UUID>
+
+- `peakHours`: List<TimeRange>
+
+- `avgDuration`: Duration
+
+#### Métodos
+
+- `identifyPeakHours()`: List<TimeRange>
+
+- `toVisualizationData()`: JSON
+
+##### **AdminDashboard**
+
+Representa el tablero configurable de un administrador con KPIs seleccionados.
+
+#### Atributos
+
+- `id`: UUID
+
+- `adminId`: UUID
+
+- `selectedKPIs`: List<KPI>
+
+- `layoutConfig`: JSON
+
+#### Métodos
+
+- `addKPI(kpi: KPI)`: void
+
+- `removeKPI(kpiId: UUID)`: void
+
+- `exportView(format: ExportFormat)`: File
+
+#### Domain Services
+
+##### **MetricsCalculatorService**
+
+- `generateUsageMetrics(spaceId, period)`: List<UsageMetric>
+
+- `calculateEfficiency(report: SpaceEfficiencyReport)`: Double
+
+##### **PatternAnalysisService**
+
+- `analyzeUserBehavior(userId, period)`: UserBehaviorPattern
+
+#### Repositories (interfaces)
+
+##### **UsageMetricRepository**
+
+- `save(metric: UsageMetric)`
+
+- `findBySpace(spaceId, period)`: List<UsageMetric>
+
+##### **SpaceEfficiencyReportRepository**
+##### **UserBehaviorPatternRepository**
+##### **AdminDashboardRepository**
+
+
 #### 4.2.6.2. Interface Layer
 #### 4.2.6.3. Application Layer
 #### 4.2.6.4. Infrastructure Layer
