@@ -413,8 +413,6 @@ El **Bounded Context Time Tracking** registra y gestiona el tiempo de uso de los
 Su objetivo es iniciar, detener y calcular la duración de cada sesión de estacionamiento a partir de los eventos de llegada y salida enviados por el **Space & IoT Management**.  
 Los datos generados se utilizan para métricas, reportes y, eventualmente, procesos de facturación o penalización.
 
----
-
 #### 4.2.4.1. Domain Layer.
 
 Agregados y Entidades del Dominio **Time Tracking** en nuestra Web/Mobile Application.
@@ -568,10 +566,34 @@ Implementación de Repositories y adaptadores externos.
 | RealTimeDisplayAdapter.cs | — | Actualiza pantallas o notificaciones en vivo para el usuario. |
 
 
-#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
-#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.4.6.2. Bounded Context Database Design Diagram
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams  
+
+En el diagrama de componentes del contexto **Time Tracking** se observa la interacción del usuario con el servicio para iniciar y finalizar sesiones de tiempo, además de las dependencias entre controladores, servicios de aplicación, agregados de dominio y repositorios.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/time-component-c4.png" alt="Time Tracking Component C4" width="90%" />
+</div><br>
+
+URL Structurizr: https://structurizr.com/share/102034
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams  
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams  
+
+El siguiente diagrama de clases muestra las entidades, servicios de dominio, interfaces de repositorio y sus relaciones que conforman el **bounded context Time Tracking**. Incluye las clases **TimeSession**, **Timer**, **TimeRecord**, el servicio de dominio **DurationCalculator** y las interfaces de repositorios que garantizan la persistencia.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/time-diagramclass.png" alt="Time Tracking Domain Layer Class Diagram" width="90%" />
+</div><br>
+
+Link: https://lucid.app/lucidchart/12a7e0a9-9b1c-48d8-a6dd-ab1b1fdc7d9c/edit?viewport_loc=-456%2C-116%2C2232%2C1049%2CHWEp-vi-RSFO&invitationId=inv_c243830e-22c1-42ae-a345-cae63204a020
+
+##### 4.2.4.6.2. Bounded Context Database Design Diagram  
+
+El diagrama entidad-relación (ERD) de la base de datos para **Time Tracking** presenta las tablas **TimeSessions**, **Timers** y **TimeRecords**, junto con sus llaves primarias, foráneas y restricciones, reflejando la persistencia de sesiones, cronómetros y registros históricos.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/time-database.png" alt="Time Tracking Database Design Diagram" width="90%" />
+</div><br>
 
 ### 4.2.5. Bounded Context: Penalty Management
 
@@ -754,10 +776,34 @@ Implementación de Repositories y adaptadores externos.
 | PenaltyEventPublisher.cs | — | Publica eventos hacia Notification Context para envío de alertas |
 | SchedulerAdapter.cs | — | Programa tareas automáticas para reactivación de usuarios después del período de suspensión |
 
-#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
-#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.5.6.2. Bounded Context Database Design Diagram
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams  
+
+En el diagrama de componentes del contexto **Penalty Management** se evidencia la orquestación de ausencias, advertencias y suspensiones. Se detallan los controladores REST, servicios de aplicación, agregados de dominio y repositorios encargados de administrar reglas de penalización, contadores de ausencias y suspensiones.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/penalty-component-c4.png" alt="Penalty Management Component C4" width="90%" />
+</div><br>
+
+URL Structurizr: https://structurizr.com/share/84646
+
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams  
+##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams  
+
+En este diagrama se aprecian las entidades **Absence**, **AbsenceCounter**, **Suspension**, **Warning** y el value object **PenaltyRules**, además de las interfaces de repositorio y servicios de dominio que encapsulan la lógica de negocio del **bounded context Penalty Management**.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/penalty-diagramclass.png" alt="Penalty Management Domain Layer Class Diagram" width="90%" />
+</div><br>
+
+Link: https://lucid.app/lucidchart/4d516fa9-fed5-4131-8a22-16207e3b05a0/edit?viewport_loc=-3820%2C-575%2C6132%2C2883%2CHWEp-vi-RSFO&invitationId=inv_709a7505-bf02-440a-87b9-406019cc1dca
+
+##### 4.2.5.6.2. Bounded Context Database Design Diagram  
+
+El diagrama entidad-relación (ERD) de **Penalty Management** representa las tablas **Absences**, **AbsenceCounters**, **Suspensions** y **Warnings**, incluyendo sus claves primarias, relaciones de usuario y constraints necesarias para gestionar las penalizaciones.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/penalty-database.png" alt="Penalty Management Database Design Diagram" width="90%" />
+</div><br>
 
 ### 4.2.6. Bounded Context: Analytics & Reporting
 #### 4.2.6.1. Domain Layer
