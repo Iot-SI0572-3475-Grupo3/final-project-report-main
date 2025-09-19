@@ -551,6 +551,20 @@ Se ha utilizado el Lean UX Canvas como una herramienta estratégica clave para e
 
 ## 1.3. Segmentos objetivo
 
+El sistema **SafePark** está enfocado en los principales actores que enfrentan directamente la problemática de disponibilidad y gestión eficiente de estacionamientos en campus universitarios:  
+
+### 1. Conductores (estudiantes, docentes y personal administrativo)  
+Estudiantes, docentes y personal administrativo de **18 a 65 años** que usan vehículo propio para llegar al campus.  
+Enfrentan incertidumbre al buscar estacionamiento, especialmente en horarios pico, lo que genera **pérdida de tiempo y estrés**.  
+Necesitan un sistema que les permita **reservar espacios gratuitamente con anticipación** y garantizar disponibilidad al llegar.  
+
+### 2. Administradores de estacionamientos  
+Personal de **30 a 55 años** encargado de supervisar y gestionar los estacionamientos del campus.  
+Su trabajo se ve afectado por **procesos manuales, errores y falta de visibilidad en tiempo real**.  
+Necesitan un sistema que **automatice el control, genere reportes y libere automáticamente los espacios no utilizados**, para mejorar la eficiencia y el aprovechamiento de los estacionamientos.  
+
+
+
 
 # Capítulo II: Requirements Elicitation & Analysis
 
