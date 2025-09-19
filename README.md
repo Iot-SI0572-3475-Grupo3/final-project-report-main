@@ -250,7 +250,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p>
         TB1:
         <p/>
-        Luciano Ruiz :
+        Luciano Ruiz:
         <p/>
         Fernando: 
         <p/>
@@ -270,7 +270,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
       <p>
         TB1:
         <p/>
-        Luciano Ruiz :
+        Luciano Ruiz:
         <p/>
         Fernando: 
         <p/>
@@ -428,9 +428,54 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
+**A) Diferenciación de Servicios**  
+SafePark se posicionará como la solución más especializada para el ámbito universitario, ofreciendo reservas gratuitas anticipadas, notificaciones inteligentes y liberación automática de espacios no utilizados. A diferencia de competidores como **ParkSmart** o **ParkingDoor**, SafePark no requiere grandes inversiones en hardware ni se limita únicamente al acceso, sino que integra la experiencia completa de gestión y uso en campus.
+
+**B) Calidad Constante**  
+La confiabilidad del sistema será un diferenciador frente a alternativas locales como **Parkealo**. SafePark implementará pilotos en universidades peruanas para validar métricas de ahorro de tiempo y mejora en la rotación de espacios. A partir de los resultados y del feedback de los usuarios, se aplicarán actualizaciones periódicas que garanticen un sistema robusto y en evolución continua.
+
+**C) Servicio al Cliente de Calidad**  
+El soporte será un punto clave frente a soluciones internacionales. SafePark ofrecerá atención personalizada en español, capacitación a administradores universitarios y un canal directo de soporte 24/7. Esto garantizará que tanto los estudiantes como los gestores del campus puedan utilizar el sistema desde el primer día sin fricciones, aumentando la satisfacción y la adopción.
+
+**D) Alianzas Estratégicas**  
+SafePark buscará convenios con universidades, asociaciones estudiantiles y entidades educativas para acelerar la implementación en campus. Asimismo, establecerá acuerdos con empresas locales de tecnología IoT para reducir costos de hardware y asegurar la escalabilidad. Estas alianzas permitirán a SafePark diferenciarse de competidores como **Parkealo**, que se enfocan en un mercado más comercial, al consolidarse como el referente en soluciones de movilidad universitaria.
+
 ## 2.2. Entrevistas
 
 ### 2.2.1. Diseño de entrevistas
+
+En esta sección se presentarán las preguntas empleadas en las entrevistas, incluyendo tanto las de carácter general aplicables a todos los segmentos objetivo, como aquellas diseñadas específicamente para cada grupo en particular.
+
+**Preguntas generales**
+
+- ¿Qué dispositivo tecnológico usas con más frecuencia en tu día a día (celular, laptop, tablet)?
+- ¿Qué navegador web usas con mayor frecuencia?
+- ¿Cuáles son los canales de interacción que más utilizas (WhatsApp, correo, llamadas, apps móviles, etc.)?
+- ¿Cómo describes tu personalidad en pocas palabras?
+- ¿Presentas alguna frustración en tu trabajo/rutina universitaria relacionada con la movilidad o el tiempo?
+- ¿Cómo se llama el distrito donde resides actualmente?
+
+**Preguntas Segmento 1: Conductores universitarios**
+
+- ¿Con qué frecuencia utilizas los estacionamientos de la universidad?
+- En promedio, ¿cuánto tiempo tardas en encontrar un espacio disponible para estacionar?
+- ¿Cuál es el mayor inconveniente que enfrentas al buscar estacionamiento en horas punta?
+- ¿Qué tan útil te resultaría poder reservar un espacio antes de llegar al campus?
+- ¿Qué opinas de que las reservas tengan un límite de 30 minutos para llegar antes de liberarse?
+- ¿Aceptarías recibir notificaciones en tu celular sobre disponibilidad, vencimiento de reservas o recordatorios?
+- ¿Qué características te parecen más valiosas en una aplicación de estacionamiento (ejemplo: rapidez, gratuidad, facilidad de uso, confiabilidad)?
+- ¿Qué mejoras propondrías para que un sistema de estacionamiento inteligente se adapte mejor a tus necesidades?
+
+**Preguntas Segmento 2: Administradores**
+
+- ¿Cómo gestionas actualmente la ocupación de los estacionamientos en el campus?
+- ¿Qué problemas principales enfrentas en la administración de los espacios (errores manuales, quejas, falta de control, etc.)?
+- ¿Qué tan difícil es controlar la rotación de vehículos en horarios de mayor demanda?
+- ¿Qué beneficios esperas de un sistema automatizado de control de estacionamientos?
+- ¿Qué opinas de implementar un sistema que libere automáticamente los espacios reservados no utilizados?
+- ¿Qué tan útil sería contar con un panel web que muestre en tiempo real la ocupación y genere reportes automáticos?
+- ¿Qué barreras crees que podrían surgir al implementar un sistema inteligente de reservas (resistencia de usuarios, falta de infraestructura, costos)?
+- ¿Qué indicadores te ayudarían a evaluar si un sistema como SafePark realmente mejora la eficiencia operativa del estacionamiento?
 
 ### 2.2.2. Registro de entrevistas
 
