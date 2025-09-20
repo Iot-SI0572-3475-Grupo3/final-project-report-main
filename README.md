@@ -407,9 +407,83 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
-### 4.1.1. Design-Level EventStorming
+### 4.1.1. EventStorming
+
+Imagen del Event Storming general en su fase final: 
+![image](./assets/img/Chapter-IV/eventstorming.jpg)
+
+Imagen con resultado del Event Storming en relación a Identity and Access Management (IAM) Bounded Context:
+![image](./assets/img/Chapter-IV/iam-eventstorming.png)
+
+Imagen con resultado del Event Storming en relación a Reservation Management Bounded Context:
+![image](./assets/img/Chapter-IV/reservation-eventstorming.png)
+
+Imagen con resultado del Event Storming en relación a Space & IoT Management Bounded Context:
+![image](./assets/img/Chapter-IV/iot-eventstorming.png)
+
+Imagen con resultado del Event Storming en relación a Time Tracking Bounded Context:
+![image](./assets/img/Chapter-IV/timeTracking-eventstorming.png)
+
+Imagen con resultado del Event Storming en relación a Penalty Management Bounded Context:
+![image](./assets/img/Chapter-IV/penalty-eventstorming.png)
+
+Imagen con resultado del Event Storming en relación a Analytics & Reporting Bounded Context:
+![image](./assets/img/Chapter-IV/analytics-eventstorming.png)
+
+Imagen con resultado del Event Storming en relación a Notification Bounded Context:
+![image](./assets/img/Chapter-IV/notification-eventstorming.png)
 
 #### 4.1.1.1. Candidate Context Discovery
+
+**Paso 1: Unstructured Exploration:** Comenzamos identificando todos los eventos de dominio que ocurren en el sistema SmartParking UPC. Durante esta fase, el equipo se enfocó en capturar eventos como "Usuario registrado en el sistema", "Espacio de estacionamiento detectado como ocupado", "Reserva confirmada exitosamente", "Sesión de estacionamiento iniciada", "Penalización aplicada por ausencia", entre otros. Cada evento fue documentado en post-its en Miro, considerando el flujo completo desde la perspectiva del usuario universitario hasta la gestión administrativa.  
+**Imagen de la Reunión:**  
+![Captura de pantalla de la reunión - Paso 1](./assets/img/Chapter-IV/meeting-step1.jpg)  
+**Imagen ejemplo:**  
+![image](./assets/img/Chapter-IV/Step%201_%20Unstructured%20Exploration.jpg)
+
+**Paso 2: Timelines:** Organizamos los eventos identificados en secuencias temporales que representan los diferentes flujos de usuario en SmartParking. Desarrollamos el flujo principal donde un estudiante busca un espacio disponible, realiza una reserva, llega al campus, confirma su llegada, estaciona su vehículo, y finalmente libera el espacio. También consideramos flujos alternativos como cancelaciones de reserva, penalizaciones por no presentarse, y escenarios de espacios ocupados inesperadamente.  
+**Imagen de la Reunión:**  
+![Captura de pantalla de la reunión - Paso 2](./assets/img/Chapter-IV/meeting-step2.jpg)  
+**Imagen ejemplo:**  
+![image](./assets/img/Chapter-IV/Step%202_%20Timelines.jpg)
+
+**Paso 3: Pain Points:** Identificamos los principales problemas que enfrentan los usuarios en el sistema actual de estacionamientos de la UPC. Entre estos se encuentran la falta de información en tiempo real sobre disponibilidad, la dificultad para encontrar espacios libres, la ausencia de un sistema de reservas, la falta de notificaciones sobre el estado de los espacios, y la inexistencia de un sistema de penalizaciones para usuarios que no cumplen con sus reservas.
+
+**Paso 4: Pivotal Points:** Definimos los eventos críticos que marcan cambios significativos en el estado del sistema. Estos incluyen momentos como cuando un sensor IoT detecta la presencia de un vehículo, cuando un usuario confirma su llegada al espacio reservado, cuando se inicia el cronometraje de una sesión de estacionamiento, y cuando se aplica una penalización por ausencia.  
+**Imagen de la Reunión:**  
+![Captura de pantalla de la reunión - Paso 4](./assets/img/Chapter-IV/meeting-step4.jpg)  
+**Imagen ejemplo:**  
+![image](./assets/img/Chapter-IV/Step%204_%20Pivotal%20Points.jpg)
+
+**Paso 5: Commands:** Especificamos las acciones que los usuarios y el sistema pueden ejecutar para generar los eventos identificados. Los comandos incluyen "Registrar usuario", "Buscar espacios disponibles", "Crear reserva", "Confirmar llegada", "Iniciar sesión de estacionamiento", "Finalizar sesión", "Aplicar penalización", "Generar reporte de uso", entre otros. Cada comando fue asociado con los actores correspondientes: estudiantes, docentes, personal administrativo y administradores del sistema.  
+**Imagen de la Reunión:**  
+![Captura de pantalla de la reunión - Paso 5](./assets/img/Chapter-IV/meeting-step5.jpg)  
+**Imagen ejemplo:**  
+![image](./assets/img/Chapter-IV/Step%205_%20Commands.jpg)
+
+**Paso 6: Policies:** Establecimos reglas de negocio automatizadas que se ejecutan sin intervención directa del usuario. Estas políticas incluyen la detección automática de vehículos mediante sensores ultrasónicos ESP32, la aplicación automática de penalizaciones cuando un usuario no se presenta a su reserva, la generación automática de alertas cuando un espacio permanece ocupado más tiempo del reservado, y la actualización automática de métricas de uso del sistema.  
+**Imagen de la reunión:**  
+![Captura de pantalla de la reunión - Paso 6](./assets/img/Chapter-IV/meeting-step6.jpg)  
+**Imagen ejemplo:**  
+![image](./assets/img/Chapter-IV/Step%206_%20Policies.jpg)
+
+**Paso 7: Read Models:** Definimos las vistas de datos necesarias para soportar las consultas de los usuarios y administradores. Estos modelos incluyen la vista de disponibilidad de espacios en tiempo real, el historial personal de reservas del usuario, el dashboard administrativo con métricas de ocupación, los reportes de eficiencia por espacio, y las consultas de patrones de uso del estacionamiento.  
+**Imagen de la Reunión:**  
+![Captura de pantalla de la reunión - Paso 7](./assets/img/Chapter-IV/meeting-step7.jpg)  
+**Imagen ejemplo:**  
+![image](./assets/img/Chapter-IV/Step%207_%20Read%20Models.jpg)
+
+**Paso 8: External Systems:** Identificamos los sistemas externos que interactúan con SmartParking pero no forman parte de su dominio core. Estos incluyen los sensores IoT ESP32 con sensores ultrasónicos, el sistema de notificaciones push para móviles, la base de datos de usuarios de la UPC, el sistema de correo electrónico institucional, y potenciales integraciones futuras con sistemas de pago o Active Directory de la universidad.  
+**Imagen ejemplo:**  
+![image](./assets/img/Chapter-IV/Step%208_%20External%20Systems.jpg)
+
+**Paso 9: Aggregates:** Agrupamos las entidades relacionadas en agregados que mantienen la consistencia de datos. Los agregados principales incluyen UserAccount (usuario y perfil), Reservation (reserva y sus estados), ParkingSpace (espacio físico y sensores asociados), TimeTrackingSession (sesión de estacionamiento y cronometraje), PenaltyRecord (registro de penalizaciones), y AnalyticsData (métricas y reportes).  
+**Imagen ejemplo:**  
+![image](./assets/img/Chapter-IV/Step%209_%20Agreggates.jpg)
+
+**Paso 10: Bounded Context:** Agrupamos los agregados relacionados en contextos delimitados que representan áreas de responsabilidad específicas. Esto resultó en siete bounded contexts: Identity and Access Management (gestión de usuarios y autenticación), Reservation Management (gestión de reservas), Space & IoT Management (gestión de espacios y sensores), Time Tracking (cronometraje de sesiones), Penalty Management (gestión de penalizaciones), Analytics & Reporting (métricas y reportes), y Notification (sistema de notificaciones).  
+**Imagen ejemplo:**  
+![image](./assets/img/Chapter-IV/Step%2010_%20Bounded%20Context.jpg)
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
