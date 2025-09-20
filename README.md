@@ -1095,6 +1095,101 @@ Sus necesidades principales son contar con un sistema automatizado que gestione 
 
 ## 2.4. Big Picture EventStorming
 
+### Introducción
+
+En esta sección el equipo introduce, resume el proceso realizado por el equipo y presenta capturas y explicaciones de las etapas del Big Picture Event Storming. En una sesión colaborativa, el equipo se enfocó en entender el dominio del negocio SafePark en general, plasmando los eventos significativos y sus relaciones. Es una primera aproximación visual de alto nivel que explora el landscape del negocio, identificando procesos clave, exponiendo potenciales problemas u oportunidades. En https://bit.ly/bpes-guide encontrará un Step-by-Step Guide para realizar el proceso.
+
+### Proceso Realizado
+
+El equipo ejecutó una sesión de 4 horas aplicando la metodología Big Picture Event Storming para mapear el dominio SafePark:
+
+- **Etapa 1: Generación de Eventos (45 min)** - El equipo generó colaborativamente 43 eventos de dominio usando post-its naranjas.
+- **Etapa 2: Ordenamiento Temporal (60 min)** - Los eventos se organizaron cronológicamente revelando flujos del sistema.
+- **Etapa 3: Identificación de Actores (30 min)** - Se añadieron actores y sistemas externos que interactúan con SafePark.
+- **Etapa 4: Storytelling (45 min)** - El equipo validó la coherencia narrando la historia completa del sistema.
+
+### Capturas y Explicaciones
+
+#### Captura 1: Generación Inicial de Eventos
+
+![Captura de pantalla de la reunión - Paso 1](./assets/img/Chapter-IV/meeting-step1.jpg)
+
+**Descripción:** Esta captura corresponde al Step 1: Unstructured Exploration del proceso. El equipo generó todos los eventos de dominio de SafePark durante la fase de brainstorming colaborativo. Los 43 post-its naranjas están distribuidos aleatoriamente en el tablero, reflejando el conocimiento inicial del equipo sobre el sistema antes de cualquier organización. Se pueden observar eventos como "User Authenticated", "Reservation Created", "Vehicle Detected", "Timer Started", entre otros, capturando la comprensión completa del dominio SafePark.
+
+#### Captura 2: Ordenamiento Cronológico
+
+![Captura de pantalla de la reunión - Paso 2](./assets/img/Chapter-IV/meeting-step2.jpg)
+
+Los eventos organizados cronológicamente muestran el flujo desde "User Registered" hasta "Admin Alert Sent", revelando dependencias entre bounded contexts.
+
+#### Captura 3: Tablero Completo
+
+![Captura de pantalla de la reunión - Paso 10](./assets/img/Chapter-IV/meeting-step10.jpg)
+
+Resultado final mostrando los 7 bounded contexts, actores (Conductores, Administradores) y sistemas externos (ESP32, sensores HC-SR04, LEDs).
+
+#### Captura 4: Problemas Identificados
+
+![Captura de pantalla de la reunión - Paso 3](./assets/img/Chapter-IV/meeting-step3.jpg)
+
+Problemas detectados: desconexión IoT, sincronización sensor-sistema, overflow de notificaciones y gestión de excepciones.
+
+### Resultados Obtenidos
+
+#### Bounded Contexts Identificados (7)
+
+**Identity & Access Management (6 eventos)**
+- User Registered, User Authenticated, User Profile Updated, User Role Assigned, User Session Started, User Session Ended
+
+**Reservation Management (7 eventos)**
+- Reservation Created, Reservation Validated, Space Assigned, Arrival Confirmed, Reservation Cancelled, Reservation Expired, Space Released
+
+**Space & IoT Management (7 eventos)**
+- Space Status Updated, Vehicle Detected, Vehicle Left, LED Status Changed, Sensor Data Received, IoT Device Connected, IoT Device Disconnected
+
+**Time Tracking (6 eventos)**
+- Timer Started, Time Updated, Timer Stopped, Duration Calculated, Time Record Created, Usage Statistics Updated
+
+**Penalty Management (6 eventos)**
+- Absence Registered, Warning Issued, User Suspended, Suspension Expired, User Reactivated, Absence Counter Reset
+
+**Analytics & Reporting (5 eventos)**
+- Usage Metric Generated, Space Efficiency Calculated, User Pattern Analyzed, Admin Report Created, Dashboard Updated
+
+**Notification (6 eventos)**
+- Reservation Confirmation Sent, Arrival Reminder Sent, Absence Notification Sent, Warning Notification Sent, Suspension Notification Sent, Admin Alert Sent
+
+#### Eventos y Actores
+
+- **43 eventos de dominio** organizados en orden temporal por bounded contexts
+- **Actores:** Conductores universitarios (usuarios con email @upc.edu.pe), Administradores de estacionamiento
+- **Sistemas externos:** Sensores HC-SR04, microcontroladores ESP32, sistema LEDs, servidor notificaciones
+
+#### Lenguaje Ubícuo
+
+- **Reservation Window:** Hasta 24 horas para crear reservas
+- **Arrival Grace Period:** 30 minutos para confirmar llegada
+- **No-Show:** Usuario que no llega en tiempo establecido
+- **Auto-Release Policy:** Liberación automática de espacios no utilizados
+- **Penalty Escalation:** Sistema progresivo de 3 ausencias que resulta en suspensión de 7 días
+
+#### Problemas y Oportunidades Identificadas
+
+**Problemas Críticos:**
+- Desconexión de dispositivos ESP32 durante ocupación de espacios
+- Sincronización entre detección física de sensores y estado digital del sistema
+- Gestión de volúmenes altos de notificaciones en horarios pico universitarios
+- Manejo de casos excepcionales como emergencias y mantenimiento
+
+**Oportunidades Detectadas:**
+- Integración con sistemas de horarios académicos para predicción de demanda
+- Implementación de analytics avanzados basados en patrones de uso
+- Escalabilidad del modelo para expansión a otros campus universitarios
+
+### Conclusiones
+
+El trabajo de Big Picture Event Storming estableció una base sólida para el desarrollo de SafePark. El equipo identificó 43 eventos organizados en 7 bounded contexts, validando la viabilidad técnica del sistema de reservas gratuitas integrado con dispositivos IoT. Se detectaron problemas críticos relacionados con la sincronización IoT y se desarrolló un lenguaje ubícuo que facilitará la comunicación durante el desarrollo del sistema.
+
 ## 2.5. Ubiquitous Language  
 
 Esta sección presenta un glosario de términos y conceptos clave del dominio, definidos de manera precisa para evitar ambigüedades. Su objetivo es asegurar una comunicación clara y uniforme entre los miembros del equipo y los stakeholders.  
