@@ -2148,14 +2148,669 @@ URL Vertabelo para apreciar mejor el diagrama de base de datos IAM: <a href="htt
 </div><br><br>
 
 ### 4.2.2. Bounded Context: Reservation Management
+
+## Introducción
+
+El Bounded Context **Reservation Management** es responsable de gestionar las reservas de espacios de estacionamiento en el sistema SmartParking UPC. Este contexto opera como un contexto de negocio principal que coordina la reserva, confirmación, modificación y cancelación de espacios de estacionamiento para los miembros de la comunidad universitaria.
+
+Como se identificó en el Context Mapping, Reservation Management actúa como un contexto de negocio central que interactúa con múltiples contextos de soporte para proporcionar una experiencia completa de reserva de estacionamiento, incluyendo validación de usuarios, verificación de disponibilidad de espacios, gestión de horarios y notificaciones.
+
 #### 4.2.2.1. Domain Layer
+
+La capa de dominio contiene las reglas de negocio fundamentales y las entidades core relacionadas con la gestión de reservas de estacionamiento en el contexto universitario UPC.
+
+##### Entidades (Entities)
+
+###### **Reservation**
+Representa una reserva de espacio de estacionamiento en el sistema SmartParking UPC.
+
+**Atributos:**
+- `reservationId`: Identificador único de la reserva
+- `userId`: ID del usuario que realiza la reserva
+- `spaceId`: ID del espacio de estacionamiento reservado
+- `startTime`: Hora de inicio de la reserva
+- `endTime`: Hora de fin de la reserva
+- `date`: Fecha de la reserva
+- `status`: Estado de la reserva (PENDING, CONFIRMED, ACTIVE, COMPLETED, CANCELLED, EXPIRED)
+- `vehicleInfo`: Información del vehículo (placa, modelo, color)
+- `specialRequirements`: Requisitos especiales (discapacidad, vehículo eléctrico)
+- `createdAt`: Fecha de creación de la reserva
+- `confirmedAt`: Fecha de confirmación de la reserva
+- `cancelledAt`: Fecha de cancelación de la reserva
+- `completedAt`: Fecha de finalización de la reserva
+- `cancellationReason`: Razón de cancelación
+- `totalCost`: Costo total de la reserva
+- `paymentStatus`: Estado del pago (PENDING, PAID, FAILED, REFUNDED)
+
+**Métodos:**
+- `confirm(): void`
+- `activate(): void`
+- `complete(): void`
+- `cancel(reason: string): void`
+- `expire(): void`
+- `extendTime(additionalMinutes: int): void`
+- `calculateCost(): decimal`
+- `isActive(): boolean`
+- `canBeCancelled(): boolean`
+- `canBeExtended(): boolean`
+
+**Invariantes de Negocio:**
+- Una reserva no puede ser confirmada si el espacio no está disponible
+- Una reserva no puede ser activada antes de su hora de inicio
+- Una reserva no puede ser completada antes de su hora de fin
+- Una reserva cancelada no puede ser reactivada
+- El costo debe calcularse correctamente según la duración y tarifas
+
+###### **ReservationSlot**
+Representa un slot de tiempo disponible para reserva en un espacio específico.
+
+**Atributos:**
+- `slotId`: Identificador único del slot
+- `spaceId`: ID del espacio de estacionamiento
+- `date`: Fecha del slot
+- `startTime`: Hora de inicio del slot
+- `endTime`: Hora de fin del slot
+- `isAvailable`: Indica si el slot está disponible
+- `reservationId`: ID de la reserva que ocupa el slot (si existe)
+- `pricePerHour`: Precio por hora del slot
+- `createdAt`: Fecha de creación del slot
+- `updatedAt`: Fecha de última actualización
+
+**Métodos:**
+- `reserve(reservationId: string): void`
+- `release(): void`
+- `isOverlapping(other: ReservationSlot): boolean`
+- `calculateDuration(): int`
+- `calculateCost(): decimal`
+- `isInPast(): boolean`
+- `isInFuture(): boolean`
+
+**Invariantes de Negocio:**
+- Un slot no puede estar disponible si ya tiene una reserva activa
+- Los slots no pueden solaparse en el mismo espacio
+- Un slot no puede ser reservado si está en el pasado
+- El precio debe ser consistente con las tarifas del espacio
+
+###### **ReservationRule**
+Representa las reglas de negocio para las reservas en el sistema.
+
+**Atributos:**
+- `ruleId`: Identificador único de la regla
+- `name`: Nombre descriptivo de la regla
+- `type`: Tipo de regla (MAX_DURATION, MIN_DURATION, ADVANCE_BOOKING, CANCELLATION_TIME)
+- `value`: Valor de la regla (en minutos, horas, días)
+- `isActive`: Indica si la regla está activa
+- `appliesTo`: A quién aplica (ALL_USERS, STUDENTS, FACULTY, STAFF)
+- `createdAt`: Fecha de creación de la regla
+- `updatedAt`: Fecha de última actualización
+
+**Métodos:**
+- `validate(reservation: Reservation): boolean`
+- `getErrorMessage(): string`
+- `activate(): void`
+- `deactivate(): void`
+- `updateValue(newValue: int): void`
+- `appliesToUser(userType: string): boolean`
+
+**Invariantes de Negocio:**
+- Las reglas activas deben tener valores válidos
+- Las reglas de duración máxima deben ser mayores que las de duración mínima
+- Las reglas de cancelación no pueden ser negativas
+
+##### Agregados (Aggregates)
+
+###### **ReservationAggregate**
+Agregado principal que gestiona el ciclo de vida de las reservas.
+
+**Entidad Raíz:** Reservation
+
+**Reglas de Negocio:**
+- Una reserva no puede ser creada si el usuario no está activo
+- Una reserva no puede ser creada si el espacio no está disponible
+- Una reserva no puede ser creada si viola las reglas de negocio
+- Una reserva no puede ser cancelada si ya está activa
+- Una reserva no puede ser extendida más allá del tiempo máximo permitido
+
+**Comandos:**
+- `CreateReservationCommand`
+- `ConfirmReservationCommand`
+- `ActivateReservationCommand`
+- `CompleteReservationCommand`
+- `CancelReservationCommand`
+- `ExtendReservationCommand`
+
+**Eventos de Dominio:**
+- `ReservationCreated`
+- `ReservationConfirmed`
+- `ReservationActivated`
+- `ReservationCompleted`
+- `ReservationCancelled`
+- `ReservationExpired`
+- `ReservationExtended`
+
+##### Servicios de Dominio (Domain Services)
+
+###### **ReservationValidationService**
+Servicio que valida las reglas de negocio para las reservas.
+
+**Métodos:**
+- `validateReservation(reservation: Reservation, rules: ReservationRule[]): ValidationResult`
+- `checkSpaceAvailability(spaceId: string, startTime: DateTime, endTime: DateTime): boolean`
+- `checkUserEligibility(userId: string, reservationType: string): boolean`
+- `checkTimeConstraints(reservation: Reservation): boolean`
+- `checkOverlappingReservations(reservation: Reservation): boolean`
+
+###### **ReservationPricingService**
+Servicio que calcula los precios de las reservas.
+
+**Métodos:**
+- `calculateReservationCost(reservation: Reservation, pricingRules: PricingRule[]): decimal`
+- `calculateExtensionCost(reservation: Reservation, additionalMinutes: int): decimal`
+- `calculateCancellationFee(reservation: Reservation, cancellationTime: DateTime): decimal`
+- `getDynamicPricing(spaceId: string, date: Date, time: Time): decimal`
+
+##### Value Objects
+
+###### **ReservationStatus**
+Valor que representa el estado de una reserva.
+
+**Valores:** PENDING, CONFIRMED, ACTIVE, COMPLETED, CANCELLED, EXPIRED
+
+**Reglas:**
+- PENDING → CONFIRMED → ACTIVE → COMPLETED
+- PENDING → CANCELLED
+- CONFIRMED → CANCELLED
+- PENDING → EXPIRED (por tiempo)
+- CONFIRMED → EXPIRED (por tiempo)
+
+###### **ReservationTimeSlot**
+Valor que representa un rango de tiempo para una reserva.
+
+**Atributos:**
+- `startTime`: Hora de inicio
+- `endTime`: Hora de fin
+- `date`: Fecha
+
+**Reglas:**
+- La hora de fin debe ser posterior a la hora de inicio
+- La duración mínima es de 30 minutos
+- La duración máxima es de 8 horas
+- No puede ser en el pasado
+
+###### **VehicleInfo**
+Valor que representa la información del vehículo.
+
+**Atributos:**
+- `licensePlate`: Placa del vehículo
+- `make`: Marca del vehículo
+- `model`: Modelo del vehículo
+- `color`: Color del vehículo
+- `type`: Tipo de vehículo (CAR, MOTORCYCLE, TRUCK)
+
+**Reglas:**
+- La placa debe ser válida según el formato local
+- El tipo de vehículo debe ser uno de los permitidos
+- La información es opcional pero recomendada
+
 #### 4.2.2.2. Interface Layer
+
+La capa de interfaz define los contratos y puntos de entrada para interactuar con el Bounded Context de Reservation Management.
+
+##### Controllers
+
+###### **ReservationController**
+Controlador REST que expone los endpoints para gestionar reservas.
+
+**Endpoints:**
+- `GET /api/reservations` - Obtener reservas del usuario
+- `GET /api/reservations/{id}` - Obtener reserva específica
+- `POST /api/reservations` - Crear nueva reserva
+- `PUT /api/reservations/{id}/confirm` - Confirmar reserva
+- `PUT /api/reservations/{id}/cancel` - Cancelar reserva
+- `PUT /api/reservations/{id}/extend` - Extender reserva
+- `GET /api/reservations/available-slots` - Obtener slots disponibles
+- `GET /api/reservations/rules` - Obtener reglas de reserva
+
+**Request/Response DTOs:**
+- `CreateReservationRequest`
+- `ReservationResponse`
+- `ReservationSlotResponse`
+- `ReservationRuleResponse`
+
+###### **ReservationSlotController**
+Controlador REST para gestionar slots de reserva.
+
+**Endpoints:**
+- `GET /api/reservation-slots` - Obtener slots disponibles
+- `GET /api/reservation-slots/{spaceId}` - Obtener slots de un espacio
+- `POST /api/reservation-slots` - Crear slots (admin)
+- `PUT /api/reservation-slots/{id}` - Actualizar slot (admin)
+- `DELETE /api/reservation-slots/{id}` - Eliminar slot (admin)
+
+##### DTOs (Data Transfer Objects)
+
+###### **CreateReservationRequest**
+```json
+{
+  "spaceId": "string",
+  "startTime": "2024-01-01T09:00:00Z",
+  "endTime": "2024-01-01T11:00:00Z",
+  "date": "2024-01-01",
+  "vehicleInfo": {
+    "licensePlate": "ABC-123",
+    "make": "Toyota",
+    "model": "Corolla",
+    "color": "White",
+    "type": "CAR"
+  },
+  "specialRequirements": "ELECTRIC_VEHICLE"
+}
+```
+
+###### **ReservationResponse**
+```json
+{
+  "reservationId": "string",
+  "userId": "string",
+  "spaceId": "string",
+  "startTime": "2024-01-01T09:00:00Z",
+  "endTime": "2024-01-01T11:00:00Z",
+  "date": "2024-01-01",
+  "status": "CONFIRMED",
+  "vehicleInfo": {
+    "licensePlate": "ABC-123",
+    "make": "Toyota",
+    "model": "Corolla",
+    "color": "White",
+    "type": "CAR"
+  },
+  "totalCost": 15.50,
+  "paymentStatus": "PAID",
+  "createdAt": "2024-01-01T08:30:00Z",
+  "confirmedAt": "2024-01-01T08:35:00Z"
+}
+```
+
+###### **ReservationSlotResponse**
+```json
+{
+  "slotId": "string",
+  "spaceId": "string",
+  "date": "2024-01-01",
+  "startTime": "09:00",
+  "endTime": "11:00",
+  "isAvailable": true,
+  "pricePerHour": 7.75,
+  "duration": 120
+}
+```
+
+##### Event Handlers
+
+###### **ReservationEventHandler**
+Manejador de eventos que procesa eventos de otros bounded contexts.
+
+**Eventos Procesados:**
+- `UserActivated` → Valida elegibilidad para reservas
+- `SpaceBecameAvailable` → Notifica slots disponibles
+- `PaymentCompleted` → Confirma reserva
+- `PaymentFailed` → Cancela reserva
+
 #### 4.2.2.3. Application Layer
+
+La capa de aplicación contiene los casos de uso y servicios de aplicación para el Bounded Context de Reservation Management.
+
+##### Application Services
+
+###### **ReservationApplicationService**
+Servicio principal que orquesta los casos de uso de reservas.
+
+**Métodos:**
+- `createReservation(command: CreateReservationCommand): Promise<ReservationId>`
+- `confirmReservation(command: ConfirmReservationCommand): Promise<void>`
+- `cancelReservation(command: CancelReservationCommand): Promise<void>`
+- `extendReservation(command: ExtendReservationCommand): Promise<void>`
+- `getUserReservations(userId: UserId, filters: ReservationFilters): Promise<Reservation[]>`
+- `getAvailableSlots(spaceId: SpaceId, date: Date): Promise<ReservationSlot[]>`
+- `validateReservationRules(reservation: Reservation): Promise<ValidationResult>`
+
+**Casos de Uso:**
+- `CreateReservationUseCase`
+- `ConfirmReservationUseCase`
+- `CancelReservationUseCase`
+- `ExtendReservationUseCase`
+- `GetUserReservationsUseCase`
+- `GetAvailableSlotsUseCase`
+- `ValidateReservationRulesUseCase`
+
+###### **ReservationSlotApplicationService**
+Servicio para gestionar slots de reserva.
+
+**Métodos:**
+- `createSlots(command: CreateSlotsCommand): Promise<SlotId[]>`
+- `updateSlot(command: UpdateSlotCommand): Promise<void>`
+- `deleteSlot(slotId: SlotId): Promise<void>`
+- `getSlotsBySpace(spaceId: SpaceId, date: Date): Promise<ReservationSlot[]>`
+- `checkAvailability(spaceId: SpaceId, startTime: DateTime, endTime: DateTime): Promise<boolean>`
+
+##### Commands
+
+###### **CreateReservationCommand**
+```typescript
+interface CreateReservationCommand {
+  userId: string;
+  spaceId: string;
+  startTime: DateTime;
+  endTime: DateTime;
+  date: Date;
+  vehicleInfo: VehicleInfo;
+  specialRequirements?: string;
+}
+```
+
+###### **ConfirmReservationCommand**
+```typescript
+interface ConfirmReservationCommand {
+  reservationId: string;
+  paymentId: string;
+  confirmedAt: DateTime;
+}
+```
+
+###### **CancelReservationCommand**
+```typescript
+interface CancelReservationCommand {
+  reservationId: string;
+  reason: string;
+  cancelledAt: DateTime;
+}
+```
+
+###### **ExtendReservationCommand**
+```typescript
+interface ExtendReservationCommand {
+  reservationId: string;
+  additionalMinutes: number;
+  extendedAt: DateTime;
+}
+```
+
+##### Queries
+
+###### **GetUserReservationsQuery**
+```typescript
+interface GetUserReservationsQuery {
+  userId: string;
+  filters: {
+    status?: ReservationStatus;
+    dateFrom?: Date;
+    dateTo?: Date;
+    spaceId?: string;
+    limit?: number;
+    offset?: number;
+  };
+}
+```
+
+###### **GetAvailableSlotsQuery**
+```typescript
+interface GetAvailableSlotsQuery {
+  spaceId: string;
+  date: Date;
+  duration?: number; // en minutos
+  startTime?: Time;
+  endTime?: Time;
+}
+```
+
+##### Event Handlers
+
+###### **ReservationEventHandler**
+Manejador de eventos de dominio para procesar eventos de reservas.
+
+**Eventos Manejados:**
+- `ReservationCreated` → Notifica al usuario y actualiza disponibilidad
+- `ReservationConfirmed` → Inicia el proceso de pago
+- `ReservationActivated` → Marca el espacio como ocupado
+- `ReservationCompleted` → Libera el espacio y calcula estadísticas
+- `ReservationCancelled` → Libera el espacio y procesa reembolso
+- `ReservationExpired` → Libera el espacio automáticamente
+
 #### 4.2.2.4. Infrastructure Layer
+
+La capa de infraestructura proporciona las implementaciones concretas para los servicios de reservas.
+
+##### Repositories
+
+###### **ReservationRepository**
+Implementación del repositorio para persistir reservas.
+
+**Métodos:**
+- `save(reservation: Reservation): Promise<void>`
+- `findById(reservationId: ReservationId): Promise<Reservation | null>`
+- `findByUserId(userId: UserId, filters: ReservationFilters): Promise<Reservation[]>`
+- `findBySpaceId(spaceId: SpaceId, date: Date): Promise<Reservation[]>`
+- `findActiveReservations(): Promise<Reservation[]>`
+- `findExpiredReservations(): Promise<Reservation[]>`
+- `delete(reservationId: ReservationId): Promise<void>`
+
+###### **ReservationSlotRepository**
+Implementación del repositorio para persistir slots.
+
+**Métodos:**
+- `save(slot: ReservationSlot): Promise<void>`
+- `findById(slotId: SlotId): Promise<ReservationSlot | null>`
+- `findBySpaceId(spaceId: SpaceId, date: Date): Promise<ReservationSlot[]>`
+- `findAvailableSlots(spaceId: SpaceId, startTime: DateTime, endTime: DateTime): Promise<ReservationSlot[]>`
+- `findOverlappingSlots(spaceId: SpaceId, startTime: DateTime, endTime: DateTime): Promise<ReservationSlot[]>`
+- `delete(slotId: SlotId): Promise<void>`
+
+###### **ReservationRuleRepository**
+Implementación del repositorio para persistir reglas.
+
+**Métodos:**
+- `save(rule: ReservationRule): Promise<void>`
+- `findById(ruleId: RuleId): Promise<ReservationRule | null>`
+- `findActiveRules(): Promise<ReservationRule[]>`
+- `findByType(type: RuleType): Promise<ReservationRule[]>`
+- `findByUserType(userType: string): Promise<ReservationRule[]>`
+- `delete(ruleId: RuleId): Promise<void>`
+
+##### External Services
+
+###### **SpaceAvailabilityService**
+Servicio para verificar disponibilidad de espacios.
+
+**Implementación:**
+- Consulta el contexto Space & IoT Management
+- Verifica estado de sensores en tiempo real
+- Valida horarios de operación
+- Considera mantenimiento programado
+
+**Métodos:**
+- `checkSpaceAvailability(spaceId: string, startTime: DateTime, endTime: DateTime): Promise<boolean>`
+- `getSpaceStatus(spaceId: string): Promise<SpaceStatus>`
+- `getOperatingHours(spaceId: string, date: Date): Promise<OperatingHours>`
+
+###### **UserValidationService**
+Servicio para validar usuarios.
+
+**Implementación:**
+- Consulta el contexto IAM
+- Verifica estado de la cuenta
+- Valida permisos de reserva
+- Verifica límites de usuario
+
+**Métodos:**
+- `validateUser(userId: string): Promise<boolean>`
+- `getUserType(userId: string): Promise<string>`
+- `checkReservationLimits(userId: string): Promise<boolean>`
+- `getUserReservationHistory(userId: string): Promise<Reservation[]>`
+
+###### **PaymentService**
+Servicio para procesar pagos.
+
+**Implementación:**
+- Integra con sistema de pagos externo
+- Maneja diferentes métodos de pago
+- Procesa reembolsos
+- Registra transacciones
+
+**Métodos:**
+- `processPayment(paymentRequest: PaymentRequest): Promise<PaymentResult>`
+- `refundPayment(paymentId: string, amount: decimal): Promise<RefundResult>`
+- `getPaymentStatus(paymentId: string): Promise<PaymentStatus>`
+
+###### **NotificationService**
+Servicio para enviar notificaciones.
+
+**Implementación:**
+- Utiliza el contexto Notification
+- Envía confirmaciones de reserva
+- Notifica cambios de estado
+- Envía recordatorios
+
+**Métodos:**
+- `sendReservationConfirmation(reservation: Reservation): Promise<void>`
+- `sendReservationReminder(reservation: Reservation): Promise<void>`
+- `sendReservationCancellation(reservation: Reservation): Promise<void>`
+- `sendReservationExpiration(reservation: Reservation): Promise<void>`
+
+##### Database Schema
+
+###### **reservations**
+```sql
+CREATE TABLE reservations (
+    reservation_id VARCHAR(36) PRIMARY KEY,
+    user_id VARCHAR(36) NOT NULL,
+    space_id VARCHAR(36) NOT NULL,
+    start_time TIMESTAMP NOT NULL,
+    end_time TIMESTAMP NOT NULL,
+    date DATE NOT NULL,
+    status ENUM('PENDING', 'CONFIRMED', 'ACTIVE', 'COMPLETED', 'CANCELLED', 'EXPIRED') DEFAULT 'PENDING',
+    vehicle_info JSON,
+    special_requirements VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    confirmed_at TIMESTAMP NULL,
+    cancelled_at TIMESTAMP NULL,
+    completed_at TIMESTAMP NULL,
+    cancellation_reason TEXT,
+    total_cost DECIMAL(10,2) DEFAULT 0.00,
+    payment_status ENUM('PENDING', 'PAID', 'FAILED', 'REFUNDED') DEFAULT 'PENDING',
+    payment_id VARCHAR(36),
+    INDEX idx_user_id (user_id),
+    INDEX idx_space_id (space_id),
+    INDEX idx_status (status),
+    INDEX idx_date (date),
+    INDEX idx_start_time (start_time),
+    INDEX idx_end_time (end_time)
+);
+```
+
+###### **reservation_slots**
+```sql
+CREATE TABLE reservation_slots (
+    slot_id VARCHAR(36) PRIMARY KEY,
+    space_id VARCHAR(36) NOT NULL,
+    date DATE NOT NULL,
+    start_time TIME NOT NULL,
+    end_time TIME NOT NULL,
+    is_available BOOLEAN DEFAULT TRUE,
+    reservation_id VARCHAR(36) NULL,
+    price_per_hour DECIMAL(8,2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_space_date (space_id, date),
+    INDEX idx_available (is_available),
+    INDEX idx_reservation_id (reservation_id),
+    FOREIGN KEY (reservation_id) REFERENCES reservations(reservation_id) ON DELETE SET NULL
+);
+```
+
+###### **reservation_rules**
+```sql
+CREATE TABLE reservation_rules (
+    rule_id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type ENUM('MAX_DURATION', 'MIN_DURATION', 'ADVANCE_BOOKING', 'CANCELLATION_TIME') NOT NULL,
+    value INT NOT NULL,
+    is_active BOOLEAN DEFAULT TRUE,
+    applies_to ENUM('ALL_USERS', 'STUDENTS', 'FACULTY', 'STAFF') DEFAULT 'ALL_USERS',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_type (type),
+    INDEX idx_active (is_active),
+    INDEX idx_applies_to (applies_to)
+);
+```
+
+##### Message Queues
+
+###### **ReservationQueue**
+Cola para procesar reservas de forma asíncrona.
+
+**Configuración:**
+- Utiliza Redis o RabbitMQ
+- Soporta prioridades de cola
+- Maneja reintentos automáticos
+- Implementa dead letter queue
+
+**Procesos:**
+- `ReservationProcessor` - Procesa reservas de la cola
+- `ExpirationProcessor` - Marca reservas expiradas
+- `ReminderProcessor` - Envía recordatorios
+- `CleanupProcessor` - Limpia datos antiguos
+
+##### Monitoring and Logging
+
+###### **ReservationMetrics**
+Métricas para monitorear el rendimiento del sistema de reservas.
+
+**Métricas:**
+- Reservas creadas por hora
+- Tasa de confirmación de reservas
+- Tasa de cancelación de reservas
+- Ocupación promedio de espacios
+- Tiempo promedio de procesamiento
+- Ingresos por reservas
+
+###### **ReservationLogger**
+Sistema de logging para auditoría y debugging.
+
+**Logs:**
+- Creación de reservas
+- Cambios de estado
+- Validaciones fallidas
+- Procesamiento de pagos
+- Errores del sistema
+- Métricas de rendimiento
+
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Web Services Component Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/reservation-webservice-c4.png" alt="Reservation Management Web Services Component Diagram" width="90%" />
+</div><br><br>
+
+**Web Applications Component Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/reservation-webapplication-c4.png" alt="Reservation Management Web Applications Component Diagram" width="90%" />
+</div><br><br>
+
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Reservation Management Domain Layer Class Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/reservation-diagramclass-c4.png" alt="Reservation Management Domain Layer Class Diagram" width="90%" />
+</div><br><br>
+
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+**Reservation Management Database Design Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/reservation-database-diagram.png" alt="Reservation Management Database Design Diagram" width="90%" />
+</div><br><br>
 
 ### 4.2.3. Bounded Context: Space & IoT Management
 #### 4.2.3.1. Domain Layer
@@ -3292,15 +3947,564 @@ URL Vertabelo para apreciar mejor el diagrama de base de datos Analytics & Repor
 </div><br><br>
 
 ### 4.2.7. Bounded Context: Notification
+
+## Introducción
+
+El Bounded Context **Notification** es responsable de gestionar y distribuir notificaciones a los usuarios del sistema SmartParking UPC. Este contexto opera como un contexto de soporte que proporciona capacidades de comunicación transversal a todos los demás bounded contexts del sistema.
+
+Como se identificó en el Context Mapping, Notification actúa como un contexto de soporte, proporcionando servicios de notificación sin crear dependencias directas en los bounded contexts de negocio. Esto permite una separación clara de responsabilidades donde la comunicación es tratada como una preocupación transversal.
+
 #### 4.2.7.1. Domain Layer
+
+La capa de dominio contiene las reglas de negocio fundamentales y las entidades core relacionadas con el sistema de notificaciones en el contexto universitario UPC.
+
+##### Entidades (Entities)
+
+###### **Notification**
+Representa una notificación individual en el sistema SmartParking UPC.
+
+**Atributos:**
+- `notificationId`: Identificador único de la notificación
+- `userId`: ID del usuario destinatario
+- `title`: Título de la notificación
+- `message`: Contenido del mensaje
+- `type`: Tipo de notificación (RESERVATION_CONFIRMED, RESERVATION_CANCELLED, PENALTY_ISSUED, SPACE_AVAILABLE, SYSTEM_ALERT)
+- `priority`: Prioridad de la notificación (LOW, MEDIUM, HIGH, URGENT)
+- `status`: Estado de la notificación (PENDING, SENT, DELIVERED, FAILED)
+- `channel`: Canal de notificación (EMAIL, SMS, PUSH, IN_APP)
+- `createdAt`: Fecha de creación de la notificación
+- `sentAt`: Fecha de envío de la notificación
+- `deliveredAt`: Fecha de entrega de la notificación
+- `expiresAt`: Fecha de expiración de la notificación
+- `metadata`: Datos adicionales en formato JSON
+
+**Métodos:**
+- `markAsSent(): void`
+- `markAsDelivered(): void`
+- `markAsFailed(): void`
+- `isExpired(): boolean`
+- `canBeRetried(): boolean`
+- `updatePriority(priority: NotificationPriority): void`
+
+**Invariantes de Negocio:**
+- Una notificación debe tener al menos un canal de envío
+- Las notificaciones urgentes no pueden tener prioridad baja
+- Las notificaciones expiradas no pueden ser enviadas
+- El estado de la notificación debe seguir un flujo válido (PENDING → SENT → DELIVERED)
+
+###### **NotificationTemplate**
+Representa una plantilla reutilizable para generar notificaciones.
+
+**Atributos:**
+- `templateId`: Identificador único de la plantilla
+- `name`: Nombre descriptivo de la plantilla
+- `type`: Tipo de notificación asociada
+- `titleTemplate`: Plantilla del título con placeholders
+- `messageTemplate`: Plantilla del mensaje con placeholders
+- `channels`: Canales de notificación soportados
+- `isActive`: Indica si la plantilla está activa
+- `createdAt`: Fecha de creación de la plantilla
+- `updatedAt`: Fecha de última actualización
+
+**Métodos:**
+- `generateNotification(data: Map<string, any>): Notification`
+- `validateTemplate(): boolean`
+- `activate(): void`
+- `deactivate(): void`
+- `updateTemplate(title: string, message: string): void`
+
+**Invariantes de Negocio:**
+- Las plantillas deben contener placeholders válidos
+- Solo las plantillas activas pueden generar notificaciones
+- Los placeholders deben coincidir con los datos proporcionados
+
+###### **NotificationPreference**
+Representa las preferencias de notificación de un usuario.
+
+**Atributos:**
+- `preferenceId`: Identificador único de la preferencia
+- `userId`: ID del usuario propietario
+- `notificationType`: Tipo de notificación
+- `channel`: Canal de notificación
+- `isEnabled`: Indica si está habilitado
+- `quietHoursStart`: Hora de inicio del silencio
+- `quietHoursEnd`: Hora de fin del silencio
+- `updatedAt`: Fecha de última actualización
+
+**Métodos:**
+- `enable(): void`
+- `disable(): void`
+- `setQuietHours(start: Time, end: Time): void`
+- `isQuietTime(): boolean`
+- `canReceiveNotification(type: NotificationType, channel: NotificationChannel): boolean`
+
+**Invariantes de Negocio:**
+- Las horas de silencio no pueden superponerse
+- Un usuario debe tener al menos un canal habilitado por tipo de notificación
+- Las notificaciones urgentes no respetan las horas de silencio
+
+##### Agregados (Aggregates)
+
+###### **NotificationAggregate**
+Agregado principal que gestiona el ciclo de vida de las notificaciones.
+
+**Entidad Raíz:** Notification
+
+**Reglas de Negocio:**
+- Una notificación no puede ser enviada si el usuario no tiene preferencias habilitadas
+- Las notificaciones deben respetar las horas de silencio del usuario (excepto las urgentes)
+- Las notificaciones fallidas pueden reintentarse hasta 3 veces
+- Las notificaciones expiradas se marcan como fallidas automáticamente
+
+**Comandos:**
+- `CreateNotificationCommand`
+- `SendNotificationCommand`
+- `MarkAsDeliveredCommand`
+- `RetryFailedNotificationCommand`
+
+**Eventos de Dominio:**
+- `NotificationCreated`
+- `NotificationSent`
+- `NotificationDelivered`
+- `NotificationFailed`
+- `NotificationExpired`
+
+##### Servicios de Dominio (Domain Services)
+
+###### **NotificationSchedulingService**
+Servicio que determina cuándo enviar una notificación basándose en las preferencias del usuario.
+
+**Métodos:**
+- `calculateSendTime(notification: Notification, preferences: NotificationPreference[]): DateTime`
+- `shouldSendNow(notification: Notification, preferences: NotificationPreference[]): boolean`
+- `getOptimalChannel(notification: Notification, preferences: NotificationPreference[]): NotificationChannel`
+
+###### **NotificationTemplateService**
+Servicio que gestiona la generación de notificaciones a partir de plantillas.
+
+**Métodos:**
+- `generateFromTemplate(templateId: string, data: Map<string, any>): Notification`
+- `validateTemplateData(template: NotificationTemplate, data: Map<string, any>): boolean`
+- `getAvailableTemplates(type: NotificationType): NotificationTemplate[]`
+
+##### Value Objects
+
+###### **NotificationPriority**
+Valor que representa la prioridad de una notificación.
+
+**Valores:** LOW, MEDIUM, HIGH, URGENT
+
+**Reglas:**
+- URGENT tiene precedencia sobre todas las demás
+- HIGH tiene precedencia sobre MEDIUM y LOW
+- MEDIUM tiene precedencia sobre LOW
+
+###### **NotificationChannel**
+Valor que representa el canal de notificación.
+
+**Valores:** EMAIL, SMS, PUSH, IN_APP
+
+**Reglas:**
+- Cada canal tiene diferentes limitaciones de caracteres
+- Los canales pueden combinarse para una notificación
+- Algunos canales requieren configuración adicional
+
 #### 4.2.7.2. Interface Layer
+
+La capa de interfaz define los contratos y puntos de entrada para interactuar con el Bounded Context de Notification.
+
+##### Controllers
+
+###### **NotificationController**
+Controlador REST que expone los endpoints para gestionar notificaciones.
+
+**Endpoints:**
+- `GET /api/notifications` - Obtener notificaciones del usuario
+- `GET /api/notifications/{id}` - Obtener notificación específica
+- `POST /api/notifications` - Crear nueva notificación
+- `PUT /api/notifications/{id}/mark-read` - Marcar notificación como leída
+- `DELETE /api/notifications/{id}` - Eliminar notificación
+- `GET /api/notifications/preferences` - Obtener preferencias del usuario
+- `PUT /api/notifications/preferences` - Actualizar preferencias del usuario
+
+**Request/Response DTOs:**
+- `CreateNotificationRequest`
+- `NotificationResponse`
+- `NotificationPreferencesRequest`
+- `NotificationPreferencesResponse`
+
+###### **NotificationTemplateController**
+Controlador REST para gestionar plantillas de notificación.
+
+**Endpoints:**
+- `GET /api/notification-templates` - Obtener plantillas disponibles
+- `POST /api/notification-templates` - Crear nueva plantilla
+- `PUT /api/notification-templates/{id}` - Actualizar plantilla
+- `DELETE /api/notification-templates/{id}` - Eliminar plantilla
+
+##### DTOs (Data Transfer Objects)
+
+###### **CreateNotificationRequest**
+```json
+{
+  "userId": "string",
+  "title": "string",
+  "message": "string",
+  "type": "RESERVATION_CONFIRMED",
+  "priority": "MEDIUM",
+  "channels": ["EMAIL", "PUSH"],
+  "metadata": {}
+}
+```
+
+###### **NotificationResponse**
+```json
+{
+  "notificationId": "string",
+  "userId": "string",
+  "title": "string",
+  "message": "string",
+  "type": "RESERVATION_CONFIRMED",
+  "priority": "MEDIUM",
+  "status": "SENT",
+  "channel": "EMAIL",
+  "createdAt": "2024-01-01T00:00:00Z",
+  "sentAt": "2024-01-01T00:01:00Z",
+  "deliveredAt": "2024-01-01T00:02:00Z"
+}
+```
+
+###### **NotificationPreferencesRequest**
+```json
+{
+  "preferences": [
+    {
+      "notificationType": "RESERVATION_CONFIRMED",
+      "channel": "EMAIL",
+      "isEnabled": true,
+      "quietHoursStart": "22:00",
+      "quietHoursEnd": "08:00"
+    }
+  ]
+}
+```
+
+##### Event Handlers
+
+###### **NotificationEventHandler**
+Manejador de eventos que procesa eventos de otros bounded contexts.
+
+**Eventos Procesados:**
+- `ReservationCreated` → Genera notificación de confirmación
+- `ReservationCancelled` → Genera notificación de cancelación
+- `PenaltyIssued` → Genera notificación de penalización
+- `SpaceBecameAvailable` → Genera notificación de disponibilidad
+
 #### 4.2.7.3. Application Layer
+
+La capa de aplicación contiene los casos de uso y servicios de aplicación para el Bounded Context de Notification.
+
+##### Application Services
+
+###### **NotificationApplicationService**
+Servicio principal que orquesta los casos de uso de notificaciones.
+
+**Métodos:**
+- `createNotification(command: CreateNotificationCommand): Promise<NotificationId>`
+- `sendNotification(notificationId: NotificationId): Promise<void>`
+- `markAsRead(notificationId: NotificationId, userId: UserId): Promise<void>`
+- `getUserNotifications(userId: UserId, filters: NotificationFilters): Promise<Notification[]>`
+- `updateNotificationPreferences(userId: UserId, preferences: NotificationPreference[]): Promise<void>`
+
+**Casos de Uso:**
+- `CreateNotificationUseCase`
+- `SendNotificationUseCase`
+- `MarkNotificationAsReadUseCase`
+- `GetUserNotificationsUseCase`
+- `UpdateNotificationPreferencesUseCase`
+
+###### **NotificationTemplateApplicationService**
+Servicio para gestionar plantillas de notificación.
+
+**Métodos:**
+- `createTemplate(command: CreateTemplateCommand): Promise<TemplateId>`
+- `updateTemplate(command: UpdateTemplateCommand): Promise<void>`
+- `deleteTemplate(templateId: TemplateId): Promise<void>`
+- `getTemplatesByType(type: NotificationType): Promise<NotificationTemplate[]>`
+- `generateNotificationFromTemplate(templateId: TemplateId, data: Map<string, any>): Promise<Notification>`
+
+##### Commands
+
+###### **CreateNotificationCommand**
+```typescript
+interface CreateNotificationCommand {
+  userId: string;
+  title: string;
+  message: string;
+  type: NotificationType;
+  priority: NotificationPriority;
+  channels: NotificationChannel[];
+  metadata?: Map<string, any>;
+  expiresAt?: Date;
+}
+```
+
+###### **SendNotificationCommand**
+```typescript
+interface SendNotificationCommand {
+  notificationId: string;
+  forceSend?: boolean; // Ignora preferencias del usuario
+}
+```
+
+###### **UpdateNotificationPreferencesCommand**
+```typescript
+interface UpdateNotificationPreferencesCommand {
+  userId: string;
+  preferences: {
+    notificationType: NotificationType;
+    channel: NotificationChannel;
+    isEnabled: boolean;
+    quietHoursStart?: string;
+    quietHoursEnd?: string;
+  }[];
+}
+```
+
+##### Queries
+
+###### **GetUserNotificationsQuery**
+```typescript
+interface GetUserNotificationsQuery {
+  userId: string;
+  filters: {
+    type?: NotificationType;
+    status?: NotificationStatus;
+    channel?: NotificationChannel;
+    dateFrom?: Date;
+    dateTo?: Date;
+    limit?: number;
+    offset?: number;
+  };
+}
+```
+
+##### Event Handlers
+
+###### **NotificationEventHandler**
+Manejador de eventos de dominio para procesar eventos de notificaciones.
+
+**Eventos Manejados:**
+- `NotificationCreated` → Inicia el proceso de envío
+- `NotificationSent` → Actualiza el estado y registra métricas
+- `NotificationDelivered` → Marca como entregada y notifica al usuario
+- `NotificationFailed` → Programa reintento o marca como fallida definitivamente
+
 #### 4.2.7.4. Infrastructure Layer
+
+La capa de infraestructura proporciona las implementaciones concretas para los servicios de notificación.
+
+##### Repositories
+
+###### **NotificationRepository**
+Implementación del repositorio para persistir notificaciones.
+
+**Métodos:**
+- `save(notification: Notification): Promise<void>`
+- `findById(notificationId: NotificationId): Promise<Notification | null>`
+- `findByUserId(userId: UserId, filters: NotificationFilters): Promise<Notification[]>`
+- `findPendingNotifications(): Promise<Notification[]>`
+- `findExpiredNotifications(): Promise<Notification[]>`
+- `delete(notificationId: NotificationId): Promise<void>`
+
+###### **NotificationTemplateRepository**
+Implementación del repositorio para persistir plantillas.
+
+**Métodos:**
+- `save(template: NotificationTemplate): Promise<void>`
+- `findById(templateId: TemplateId): Promise<NotificationTemplate | null>`
+- `findByType(type: NotificationType): Promise<NotificationTemplate[]>`
+- `findActiveTemplates(): Promise<NotificationTemplate[]>`
+- `delete(templateId: TemplateId): Promise<void>`
+
+###### **NotificationPreferenceRepository**
+Implementación del repositorio para persistir preferencias.
+
+**Métodos:**
+- `save(preference: NotificationPreference): Promise<void>`
+- `findByUserId(userId: UserId): Promise<NotificationPreference[]>`
+- `findByUserAndType(userId: UserId, type: NotificationType): Promise<NotificationPreference[]>`
+- `delete(preferenceId: PreferenceId): Promise<void>`
+
+##### External Services
+
+###### **EmailNotificationService**
+Servicio para enviar notificaciones por email.
+
+**Implementación:**
+- Utiliza SendGrid o AWS SES para el envío
+- Soporta plantillas HTML y texto plano
+- Maneja reintentos automáticos
+- Registra métricas de entrega
+
+**Métodos:**
+- `sendEmail(notification: Notification): Promise<void>`
+- `validateEmailAddress(email: string): boolean`
+- `getDeliveryStatus(messageId: string): Promise<DeliveryStatus>`
+
+###### **SMSNotificationService**
+Servicio para enviar notificaciones por SMS.
+
+**Implementación:**
+- Utiliza Twilio o AWS SNS para el envío
+- Soporta mensajes en español
+- Maneja códigos de país automáticamente
+- Registra métricas de entrega
+
+**Métodos:**
+- `sendSMS(notification: Notification): Promise<void>`
+- `validatePhoneNumber(phone: string): boolean`
+- `getDeliveryStatus(messageId: string): Promise<DeliveryStatus>`
+
+###### **PushNotificationService**
+Servicio para enviar notificaciones push.
+
+**Implementación:**
+- Utiliza Firebase Cloud Messaging (FCM)
+- Soporta notificaciones para Android e iOS
+- Maneja tokens de dispositivo
+- Registra métricas de entrega
+
+**Métodos:**
+- `sendPush(notification: Notification, deviceTokens: string[]): Promise<void>`
+- `registerDeviceToken(userId: UserId, token: string): Promise<void>`
+- `unregisterDeviceToken(token: string): Promise<void>`
+- `getDeliveryStatus(messageId: string): Promise<DeliveryStatus>`
+
+###### **InAppNotificationService**
+Servicio para notificaciones dentro de la aplicación.
+
+**Implementación:**
+- Utiliza WebSockets para notificaciones en tiempo real
+- Almacena notificaciones en base de datos
+- Soporta notificaciones persistentes y temporales
+- Registra métricas de visualización
+
+**Métodos:**
+- `sendInApp(notification: Notification): Promise<void>`
+- `markAsRead(notificationId: NotificationId, userId: UserId): Promise<void>`
+- `getUnreadCount(userId: UserId): Promise<number>`
+
+##### Database Schema
+
+###### **notifications**
+```sql
+CREATE TABLE notifications (
+    notification_id UUID PRIMARY KEY,
+    user_id UUID NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    priority VARCHAR(20) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    channel VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP NOT NULL,
+    sent_at TIMESTAMP,
+    delivered_at TIMESTAMP,
+    expires_at TIMESTAMP,
+    metadata JSONB,
+    retry_count INTEGER DEFAULT 0,
+    error_message TEXT
+);
+```
+
+###### **notification_templates**
+```sql
+CREATE TABLE notification_templates (
+    template_id UUID PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    title_template TEXT NOT NULL,
+    message_template TEXT NOT NULL,
+    channels VARCHAR(50)[] NOT NULL,
+    is_active BOOLEAN DEFAULT true,
+    created_at TIMESTAMP NOT NULL,
+    updated_at TIMESTAMP NOT NULL
+);
+```
+
+###### **notification_preferences**
+```sql
+CREATE TABLE notification_preferences (
+    preference_id UUID PRIMARY KEY,
+    user_id UUID NOT NULL,
+    notification_type VARCHAR(50) NOT NULL,
+    channel VARCHAR(20) NOT NULL,
+    is_enabled BOOLEAN DEFAULT true,
+    quiet_hours_start TIME,
+    quiet_hours_end TIME,
+    updated_at TIMESTAMP NOT NULL,
+    UNIQUE(user_id, notification_type, channel)
+);
+```
+
+##### Message Queues
+
+###### **NotificationQueue**
+Cola para procesar notificaciones de forma asíncrona.
+
+**Configuración:**
+- Utiliza Redis o RabbitMQ
+- Soporta prioridades de cola
+- Maneja reintentos automáticos
+- Implementa dead letter queue
+
+**Procesos:**
+- `NotificationProcessor` - Procesa notificaciones de la cola
+- `RetryProcessor` - Reintenta notificaciones fallidas
+- `ExpirationProcessor` - Marca notificaciones expiradas
+
+##### Monitoring and Logging
+
+###### **NotificationMetrics**
+Métricas para monitorear el rendimiento del sistema de notificaciones.
+
+**Métricas:**
+- Notificaciones enviadas por minuto
+- Tasa de entrega por canal
+- Tiempo promedio de entrega
+- Tasa de fallos por canal
+- Notificaciones pendientes en cola
+
+###### **NotificationLogger**
+Sistema de logging para auditoría y debugging.
+
+**Logs:**
+- Creación de notificaciones
+- Intentos de envío
+- Fallos y errores
+- Cambios de estado
+- Métricas de rendimiento
 #### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
+
+URL Structurizr para apreciar mejor los diagramas de componentes IAM: <a href="https://structurizr.com/share/106368/diagrams#IAM-MobileComponents">https://structurizr.com/share/106385</a>
+<br><br>
+**IAM Web Services Component Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/notification-webservice-c4.png" alt="IAM Web Service Component Diagram" width="90%" />
+</div><br><br>
+
+**IAM Web Applications Component Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/notification-webapplication-c4.png" alt="IAM Web Service Component Diagram" width="90%" />
+</div><br><br>
+
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.7.6.2. Bounded Context Database Design Diagram
+<img src="./assets/img/Chapter-IV/notification-diagramclass.png" alt="Context Diagram"/>
 
+##### 4.2.7.6.2. Bounded Context Database Design Diagram
+<img src="./assets/img/Chapter-IV/notification-database-diagram.png" alt="Context Diagram"/>
 
 
 # Capítulo V: Solution UI/UX Design
