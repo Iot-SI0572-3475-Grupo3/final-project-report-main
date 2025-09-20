@@ -1784,6 +1784,19 @@ Estos controladores definen los endpoints públicos de la aplicación y orquesta
 <br>
 
 #### 4.2.3.4. Infrastructure Layer
+
+### Implementación de Repositories
+
+| Clase                     | Interfaz implementada       | Función principal                                                                 |
+|----------------------------|----------------------------|---------------------------------------------------------------------------------|
+| SpaceRepository.cs         | ISpaceRepository           | Implementa operaciones de persistencia y consultas sobre los espacios de estacionamiento, incluyendo búsqueda por estado (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE) y asignación/liberación de espacios. |
+| IoTDeviceRepository.cs     | IIoTDeviceRepository       | Gestiona la persistencia de los dispositivos IoT (ESP32), incluyendo conexión, desconexión y estado en tiempo real. |
+| SensorRepository.cs        | ISensorRepository          | Maneja la persistencia de sensores HC-SR04, incluyendo recepción de datos, estado y calibración. |
+| LEDRepository.cs           | ILEDRepository             | Persiste y gestiona los estados de los LEDs RGB de cada espacio (verde, azul, rojo). |
+| TimeTrackingRepository.cs  | ITimeTrackingRepository    | Almacena registros históricos de tiempo de uso de cada espacio y estadísticas para análisis y reportes. |
+
+<br>
+
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
