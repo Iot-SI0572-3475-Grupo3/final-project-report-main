@@ -305,13 +305,13 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p/>
         Luciano Ruiz: Distribui tareas equitativas y por fortalezas de cada miembro del equipo. Además, proporcione apoyo a mis companeros de equipo en sus tareas para un mejor desenvolvimiento.
         <p/>
-        Fernando: 
+        Fernando: Colaboré en el desarrollo de los Bounded Contexts de Identity & Access Management y Parking Management, además de participar activamente en la planificación y coordinación del equipo para asegurar el cumplimiento de los objetivos del proyecto.
         <p/>
         Leonardo: A partir de la reunion de equipo, logre hacer mis partes del los capitulos I-III, además de explayar a fondo los Bounded Contexts de Time Tracking y Penalty Management.
         <p/>
-        Carlos: 
+        Carlos: Contribuí en el desarrollo de los Bounded Contexts de Analytics & Reporting y Notification, además de participar en la elaboración de los diagramas C4 y la arquitectura del sistema para garantizar una solución robusta y escalable.
         <p/>
-        Luis Aquije:
+        Luis Aquije: Participé en el desarrollo de los Bounded Contexts de Reservation Management y Parking Management, además de colaborar en la definición de la arquitectura del sistema y la integración de los componentes IoT.
     </td>
     <td>
         TB1: En esta entrega logramos trabajar en equipo, apoyándonos mutuamente y colaborando en la redacción del informe. Cada uno de los integrantes participó activamente en el desarrollo de las secciones asignadas, lo que permitió un avance significativo en el proyecto. La comunicación constante y la disposición para ayudar a los demás fueron clave para el éxito de esta entrega.</p>
@@ -325,13 +325,13 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p/>
         Luciano Ruiz: Estableci los sprints, participe en el capitulo IV apoyando en la planificación de nuestra solución.
         <p/>
-        Fernando: 
+        Fernando: Establecí las bases para el desarrollo de la interfaz de usuario y la experiencia móvil, además de coordinar las tareas de frontend y backend para asegurar una integración fluida entre los componentes del sistema.
         <p/>
         Leonardo: Ayude en la elaboración del capitulo IV con los Bounded Contexts de Time Tracking y Penalty Management, y delimite el analisis competitivo, los journey e impact mappings y analisis de entrevistas
         <p/>
-        Carlos: 
+        Carlos: Planifiqué y estructuré la arquitectura de datos y los sistemas de reportes, además de establecer las métricas y KPIs necesarios para el monitoreo y análisis del rendimiento del sistema.
         <p/>
-        Luis Aquije:
+        Luis Aquije: Coordiné la integración de los sensores IoT con la plataforma, además de establecer los protocolos de comunicación y las interfaces necesarias para el funcionamiento del sistema de estacionamiento inteligente.
     <td>
     TB1: En esta entrega, logramos establecer un entorno colaborativo e inclusivo, donde cada miembro del equipo pudo expresar sus ideas y contribuir al desarrollo del proyecto. La planificación de tareas y el cumplimiento de objetivos fueron fundamentales para avanzar en la redacción del informe y en la elaboración de los diagramas y documentos requeridos. La comunicación constante y el uso del tablero Kanban facilitaron la organización y el seguimiento de las tareas asignadas.
     </p>
