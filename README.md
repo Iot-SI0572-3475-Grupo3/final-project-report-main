@@ -1518,6 +1518,165 @@ URL Vertabelo para apreciar mejor el diagrama de base de datos IAM: <a href="htt
 
 ### 4.2.3. Bounded Context: Space & IoT Management
 #### 4.2.3.1. Domain Layer
+
+En nuestras aplicaciones web y móvil, la carpeta `domain` dentro del Bounded Context **Space & IoT Management** contiene las entidades y agregados del dominio, representadas como clases con sus atributos y constructores. Cada clase encapsula la lógica de negocio principal asociada a espacios de estacionamiento y dispositivos IoT.
+
+---
+
+## ParkingSpace
+Representa un espacio de estacionamiento.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del espacio |
+| Code | string | Código identificador del espacio (A, B, C) |
+| Status | string | Estado actual del espacio (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE) |
+| CurrentReservationId | int? | ID de la reserva activa asociada |
+| LastUpdated | DateTime | Última fecha y hora de actualización del estado |
+
+**Constructores:** Por parámetros individuales.  
+**Comandos relacionados:** `AssignSpaceCommand`, `UpdateSpaceStatusCommand`.
+
+---
+
+## IoTDevice
+Representa un dispositivo IoT ESP32 que controla los espacios.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del dispositivo |
+| Name | string | Nombre descriptivo del dispositivo (ESP32-Central) |
+| IPAddress | string | Dirección IP del dispositivo |
+| MacAddress | string | Dirección MAC del dispositivo |
+| IsConnected | bool | Indica si está conectado al sistema |
+| LastSync | DateTime | Última sincronización exitosa con la base de datos |
+
+**Constructores:** Por parámetros individuales.  
+**Comandos relacionados:** `ConnectIoTDeviceCommand`, `DisconnectIoTDeviceCommand`.
+
+---
+
+## Sensor
+Representa un sensor ultrasónico HC-SR04 asociado a un espacio.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del sensor |
+| ParkingSpaceId | int | ID del espacio al que pertenece |
+| LastDistance | double | Última medición de distancia del sensor |
+| State | string | Estado actual del sensor (ACTIVE, INACTIVE, ERROR) |
+| LastDetected | DateTime? | Fecha y hora del último vehículo detectado |
+
+**Constructores:** Por parámetros individuales.  
+**Comandos relacionados:** `UpdateSensorStateCommand`, `UpdateSensorDistanceCommand`.
+
+---
+
+## ArrivalEvent
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del evento |
+| ReservationId | int | ID de la reserva correspondiente |
+| ParkingSpaceId | int | Espacio donde se detectó el vehículo |
+| Timestamp | DateTime | Fecha y hora de detección |
+
+**Constructores:** Desde evento de sensor `VehicleDetectedEvent`.
+
+---
+
+## DepartureEvent
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del evento |
+| ReservationId | int | ID de la reserva correspondiente |
+| ParkingSpaceId | int | Espacio del que se retiró el vehículo |
+| Timestamp | DateTime | Fecha y hora de salida |
+
+**Constructores:** Desde evento de sensor `VehicleLeftEvent`.
+
+---
+
+## Comandos
+
+### ParkingSpace
+
+| Comando | Descripción |
+|---------|------------|
+| AssignSpaceCommand.cs | Asigna un espacio de estacionamiento a una reserva específica |
+| UpdateSpaceStatusCommand.cs | Actualiza el estado del espacio (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE) |
+
+### Sensor
+
+| Comando | Descripción |
+|---------|------------|
+| UpdateSensorStateCommand.cs | Actualiza el estado del sensor (ACTIVE, INACTIVE, ERROR) |
+| UpdateSensorDistanceCommand.cs | Actualiza la última distancia detectada por el sensor |
+
+### IoTDevice
+
+| Comando | Descripción |
+|---------|------------|
+| ConnectIoTDeviceCommand.cs | Registra la conexión de un ESP32 al sistema |
+| DisconnectIoTDeviceCommand.cs | Marca la desconexión del dispositivo |
+
+---
+
+## Queries
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| GetAllParkingSpacesQuery.cs | Lista todos los espacios y su estado actual |
+| GetParkingSpaceByIdQuery.cs | Obtiene un espacio específico por ID |
+| GetSensorByParkingSpaceIdQuery.cs | Obtiene sensor asociado a un espacio |
+| GetIoTDeviceStatusQuery.cs | Retorna estado actual del ESP32 central |
+
+---
+
+## Repositories (Interfaces)
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| IParkingSpaceRepository.cs | Define operaciones sobre espacios: FindById, FindAll, UpdateStatus |
+| ISensorRepository.cs | Operaciones sobre sensores: FindById, FindByParkingSpaceId, UpdateState |
+| IIoTDeviceRepository.cs | Operaciones sobre ESP32: FindById, UpdateConnectionStatus |
+
+---
+
+## ParkingSpace Services
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| IParkingSpaceCommandService.cs | Comandos de espacios: asignación y actualización de estado |
+| IParkingSpaceQueryService.cs | Consultas de espacios y estados actuales |
+
+---
+
+## Sensor Services
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| ISensorCommandService.cs | Comandos de sensores: actualización de estado y distancia |
+| ISensorQueryService.cs | Consultas de sensores por espacio o ID |
+
+---
+
+## IoTDevice Services
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| IIoTDeviceCommandService.cs | Comandos de ESP32: conexión y desconexión |
+| IIoTDeviceQueryService.cs | Consultas de estado del dispositivo |
+
+<br>
+
 #### 4.2.3.2. Interface Layer
 #### 4.2.3.3. Application Layer
 #### 4.2.3.4. Infrastructure Layer
