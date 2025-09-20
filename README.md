@@ -1276,7 +1276,7 @@ Imagen con resultado del Event Storming en relación a Notification Bounded Cont
 
 **Paso 1: Unstructured Exploration:** Comenzamos identificando todos los eventos de dominio que ocurren en el sistema SmartParking UPC. Durante esta fase, el equipo se enfocó en capturar eventos como "Usuario registrado en el sistema", "Espacio de estacionamiento detectado como ocupado", "Reserva confirmada exitosamente", "Sesión de estacionamiento iniciada", "Penalización aplicada por ausencia", entre otros. Cada evento fue documentado en post-its en Miro, considerando el flujo completo desde la perspectiva del usuario universitario hasta la gestión administrativa.  
 **Imagen de la Reunión:**  
-![Captura de pantalla de la reunión - Paso 1](./assets/img/Chapter-IV/meeting-step1.jpg)  
+![Captura de pantalla de la reunión - Paso 1](./assets/img/Chapter-IV/meeting-step1.png)  
 **Imagen ejemplo:**  
 ![image](./assets/img/Chapter-IV/Step%201_%20Unstructured%20Exploration.jpg)
 
@@ -1302,7 +1302,7 @@ Imagen con resultado del Event Storming en relación a Notification Bounded Cont
 
 **Paso 6: Policies:** Establecimos reglas de negocio automatizadas que se ejecutan sin intervención directa del usuario. Estas políticas incluyen la detección automática de vehículos mediante sensores ultrasónicos ESP32, la aplicación automática de penalizaciones cuando un usuario no se presenta a su reserva, la generación automática de alertas cuando un espacio permanece ocupado más tiempo del reservado, y la actualización automática de métricas de uso del sistema.  
 **Imagen de la reunión:**  
-![Captura de pantalla de la reunión - Paso 6](./assets/img/Chapter-IV/meeting-step6.jpg)  
+![Captura de pantalla de la reunión - Paso 6](./assets/img/Chapter-IV/meeting-step6.png)  
 **Imagen ejemplo:**  
 ![image](./assets/img/Chapter-IV/Step%206_%20Policies.jpg)
 
@@ -1312,15 +1312,21 @@ Imagen con resultado del Event Storming en relación a Notification Bounded Cont
 **Imagen ejemplo:**  
 ![image](./assets/img/Chapter-IV/Step%207_%20Read%20Models.jpg)
 
-**Paso 8: External Systems:** Identificamos los sistemas externos que interactúan con SmartParking pero no forman parte de su dominio core. Estos incluyen los sensores IoT ESP32 con sensores ultrasónicos, el sistema de notificaciones push para móviles, la base de datos de usuarios de la UPC, el sistema de correo electrónico institucional, y potenciales integraciones futuras con sistemas de pago o Active Directory de la universidad.  
+**Paso 8: External Systems:** Identificamos los sistemas externos que interactúan con SmartParking pero no forman parte de su dominio core. Estos incluyen los sensores IoT ESP32 con sensores ultrasónicos, el sistema de notificaciones push para móviles, la base de datos de usuarios de la UPC, el sistema de correo electrónico institucional, y potenciales integraciones futuras con sistemas de pago o Active Directory de la universidad.
+**Imagen de la Reunión:**  
+![Captura de pantalla de la reunión - Paso 8](./assets/img/Chapter-IV/meeting-step8.jpg)  
 **Imagen ejemplo:**  
 ![image](./assets/img/Chapter-IV/Step%208_%20External%20Systems.jpg)
 
 **Paso 9: Aggregates:** Agrupamos las entidades relacionadas en agregados que mantienen la consistencia de datos. Los agregados principales incluyen UserAccount (usuario y perfil), Reservation (reserva y sus estados), ParkingSpace (espacio físico y sensores asociados), TimeTrackingSession (sesión de estacionamiento y cronometraje), PenaltyRecord (registro de penalizaciones), y AnalyticsData (métricas y reportes).  
+**Imagen de la Reunión:**  
+![Captura de pantalla de la reunión - Paso 9](./assets/img/Chapter-IV/meeting-step9.jpg)
 **Imagen ejemplo:**  
 ![image](./assets/img/Chapter-IV/Step%209_%20Agreggates.jpg)
 
-**Paso 10: Bounded Context:** Agrupamos los agregados relacionados en contextos delimitados que representan áreas de responsabilidad específicas. Esto resultó en siete bounded contexts: Identity and Access Management (gestión de usuarios y autenticación), Reservation Management (gestión de reservas), Space & IoT Management (gestión de espacios y sensores), Time Tracking (cronometraje de sesiones), Penalty Management (gestión de penalizaciones), Analytics & Reporting (métricas y reportes), y Notification (sistema de notificaciones).  
+**Paso 10: Bounded Context:** Agrupamos los agregados relacionados en contextos delimitados que representan áreas de responsabilidad específicas. Esto resultó en siete bounded contexts: Identity and Access Management (gestión de usuarios y autenticación), Reservation Management (gestión de reservas), Space & IoT Management (gestión de espacios y sensores), Time Tracking (cronometraje de sesiones), Penalty Management (gestión de penalizaciones), Analytics & Reporting (métricas y reportes), y Notification (sistema de notificaciones).
+**Imagen de la Reunión:**  
+![Captura de pantalla de la reunión - Paso 7](./assets/img/Chapter-IV/meeting-step10.jpg)  
 **Imagen ejemplo:**  
 ![image](./assets/img/Chapter-IV/Step%2010_%20Bounded%20Context.jpg)
 
