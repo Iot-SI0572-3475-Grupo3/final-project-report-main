@@ -663,6 +663,23 @@ Sus necesidades principales son contar con un sistema automatizado que gestione 
 
 ## 2.5. Ubiquitous Language
 
+Esta sección presenta un glosario de términos y conceptos clave del dominio, definidos de manera precisa para evitar ambigüedades. Su objetivo es asegurar una comunicación clara y uniforme entre los miembros del equipo y los stakeholders.
+
+| Término (Inglés) | Término (Español)      | Definición                                                                                       |
+|------------------|-----------------------|-------------------------------------------------------------------------------------------------|
+| Parking Spot      | Espacio de estacionamiento | Lugar físico destinado al estacionamiento de un vehículo dentro del campus universitario.       |
+| Reservation       | Reserva               | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SafePark. |
+| Reservation Status | Estado de la reserva  | Condición actual de una reserva, por ejemplo: confirmada, pendiente, cancelada o expirada.     |
+| Arrival Time      | Hora de llegada       | Momento en el que el conductor debe llegar al espacio reservado antes de que se libere automáticamente. |
+| No-show           | No presentación       | Situación en la que un conductor no ocupa el espacio reservado dentro del tiempo límite establecido. |
+| Occupancy         | Ocupación             | Cantidad de espacios de estacionamiento actualmente ocupados en un área o lote específico.     |
+| IoT Sensor        | Sensor IoT            | Dispositivo que detecta la presencia de un vehículo en un espacio de estacionamiento y envía información en tiempo real al sistema. |
+| Dashboard         | Panel de administración | Interfaz web utilizada por los administradores para monitorear la ocupación, gestionar reservas y generar reportes. |
+| User App          | Aplicación móvil      | Plataforma usada por conductores para consultar disponibilidad, reservar espacios y recibir notificaciones. |
+| Auto-release      | Liberación automática | Función que libera un espacio reservado si no es ocupado por el conductor dentro del tiempo límite de llegada. |
+| Peak Hours        | Horas punta           | Intervalos de tiempo con mayor demanda de estacionamiento en el campus, generalmente al inicio y final de clases. |
+
+<br>
 
 # Capítulo III: Requirements Specification
 
