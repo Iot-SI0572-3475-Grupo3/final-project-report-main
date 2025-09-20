@@ -364,6 +364,8 @@ Nuestra misión es brindar un sistema de estacionamiento automatizado que integr
 | Ruiz Blas, Luciano Stefano           | U20211F978       | Ingeniería de Software |             |        |
 | Salgado Luna, Fernando Brian         | U202212023       | Ingeniería de Software | Soy Fernando Salgado, tengo 20 años y me apasiona la tecnología. Tengo experiencia en desarrollo frontend y backend, trabajando con lenguajes y tecnologías como Python, C++, C#, Java, HTML, CSS, JavaScript, MySQL, así como frameworks de frontend como Vue.js y Angular. Disfruto resolviendo problemas y buscando soluciones prácticas que contribuyan a los proyectos en los que participo. | |
 
+<br>
+
 ## 1.2. Solution Profile
 
 ### 1.2.1. Antecedentes y problemática
@@ -380,6 +382,7 @@ Nuestra misión es brindar un sistema de estacionamiento automatizado que integr
 | How?        | ¿Cómo se diferencia del estado óptimo?     | En un estado ideal, los usuarios encontrarían un espacio de forma rápida y ordenada, podrían planificar su estacionamiento sin incertidumbre y los administradores contarían con visibilidad en tiempo real. Actualmente, predominan las demoras, la desorganización y la falta de control operativo. |
 | How Much?   | ¿Cuál es la magnitud del problema?         | Los inconvenientes ocurren varias veces en un mismo día, especialmente en semanas de alta carga académica. A nivel mensual, se acumulan pérdidas significativas de tiempo para los usuarios e ineficiencias operativas para la universidad, convirtiéndose en un problema constante. |
 
+<br>
 
 ### 1.2.2. Lean UX Process
 
@@ -424,6 +427,8 @@ La estrategia se centra en combinar **sensores IoT** con **interfaces intuitivas
 
 **Segmento Inicial:**  
 El lanzamiento inicial se enfocará en **estacionamientos de campus universitarios**. Este segmento permitirá validar rápidamente la propuesta, mostrar beneficios tangibles en la operación, como reducción de la búsqueda de espacios y cumplimiento de tiempos de reserva y, a partir de allí, **escalar la solución hacia otros campus universitarios**.  
+
+<br>
 
 #### 1.2.2.2. Lean UX Assumptions
 
@@ -502,7 +507,9 @@ El lanzamiento inicial se enfocará en **estacionamientos de campus universitari
 - Los usuarios universitarios aceptarán la política de cancelación automática si se comunica con claridad en la app.  
 - Los administradores universitarios percibirán valor en la reducción de espacios ociosos y mayor control en tiempo real.  
 - El modelo de negocio enfocado en el valor agregado para la universidad será percibido como una inversión rentable.  
-- La integración de IoT y software será percibida como una mejora significativa en la experiencia del campus.  
+- La integración de IoT y software será percibida como una mejora significativa en la experiencia del campus.
+
+  <br>
 
 #### 1.2.2.3. Lean UX Hypothesis Statements.
 
@@ -543,11 +550,15 @@ Creemos que si la aplicación envía notificaciones claras y anticipadas sobre e
 esto logrará reducir la frustración de los usuarios y mejorar la aceptación de la política,  
 y lo sabremos cuando el **90% de los usuarios** confirme haber entendido las alertas y se reduzcan quejas por cancelaciones inesperadas.  
 
+<br>
+
 #### 1.2.2.4. Lean UX Canvas
 
 Se ha utilizado el Lean UX Canvas como una herramienta estratégica clave para estructurar y validar ágilmente el concepto del producto. Este enfoque permite al equipo identificar con claridad el problema de negocio, definir a los usuarios objetivo, formular hipótesis comprobables y diseñar los experimentos mínimos necesarios para aprender e iterar rápidamente sobre la solución. De esta manera, se reduce significativamente el riesgo de desarrollar funcionalidades que no generen un valor real para el usuario final.
 
 <img src="./assets/img/Chapter-I/lean-ux-canvas.png">
+
+<br>
 
 ## 1.3. Segmentos objetivo
 
@@ -563,7 +574,7 @@ Personal de **30 a 55 años** encargado de supervisar y gestionar los estacionam
 Su trabajo se ve afectado por **procesos manuales, errores y falta de visibilidad en tiempo real**.  
 Necesitan un sistema que **automatice el control, genere reportes y libere automáticamente los espacios no utilizados**, para mejorar la eficiencia y el aprovechamiento de los estacionamientos.  
 
-
+<br>
 
 
 # Capítulo II: Requirements Elicitation & Analysis
@@ -584,7 +595,25 @@ Necesitan un sistema que **automatice el control, genere reportes y libere autom
 
 ## 2.3. Needfinding
 
+Para comprender mejor cómo los usuarios interactuarán con nuestro producto, emplearemos herramientas como User Persona, User Task Matrix, User Journey Mapping y Empathy Mapping. Esto nos permitirá visualizar su experiencia de manera más clara y detallada. 
+
 ### 2.3.1. User Personas
+
+## Conductor Universitario
+
+<img src="./assets/img/Chapter-II/user-persona-conductores.png">
+
+El segmento de Conductor Universitario representa a estudiantes, docentes y personal administrativo que buscan optimizar su tiempo y reducir la incertidumbre al estacionar dentro del campus. Este perfil se caracteriza por su enfoque en la eficiencia, la planificación y el uso de soluciones tecnológicas confiables que faciliten la movilidad y organización diaria. Buscan una solución integral que permita consultar disponibilidad en tiempo real, reservar espacios con anticipación y recibir notificaciones claras sobre sus reservas. Este segmento tiene un perfil demográfico de 18 a 35 años, usuarios frecuentes de smartphones y laptops, que valoran interfaces intuitivas y rápidas, así como herramientas de coordinación digital como WhatsApp y correo institucional.
+
+<br>
+
+## Administrador de Estacionamiento
+
+<img src="./assets/img/Chapter-II/user-persona-administradores.png">
+
+El segmento de Administrador de Estacionamiento representa a profesionales responsables de supervisar y gestionar los estacionamientos universitarios, buscando eficiencia operativa, control centralizado y reducción de errores manuales. Este perfil valora tecnologías confiables que faciliten la automatización de reservas, liberación de espacios, generación de reportes y métricas en tiempo real, mejorando la gestión de su equipo y la experiencia de los usuarios. El rango demográfico es de 30 a 60 años, con formación en administración o gestión de operaciones, y usuarios frecuentes de laptops y smartphones, que requieren interfaces web intuitivas y paneles de control claros para una operación eficiente.
+
+<br>
 
 ### 2.3.2. User Task Matrix
 
