@@ -302,11 +302,11 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p>
         TB1:
         <p/>
-        Luciano Ruiz : Distribui tareas equitativas y por fortalezas de cada miembro del equipo. Además, proporcione apoyo a mis companeros de equipo en sus tareas para un mejor desenvolvimiento.
+        Luciano Ruiz: Distribui tareas equitativas y por fortalezas de cada miembro del equipo. Además, proporcione apoyo a mis companeros de equipo en sus tareas para un mejor desenvolvimiento.
         <p/>
         Fernando: 
         <p/>
-        Leonardo: 
+        Leonardo: A partir de la reunion de equipo, logre hacer mis partes del los capitulos I-III, además de explayar a fondo los Bounded Contexts de Time Tracking y Penalty Management.
         <p/>
         Carlos: 
         <p/>
@@ -322,11 +322,11 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
       <p>
         TB1:
         <p/>
-        Luciano Ruiz : Estableci los sprints, participe en el capitulo IV apoyando en la planificación de nuestra solución.
+        Luciano Ruiz: Estableci los sprints, participe en el capitulo IV apoyando en la planificación de nuestra solución.
         <p/>
         Fernando: 
         <p/>
-        Leonardo: 
+        Leonardo: Ayude en la elaboración del capitulo IV con los Bounded Contexts de Time Tracking y Penalty Management, y delimite el analisis competitivo, los journey e impact mappings y analisis de entrevistas
         <p/>
         Carlos: 
         <p/>
@@ -583,15 +583,318 @@ Necesitan un sistema que **automatice el control, genere reportes y libere autom
 
 ### 2.1.1. Análisis competitivo
 
+<table border="1" style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="6" style="text-align: center;">Competitive Analysis Landscape</th>
+        </tr>
+        <tr>
+            <td colspan="2">¿Por qué llevar a cabo este análisis?</td>
+            <td colspan="4">
+                Para dar a conocer a los competidores que se presentan en nuestra Startup.
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="text-align: center;">
+            <td colspan="2">Empresas</td>
+            <td><strong>SafePark</strong><br><img src="./assets/img/Chapter-II/safepark-logo.png"></td>
+            <td><strong>ParkSmart</strong><br><img src="./assets/img/Chapter-II/parksmart-logo.png"></td>
+            <td><strong>ParkingDoor</strong><br><img src="./assets/img/Chapter-II/parkingdoor-logo.png"></td>
+            <td><strong>Parkealo</strong><br><img src="./assets/img/Chapter-II/parkealo-logo.png"></td>
+        </tr>
+        <!-- Perfil -->
+        <tr>
+            <td rowspan="2" style="writing-mode: vertical-lr; text-align: center;">Perfil</td>
+            <td>Overview</td>
+            <td>Sistema IoT para reservas y gestión gratuita de estacionamientos universitarios.</td>
+            <td>Solución global de smart parking con sensores, cámaras y software para ciudades.</td>
+            <td>Control de accesos a estacionamientos mediante app y dispositivos IoT.</td>
+            <td>Plataforma local peruana de gestión integral de estacionamientos con app móvil y reportes.</td>
+        </tr>
+        <tr>
+            <td>¿Qué valor ofrece a los clientes?</td>
+            <td>Reserva gratuita, optimización académica y sostenibilidad en campus universitarios.</td>
+            <td>Amplia experiencia internacional en proyectos de smart cities.</td>
+            <td>Simplicidad en accesos inteligentes y gestión de permisos.</td>
+            <td>Conocimiento del contexto local y soporte en Perú.</td>
+        </tr>
+        <!-- Perfil de Marketing -->
+        <tr>
+            <td rowspan="2" style="writing-mode: vertical-lr; text-align: center;">Perfil de Marketing</td>
+            <td>Mercado objetivo</td>
+            <td>Universidades en Latinoamérica.</td>
+            <td>Gobiernos municipales, centros comerciales, aeropuertos.</td>
+            <td>Empresas, residencias y oficinas privadas.</td>
+            <td>Estacionamientos privados y públicos en Perú.</td>
+        </tr>
+        <tr>
+            <td>Estrategias de marketing</td>
+            <td>Convenios con universidades y asociaciones estudiantiles (B2B2C).</td>
+            <td>Alianzas con gobiernos y concesionarias.</td>
+            <td>Promoción a través de inmobiliarias y comunidades.</td>
+            <td>Marketing digital local y convenios con estacionamientos.</td>
+        </tr>
+        <!-- Perfil de Producto -->
+        <tr>
+            <td rowspan="3" style="writing-mode: vertical-lr; text-align: center;">Perfil de Producto</td>
+            <td>Productos & Servicios</td>
+            <td>Sensores IoT, reservas anticipadas, notificaciones, panel web.</td>
+            <td>Sensores, cámaras, software de control de ocupación y pagos.</td>
+            <td>App, controladores IoT de acceso, llaves digitales.</td>
+            <td>App con mapa de estacionamientos, reservas y pagos.</td>
+        </tr>
+        <tr>
+            <td>Precios & Costos</td>
+            <td>Modelo de suscripción mensual a universidades.</td>
+            <td>Costos elevados, modelo SaaS con hardware.</td>
+            <td>Pago por dispositivo y suscripción mensual.</td>
+            <td>Comisiones por transacción a usuarios y estacionamientos.</td>
+        </tr>
+        <tr>
+            <td>Canales de distribución (Web o móvil)</td>
+            <td>App móvil y web, alianzas con universidades.</td>
+            <td>App, web, integraciones con ciudades inteligentes.</td>
+            <td>App móvil, hardware instalado.</td>
+            <td>Web, app móvil, soporte técnico local.</td>
+        </tr>
+        <!-- SWOT -->
+        <tr>
+            <td rowspan="4" style="writing-mode: vertical-lr; text-align: center;">Análisis SWOT</td>
+            <td>Fortalezas</td>
+            <td>Especialización en campus universitarios, bajo costo para usuarios.</td>
+            <td>Experiencia internacional y soporte tecnológico.</td>
+            <td>Seguridad y simplicidad en accesos.</td>
+            <td>Conocimiento del mercado local.</td>
+        </tr>
+        <tr>
+            <td>Debilidades</td>
+            <td>Mercado inicial limitado a universidades.</td>
+            <td>Costos altos, difícil de implementar en entornos pequeños.</td>
+            <td>No orientado a espacios públicos.</td>
+            <td>Cobertura geográfica reducida.</td>
+        </tr>
+        <tr>
+            <td>Oportunidades</td>
+            <td>Escalar a otras ciudades y campus corporativos.</td>
+            <td>Creciente interés en ciudades inteligentes.</td>
+            <td>Incremento de condominios y oficinas privadas.</td>
+            <td>Expansión nacional.</td>
+        </tr>
+        <tr>
+            <td>Amenazas</td>
+            <td>Entrada de competidores globales al segmento educativo.</td>
+            <td>Competencia de startups más ágiles.</td>
+            <td>Limitada escalabilidad en espacios públicos.</td>
+            <td>Competencia de soluciones globales más avanzadas.</td>
+        </tr>
+    </tbody>
+</table>
+
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+**A) Diferenciación de Servicios**  
+SafePark se posicionará como la solución más especializada para el ámbito universitario, ofreciendo reservas gratuitas anticipadas, notificaciones inteligentes y liberación automática de espacios no utilizados. A diferencia de competidores como **ParkSmart** o **ParkingDoor**, SafePark no requiere grandes inversiones en hardware ni se limita únicamente al acceso, sino que integra la experiencia completa de gestión y uso en campus.
+
+**B) Calidad Constante**  
+La confiabilidad del sistema será un diferenciador frente a alternativas locales como **Parkealo**. SafePark implementará pilotos en universidades peruanas para validar métricas de ahorro de tiempo y mejora en la rotación de espacios. A partir de los resultados y del feedback de los usuarios, se aplicarán actualizaciones periódicas que garanticen un sistema robusto y en evolución continua.
+
+**C) Servicio al Cliente de Calidad**  
+El soporte será un punto clave frente a soluciones internacionales. SafePark ofrecerá atención personalizada en español, capacitación a administradores universitarios y un canal directo de soporte 24/7. Esto garantizará que tanto los estudiantes como los gestores del campus puedan utilizar el sistema desde el primer día sin fricciones, aumentando la satisfacción y la adopción.
+
+**D) Alianzas Estratégicas**  
+SafePark buscará convenios con universidades, asociaciones estudiantiles y entidades educativas para acelerar la implementación en campus. Asimismo, establecerá acuerdos con empresas locales de tecnología IoT para reducir costos de hardware y asegurar la escalabilidad. Estas alianzas permitirán a SafePark diferenciarse de competidores como **Parkealo**, que se enfocan en un mercado más comercial, al consolidarse como el referente en soluciones de movilidad universitaria.
 
 ## 2.2. Entrevistas
 
 ### 2.2.1. Diseño de entrevistas
 
+En esta sección se presentarán las preguntas empleadas en las entrevistas, incluyendo tanto las de carácter general aplicables a todos los segmentos objetivo, como aquellas diseñadas específicamente para cada grupo en particular.
+
+**Preguntas generales**
+
+- ¿Qué dispositivo tecnológico usas con más frecuencia en tu día a día (celular, laptop, tablet)?
+- ¿Qué navegador web usas con mayor frecuencia?
+- ¿Cuáles son los canales de interacción que más utilizas (WhatsApp, correo, llamadas, apps móviles, etc.)?
+- ¿Cómo describes tu personalidad en pocas palabras?
+- ¿Presentas alguna frustración en tu trabajo/rutina universitaria relacionada con la movilidad o el tiempo?
+- ¿Cómo se llama el distrito donde resides actualmente?
+
+**Preguntas Segmento 1: Conductores universitarios**
+
+- ¿Con qué frecuencia utilizas los estacionamientos de la universidad?
+- En promedio, ¿cuánto tiempo tardas en encontrar un espacio disponible para estacionar?
+- ¿Cuál es el mayor inconveniente que enfrentas al buscar estacionamiento en horas punta?
+- ¿Qué tan útil te resultaría poder reservar un espacio antes de llegar al campus?
+- ¿Qué opinas de que las reservas tengan un límite de 30 minutos para llegar antes de liberarse?
+- ¿Aceptarías recibir notificaciones en tu celular sobre disponibilidad, vencimiento de reservas o recordatorios?
+- ¿Qué características te parecen más valiosas en una aplicación de estacionamiento (ejemplo: rapidez, gratuidad, facilidad de uso, confiabilidad)?
+- ¿Qué mejoras propondrías para que un sistema de estacionamiento inteligente se adapte mejor a tus necesidades?
+
+**Preguntas Segmento 2: Administradores**
+
+- ¿Cómo gestionas actualmente la ocupación de los estacionamientos en el campus?
+- ¿Qué problemas principales enfrentas en la administración de los espacios (errores manuales, quejas, falta de control, etc.)?
+- ¿Qué tan difícil es controlar la rotación de vehículos en horarios de mayor demanda?
+- ¿Qué beneficios esperas de un sistema automatizado de control de estacionamientos?
+- ¿Qué opinas de implementar un sistema que libere automáticamente los espacios reservados no utilizados?
+- ¿Qué tan útil sería contar con un panel web que muestre en tiempo real la ocupación y genere reportes automáticos?
+- ¿Qué barreras crees que podrían surgir al implementar un sistema inteligente de reservas (resistencia de usuarios, falta de infraestructura, costos)?
+- ¿Qué indicadores te ayudarían a evaluar si un sistema como SafePark realmente mejora la eficiencia operativa del estacionamiento?
+
 ### 2.2.2. Registro de entrevistas
+A continuación, se registraron todas las entrevistas realizadas para nuestra solución, categorizadas según su segmento objetivo, y con un resumen que destaca las características y críticas realizadas sobre nuestro proyecto.
+
+**Entrevista 01 (Administradores)**
+
+URL del Vídeo: 
+
+Nombres: Maricarmen  
+Apellidos: Tejada  
+Edad: 60  
+Sexo: Femenino  
+Ocupación: Administradora de Servicios Generales – Gestión de Estacionamientos  
+Lugar donde vive: San Miguel, Lima  
+Duración de la entrevista: 22:12 – 29:46
+
+Personalidad: Responsable, organizada y práctica
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/admin-maricarmen.png" alt="Administradora Maricarmen Tejada" width="100%" />
+</div><br>
+
+En resumen, Maricarmen Tejada es administradora de servicios generales en el campus universitario de San Miguel, con más de 12 años de experiencia gestionando estacionamientos y coordinando a su equipo de vigilantes y personal de control de accesos.  
+Utiliza principalmente **laptop** para correos, reportes y hojas de cálculo, pero también el **celular** para coordinar por WhatsApp. Su navegador habitual es **Google Chrome**, con uso ocasional de Edge. Los **canales de comunicación** que más emplea son el **correo institucional**, **WhatsApp** y, para reuniones, Microsoft Teams.
+
+Maricarmen experimenta una **alta frustración** por la congestión en horas pico, ya que debe atender simultáneamente múltiples quejas, lo que interrumpe sus labores. Actualmente la **gestión de ocupación es manual**, basada en conteos y reportes del personal de seguridad. Los principales problemas que identifica son **errores humanos**, **quejas de usuarios** y **falta de información en tiempo real**.
+
+Considera que un **sistema automatizado** brindaría gran valor al permitir **visibilidad inmediata de la ocupación**, reducción de la carga de trabajo del equipo y una mejor experiencia para los usuarios. Apoya la idea de **liberar automáticamente las reservas no utilizadas** y cree fundamental contar con un **panel web en tiempo real** que genere reportes semanales o mensuales para la toma de decisiones. Señala posibles barreras como **resistencia inicial de algunos usuarios**, **costos de implementación** y la necesidad de **soporte técnico continuo**. Finalmente, propone indicadores de éxito como el **tiempo promedio de búsqueda de estacionamiento**, la **rotación de espacios**, el **nivel de ocupación en horas pico** y la **reducción de quejas**.
+<br><br>
+
 
 ### 2.2.3. Análisis de entrevistas
+
+Con el fin de analizar las entrevistas realizadas a **conductores universitarios** y **administradores de estacionamientos**, se recopilaron las respuestas en un formulario de Google. A continuación, se presenta un resumen de los resultados más relevantes acompañados de los gráficos obtenidos.
+
+<h4>Preguntas generales</h4>
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis1.png" alt="Navegador y dispositivo preferido" width="70%" />
+</div>
+
+En cuanto a dispositivos, predominan el **celular** y la **laptop**, confirmando que los usuarios acceden a herramientas digitales principalmente desde entornos móviles.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis2.png" alt="Navegador y dispositivo preferido" width="70%" />
+</div>
+
+La mayoría de los entrevistados utiliza **Google Chrome** como navegador principal, aunque se hace mención a **Safari**.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis3.png" alt="Navegador y dispositivo preferido" width="70%" />
+</div>
+Los canales de interacción más comunes son **WhatsApp**, **correo electrónico** y **llamadas**, con pequeña valoración de **apps móviles**.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis4.png" alt="Navegador y dispositivo preferido" width="70%" />
+</div>
+En la escala de frustración por problemas de movilidad o tiempo, la mayoría de los conductores reportan un nivel **4**, mientras que otros tienen un nivel **3 y 5**, evidenciando molestias constantes en su rutina universitaria.
+
+
+<h4>Análisis segmento Conductores Universitarios</h4>
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni1.png" alt="Frecuencia de uso del estacionamiento" width="70%" />
+</div>
+
+La mayoría utiliza el estacionamiento **todos los dias**, seguido de quienes lo usan **3–4 veces por semana**.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni2.png" alt="Tiempo promedio para encontrar estacionamiento" width="70%" />
+</div>
+
+El **tiempo de búsqueda de un espacio** se concentra entre **10 y 20 minutos**, con casos que superan los 20 minutos en horas pico.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni3.png" alt="Principales inconvenientes" width="70%" />
+</div>
+
+Los principales inconvenientes son la **falta de espacios disponibles**, la **demora en encontrar lugar** y el **estrés** asociado.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni4.png" alt="Utilidad de reservar espacios" width="70%" />
+</div>
+
+La idea de **reservar un espacio antes de llegar al campus** se valora con puntajes de **4 y 5**, considerándola muy útil.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni5.png" alt="Opinión sobre límite de 30 min" width="70%" />
+</div>
+
+Respecto al **límite de 30 minutos para liberar reservas**, la mayoría lo considera **adecuado** (3–5).
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni6.png" alt="Características más valoradas en la app" width="70%" />
+</div>
+
+Las características más valoradas en una app de estacionamiento son **rapidez**, **facilidad de uso** y **confiabilidad**, con la **gratuidad** como valor agregado.
+
+
+<h4>Análisis segmento Administradores</h4>
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin1.png" alt="Método de gestión de ocupación" width="70%" />
+</div>
+
+Casi todos los administradores, gestionan la ocupación de forma **manual**, mediante observación y reportes del personal de seguridad. Mientras que solo uno maneja la gestión con un software básico.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin2.png" alt="Problemas principales" width="70%" />
+</div>
+
+Los problemas más frecuentes son **errores manuales**, **quejas de usuarios** y **falta de control**.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin3.png" alt="Dificultad de controlar la rotación" width="70%" />
+</div>
+
+Controlar la **rotación de vehículos en horas pico** se califica entre **3, 4 y 5**, reflejando la alta dificultad.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin4.png" alt="Beneficios esperados de un sistema automatizado" width="70%" />
+</div>
+
+De los beneficios esperados del sistema, el que más se espera es el de **Mayor Control**, seguido de la optimización de tiempos, la reducción de erroes y una mejor experiencia de usuario.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin5.png" alt="Opinión sobre liberación automática" width="70%" />
+</div>
+
+La idea de **liberar automáticamente los espacios reservados no utilizados** obtiene una valoración **muy alta (5/5)**.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin6.png" alt="Utilidad de un panel web en tiempo real" width="70%" />
+</div>
+
+Contar con un **panel web en tiempo real** para monitoreo y reportes automáticos es considerado **fundamental**, con puntajes de **5/5**.
+
+### Hallazgos clave
+
+- **Conductores**  
+  - Alta frustración (4–5) por la demora en encontrar estacionamiento.  
+  - Ven muy útil la opción de **reservar espacios con antelación**.  
+  - Valoran rapidez, facilidad y confiabilidad en una app de estacionamiento.
+
+- **Administradores**  
+  - Gestión actual **100 % manual**, dependiente de reportes del personal.  
+  - Necesitan visibilidad **en tiempo real** y reducción de errores humanos.  
+  - Alta disposición a sistemas que **liberen espacios automáticamente** y generen reportes automáticos.
+
+- **Conclusión General**  
+  Conductores y administradores coinciden en la necesidad de una **plataforma centralizada y automatizada** que reduzca la congestión, optimice la rotación de vehículos y ofrezca una experiencia eficiente para todos los usuarios.
+
+
 
 ## 2.3. Needfinding
 
@@ -616,7 +919,6 @@ El segmento de Administrador de Estacionamiento representa a profesionales respo
 <br>
 
 ### 2.3.2. User Task Matrix
-
 En esta sección se muestra la User Task Matrix, que permite identificar las tareas más importantes y frecuentes de los usuarios de SafePark: conductores universitarios y administradores de estacionamientos. La matriz ayuda a comparar sus actividades, destacando similitudes y diferencias en frecuencia e importancia. Este análisis, basado en los User Personas, permite comprender mejor sus necesidades y desafíos, enfocando el diseño de SafePark en funciones que optimicen la experiencia de los conductores y faciliten la gestión eficiente de los administradores.
 
 | Task | Conductores universitarios (Frecuencia / Importancia) | Administradores (Frecuencia / Importancia) |
@@ -633,7 +935,41 @@ En esta sección se muestra la User Task Matrix, que permite identificar las tar
 
 <br>
 
-### 2.3.3. User Journey Mapping
+### 2.3.3. User Journey Mapping  
+
+En esta sección se presentan los **User Journey Mapping** de los dos perfiles de usuario principales, resaltando las etapas clave de interacción con **SafePark**, los puntos de contacto, así como las emociones y experiencias que viven en cada fase. El objetivo es identificar oportunidades de mejora para optimizar su experiencia.  
+
+__User Journey Map – Manuel Rojas – Conductor Universitario (As-Is)__  
+
+__Inicio de la mañana:__ Manuel se alista para sus clases y piensa en el tiempo que le tomará encontrar estacionamiento en el campus. Siente **ansiedad** porque en días de alta demanda suele dar varias vueltas antes de hallar un espacio.  
+
+__Camino a la universidad:__ Durante el trayecto revisa, sin éxito, si hay información en tiempo real sobre espacios libres. La **frustración** aumenta porque no cuenta con una app que le avise.  
+
+__Búsqueda de estacionamiento:__ Llega al campus y recorre el estacionamiento esperando encontrar un lugar. Experimenta **estrés** y **apuro** por no llegar tarde a su primera clase.  
+
+__Estacionamiento y asistencia a clases:__ Finalmente encuentra un espacio tras varios minutos. Se siente **aliviado**, aunque sabe que el proceso fue poco eficiente.  
+
+__Salida del campus:__ Al retirarse, piensa en lo útil que sería una aplicación que permita **reservar** o recibir **alertas en tiempo real**. Termina el día con **expectativa** de una futura solución tecnológica.  
+
+<div style="text-align: center;">
+  <img src="assets/img/Chapter-II/journey-conductor.png" alt="Journey Map Conductor" width="70%" />
+</div><br>
+
+__User Journey Map – Maricarmen Tejada – Administradora de Estacionamiento (As-Is)__  
+
+__Inicio de la jornada:__ Maricarmen comienza su día revisando manualmente el registro de espacios disponibles. Siente **presión** porque debe garantizar un flujo adecuado de vehículos sin errores.  
+
+__Control de ocupación:__ Atiende llamadas y mensajes de personal de seguridad para conocer la disponibilidad en tiempo real. La falta de un panel centralizado le genera **estrés** y posibles **confusiones**.  
+
+__Atención a incidencias:__ Se comunica con guardias y estudiantes cuando surgen reclamos o problemas de estacionamiento. Vive momentos de **tensión** por la dificultad de coordinar rápidamente.  
+
+__Elaboración de reportes:__ Al final del turno, recopila datos en hojas de cálculo para entregar un informe de ocupación. Esta tarea es **tediosa** y consume demasiado tiempo.  
+
+__Cierre del día:__ Revisa que todo quede en orden para el siguiente turno, pero se siente **agotada** y con la expectativa de contar con una herramienta que permita automatizar reservas, alertas y reportes.  
+
+<div style="text-align: center;">
+  <img src="assets/img/Chapter-II/journey-admin.png" alt="Journey Map Admin" width="70%" />
+</div> 
 
 ### 2.3.4. Empathy Mapping
 
@@ -661,14 +997,44 @@ Sus necesidades principales son contar con un sistema automatizado que gestione 
 
 ## 2.4. Big Picture EventStorming
 
-## 2.5. Ubiquitous Language
+## 2.5. Ubiquitous Language  
+
+Esta sección presenta un glosario de términos y conceptos clave del dominio, definidos de manera precisa para evitar ambigüedades. Su objetivo es asegurar una comunicación clara y uniforme entre los miembros del equipo y los stakeholders.  
+
+| Término (Inglés)    | Término (Español)        | Definición |
+|---------------------|--------------------------|------------|
+| **Parking Spot**    | Espacio de estacionamiento | Lugar físico destinado al estacionamiento de un vehículo dentro del campus universitario. |
+| **Reservation**     | Reserva                  | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SafePark. |
+| **Reservation Status** | Estado de la reserva   | Condición actual de una reserva, por ejemplo: confirmada, pendiente, cancelada o expirada. |
+| **Arrival Time**    | Hora de llegada          | Momento en el que el conductor debe llegar al espacio reservado antes de que se libere automáticamente. |
+| **No-show**         | No presentación          | Situación en la que un conductor no ocupa el espacio reservado dentro del tiempo límite establecido. |
+| **Occupancy**       | Ocupación                | Cantidad de espacios de estacionamiento actualmente ocupados en un área o lote específico. |
+| **IoT Sensor**      | Sensor IoT               | Dispositivo que detecta la presencia de un vehículo en un espacio de estacionamiento y envía información en tiempo real al sistema. |
+| **Dashboard**       | Panel de administración  | Interfaz web utilizada por los administradores para monitorear la ocupación, gestionar reservas y generar reportes. |
+| **User App**        | Aplicación móvil         | Plataforma usada por conductores para consultar disponibilidad, reservar espacios y recibir notificaciones. |
+| **Auto-release**    | Liberación automática    | Función que libera un espacio reservado si no es ocupado por el conductor dentro del tiempo límite de llegada. |
+| **Peak Hours**      | Horas punta             | Intervalos de tiempo con mayor demanda de estacionamiento en el campus, generalmente al inicio y final de clases. |
 
 
 # Capítulo III: Requirements Specification
 
 ## 3.1. User Stories
 
-## 3.2. Impact Mapping
+## 3.2. Impact Mapping  
+
+En el desarrollo de nuestro proyecto, aplicamos la metodología **Impact Mapping** como herramienta estratégica para asegurar que cada funcionalidad de **SafePark** se alinee con los objetivos de negocio y con las verdaderas necesidades de nuestros usuarios. Esta técnica permitió identificar con claridad qué queremos lograr, quiénes son los actores clave, cómo pueden influir en el resultado y qué acciones priorizar, evitando invertir recursos en características que no aporten valor directo.  
+
+__Business goal:__  
+Reducir en 30% el tiempo de búsqueda de estacionamiento en 3 meses
+<div style="text-align: center;">
+  <img src="assets/img/Chapter-III/impact-map-conductor.png" alt="Impact Map – Manuel (Conductor Universitario)" width="90%" />
+</div>  
+
+__Business goal:__  
+Incrementar en 25% la rotación de espacios en 6 meses mediante liberación automática de reservas no utilizadas.
+<div style="text-align: center;">
+  <img src="assets/img/Chapter-III/impact-map-admin.png" alt="Impact Map – Maricarmen (Administradora de Estacionamiento)" width="90%" />
+</div>  
 
 ## 3.3. Product Backlog
 
@@ -1498,24 +1864,402 @@ URL Vertabelo para apreciar mejor el diagrama de base de datos IAM: <a href="htt
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
 ### 4.2.4. Bounded Context: Time Tracking
-#### 4.2.4.1. Domain Layer
-#### 4.2.4.2. Interface Layer
-#### 4.2.4.3. Application Layer
-#### 4.2.4.4. Infrastructure Layer
-#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
-#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+El **Bounded Context Time Tracking** registra y gestiona el tiempo de uso de los espacios de estacionamiento sin límites temporales.  
+Su objetivo es iniciar, detener y calcular la duración de cada sesión de estacionamiento a partir de los eventos de llegada y salida enviados por el **Space & IoT Management**.  
+Los datos generados se utilizan para métricas, reportes y, eventualmente, procesos de facturación o penalización.
+
+#### 4.2.4.1. Domain Layer.
+
+Agregados y Entidades del Dominio **Time Tracking** en nuestra Web/Mobile Application.
+
+En la carpeta `domain` dentro de este Bounded Context se definen las entidades, agregados y servicios de dominio que encapsulan la lógica de negocio principal.
+
+##### TimeSession
+Representa una sesión de tiempo de uso de un espacio de estacionamiento.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único de la sesión |
+| UserId | int | ID del usuario que ocupa el espacio |
+| ParkingSpaceId | int | ID del espacio de estacionamiento utilizado |
+| StartTime | DateTime | Fecha y hora de inicio |
+| EndTime | DateTime? | Fecha y hora de finalización (puede ser nulo mientras la sesión está activa) |
+| Duration | TimeSpan? | Duración total calculada cuando la sesión termina |
+| Status | string | Estado de la sesión (ACTIVE, COMPLETED, CANCELLED) |
+
+**Constructores**  
+- Por parámetros individuales  
+- A partir de `StartTimerCommand` y `StopTimerCommand`
+
+##### Timer
+Entidad que representa el cronómetro interno de la sesión.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único del cronómetro |
+| TimeSessionId | int | Relación con la sesión de tiempo |
+| StartTick | DateTime | Momento exacto en que se inició |
+| StopTick | DateTime? | Momento exacto en que se detuvo |
+| Elapsed | TimeSpan? | Tiempo transcurrido |
+
+**Constructores**  
+- Por parámetros individuales  
+- Desde evento `TimerStartedEvent` y `TimerStoppedEvent`
+
+##### TimeRecord
+Registro histórico de uso de un espacio, derivado de una sesión completada.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único |
+| UserId | int | ID del usuario |
+| ParkingSpaceId | int | ID del espacio |
+| Duration | TimeSpan | Duración final |
+| DateRecorded | DateTime | Fecha de registro del historial |
+
+##### DurationCalculator (Domain Service)
+Servicio de dominio que encapsula la lógica para calcular la duración de una sesión.
+
+**Métodos**  
+- `Calculate(TimeSession session): TimeSpan`
+
+**Comandos**
+
+| Comando | Descripción |
+|---------|------------|
+| StartTimerCommand.cs | Inicia una nueva sesión de tiempo al recibir evento de llegada |
+| StopTimerCommand.cs | Detiene la sesión al recibir evento de salida |
+| CalculateDurationCommand.cs | Calcula la duración total de la sesión y actualiza el registro |
+
+**Queries**
+
+| Archivo | Descripción |
+|---------|------------|
+| GetActiveSessionByUserQuery.cs | Obtiene la sesión activa de un usuario |
+| GetTimeHistoryByUserQuery.cs | Lista histórico de tiempos de un usuario |
+| GetSpaceUsageQuery.cs | Devuelve uso de tiempo por espacio |
+
+**Repositories (Interfaces)**
+
+| Archivo | Descripción |
+|---------|------------|
+| ITimeSessionRepository.cs | Operaciones CRUD y búsqueda por usuario o espacio |
+| ITimeRecordRepository.cs | Persistencia de registros históricos |
+| ITimerRepository.cs | Persistencia de cronómetros activos |
+
+**Domain Services**
+
+| Archivo | Descripción |
+|---------|------------|
+| ITimeTrackingCommandService.cs | Comandos: iniciar, detener, calcular duración |
+| ITimeTrackingQueryService.cs | Consultas: historial, sesiones activas |
+
+#### 4.2.4.2. Interface Layer.
+
+Interface Layer – Presentación de la Aplicación.
+
+Esta capa expone los endpoints REST y transforma las solicitudes HTTP en comandos/queries para la capa de aplicación.
+
+**Resources**
+
+| Archivo | Función |
+|---------|--------|
+| StartTimerResource.cs | Recibe datos para iniciar cronómetro (UserId, ParkingSpaceId) |
+| StopTimerResource.cs | Recibe datos para detener cronómetro |
+| TimeSessionResource.cs | Devuelve información de una sesión (inicio, fin, duración) |
+| TimeRecordResource.cs | Devuelve información histórica de uso |
+
+**Transform/Assemblers**
+
+| Archivo | Función |
+|---------|--------|
+| StartTimerCommandFromResourceAssembler.cs | Convierte StartTimerResource en StartTimerCommand |
+| StopTimerCommandFromResourceAssembler.cs | Convierte StopTimerResource en StopTimerCommand |
+| TimeSessionResourceFromEntityAssembler.cs | Convierte entidad TimeSession en TimeSessionResource |
+| TimeRecordResourceFromEntityAssembler.cs | Convierte entidad TimeRecord en TimeRecordResource |
+
+**Controllers**
+
+| Controlador | Ruta base típica | Responsabilidad principal |
+|-------------|------------------|--------------------------|
+| TimeTrackingController.cs | /api/timetracking | Gestiona el inicio/detención de cronómetros y consulta de sesiones activas |
+| TimeHistoryController.cs | /api/timetracking/history | Expone el historial de uso de tiempo por usuario o espacio |
+
+#### 4.2.4.3. Application Layer.
+
+Servicios de Aplicación – Gestión de Flujos de Negocio.
+
+**Command Services**
+
+| Clase | Descripción |
+|-------|------------|
+| TimeTrackingCommandService.cs | Maneja inicio, detención y cálculo de duración de una sesión; utiliza `TimeSession` y `Timer`. |
+
+**Query Services**
+
+| Clase | Descripción |
+|-------|------------|
+| TimeTrackingQueryService.cs | Devuelve información de sesiones activas, histórico de tiempo por usuario o por espacio. |
+
+**Eventos clave**
+
+- ✅ **Timer Started Event**: Se dispara cuando el Space & IoT Management detecta llegada.  
+- ✅ **Timer Stopped Event**: Se dispara cuando se detecta salida.  
+- ✅ **Duration Calculated Event**: Calcula y persiste la duración final en `TimeRecord`.  
+- ✅ **Session Expired Event** (opcional): Maneja sesiones que no fueron cerradas correctamente.
+
+#### 4.2.4.4. Infrastructure Layer.
+
+Implementación de Repositories y adaptadores externos.
+
+| Clase | Interfaz Implementada | Función Principal |
+|-------|----------------------|------------------|
+| TimeSessionRepository.cs | ITimeSessionRepository | Persiste y consulta sesiones de tiempo en la base de datos relacional (PostgreSQL/MySQL). |
+| TimeRecordRepository.cs | ITimeRecordRepository | Persiste registros históricos para análisis posteriores. |
+| TimerRepository.cs | ITimerRepository | Gestiona datos de cronómetros en curso. |
+| TimeTrackingEventPublisher.cs | — | Publica eventos de inicio/detención a otros contextos (por ejemplo, Analytics & Reporting). |
+| RealTimeDisplayAdapter.cs | — | Actualiza pantallas o notificaciones en vivo para el usuario. |
+
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams  
+
+En el diagrama de componentes del contexto **Time Tracking** se observa la interacción del usuario con el servicio para iniciar y finalizar sesiones de tiempo, además de las dependencias entre controladores, servicios de aplicación, agregados de dominio y repositorios.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/time-component-c4.png" alt="Time Tracking Component C4" width="90%" />
+</div><br>
+
+URL Structurizr: https://structurizr.com/share/102034
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams  
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams  
+
+El siguiente diagrama de clases muestra las entidades, servicios de dominio, interfaces de repositorio y sus relaciones que conforman el **bounded context Time Tracking**. Incluye las clases **TimeSession**, **Timer**, **TimeRecord**, el servicio de dominio **DurationCalculator** y las interfaces de repositorios que garantizan la persistencia.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/time-diagramclass.png" alt="Time Tracking Domain Layer Class Diagram" width="90%" />
+</div><br>
+
+Link: https://lucid.app/lucidchart/12a7e0a9-9b1c-48d8-a6dd-ab1b1fdc7d9c/edit?viewport_loc=-456%2C-116%2C2232%2C1049%2CHWEp-vi-RSFO&invitationId=inv_c243830e-22c1-42ae-a345-cae63204a020
+
+##### 4.2.4.6.2. Bounded Context Database Design Diagram  
+
+El diagrama entidad-relación (ERD) de la base de datos para **Time Tracking** presenta las tablas **TimeSessions**, **Timers** y **TimeRecords**, junto con sus llaves primarias, foráneas y restricciones, reflejando la persistencia de sesiones, cronómetros y registros históricos.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/time-database.png" alt="Time Tracking Database Design Diagram" width="90%" />
+</div><br>
 
 ### 4.2.5. Bounded Context: Penalty Management
-#### 4.2.5.1. Domain Layer
-#### 4.2.5.2. Interface Layer
-#### 4.2.5.3. Application Layer
-#### 4.2.5.4. Infrastructure Layer
-#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
-#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.5.6.2. Bounded Context Database Design Diagram
+
+El **Bounded Context Penalty Management** administra el sistema de penalizaciones “3 Strikes” configurable basado en **ausencias automáticas**, sin intervención manual.  
+Su objetivo es detectar usuarios que no se presenten en el estacionamiento dentro de la ventana configurada, acumular “strikes” y aplicar suspensiones temporales, enviando advertencias y reactivaciones según las reglas de negocio.
+
+#### 4.2.5.1. Domain Layer.
+
+Agregados y Entidades del Dominio **Penalty Management** en nuestra Web/Mobile Application.
+
+En la carpeta `domain` de este Bounded Context se encuentran las clases principales que encapsulan la lógica de negocio para la detección de ausencias, emisión de advertencias y suspensión de usuarios.
+
+##### Absence
+Representa una ausencia registrada cuando un usuario no llega en el tiempo establecido.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único de la ausencia |
+| UserId | int | ID del usuario ausente |
+| ReservationId | int | ID de la reserva no utilizada |
+| DetectedAt | DateTime | Fecha y hora en que se detectó la ausencia |
+
+**Constructores**  
+- Por parámetros individuales  
+- Desde `RegisterAbsenceCommand`
+
+##### AbsenceCounter
+Contador de ausencias acumuladas por usuario.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador del contador |
+| UserId | int | ID del usuario |
+| StrikeCount | int | Número de ausencias registradas |
+| MaxStrikes | int | Límite de strikes configurable (2–5) |
+| LastUpdated | DateTime | Última fecha de actualización |
+
+**Métodos de dominio**  
+- `IncrementStrike()` – Incrementa el número de ausencias.  
+- `ResetCounter()` – Reinicia el contador tras suspensión.
+
+##### Suspension
+Entidad que representa la suspensión de un usuario por alcanzar el máximo de strikes.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único |
+| UserId | int | ID del usuario suspendido |
+| StartDate | DateTime | Fecha de inicio de la suspensión |
+| EndDate | DateTime | Fecha de reactivación automática |
+| Status | string | Estado (ACTIVE, COMPLETED) |
+
+**Métodos de dominio**  
+- `Activate()` – Activa suspensión.  
+- `Complete()` – Marca la suspensión como finalizada.
+
+##### Warning
+Advertencia emitida antes de la suspensión.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| Id | int | Identificador único |
+| UserId | int | ID del usuario |
+| Message | string | Mensaje de advertencia |
+| CreatedAt | DateTime | Fecha de emisión |
+
+##### PenaltyRules (Value Object)
+Objeto de valor que define las reglas de penalización configurables.
+
+| Atributo | Tipo | Descripción |
+|----------|------|------------|
+| MaxStrikes | int | Límite de ausencias antes de suspensión |
+| SuspensionDays | int | Días de suspensión automática |
+| WindowMinutes | int | Minutos de ventana de llegada antes de marcar ausencia |
+
+**Comandos**
+
+| Comando | Descripción |
+|---------|------------|
+| RegisterAbsenceCommand.cs | Registra una nueva ausencia al no detectar llegada |
+| IssueWarningCommand.cs | Emite una advertencia por ausencia |
+| SuspendUserCommand.cs | Suspende usuario tras alcanzar máximo de strikes |
+| ReactivateUserCommand.cs | Reactiva usuario al finalizar período de suspensión |
+| ResetAbsenceCounterCommand.cs | Reinicia el contador de ausencias |
+| ConfigurePenaltyRulesCommand.cs | Actualiza las reglas de penalización |
+
+**Queries**
+
+| Archivo | Descripción |
+|---------|------------|
+| GetAbsenceHistoryByUserQuery.cs | Lista las ausencias de un usuario |
+| GetCurrentSuspensionQuery.cs | Obtiene información de la suspensión actual |
+| GetPenaltyRulesQuery.cs | Consulta las reglas de penalización vigentes |
+| GetAbsenceCounterQuery.cs | Devuelve el contador de ausencias actual de un usuario |
+
+**Repositories (Interfaces)**
+
+| Archivo | Descripción |
+|---------|------------|
+| IAbsenceRepository.cs | CRUD de ausencias |
+| IAbsenceCounterRepository.cs | Maneja contador de ausencias por usuario |
+| ISuspensionRepository.cs | Persiste y consulta suspensiones activas o completadas |
+| IWarningRepository.cs | Registra advertencias enviadas |
+| IPenaltyRulesRepository.cs | Gestiona las reglas de penalización configurables |
+
+**Domain Services**
+
+| Archivo | Descripción |
+|---------|------------|
+| IPenaltyCommandService.cs | Orquesta la lógica para registrar ausencias, emitir advertencias y suspender usuarios |
+| IPenaltyQueryService.cs | Consulta histórico de ausencias, suspensiones y reglas |
+
+#### 4.2.5.2. Interface Layer.
+
+Interface Layer – Presentación de la Aplicación.
+
+La carpeta `interfaces/REST` expone endpoints que permiten al sistema y a los administradores consultar o actualizar las penalizaciones y reglas.
+
+**Resources**
+
+| Archivo | Función |
+|---------|--------|
+| RegisterAbsenceResource.cs | Datos para registrar una ausencia automática |
+| WarningResource.cs | Devuelve datos de advertencias emitidas |
+| SuspensionResource.cs | Devuelve información de suspensiones activas |
+| PenaltyRulesResource.cs | Muestra las reglas actuales de penalización |
+| UpdatePenaltyRulesResource.cs | Permite a un administrador actualizar las reglas (strikes, días de suspensión, ventana de llegada) |
+
+**Transform/Assemblers**
+
+| Archivo | Función |
+|---------|--------|
+| RegisterAbsenceCommandFromResourceAssembler.cs | Convierte RegisterAbsenceResource en RegisterAbsenceCommand |
+| UpdatePenaltyRulesCommandFromResourceAssembler.cs | Convierte UpdatePenaltyRulesResource en ConfigurePenaltyRulesCommand |
+| SuspensionResourceFromEntityAssembler.cs | Convierte entidad Suspension en SuspensionResource |
+| WarningResourceFromEntityAssembler.cs | Convierte entidad Warning en WarningResource |
+
+**Controllers**
+
+| Controlador | Ruta base típica | Responsabilidad principal |
+|-------------|------------------|--------------------------|
+| PenaltyController.cs | /api/penalty | Expone endpoints para registro de ausencias y emisión de advertencias |
+| SuspensionController.cs | /api/penalty/suspension | Consulta y gestión de suspensiones de usuarios |
+| PenaltyRulesController.cs | /api/penalty/rules | Consulta y actualización de reglas de penalización |
+
+#### 4.2.5.3. Application Layer.
+
+Servicios de Aplicación – Gestión de Flujos de Negocio.
+
+**Command Services**
+
+| Clase | Descripción |
+|-------|------------|
+| PenaltyCommandService.cs | Orquesta la lógica para registrar ausencias, emitir advertencias, suspender usuarios y reactivar automáticamente. |
+
+**Query Services**
+
+| Clase | Descripción |
+|-------|------------|
+| PenaltyQueryService.cs | Permite consultas de ausencias, suspensiones y reglas de penalización. |
+
+**Eventos clave**
+
+- ✅ **Absence Detected Event**: Disparado por Reservation Management cuando no hay llegada dentro de la ventana configurada.  
+- ✅ **Warning Issued Event**: Notifica al Notification Context sobre la advertencia al usuario.  
+- ✅ **User Suspended Event**: Marca y comunica la suspensión.  
+- ✅ **User Reactivated Event**: Reactiva el acceso del usuario tras el período configurado.  
+
+#### 4.2.5.4. Infrastructure Layer.
+
+Implementación de Repositories y adaptadores externos.
+
+| Clase | Interfaz Implementada | Función Principal |
+|-------|----------------------|------------------|
+| AbsenceRepository.cs | IAbsenceRepository | Persiste ausencias registradas y permite filtrado por usuario o fecha |
+| AbsenceCounterRepository.cs | IAbsenceCounterRepository | Gestiona el conteo de ausencias de cada usuario |
+| SuspensionRepository.cs | ISuspensionRepository | Persiste suspensiones activas, fechas y reactivaciones automáticas |
+| WarningRepository.cs | IWarningRepository | Almacena advertencias emitidas |
+| PenaltyRulesRepository.cs | IPenaltyRulesRepository | Mantiene la configuración de reglas de penalización |
+| PenaltyEventPublisher.cs | — | Publica eventos hacia Notification Context para envío de alertas |
+| SchedulerAdapter.cs | — | Programa tareas automáticas para reactivación de usuarios después del período de suspensión |
+
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams  
+
+En el diagrama de componentes del contexto **Penalty Management** se evidencia la orquestación de ausencias, advertencias y suspensiones. Se detallan los controladores REST, servicios de aplicación, agregados de dominio y repositorios encargados de administrar reglas de penalización, contadores de ausencias y suspensiones.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/penalty-component-c4.png" alt="Penalty Management Component C4" width="90%" />
+</div><br>
+
+URL Structurizr: https://structurizr.com/share/84646
+
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams  
+##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams  
+
+En este diagrama se aprecian las entidades **Absence**, **AbsenceCounter**, **Suspension**, **Warning** y el value object **PenaltyRules**, además de las interfaces de repositorio y servicios de dominio que encapsulan la lógica de negocio del **bounded context Penalty Management**.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/penalty-diagramclass.png" alt="Penalty Management Domain Layer Class Diagram" width="90%" />
+</div><br>
+
+Link: https://lucid.app/lucidchart/4d516fa9-fed5-4131-8a22-16207e3b05a0/edit?viewport_loc=-3820%2C-575%2C6132%2C2883%2CHWEp-vi-RSFO&invitationId=inv_709a7505-bf02-440a-87b9-406019cc1dca
+
+##### 4.2.5.6.2. Bounded Context Database Design Diagram  
+
+El diagrama entidad-relación (ERD) de **Penalty Management** representa las tablas **Absences**, **AbsenceCounters**, **Suspensions** y **Warnings**, incluyendo sus claves primarias, relaciones de usuario y constraints necesarias para gestionar las penalizaciones.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/penalty-database.png" alt="Penalty Management Database Design Diagram" width="90%" />
+</div><br>
 
 ### 4.2.6. Bounded Context: Analytics & Reporting
 
