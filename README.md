@@ -478,8 +478,157 @@ En esta sección se presentarán las preguntas empleadas en las entrevistas, inc
 - ¿Qué indicadores te ayudarían a evaluar si un sistema como SafePark realmente mejora la eficiencia operativa del estacionamiento?
 
 ### 2.2.2. Registro de entrevistas
+A continuación, se registraron todas las entrevistas realizadas para nuestra solución, categorizadas según su segmento objetivo, y con un resumen que destaca las características y críticas realizadas sobre nuestro proyecto.
+
+**Entrevista 01 (Administradores)**
+
+URL del Vídeo: 
+
+Nombres: Maricarmen  
+Apellidos: Tejada  
+Edad: 60  
+Sexo: Femenino  
+Ocupación: Administradora de Servicios Generales – Gestión de Estacionamientos  
+Lugar donde vive: San Miguel, Lima  
+Duración de la entrevista: 22:12 – 29:46
+
+Personalidad: Responsable, organizada y práctica
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/admin-maricarmen.png" alt="Administradora Maricarmen Tejada" width="100%" />
+</div><br>
+
+En resumen, Maricarmen Tejada es administradora de servicios generales en el campus universitario de San Miguel, con más de 12 años de experiencia gestionando estacionamientos y coordinando a su equipo de vigilantes y personal de control de accesos.  
+Utiliza principalmente **laptop** para correos, reportes y hojas de cálculo, pero también el **celular** para coordinar por WhatsApp. Su navegador habitual es **Google Chrome**, con uso ocasional de Edge. Los **canales de comunicación** que más emplea son el **correo institucional**, **WhatsApp** y, para reuniones, Microsoft Teams.
+
+Maricarmen experimenta una **alta frustración** por la congestión en horas pico, ya que debe atender simultáneamente múltiples quejas, lo que interrumpe sus labores. Actualmente la **gestión de ocupación es manual**, basada en conteos y reportes del personal de seguridad. Los principales problemas que identifica son **errores humanos**, **quejas de usuarios** y **falta de información en tiempo real**.
+
+Considera que un **sistema automatizado** brindaría gran valor al permitir **visibilidad inmediata de la ocupación**, reducción de la carga de trabajo del equipo y una mejor experiencia para los usuarios. Apoya la idea de **liberar automáticamente las reservas no utilizadas** y cree fundamental contar con un **panel web en tiempo real** que genere reportes semanales o mensuales para la toma de decisiones. Señala posibles barreras como **resistencia inicial de algunos usuarios**, **costos de implementación** y la necesidad de **soporte técnico continuo**. Finalmente, propone indicadores de éxito como el **tiempo promedio de búsqueda de estacionamiento**, la **rotación de espacios**, el **nivel de ocupación en horas pico** y la **reducción de quejas**.
+<br><br>
+
 
 ### 2.2.3. Análisis de entrevistas
+
+Con el fin de analizar las entrevistas realizadas a **conductores universitarios** y **administradores de estacionamientos**, se recopilaron las respuestas en un formulario de Google. A continuación, se presenta un resumen de los resultados más relevantes acompañados de los gráficos obtenidos.
+
+<h4>Preguntas generales</h4>
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis1.png" alt="Navegador y dispositivo preferido" width="70%" />
+</div>
+
+En cuanto a dispositivos, predominan el **celular** y la **laptop**, confirmando que los usuarios acceden a herramientas digitales principalmente desde entornos móviles.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis2.png" alt="Navegador y dispositivo preferido" width="70%" />
+</div>
+
+La mayoría de los entrevistados utiliza **Google Chrome** como navegador principal, aunque se hace mención a **Safari**.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis3.png" alt="Navegador y dispositivo preferido" width="70%" />
+</div>
+Los canales de interacción más comunes son **WhatsApp**, **correo electrónico** y **llamadas**, con pequeña valoración de **apps móviles**.  
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis4.png" alt="Navegador y dispositivo preferido" width="70%" />
+</div>
+En la escala de frustración por problemas de movilidad o tiempo, la mayoría de los conductores reportan un nivel **4**, mientras que otros tienen un nivel **3 y 5**, evidenciando molestias constantes en su rutina universitaria.
+
+
+<h4>Análisis segmento Conductores Universitarios</h4>
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni1.png" alt="Frecuencia de uso del estacionamiento" width="70%" />
+</div>
+
+La mayoría utiliza el estacionamiento **todos los dias**, seguido de quienes lo usan **3–4 veces por semana**.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni2.png" alt="Tiempo promedio para encontrar estacionamiento" width="70%" />
+</div>
+
+El **tiempo de búsqueda de un espacio** se concentra entre **10 y 20 minutos**, con casos que superan los 20 minutos en horas pico.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni3.png" alt="Principales inconvenientes" width="70%" />
+</div>
+
+Los principales inconvenientes son la **falta de espacios disponibles**, la **demora en encontrar lugar** y el **estrés** asociado.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni4.png" alt="Utilidad de reservar espacios" width="70%" />
+</div>
+
+La idea de **reservar un espacio antes de llegar al campus** se valora con puntajes de **4 y 5**, considerándola muy útil.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni5.png" alt="Opinión sobre límite de 30 min" width="70%" />
+</div>
+
+Respecto al **límite de 30 minutos para liberar reservas**, la mayoría lo considera **adecuado** (3–5).
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-uni6.png" alt="Características más valoradas en la app" width="70%" />
+</div>
+
+Las características más valoradas en una app de estacionamiento son **rapidez**, **facilidad de uso** y **confiabilidad**, con la **gratuidad** como valor agregado.
+
+
+<h4>Análisis segmento Administradores</h4>
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin1.png" alt="Método de gestión de ocupación" width="70%" />
+</div>
+
+Casi todos los administradores, gestionan la ocupación de forma **manual**, mediante observación y reportes del personal de seguridad. Mientras que solo uno maneja la gestión con un software básico.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin2.png" alt="Problemas principales" width="70%" />
+</div>
+
+Los problemas más frecuentes son **errores manuales**, **quejas de usuarios** y **falta de control**.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin3.png" alt="Dificultad de controlar la rotación" width="70%" />
+</div>
+
+Controlar la **rotación de vehículos en horas pico** se califica entre **3, 4 y 5**, reflejando la alta dificultad.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin4.png" alt="Beneficios esperados de un sistema automatizado" width="70%" />
+</div>
+
+De los beneficios esperados del sistema, el que más se espera es el de **Mayor Control**, seguido de la optimización de tiempos, la reducción de erroes y una mejor experiencia de usuario.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin5.png" alt="Opinión sobre liberación automática" width="70%" />
+</div>
+
+La idea de **liberar automáticamente los espacios reservados no utilizados** obtiene una valoración **muy alta (5/5)**.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/interview-analysis-admin6.png" alt="Utilidad de un panel web en tiempo real" width="70%" />
+</div>
+
+Contar con un **panel web en tiempo real** para monitoreo y reportes automáticos es considerado **fundamental**, con puntajes de **5/5**.
+
+### Hallazgos clave
+
+- **Conductores**  
+  - Alta frustración (4–5) por la demora en encontrar estacionamiento.  
+  - Ven muy útil la opción de **reservar espacios con antelación**.  
+  - Valoran rapidez, facilidad y confiabilidad en una app de estacionamiento.
+
+- **Administradores**  
+  - Gestión actual **100 % manual**, dependiente de reportes del personal.  
+  - Necesitan visibilidad **en tiempo real** y reducción de errores humanos.  
+  - Alta disposición a sistemas que **liberen espacios automáticamente** y generen reportes automáticos.
+
+- **Conclusión General**  
+  Conductores y administradores coinciden en la necesidad de una **plataforma centralizada y automatizada** que reduzca la congestión, optimice la rotación de vehículos y ofrezca una experiencia eficiente para todos los usuarios.
+
+
 
 ## 2.3. Needfinding
 
