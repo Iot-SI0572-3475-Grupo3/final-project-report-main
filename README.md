@@ -413,7 +413,79 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
+
+
 #### 4.1.1.3. Bounded Context Canvases
+
+En el siguiente apartado se grafican los candidate bounded context. El grupo toma un bounded context de acuerdo a su relevancia y se grafica en un recuadro los siguientes criterios: Name, Strategic Classification, Description, Business Policies, Ubiquituous Language, Capabilities & Responsabilities.
+
+<h2>Space & IoT Management Bounded Context</h2>
+<p>Responsable de la interacción con el mundo físico. Su principal tarea es monitorear el estado de cada espacio de estacionamiento a través de sensores IoT. .</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/9691e0c18dc66ab9688c434b117e9873ecead165/assets/img/Chapter-IV/space-iot-management-bounded-context.jpg" width="90%"/>
+</div><br>
+
+Este *bounded context* está encargado de detectar cuando un vehiculo entra o sale, actualizar el estado del espacio y notificar a otros contextos sobre estos eventos.
+
+<h2>Time Tracking Bounded Context</h2>
+<p>
+Responsable de medir y registrar el tiempo. Su única responsabilidad es iniciar un temporizador cuando un vehículo ocupa un espacio y detenerlo cuando se va. No toma decisiones sobre penalizaciones o reglas de negocio; simplemente provee la métrica de tiempo para que otros contextos puedan actuar en consecuencia.
+</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/time-tracking-bounded-context.jpg" width="90%"/>
+</div>
+
+Este *bounded context* notifica cuando un usuario excede su tiempo de reserva, y envía los datos de tiempo de estacionamiento para análisis y reportes.
+
+<h2>Penalty Management Bounded Context</h2>
+<p>
+Responsable de la disciplina y el cumplimiento de las reglas. Su función es aplicar las políticas de penalización del negocio. Recibe notificaciones de otros contextos sobre infracciones (ej. tiempo excedido, no-shows) y se encarga de calcular las penalizaciones correspondientes, emitir advertencias y, si es necesario, suspender a los usuarios.
+</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/penalty-management-bounded-context.jpg" width="90%"/>
+</div>
+
+Este *bounded context* recibe notificaciones de otros contextos sobre infracciones y se encarga de calcular las penalizaciones correspondientes, emitir advertencias y, si es necesario, suspender a los usuarios.
+
+<h2>Reservation Management Bounded Context</h2>
+<p>
+Este es el corazón de la funcionalidad del negocio. Su responsabilidad es gestionar todo el ciclo de vida de una reserva: desde que un usuario la solicita, la confirma y se le asigna un espacio, hasta que expira o es cancelada. Este contexto valida las reglas de negocio (ej. tiempo límite de llegada, espacios disponibles) y coordina la asignación de espacios, garantizando que el proceso sea justo y eficiente.
+</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/reservation-management-bounded-context.jpg" width="90%"/>
+</div>
+
+Este *bounded context* se encarga de validar las reglas de negocio y coordina la asignación de espacios, garantizando que el proceso sea justo y eficiente.
+
+<h2>Analytics & Reporting Bounded Context</h2>
+<p>
+Responsable de recopilar y analizar datos para la toma de decisiones. Su función es centralizar la información de todo el sistema para generar métricas, reportes y dashboards. Proporciona una visión de alto nivel a los administradores sobre el rendimiento operativo, la utilización de espacios y el comportamiento de los usuarios.
+</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/analytics-reporting-bounded-context.jpg" width="90%"/>
+</div>
+
+Este *bounded context* centraliza la información de todo el sistema para generar métricas, reportes y dashboards. Proporciona una visión de alto nivel a los administradores sobre el rendimiento operativo, la utilización de espacios y el comportamiento de los usuarios.
+
+<h2>Notification Bounded Context</h2>
+<p>
+Responsable de la comunicación automatizada. Su única responsabilidad es enviar mensajes a usuarios y administradores a través de diversos canales (email, SMS, notificaciones push). Recibe solicitudes de otros contextos (ej. "envía una confirmación de reserva") y se encarga de gestionar el proceso de envío de manera eficiente y confiable.
+</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/notification-bounded-context.jpg" width="90%"/>
+</div>
+
+Este *bounded context* recibe solicitudes de otros contextos y se encarga de gestionar el proceso de envío de manera eficiente y confiable.
+
+<h2>IAM (Identity & Access Management) Bounded Context</h2>
+<p>
+Este contexto es el guardián de la seguridad y el acceso. Su responsabilidad es gestionar las identidades de los usuarios y controlar quién puede acceder a qué funcionalidades del sistema. Se encarga de la autenticación, el registro de usuarios, la gestión de perfiles y la asignación de roles y permisos, asegurando que solo las personas autorizadas puedan interactuar con el sistema de manera segura.
+</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/iam-identity-access-management-bounded-context.jpg" width="90%"/>
+</div>
+
+Este *bounded context* se encarga de la autenticación, el registro de usuarios, la gestión de perfiles y la asignación de roles y permisos, asegurando que solo las personas autorizadas puedan interactuar con el sistema de manera segura.
 
 ### 4.1.2. Context Mapping
 
