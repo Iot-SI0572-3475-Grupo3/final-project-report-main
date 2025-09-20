@@ -1545,8 +1545,14 @@ El Bounded Context Analytics & Reporting proporciona una arquitectura robusta pa
 Esto asegura que la gestión del sistema de estacionamientos no solo sea operativa, sino también estratégica, permitiendo decisiones basadas en datos.
 
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+  <img src="./assets/img/Chapter-IV/Analytics_Reporting_c4.png" alt="Context Diagram" width="90%" />
+
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+  <img src="./assets/img/Chapter-IV/analysis_class_diagram.png" alt="Context Diagram"/>
+
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
 
 URL Vertabelo para apreciar mejor el diagrama de base de datos Analytics & Reporting: <a href="https://my.vertabelo.com/doc/yV4QquKh1vFJgVa60d7UfUDGHXiNYsSE">https://my.vertabelo.com/doc/yV4QquKh1vFJgVa60d7UfUDGHXiNYsSE</a>
