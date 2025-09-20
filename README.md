@@ -635,6 +635,44 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
   <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow36.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
+<h2>IAM (Identity & Access Management)</h2>
+<h3>Escenario: Registro y verificación de usuario (onboarding).</h3>
+<p>Para este escenario, Admin/Usuario → IAM envía el comando Create User; IAM → Notification envía el comando Send Verification y IAM emite User Created (Event). Notification confirma entrega con Verification Delivered (Event).</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow37.png" alt="Message Flow Organizational Management" width="90%" />
+</div><br>
+
+<h3>Escenario: Autenticación y emisión de token (inicio de sesión).</h3>
+<p>Para este escenario, Usuario → IAM envía el comando Authenticate; IAM emite Access Token Issued (Event). Los demás BCs realizan consulta a IAM (Validate Token – Query) y IAM responde con Token Validated/Rejected (Event).</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow38.png" alt="Message Flow Organizational Management" width="90%" />
+</div><br>
+
+<h3>Escenario: Autorización de operación sensible (RBAC / ABAC).</h3>
+<p>Para este escenario, un BC (p. ej., Space & IoT/Reservation) consulta a IAM con Check Permission (Query) para actionId/resource. IAM evalúa política y emite Authorization Decision: Granted/Denied (Event); opcionalmente IAM → Notification Notify Access Denied (Command).</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow39.png" alt="Message Flow Organizational Management" width="90%" />
+</div><br>
+
+<h3>Escenario: Step-up / MFA para acción privilegiada.</h3>
+<p>Para este escenario, el BC que dispara (p. ej., Space & IoT) envía a IAM el comando Require StepUp; IAM → Notification Send MFA (Command); Usuario → IAM Verify StepUp (Command); IAM emite StepUpGranted (Event) y el BC vuelve a consultar permisos (Check Permission – Query), ahora concedidos por el contexto reforzado.</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow40.png" alt="Message Flow Organizational Management" width="90%" />
+</div><br>
+
+<h3>Escenario: Suspensión y levantamiento por penalización (integración con Penalty).</h3>
+<p>Para este escenario, Penalty Management → IAM envía comando Suspend User; IAM emite User Suspended (Event) y IAM → Notification Send Suspension Notice (Command). Para restituir, Penalty → IAM Reinstate User (Command) y IAM emite User Reinstated (Event).</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow41.png" alt="Message Flow Organizational Management" width="90%" />
+</div><br>
+
+<h3>Escenario: Gestión de credenciales y sesiones (dispositivos y seguridad).</h3>
+<p>Para este escenario, Space & IoT → IAM envía comando Register Device; IAM emite Device Credentials Issued (Event). Para rotación, Space & IoT → IAM Rotate Device Keys (Command) y IAM emite Device Keys Rotated (Event). Ante incidente, Admin/SOC → IAM Revoke All Tokens (Command) y IAM emite Sessions Revoked (Event).</p>
+<div style="text-align: center;">
+  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow42.png" alt="Message Flow Organizational Management" width="90%" />
+</div><br>
+
+
 
 #### 4.1.1.3. Bounded Context Canvases
 
