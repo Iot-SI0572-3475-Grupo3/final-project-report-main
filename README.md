@@ -3133,7 +3133,7 @@ Sistema de logging para auditoría y debugging.
 
 **Reservation Management Domain Layer Class Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/reservation-diagramclass-c4.png" alt="Reservation Management Domain Layer Class Diagram" width="90%" />
+  <img src="./assets/img/Chapter-IV/reservation-diagramclass-c5.png" alt="Reservation Management Domain Layer Class Diagram" width="90%" />
 </div><br><br>
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
