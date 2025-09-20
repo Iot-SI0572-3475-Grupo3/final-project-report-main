@@ -1798,9 +1798,143 @@ Estos controladores definen los endpoints públicos de la aplicación y orquesta
 <br>
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+En el diagrama de componentes en el contexto Space & IoT Management se puede observar la interacción del usuario al hacer consultas relacionadas a espacios de estacionamiento y el estado de sensores IoT. 
+
+### Web Services
+
+<img src="./assets/img/Chapter-IV/space-iot-web-services.png">
+
+Se muestra el diagrama de componentes del Web Services, desde la solicitud del front end, comunicación con otros bounded contexts y consultas a la base de datos.
+
+<br>
+
+### Web Application
+
+<img src="./assets/img/Chapter-IV/space-iot-web-app.png">
+
+Se muestra el diagrama de componentes de Web Application, mostrando los componentes y páginas relacionados entre sí.
+
+<br>
+
+### Mobile Application
+
+<img src="./assets/img/Chapter-IV/space-iot-mobile.png">
+
+Se muestra el diagrama de componentes del Mobile Application, mostrando los Widgets relacionados entre sí.
+
+<br>
+
+
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+En el siguiente diagrama de clases se muestran las interfaces, clases e implementaciones de repositorios que conforman el bounded context actual. Este diagrama permite visualizar la estructura interna del dominio, así como las relaciones y dependencias entre los distintos componentes que lo integran.
+
+<img src="./assets/img/Chapter-IV/space-iot-domain-layer-class-diagram.png">
+
+<br>
+
+**Bounded Context Domain Layer Class Diagrams Embedded Application**
+
+<img src="./assets/img/Chapter-IV/space-iot-embedded-class-diagram.png">
+
+<br>
+
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+<img src="./assets/img/Chapter-IV/space-iot-database-diagram.jpeg">
+
+<br>
+
+Las tablas principales y únicas del Bounded Context Space & IoT Management son:
+
+## `parking_spaces`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `space_id` | varchar(36) | Identificador único del espacio |
+| `code` | varchar(1) | Código del espacio (A, B, C) |
+| `status` | enum | Estado actual (`AVAILABLE`, `RESERVED`, `OCCUPIED`, `MAINTENANCE`) |
+| `current_reservation_id` | varchar(36)? | ID de la reserva activa asignada |
+| `last_updated` | timestamp | Última actualización del estado |
+| `created_at` | timestamp | Fecha de creación |
+
+## `sensors`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `sensor_id` | varchar(36) | Identificador único del sensor |
+| `space_id` | varchar(36) | Relación con el espacio de estacionamiento |
+| `last_distance` | decimal(5,2)? | Última medición de distancia |
+| `state` | enum | Estado del sensor (`ACTIVE`, `INACTIVE`, `ERROR`) |
+| `last_detected` | timestamp? | Última detección de vehículo |
+| `created_at` | timestamp | Fecha de creación |
+
+## `space_led_status`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `led_id` | varchar(36) | Identificador único del LED |
+| `space_id` | varchar(36) | Relación con el espacio (1:1) |
+| `color` | enum | Color actual (`GREEN`, `BLUE`, `RED`, `YELLOW`) |
+| `status` | enum | Estado operativo (`ON`, `OFF`, `BLINKING`, `ERROR`) |
+| `last_updated` | timestamp | Última actualización |
+| `created_at` | timestamp | Fecha de creación |
+
+## `arrival_events`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `event_id` | varchar(36) | Identificador único del evento |
+| `reservation_id` | varchar(36) | Relación con reserva (contexto externo) |
+| `space_id` | varchar(36) | Espacio donde se detectó llegada |
+| `timestamp` | timestamp | Momento de detección automática |
+| `created_at` | timestamp | Fecha de registro |
+
+## `departure_events`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `event_id` | varchar(36) | Identificador único del evento |
+| `reservation_id` | varchar(36) | Relación con reserva (contexto externo) |
+| `space_id` | varchar(36) | Espacio donde se detectó salida |
+| `timestamp` | timestamp | Momento de detección automática |
+| `created_at` | timestamp | Fecha de registro |
+
+## `iot_devices`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `device_id` | varchar(36) | Identificador único del dispositivo |
+| `name` | varchar(50) | Nombre descriptivo (ESP32-Central) |
+| `ip_address` | varchar(15) | Dirección IP del dispositivo |
+| `mac_address` | varchar(17) | Dirección MAC única |
+| `is_connected` | boolean | Estado de conectividad |
+| `last_sync` | timestamp? | Última sincronización exitosa |
+| `created_at` | timestamp | Fecha de registro |
+
+## `sensor_readings`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `reading_id` | varchar(36) | Identificador único de lectura |
+| `sensor_id` | varchar(36) | Relación con el sensor |
+| `distance_cm` | decimal(5,2) | Distancia medida por HC-SR04 |
+| `vehicle_detected` | boolean | Indicador de detección |
+| `timestamp` | timestamp | Momento de la medición |
+| `created_at` | timestamp | Fecha de registro |
+
+<br>
+
 
 ### 4.2.4. Bounded Context: Time Tracking
 #### 4.2.4.1. Domain Layer
