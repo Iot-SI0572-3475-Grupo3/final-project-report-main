@@ -738,6 +738,43 @@ Redactamos las historias de usuario para el sistema de gestión de estacionamien
 
 ## 3.3. Product Backlog
 
+| Orden | User Story ID | Título | Descripción | Story Points |
+|-------|---------------|--------|-------------|--------------|
+| 1     | US01          | Registro Usuario UPC | Como miembro UPC quiero registrarme con email @upc.edu.pe para acceder al sistema | 3 |
+| 2     | US02          | Autenticación Usuario | Como usuario registrado quiero iniciar sesión para acceder a funcionalidades | 3 |
+| 3     | TS01          | API Autenticación JWT | Como desarrollador quiero endpoints de autenticación JWT para que las apps puedan autenticar usuarios | 5 |
+| 4     | US26          | Landing Page Principal | Como visitante quiero conocer características del sistema para entender sus beneficios | 2 |
+| 5     | US09          | Monitoreo Estado Espacios | Como usuario quiero ver el estado actual de los 3 espacios en tiempo real para saber si están disponibles | 5 |
+| 6     | US04          | Crear Nueva Reserva | Como miembro UPC quiero crear reservas hasta 24h antes para garantizar un espacio | 5 |
+| 7     | TS02          | API Gestión Reservas | Como desarrollador quiero endpoints RESTful para crear, consultar y cancelar reservas | 5 |
+| 8     | US05          | Ver Estado Reservas | Como usuario con reserva quiero ver detalles y tiempo restante para gestionar mi llegada | 3 |
+| 9     | US06          | Cancelar Reserva | Como usuario quiero cancelar una reserva para liberar el espacio si no lo necesito | 2 |
+| 10    | US27          | Descarga Aplicaciones | Como miembro UPC quiero acceder fácilmente a apps móvil y web para instalar el sistema rápidamente | 2 |
+| 11    | TS03          | Integración IoT ESP32 | Como desarrollador quiero comunicación bidireccional con ESP32 para sincronizar el estado de los espacios | 8 |
+| 12    | US07          | Confirmación Automática Llegada | Como usuario quiero que el sistema detecte automáticamente mi llegada para validar mi reserva sin acciones manuales | 8 |
+| 13    | US11          | Cronometraje Automático | Como usuario quiero que el sistema registre automáticamente el tiempo para llevar un control sin intervención manual | 5 |
+| 14    | US08          | Finalización Automática Sesión | Como usuario quiero que el sistema detecte automáticamente mi salida para liberar el espacio sin necesidad de confirmación manual | 8 |
+| 15    | US10          | Indicación Visual Espacio | Como usuario con reserva quiero identificar fácilmente mi espacio asignado para ubicarlo sin confusión | 3 |
+| 16    | US12          | Visualización Tiempo en Vivo | Como usuario activo quiero ver el tiempo transcurrido actualizado en vivo para monitorear mi sesión en curso | 3 |
+| 17    | US22          | Notificaciones Reserva | Como usuario quiero recibir notificaciones sobre mis reservas para estar informado de su estado | 3 |
+| 18    | TS04          | Sistema Notificaciones | Como desarrollador quiero un servicio de notificación tipo push para enviar alertas a los usuarios | 5 |
+| 19    | US14          | Registro Automático Ausencias | Como sistema quiero detectar ausencias automáticamente para gestionar penalizaciones sin intervención manual | 5 |
+| 20    | US15          | Advertencias Progresivas | Como usuario con ausencias quiero recibir advertencias claras para conocer mi estado antes de una suspensión | 3 |
+| 21    | US16          | Suspensión Automática | Como sistema quiero suspender automáticamente usuarios con 3 ausencias para asegurar cumplimiento de reglas | 5 |
+| 22    | US23          | Notificaciones Sesión | Como usuario quiero recibir notificaciones de inicio y fin de sesión para estar al tanto de mis horarios | 2 |
+| 23    | US24          | Notificaciones Penalizaciones | Como usuario quiero recibir notificaciones claras sobre mis ausencias y suspensiones para entender mis penalizaciones | 2 |
+| 24    | US18          | Dashboard Administrativo | Como admin quiero ver el estado completo del sistema para monitorear y tomar decisiones | 8 |
+| 25    | US03          | Gestión Perfil Personal | Como usuario quiero actualizar mi información personal para mantener mis datos correctos y actualizados | 3 |
+| 26    | US13          | Historial Tiempos Uso | Como usuario quiero ver mi historial de sesiones y estadísticas personales para analizar mis hábitos de uso | 3 |
+| 27    | US17          | Reactivación Automática | Como usuario suspendido quiero reactivación automática después del periodo para recuperar acceso al sistema | 3 |
+| 28    | US19          | Gestión Usuarios | Como admin quiero gestionar usuarios para resolver problemas y administrar penalizaciones | 8 |
+| 29    | US20          | Configuración Sistema | Como admin quiero configurar parámetros del sistema para adaptar su funcionamiento a las necesidades de la UPC | 5 |
+| 30    | US25          | Configuración Preferencias | Como usuario quiero configurar mis preferencias de notificación para recibir alertas según mis necesidades | 2 |
+| 31    | US21          | Reportes y Métricas | Como admin quiero generar reportes del sistema para analizar el uso y optimizar el servicio | 5 |
+| 32    | US28          | Información Técnica | Como visitante técnico quiero conocer detalles de implementación y arquitectura para evaluar la solución en profundidad | 1 |
+
+<br>
+
 
 # Capítulo IV: Solution Software Design
 
