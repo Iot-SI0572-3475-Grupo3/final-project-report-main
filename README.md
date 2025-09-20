@@ -1016,10 +1016,77 @@ Esta sección presenta un glosario de términos y conceptos clave del dominio, d
 | **Auto-release**    | Liberación automática    | Función que libera un espacio reservado si no es ocupado por el conductor dentro del tiempo límite de llegada. |
 | **Peak Hours**      | Horas punta             | Intervalos de tiempo con mayor demanda de estacionamiento en el campus, generalmente al inicio y final de clases. |
 
+Esta sección presenta un glosario de términos y conceptos clave del dominio, definidos de manera precisa para evitar ambigüedades. Su objetivo es asegurar una comunicación clara y uniforme entre los miembros del equipo y los stakeholders.
+
+| Término (Inglés) | Término (Español)      | Definición                                                                                       |
+|------------------|-----------------------|-------------------------------------------------------------------------------------------------|
+| Parking Spot      | Espacio de estacionamiento | Lugar físico destinado al estacionamiento de un vehículo dentro del campus universitario.       |
+| Reservation       | Reserva               | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SafePark. |
+| Reservation Status | Estado de la reserva  | Condición actual de una reserva, por ejemplo: confirmada, pendiente, cancelada o expirada.     |
+| Arrival Time      | Hora de llegada       | Momento en el que el conductor debe llegar al espacio reservado antes de que se libere automáticamente. |
+| No-show           | No presentación       | Situación en la que un conductor no ocupa el espacio reservado dentro del tiempo límite establecido. |
+| Occupancy         | Ocupación             | Cantidad de espacios de estacionamiento actualmente ocupados en un área o lote específico.     |
+| IoT Sensor        | Sensor IoT            | Dispositivo que detecta la presencia de un vehículo en un espacio de estacionamiento y envía información en tiempo real al sistema. |
+| Dashboard         | Panel de administración | Interfaz web utilizada por los administradores para monitorear la ocupación, gestionar reservas y generar reportes. |
+| User App          | Aplicación móvil      | Plataforma usada por conductores para consultar disponibilidad, reservar espacios y recibir notificaciones. |
+| Auto-release      | Liberación automática | Función que libera un espacio reservado si no es ocupado por el conductor dentro del tiempo límite de llegada. |
+| Peak Hours        | Horas punta           | Intervalos de tiempo con mayor demanda de estacionamiento en el campus, generalmente al inicio y final de clases. |
+
+<br>
 
 # Capítulo III: Requirements Specification
 
 ## 3.1. User Stories
+
+
+Redactamos las historias de usuario para el sistema de gestión de estacionamientos SafePark basándonos en las necesidades y problemas identificados en los segmentos de conductores universitarios y administradores del campus. Las historias de usuario describen las funcionalidades y características que los usuarios finales esperan del sistema, y se utilizan como guía para diseñar y desarrollar una experiencia eficiente, confiable y tecnológica para la gestión de reservas, ocupación y control de espacios de estacionamiento.
+
+<br>
+
+| Epic/Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
+|---------------|--------|------------|-------------------------|---------------------------|
+| EP01 | Gestión de Identidad y Acceso | Como miembro UPC quiero registrarme, autenticarme y gestionar mi perfil para acceder al sistema de estacionamiento. | – | – |
+| US01 | Registro de Usuario UPC | Como estudiante/docente/personal de UPC quiero registrarme con mi email institucional (@upc.edu.pe) para acceder a SafePark. | Given que soy miembro de UPC con email válido When completo el formulario de registro Then el sistema valida mi email y crea mi cuenta And recibo un correo de confirmación And mi perfil se clasifica como “Estudiante”, “Docente” o “Personal Administrativo”. | EP01 |
+| US02 | Autenticación de Usuario | Como miembro registrado quiero iniciar sesión en SafePark para acceder a mis funcionalidades. | Given que tengo una cuenta activa When ingreso mi email y contraseña válidos Then el sistema me autentica y me redirige al dashboard And mi sesión permanece activa And veo mi estado actual (reservas, ausencias, etc.). | EP01 |
+| US03 | Gestión de Perfil Personal | Como usuario autenticado quiero actualizar mi información personal para mantener mis datos al día. | Given que estoy autenticado When accedo a “Mi Perfil” Then puedo editar nombre, teléfono y preferencias de notificación And los cambios se guardan And no puedo cambiar mi email institucional ni tipo de usuario. | EP01 |
+| EP02 | Gestión de Reservas Flexibles | Como miembro UPC quiero crear, consultar y cancelar reservas con detección automática, sin necesidad de definir hora de salida. | – | – |
+| US04 | Crear Nueva Reserva | Como miembro UPC quiero crear una reserva de estacionamiento para asegurar mi espacio. | Given que no tengo una reserva activa y hay espacios disponibles When selecciono fecha y hora de inicio (máx. 24h anticipación) Then el sistema asigna un espacio disponible And recibo confirmación con detalles And tengo ventana de 30 min para llegar And no necesito definir hora de fin. | EP02 |
+| US05 | Ver Estado de Reservas | Como usuario con reserva quiero ver el estado actual de mis reservas para saber dónde y cuándo debo llegar. | Given que tengo una reserva activa When accedo al dashboard Then veo mi espacio asignado con fecha y hora And veo tiempo restante para llegar (cuenta regresiva) And veo el estado general de espacios. | EP02 |
+| US06 | Cancelar Reserva | Como usuario con reserva quiero cancelarla para liberar el espacio si ya no lo necesito. | Given que tengo una reserva activa no confirmada When selecciono “Cancelar Reserva” Then el sistema libera el espacio And recibo confirmación And puedo crear otra reserva. | EP02 |
+| US07 | Confirmación Automática de Llegada | Como usuario quiero que SafePark detecte mi llegada automáticamente al estacionar. | Given que tengo una reserva activa y llego a mi espacio When estaciono mi vehículo Then el sensor detecta ocupación And el LED cambia a rojo (ocupado) And el cronómetro inicia And recibo confirmación de inicio. | EP02 |
+| US08 | Finalización Automática de Sesión | Como usuario quiero que SafePark detecte mi salida para cerrar la sesión. | Given que tengo una sesión activa When retiro mi vehículo Then el sensor detecta espacio libre And el cronómetro se detiene And recibo resumen de sesión And el LED cambia a verde (libre). | EP02 |
+| EP03 | Control de Espacios IoT | Como sistema quiero gestionar espacios físicos e integrar dispositivos ESP32 para monitoreo en tiempo real. | – | – |
+| US09 | Monitoreo de Estado de Espacios | Como usuario quiero ver el estado actual de todos los espacios para conocer disponibilidad en tiempo real. | Given que estoy en el dashboard When consulto el estado de espacios Then veo los 3 espacios (A, B, C) con estado: Libre, Reservado, Ocupado o Mantenimiento And se actualiza cada 15s And veo LED correspondiente. | EP03 |
+| US10 | Indicación Visual de Espacio Asignado | Como usuario quiero identificar fácilmente mi espacio asignado para estacionar correctamente. | Given que tengo una reserva confirmada When llego al estacionamiento Then el LED de mi espacio parpadea en azul And el display muestra “Espacio [X] reservado para [Usuario]”. | EP03 |
+| EP04 | Seguimiento de Tiempo Real | Como usuario quiero que SafePark registre y muestre el tiempo de uso en vivo sin límites temporales. | – | – |
+| US11 | Cronometraje Automático | Como usuario quiero que el sistema registre automáticamente mi tiempo de uso. | Given que confirmé mi llegada When el sensor detecta ocupación Then el cronómetro inicia And puedo ver tiempo transcurrido en la app And se registra hasta mi salida. | EP04 |
+| US12 | Visualización de Tiempo en Vivo | Como usuario quiero ver mi tiempo de uso actual en la app. | Given que tengo sesión activa When consulto el dashboard Then veo tiempo transcurrido actualizado en vivo And hora de inicio And datos sincronizados con IoT. | EP04 |
+| US13 | Historial de Tiempos de Uso | Como usuario quiero ver mi historial de sesiones para conocer mis patrones de uso. | Given que tengo sesiones anteriores When accedo a “Mi Historial” Then veo lista de últimas 20 sesiones con fecha, duración y espacio And estadísticas personales And puedo filtrar por rango de fechas. | EP04 |
+| EP05 | Sistema de Penalizaciones | Como sistema quiero registrar ausencias y suspender usuarios automáticamente para mantener justicia. | – | – |
+| US14 | Registro Automático de Ausencias | Como sistema quiero detectar ausencias automáticamente. | Given que un usuario tiene reserva confirmada When pasan 30 min sin detectar ocupación Then registro ausencia And libero el espacio And envío notificación. | EP05 |
+| US15 | Sistema de Advertencias Progresivas | Como usuario quiero recibir advertencias sobre mis ausencias. | Given que tengo 1 ausencia When accedo al sistema Then veo “Ausencias: 1/3” y notificación. Given que tengo 2 ausencias Then veo “Ausencias: 2/3 – Advertencia final” y notificación. | EP05 |
+| US16 | Suspensión Automática de Usuario | Como sistema quiero suspender usuarios con 3 ausencias para evitar abuso. | Given que un usuario alcanza 3 ausencias When se registra la tercera Then se suspende por 7 días And no puede reservar And recibe notificación. | EP05 |
+| US17 | Reactivación Automática Post-Suspensión | Como usuario quiero ser reactivado automáticamente después de la suspensión. | Given que fui suspendido por 7 días When se cumple el período Then mi cuenta se reactiva And contador reseteado 0/3 And recibo notificación. | EP05 |
+| EP06 | Panel Administrativo | Como administrador quiero monitorear, configurar y generar reportes para gestionar el sistema. | – | – |
+| US18 | Dashboard Administrativo | Como administrador quiero ver estado completo del sistema. | Given que soy administrador autenticado When accedo al panel Then veo estado en tiempo real And métricas del día And alertas de usuarios suspendidos o problemas técnicos. | EP06 |
+| US19 | Gestión de Usuarios | Como administrador quiero gestionar usuarios del sistema. | Given que soy administrador When busco un usuario Then veo su perfil completo And puedo resetear ausencias, suspender o reactivar manualmente And ver historial. | EP06 |
+| US20 | Configuración del Sistema | Como administrador quiero configurar parámetros del sistema. | Given que soy administrador When accedo a “Configuración” Then ajusto ventana de llegada, anticipación máxima, límite de reservas y penalizaciones And cambios aplicados inmediatamente. | EP06 |
+| US21 | Reportes y Métricas | Como administrador quiero generar reportes y métricas. | Given que soy administrador When solicito reportes Then puedo generarlos diarios, semanales o mensuales And exportar a Excel/PDF And ver gráficos de tendencias. | EP06 |
+| EP07 | Notificaciones Inteligentes | Como usuario quiero recibir notificaciones claras sobre mis reservas, sesiones y penalizaciones. | – | – |
+| US22 | Notificaciones de Reserva | Como usuario quiero recibir notificaciones de mis reservas. | Given que creo una nueva reserva When el sistema la confirma Then recibo confirmación And recordatorio 15 min antes And alerta de ventana de llegada. | EP07 |
+| US23 | Notificaciones de Sesión | Como usuario quiero recibir notificaciones sobre mi sesión. | Given que inicio una sesión When sensor confirma mi llegada Then recibo notificación de inicio Given que finalizo sesión When sensor detecta mi salida Then recibo resumen. | EP07 |
+| US24 | Notificaciones de Penalizaciones | Como usuario quiero recibir notificaciones claras sobre ausencias y suspensiones. | Given que se registra una ausencia Then recibo notificación con contador actualizado. Given que soy suspendido When alcanzo 3 ausencias Then recibo notificación con fecha de reactivación. | EP07 |
+| US25 | Configuración de Preferencias de Notificación | Como usuario quiero configurar mis preferencias de notificación. | Given que accedo a mi perfil When entro a “Preferencias de Notificación” Then puedo activar/desactivar push And configurar recordatorios automáticos. | EP07 |
+| EP08 | Landing Page Institucional | Como visitante quiero conocer el sistema y acceder fácilmente a las apps. | – | – |
+| US26 | Página Principal Informativa | Como visitante quiero conocer características principales del sistema. | Given que visito la landing page When navego Then veo información sobre automatización, tiempo ilimitado y facilidad de uso And demo visual con imágenes/video And testimonios. | EP08 |
+| US27 | Descarga de Aplicaciones | Como miembro UPC quiero acceder fácilmente a las apps. | Given que decido usar el sistema When busco cómo acceder Then encuentro botones claros para App Web y App Móvil And enlaces me llevan correctamente. | EP08 |
+| US28 | Información Técnica | Como visitante técnico quiero conocer detalles de la implementación. | Given que busco información técnica When accedo a “Tecnología” Then veo detalles de IoT (ESP32, sensores, LEDs) And stack tecnológico And estadísticas de eficiencia. | EP08 |
+| TS01 | API de Autenticación | Como desarrollador quiero implementar endpoints JWT para autenticar usuarios. | Given que recibo credenciales válidas en POST /api/auth/login When proceso autenticación Then retorno JWT válido And expira en 24h. | EP01 |
+| TS02 | API de Gestión de Reservas | Como desarrollador quiero implementar endpoints RESTful para reservas. | Given que recibo petición POST /api/reservations When valido disponibilidad y reglas Then creo reserva y retorno confirmación And actualizo estado en tiempo real. | EP02 |
+| TS03 | Integración IoT con ESP32 | Como desarrollador quiero comunicación bidireccional con ESP32. | Given que ESP32 envía datos When recibo evento en /api/iot/sensor-data Then actualizo estado de espacio And notifico via WebSocket. | EP03 |
+| TS04 | Sistema de Notificaciones | Como desarrollador quiero implementar servicio de notificaciones push. | Given que se dispara un evento When proceso solicitud con template Then envío notificación And registro estado de entrega. | EP07 |
+
+<br>
 
 ## 3.2. Impact Mapping  
 
@@ -1037,7 +1104,45 @@ Incrementar en 25% la rotación de espacios en 6 meses mediante liberación auto
   <img src="assets/img/Chapter-III/impact-map-admin.png" alt="Impact Map – Maricarmen (Administradora de Estacionamiento)" width="90%" />
 </div>  
 
+
 ## 3.3. Product Backlog
+
+| Orden | User Story ID | Título | Descripción | Story Points |
+|-------|---------------|--------|-------------|--------------|
+| 1     | US01          | Registro Usuario UPC | Como miembro UPC quiero registrarme con email @upc.edu.pe para acceder al sistema | 3 |
+| 2     | US02          | Autenticación Usuario | Como usuario registrado quiero iniciar sesión para acceder a funcionalidades | 3 |
+| 3     | TS01          | API Autenticación JWT | Como desarrollador quiero endpoints de autenticación JWT para que las apps puedan autenticar usuarios | 5 |
+| 4     | US26          | Landing Page Principal | Como visitante quiero conocer características del sistema para entender sus beneficios | 2 |
+| 5     | US09          | Monitoreo Estado Espacios | Como usuario quiero ver el estado actual de los 3 espacios en tiempo real para saber si están disponibles | 5 |
+| 6     | US04          | Crear Nueva Reserva | Como miembro UPC quiero crear reservas hasta 24h antes para garantizar un espacio | 5 |
+| 7     | TS02          | API Gestión Reservas | Como desarrollador quiero endpoints RESTful para crear, consultar y cancelar reservas | 5 |
+| 8     | US05          | Ver Estado Reservas | Como usuario con reserva quiero ver detalles y tiempo restante para gestionar mi llegada | 3 |
+| 9     | US06          | Cancelar Reserva | Como usuario quiero cancelar una reserva para liberar el espacio si no lo necesito | 2 |
+| 10    | US27          | Descarga Aplicaciones | Como miembro UPC quiero acceder fácilmente a apps móvil y web para instalar el sistema rápidamente | 2 |
+| 11    | TS03          | Integración IoT ESP32 | Como desarrollador quiero comunicación bidireccional con ESP32 para sincronizar el estado de los espacios | 8 |
+| 12    | US07          | Confirmación Automática Llegada | Como usuario quiero que el sistema detecte automáticamente mi llegada para validar mi reserva sin acciones manuales | 8 |
+| 13    | US11          | Cronometraje Automático | Como usuario quiero que el sistema registre automáticamente el tiempo para llevar un control sin intervención manual | 5 |
+| 14    | US08          | Finalización Automática Sesión | Como usuario quiero que el sistema detecte automáticamente mi salida para liberar el espacio sin necesidad de confirmación manual | 8 |
+| 15    | US10          | Indicación Visual Espacio | Como usuario con reserva quiero identificar fácilmente mi espacio asignado para ubicarlo sin confusión | 3 |
+| 16    | US12          | Visualización Tiempo en Vivo | Como usuario activo quiero ver el tiempo transcurrido actualizado en vivo para monitorear mi sesión en curso | 3 |
+| 17    | US22          | Notificaciones Reserva | Como usuario quiero recibir notificaciones sobre mis reservas para estar informado de su estado | 3 |
+| 18    | TS04          | Sistema Notificaciones | Como desarrollador quiero un servicio de notificación tipo push para enviar alertas a los usuarios | 5 |
+| 19    | US14          | Registro Automático Ausencias | Como sistema quiero detectar ausencias automáticamente para gestionar penalizaciones sin intervención manual | 5 |
+| 20    | US15          | Advertencias Progresivas | Como usuario con ausencias quiero recibir advertencias claras para conocer mi estado antes de una suspensión | 3 |
+| 21    | US16          | Suspensión Automática | Como sistema quiero suspender automáticamente usuarios con 3 ausencias para asegurar cumplimiento de reglas | 5 |
+| 22    | US23          | Notificaciones Sesión | Como usuario quiero recibir notificaciones de inicio y fin de sesión para estar al tanto de mis horarios | 2 |
+| 23    | US24          | Notificaciones Penalizaciones | Como usuario quiero recibir notificaciones claras sobre mis ausencias y suspensiones para entender mis penalizaciones | 2 |
+| 24    | US18          | Dashboard Administrativo | Como admin quiero ver el estado completo del sistema para monitorear y tomar decisiones | 8 |
+| 25    | US03          | Gestión Perfil Personal | Como usuario quiero actualizar mi información personal para mantener mis datos correctos y actualizados | 3 |
+| 26    | US13          | Historial Tiempos Uso | Como usuario quiero ver mi historial de sesiones y estadísticas personales para analizar mis hábitos de uso | 3 |
+| 27    | US17          | Reactivación Automática | Como usuario suspendido quiero reactivación automática después del periodo para recuperar acceso al sistema | 3 |
+| 28    | US19          | Gestión Usuarios | Como admin quiero gestionar usuarios para resolver problemas y administrar penalizaciones | 8 |
+| 29    | US20          | Configuración Sistema | Como admin quiero configurar parámetros del sistema para adaptar su funcionamiento a las necesidades de la UPC | 5 |
+| 30    | US25          | Configuración Preferencias | Como usuario quiero configurar mis preferencias de notificación para recibir alertas según mis necesidades | 2 |
+| 31    | US21          | Reportes y Métricas | Como admin quiero generar reportes del sistema para analizar el uso y optimizar el servicio | 5 |
+| 32    | US28          | Información Técnica | Como visitante técnico quiero conocer detalles de implementación y arquitectura para evaluar la solución en profundidad | 1 |
+
+<br>
 
 
 # Capítulo IV: Solution Software Design
@@ -1856,13 +1961,423 @@ URL Vertabelo para apreciar mejor el diagrama de base de datos IAM: <a href="htt
 
 ### 4.2.3. Bounded Context: Space & IoT Management
 #### 4.2.3.1. Domain Layer
+
+**Agregados y Entidades del Dominio Space & IoT Management en nuestro Web/Mobile Application**
+
+En nuestras aplicaciones web y móvil, la carpeta `domain` dentro del Bounded Context **Space & IoT Management** contiene las entidades y agregados del dominio, representadas como clases con sus atributos y constructores. Cada clase encapsula la lógica de negocio principal asociada a espacios de estacionamiento y dispositivos IoT.
+
+---
+
+## ParkingSpace
+Representa un espacio de estacionamiento.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del espacio |
+| Code | string | Código identificador del espacio (A, B, C) |
+| Status | string | Estado actual del espacio (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE) |
+| CurrentReservationId | int? | ID de la reserva activa asociada |
+| LastUpdated | DateTime | Última fecha y hora de actualización del estado |
+
+**Constructores:** Por parámetros individuales.  
+**Comandos relacionados:** `AssignSpaceCommand`, `UpdateSpaceStatusCommand`.
+
+---
+
+## IoTDevice
+Representa un dispositivo IoT ESP32 que controla los espacios.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del dispositivo |
+| Name | string | Nombre descriptivo del dispositivo (ESP32-Central) |
+| IPAddress | string | Dirección IP del dispositivo |
+| MacAddress | string | Dirección MAC del dispositivo |
+| IsConnected | bool | Indica si está conectado al sistema |
+| LastSync | DateTime | Última sincronización exitosa con la base de datos |
+
+**Constructores:** Por parámetros individuales.  
+**Comandos relacionados:** `ConnectIoTDeviceCommand`, `DisconnectIoTDeviceCommand`.
+
+---
+
+## Sensor
+Representa un sensor ultrasónico HC-SR04 asociado a un espacio.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del sensor |
+| ParkingSpaceId | int | ID del espacio al que pertenece |
+| LastDistance | double | Última medición de distancia del sensor |
+| State | string | Estado actual del sensor (ACTIVE, INACTIVE, ERROR) |
+| LastDetected | DateTime? | Fecha y hora del último vehículo detectado |
+
+**Constructores:** Por parámetros individuales.  
+**Comandos relacionados:** `UpdateSensorStateCommand`, `UpdateSensorDistanceCommand`.
+
+---
+
+## ArrivalEvent
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del evento |
+| ReservationId | int | ID de la reserva correspondiente |
+| ParkingSpaceId | int | Espacio donde se detectó el vehículo |
+| Timestamp | DateTime | Fecha y hora de detección |
+
+**Constructores:** Desde evento de sensor `VehicleDetectedEvent`.
+
+---
+
+## DepartureEvent
+
+| Atributo | Tipo | Descripción |
+|----------|------|-------------|
+| Id | int | Identificador único del evento |
+| ReservationId | int | ID de la reserva correspondiente |
+| ParkingSpaceId | int | Espacio del que se retiró el vehículo |
+| Timestamp | DateTime | Fecha y hora de salida |
+
+**Constructores:** Desde evento de sensor `VehicleLeftEvent`.
+
+---
+
+## Comandos
+
+### ParkingSpace
+
+| Comando | Descripción |
+|---------|------------|
+| AssignSpaceCommand.cs | Asigna un espacio de estacionamiento a una reserva específica |
+| UpdateSpaceStatusCommand.cs | Actualiza el estado del espacio (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE) |
+
+### Sensor
+
+| Comando | Descripción |
+|---------|------------|
+| UpdateSensorStateCommand.cs | Actualiza el estado del sensor (ACTIVE, INACTIVE, ERROR) |
+| UpdateSensorDistanceCommand.cs | Actualiza la última distancia detectada por el sensor |
+
+### IoTDevice
+
+| Comando | Descripción |
+|---------|------------|
+| ConnectIoTDeviceCommand.cs | Registra la conexión de un ESP32 al sistema |
+| DisconnectIoTDeviceCommand.cs | Marca la desconexión del dispositivo |
+
+---
+
+## Queries
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| GetAllParkingSpacesQuery.cs | Lista todos los espacios y su estado actual |
+| GetParkingSpaceByIdQuery.cs | Obtiene un espacio específico por ID |
+| GetSensorByParkingSpaceIdQuery.cs | Obtiene sensor asociado a un espacio |
+| GetIoTDeviceStatusQuery.cs | Retorna estado actual del ESP32 central |
+
+---
+
+## Repositories (Interfaces)
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| IParkingSpaceRepository.cs | Define operaciones sobre espacios: FindById, FindAll, UpdateStatus |
+| ISensorRepository.cs | Operaciones sobre sensores: FindById, FindByParkingSpaceId, UpdateState |
+| IIoTDeviceRepository.cs | Operaciones sobre ESP32: FindById, UpdateConnectionStatus |
+
+---
+
+## ParkingSpace Services
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| IParkingSpaceCommandService.cs | Comandos de espacios: asignación y actualización de estado |
+| IParkingSpaceQueryService.cs | Consultas de espacios y estados actuales |
+
+---
+
+## Sensor Services
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| ISensorCommandService.cs | Comandos de sensores: actualización de estado y distancia |
+| ISensorQueryService.cs | Consultas de sensores por espacio o ID |
+
+---
+
+## IoTDevice Services
+
+| Archivo | Descripción breve |
+|---------|-----------------|
+| IIoTDeviceCommandService.cs | Comandos de ESP32: conexión y desconexión |
+| IIoTDeviceQueryService.cs | Consultas de estado del dispositivo |
+
+<br>
+
 #### 4.2.3.2. Interface Layer
+
+**Interface Layer – Presentación de la Aplicación**  
+
+La carpeta `Interfaces/REST` representa la capa de presentación de la arquitectura, encargada de recibir solicitudes HTTP, transformarlas en comandos o queries, y devolver respuestas adecuadas al cliente.
+
+---
+
+### Resources
+Las clases Resource funcionan como objetos de transferencia entre el mundo externo (API REST) y la capa de aplicación.
+
+| Archivo | Función |
+|---------|---------|
+| CreateParkingSpaceResource.cs | Recibe datos para crear un nuevo espacio de estacionamiento desde el cliente. |
+| UpdateSpaceStatusResource.cs | Permite actualizar el estado de un espacio (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE). |
+| ParkingSpaceResource.cs | Devuelve información de un espacio de estacionamiento. |
+| CreateIoTDeviceResource.cs | Recibe datos para registrar un nuevo dispositivo IoT (ESP32). |
+| IoTDeviceResource.cs | Devuelve información de un dispositivo IoT. |
+| UpdateSensorStateResource.cs | Permite cambiar el estado de un sensor (activo/inactivo). |
+| SensorResource.cs | Devuelve información de un sensor HC-SR04. |
+| UpdateLEDStatusResource.cs | Permite actualizar el color o estado de un LED de un espacio. |
+| LEDResource.cs | Devuelve información del LED asociado a un espacio. |
+
+---
+
+### Transform / Assemblers
+Las clases de la carpeta `Transform` (también llamadas Assemblers) son responsables de:
+
+- Convertir Resources en Command Objects para que los maneje la capa de aplicación.
+- Convertir entidades del dominio en Resources para que sean devueltos en la respuesta de la API.
+
+| Archivo | Función |
+|---------|---------|
+| CreateParkingSpaceCommandFromResourceAssembler.cs | Transforma `CreateParkingSpaceResource` en `CreateParkingSpaceCommand`. |
+| UpdateSpaceStatusCommandFromResourceAssembler.cs | Transforma `UpdateSpaceStatusResource` en `UpdateSpaceStatusCommand`. |
+| ParkingSpaceResourceFromEntityAssembler.cs | Convierte una entidad `ParkingSpace` en `ParkingSpaceResource`. |
+| CreateIoTDeviceCommandFromResourceAssembler.cs | Transforma `CreateIoTDeviceResource` en `CreateIoTDeviceCommand`. |
+| IoTDeviceResourceFromEntityAssembler.cs | Convierte una entidad `IoTDevice` en `IoTDeviceResource`. |
+| UpdateSensorStateCommandFromResourceAssembler.cs | Transforma `UpdateSensorStateResource` en `UpdateSensorStateCommand`. |
+| SensorResourceFromEntityAssembler.cs | Convierte una entidad `Sensor` en `SensorResource`. |
+| UpdateLEDStatusCommandFromResourceAssembler.cs | Transforma `UpdateLEDStatusResource` en `UpdateLEDStatusCommand`. |
+| LEDResourceFromEntityAssembler.cs | Convierte una entidad `LED` en `LEDResource`. |
+
+---
+
+### Controllers
+Cada entidad clave en el Bounded Context `Space & IoT Management` cuenta con un REST Controller.  
+Estos controladores definen los endpoints públicos de la aplicación y orquestan los flujos de ejecución:
+
+| Controlador | Ruta base típica | Responsabilidad principal |
+|-------------|-----------------|--------------------------|
+| ParkingSpaceController.cs | /api/parkingspace | Gestiona la creación, actualización y consulta de espacios de estacionamiento. |
+| IoTDeviceController.cs | /api/iotdevice | Maneja el registro y consulta de dispositivos IoT (ESP32). |
+| SensorController.cs | /api/sensor | Expone endpoints para crear, actualizar y consultar sensores HC-SR04. |
+| LEDController.cs | /api/led | Expone endpoints para actualizar y consultar el estado de los LEDs de los espacios. |
+
+<br>
+
 #### 4.2.3.3. Application Layer
+
+**Servicios de Aplicación – Gestión de Flujos de Negocio**
+
+---
+
+### Command Services
+| Clase | Descripción |
+|-------|------------|
+| ParkingSpaceCommandService.cs | Maneja comandos para crear un espacio de estacionamiento, actualizar su estado o configurar parámetros de ocupación. Utiliza el agregado ParkingSpace. |
+| IoTDeviceCommandService.cs | Administra la creación, configuración y actualización de dispositivos IoT (ESP32). |
+| SensorCommandService.cs | Administra la creación y actualización de sensores HC-SR04 asociados a los espacios de estacionamiento. |
+| LEDCommandService.cs | Administra la actualización de LEDs RGB de los espacios (colores y estado). |
+
+---
+
+### Query Services
+| Clase | Descripción |
+|-------|------------|
+| ParkingSpaceQueryService.cs | Devuelve información de espacios filtrada por ID, estado, disponibilidad o asignación. Utiliza ParkingSpaceResource para evitar ciclos. |
+| IoTDeviceQueryService.cs | Lista dispositivos IoT por ID, estado, ubicación o conectividad. |
+| SensorQueryService.cs | Devuelve información de sensores por ID, estado o espacio asociado. |
+| LEDQueryService.cs | Lista el estado de LEDs por espacio, color actual y estado operativo. |
+
+---
+
+### Capabilities del Bounded Context Space & IoT Management
+*Extraído del Bounded Context Canvas y el Event Storming elaborado:*
+
+<br>
+
+| Capability (Funcionalidad) | Tipo    | Handler Responsable                               | Descripción                                                                 |
+|----------------------------|--------|--------------------------------------------------|----------------------------------------------------------------------------|
+| ✅ Assign Space            | Command | SpaceCommandService.Handle(AssignSpaceCommand)  | Asigna un espacio disponible a un usuario tras la creación de la reserva. |
+| ✅ Release Space           | Command | SpaceCommandService.Handle(ReleaseSpaceCommand) | Libera el espacio cuando el usuario decide retirarse, actualizando estado y tiempo. |
+| ✅ Update Space Status     | Command | SpaceCommandService.Handle(UpdateSpaceStatusCommand) | Cambia el estado del espacio (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE). |
+| ✅ Vehicle Detected        | Event   | SpaceEventHandler.Handle(VehicleDetectedEvent)  | Sensor detecta presencia de un vehículo y actualiza automáticamente el estado del espacio. |
+| ✅ Vehicle Left            | Event   | SpaceEventHandler.Handle(VehicleLeftEvent)      | Sensor detecta que el vehículo se retiró y activa liberación de espacio y cálculo de tiempo. |
+| ✅ LED Status Changed      | Event   | IoTCommandService.Handle(UpdateLEDStatusCommand) | Actualiza color de LED según estado del espacio (verde, azul, rojo). |
+| ✅ Sensor Data Received    | Event   | IoTCommandService.Handle(ProcessSensorDataEvent) | Recibe y procesa datos de sensores HC-SR04 para detección de vehículos. |
+| ✅ Timer Started           | Event   | TimeTrackingService.Handle(StartTimerEvent)     | Inicia cronómetro cuando se detecta que un vehículo ha ocupado un espacio. |
+| ✅ Timer Stopped           | Event   | TimeTrackingService.Handle(StopTimerEvent)      | Detiene cronómetro cuando el usuario libera el espacio. |
+| ✅ Duration Calculated     | Event   | TimeTrackingService.Handle(CalculateDurationEvent) | Calcula el tiempo total que el usuario ocupó el espacio y lo registra en el historial. |
+
+<br>
+
 #### 4.2.3.4. Infrastructure Layer
+
+### Implementación de Repositories
+
+| Clase                     | Interfaz implementada       | Función principal                                                                 |
+|----------------------------|----------------------------|---------------------------------------------------------------------------------|
+| SpaceRepository.cs         | ISpaceRepository           | Implementa operaciones de persistencia y consultas sobre los espacios de estacionamiento, incluyendo búsqueda por estado (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE) y asignación/liberación de espacios. |
+| IoTDeviceRepository.cs     | IIoTDeviceRepository       | Gestiona la persistencia de los dispositivos IoT (ESP32), incluyendo conexión, desconexión y estado en tiempo real. |
+| SensorRepository.cs        | ISensorRepository          | Maneja la persistencia de sensores HC-SR04, incluyendo recepción de datos, estado y calibración. |
+| LEDRepository.cs           | ILEDRepository             | Persiste y gestiona los estados de los LEDs RGB de cada espacio (verde, azul, rojo). |
+| TimeTrackingRepository.cs  | ITimeTrackingRepository    | Almacena registros históricos de tiempo de uso de cada espacio y estadísticas para análisis y reportes. |
+
+<br>
+
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+En el diagrama de componentes en el contexto Space & IoT Management se puede observar la interacción del usuario al hacer consultas relacionadas a espacios de estacionamiento y el estado de sensores IoT. 
+
+### Web Services
+
+<img src="./assets/img/Chapter-IV/space-iot-web-services.png">
+
+Se muestra el diagrama de componentes del Web Services, desde la solicitud del front end, comunicación con otros bounded contexts y consultas a la base de datos.
+
+<br>
+
+### Web Application
+
+<img src="./assets/img/Chapter-IV/space-iot-web-app.png">
+
+Se muestra el diagrama de componentes de Web Application, mostrando los componentes y páginas relacionados entre sí.
+
+<br>
+
+### Mobile Application
+
+<img src="./assets/img/Chapter-IV/space-iot-mobile.png">
+
+Se muestra el diagrama de componentes del Mobile Application, mostrando los Widgets relacionados entre sí.
+
+<br>
+
+
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+En el siguiente diagrama de clases se muestran las interfaces, clases e implementaciones de repositorios que conforman el bounded context actual. Este diagrama permite visualizar la estructura interna del dominio, así como las relaciones y dependencias entre los distintos componentes que lo integran.
+
+<img src="./assets/img/Chapter-IV/space-iot-domain-layer-class-diagram.png">
+
+<br>
+
+**Bounded Context Domain Layer Class Diagrams Embedded Application**
+
+<img src="./assets/img/Chapter-IV/space-iot-embedded-class-diagram.png">
+
+<br>
+
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+<img src="./assets/img/Chapter-IV/space-iot-database-diagram.jpeg">
+
+<br>
+
+Las tablas principales y únicas del Bounded Context Space & IoT Management son:
+
+## `parking_spaces`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `space_id` | varchar(36) | Identificador único del espacio |
+| `code` | varchar(1) | Código del espacio (A, B, C) |
+| `status` | enum | Estado actual (`AVAILABLE`, `RESERVED`, `OCCUPIED`, `MAINTENANCE`) |
+| `current_reservation_id` | varchar(36)? | ID de la reserva activa asignada |
+| `last_updated` | timestamp | Última actualización del estado |
+| `created_at` | timestamp | Fecha de creación |
+
+## `sensors`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `sensor_id` | varchar(36) | Identificador único del sensor |
+| `space_id` | varchar(36) | Relación con el espacio de estacionamiento |
+| `last_distance` | decimal(5,2)? | Última medición de distancia |
+| `state` | enum | Estado del sensor (`ACTIVE`, `INACTIVE`, `ERROR`) |
+| `last_detected` | timestamp? | Última detección de vehículo |
+| `created_at` | timestamp | Fecha de creación |
+
+## `space_led_status`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `led_id` | varchar(36) | Identificador único del LED |
+| `space_id` | varchar(36) | Relación con el espacio (1:1) |
+| `color` | enum | Color actual (`GREEN`, `BLUE`, `RED`, `YELLOW`) |
+| `status` | enum | Estado operativo (`ON`, `OFF`, `BLINKING`, `ERROR`) |
+| `last_updated` | timestamp | Última actualización |
+| `created_at` | timestamp | Fecha de creación |
+
+## `arrival_events`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `event_id` | varchar(36) | Identificador único del evento |
+| `reservation_id` | varchar(36) | Relación con reserva (contexto externo) |
+| `space_id` | varchar(36) | Espacio donde se detectó llegada |
+| `timestamp` | timestamp | Momento de detección automática |
+| `created_at` | timestamp | Fecha de registro |
+
+## `departure_events`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `event_id` | varchar(36) | Identificador único del evento |
+| `reservation_id` | varchar(36) | Relación con reserva (contexto externo) |
+| `space_id` | varchar(36) | Espacio donde se detectó salida |
+| `timestamp` | timestamp | Momento de detección automática |
+| `created_at` | timestamp | Fecha de registro |
+
+## `iot_devices`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `device_id` | varchar(36) | Identificador único del dispositivo |
+| `name` | varchar(50) | Nombre descriptivo (ESP32-Central) |
+| `ip_address` | varchar(15) | Dirección IP del dispositivo |
+| `mac_address` | varchar(17) | Dirección MAC única |
+| `is_connected` | boolean | Estado de conectividad |
+| `last_sync` | timestamp? | Última sincronización exitosa |
+| `created_at` | timestamp | Fecha de registro |
+
+## `sensor_readings`
+**Atributos principales:**
+
+| **Atributo** | **Tipo** | **Descripción** |
+|---|---|---|
+| `reading_id` | varchar(36) | Identificador único de lectura |
+| `sensor_id` | varchar(36) | Relación con el sensor |
+| `distance_cm` | decimal(5,2) | Distancia medida por HC-SR04 |
+| `vehicle_detected` | boolean | Indicador de detección |
+| `timestamp` | timestamp | Momento de la medición |
+| `created_at` | timestamp | Fecha de registro |
+
+<br>
+
 
 ### 4.2.4. Bounded Context: Time Tracking
 
