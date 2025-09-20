@@ -637,6 +637,28 @@ En esta sección se muestra la User Task Matrix, que permite identificar las tar
 
 ### 2.3.4. Empathy Mapping
 
+El Empathy Mapping permite comprender a fondo las necesidades, emociones y comportamientos de los usuarios, identificando oportunidades para mejorar su experiencia. A continuación, se presentan los mapas de empatía de los dos segmentos objetivo de SafePark: Conductores Universitarios y Administradores de Estacionamientos.
+
+## Empathy Map del Conductor Universitario
+
+En este mapa de empatía, se ha representado al conductor universitario como el principal usuario de la aplicación SafePark. Este segmento busca reducir el tiempo y el estrés que genera la búsqueda de estacionamiento dentro del campus, asegurando un espacio disponible al llegar.  
+Durante el análisis, se observa que los conductores sienten frustración por la congestión y la desorganización en los estacionamientos, y ansiedad por la posibilidad de llegar tarde a clases o reuniones. Normalmente intentan salir con mucha anticipación o dar vueltas alrededor del campus para encontrar un lugar, lo que afecta su productividad y estado de ánimo.  
+Sus necesidades principales son contar con un sistema que permita reservar espacios con anticipación, recibir información confiable en tiempo real y reducir la incertidumbre en su rutina diaria. Buscan una herramienta tecnológica rápida, confiable y gratuita que les brinde tranquilidad, control y eficiencia en su movilidad.
+
+<img src="./assets/img/Chapter-II/empathy-mapping-conductor.png">
+
+<br>
+
+## Empathy Map del Administrador de Estacionamientos
+
+En este mapa de empatía, se ha representado al administrador como el principal responsable de gestionar los estacionamientos universitarios. Este segmento busca optimizar la eficiencia operativa, mantener el orden y reducir la carga manual de su equipo, especialmente durante las horas pico.  
+Durante el análisis, se observa que los administradores enfrentan problemas diarios por la desorganización, quejas de usuarios y limitaciones de procesos manuales. Normalmente intentan resolver estos problemas con métodos tradicionales o herramientas digitales limitadas, que no siempre cumplen con sus expectativas.  
+Sus necesidades principales son contar con un sistema automatizado que gestione reservas, libere espacios no utilizados, genere métricas en tiempo real y permita tomar decisiones basadas en datos. Buscan tecnología confiable que mejore la eficiencia operativa y garantice una experiencia positiva para los usuarios del campus.
+
+<img src="./assets/img/Chapter-II/empathy-mapping-administradores.png">
+
+<br>
+
 ## 2.4. Big Picture EventStorming
 
 ## 2.5. Ubiquitous Language
