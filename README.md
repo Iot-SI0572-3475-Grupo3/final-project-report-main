@@ -747,7 +747,7 @@ En esta sección se presentarán las preguntas empleadas en las entrevistas, inc
 ### 2.2.2. Registro de entrevistas
 A continuación, se registraron todas las entrevistas realizadas para nuestra solución, categorizadas según su segmento objetivo, y con un resumen que destaca las características y críticas realizadas sobre nuestro proyecto.
 
-URL de video: 
+URL de video: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202211168_upc_edu_pe/EW_1yTCPJk9IoPucellNJN0BSyXIG1pwYVN9VizGIPnxbg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=L0KE00
 
 **Entrevista 01 (Conductores Universitarios)**
 
