@@ -747,9 +747,70 @@ En esta sección se presentarán las preguntas empleadas en las entrevistas, inc
 ### 2.2.2. Registro de entrevistas
 A continuación, se registraron todas las entrevistas realizadas para nuestra solución, categorizadas según su segmento objetivo, y con un resumen que destaca las características y críticas realizadas sobre nuestro proyecto.
 
-**Entrevista 01 (Administradores)**
+URL de video: 
 
-URL del Vídeo: 
+**Entrevista 01 (Conductores Universitarios)**
+
+Nombres: Manuel  
+Apellidos: Chavez  
+Edad: 23  
+Sexo: Masculino  
+Carrera: Ingeniería de Sistemas  
+Universidad: UPC – Campus San Isidro  
+Lugar de residencia: San Borja, Lima  
+Duración de la entrevista: 00:00 – 6:29
+
+Personalidad: Responsable, puntual y sociable.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/conductor-manuel.png" alt="Conductor Universitario Manuel Chavez" width="100%" />
+</div><br>
+
+En resumen, Manuel Chavez es estudiante de Ingeniería de Sistemas en la UPC de San Isidro y vive en San Borja, desde donde se traslada en auto al campus con una duración de viaje que varía entre 25 y 40 minutos según el tráfico. Utiliza principalmente el **celular** para revisar mensajes en WhatsApp, correos y escuchar música, mientras que la **laptop** la reserva para trabajos y proyectos académicos. Su **navegador habitual** es **Google Chrome**, sincronizado con su cuenta de Gmail para guardar contraseñas, marcadores y acceder a Drive. Se comunica sobre todo por **WhatsApp** y **correo institucional**, y solo realiza llamadas en casos urgentes. Usa el **estacionamiento de la universidad casi todos los días**, encontrando espacio en menos de 5 minutos si llega antes de las 7:30 a. m., pero demorando entre 15 y 20 minutos si llega después de las 8:00 a. m. Señala como principales problemas la alta demanda de espacios, la congestión en las entradas y el tráfico interno generado por vehículos que esperan una salida. Considera que un sistema que permita **reservar un espacio antes de llegar** sería **muy útil**, y ve razonable un límite de 30 minutos antes de liberar la reserva para que otros puedan ocupar el espacio. Le gustaría recibir **notificaciones en el celular** sobre la disponibilidad de espacios o el vencimiento de su reserva. Para una aplicación de estacionamiento, prioriza que sea **rápida, confiable y de uso sencillo**, con información actualizada en tiempo real, preferiblemente gratuita, que muestre un **mapa del campus** con los espacios disponibles, permita **reservar en uno o dos clics** y se integre con el **carné universitario** para validar rápidamente la entrada.
+<br><br>
+
+**Entrevista 02 (Conductores Universitarios)**  
+
+Nombres: Diego  
+Apellidos: Sanchez  
+Edad: 22  
+Sexo: Masculino  
+Carrera: Ingeniería Industrial  
+Universidad: UPC – Campus Monterrico  
+Lugar de residencia: Surco, Lima  
+Duración de la entrevista: 06:30 – 16:22
+
+Personalidad: Organizado, responsable y puntual.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/conductor-2.png" alt="Conductor Universitario Diego Sanchez" width="100%" />
+</div><br>
+
+En resumen, Diego Sanchez es estudiante de Ingeniería Industrial en la UPC Monterrico y vive en Surco, a unos 15 minutos del campus. Usa principalmente el **celular** para clases, correos y coordinación de trabajos, mientras que la **laptop** la emplea solo en casa. Su **navegador habitual** es **Google Chrome** y se comunica sobre todo por **WhatsApp**, **correo institucional** y **Microsoft Teams**. Conduce al campus **4–5 veces por semana** y en hora punta puede tardar **15–20 minutos** en encontrar estacionamiento, lo que le genera estrés por la **falta de información en tiempo real** y el **desorden interno**. Considera muy útil un sistema de **reserva previa**, acepta un **límite de 30 minutos** para mantener la reserva y valora recibir **notificaciones en el celular**. Para una aplicación de estacionamiento, prioriza que sea **sencilla, rápida, confiable y gratuita**, idealmente integrada con el **carné universitario** para validar el ingreso.
+<br><br>
+
+**Entrevista 03 (Conductores Universitarios)**  
+
+Nombres: Álvaro  
+Apellidos: Rivas  
+Edad: 21  
+Sexo: Masculino  
+Carrera: Administración y Negocios Internacionales  
+Universidad: UPC – Campus San Isidro  
+Lugar de residencia: Miraflores, Lima  
+Duración de la entrevista: 16:23 – 22:07
+
+Personalidad: Disciplinado, organizado y puntual.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/conductor-3.png" alt="Conductor Universitario Álvaro Rivas" width="100%" />
+</div><br>
+
+En resumen, Álvaro Rivas es estudiante de Administración y Negocios Internacionales en la UPC San Isidro y vive en Miraflores. Usa principalmente el **celular** para clases, coordinación y finanzas personales, mientras que la **laptop** la utiliza en casa para trabajos. Su **navegador habitual** es **Google Chrome**, con uso ocasional de Safari. Se comunica sobre todo por **WhatsApp**, **correo institucional** y **Microsoft Teams**. Conduce al campus **casi todos los días**, demorando **5 minutos si llega temprano** y **15–20 minutos en hora punta**, lo que le genera tensión por la **incertidumbre y el tráfico interno**. Considera muy útil un sistema de **reserva previa de estacionamiento**, ve adecuado un **límite de 30 minutos** y valora recibir **notificaciones en el celular**. Para una aplicación de estacionamiento, prioriza que sea **rápida, confiable, de uso sencillo y gratuita**, con integración al **carné universitario** y un **historial de uso** para planificar mejor sus horarios.
+<br><br>
+
+
+**Entrevista 01 (Administradores)**
 
 Nombres: Maricarmen  
 Apellidos: Tejada  
@@ -759,18 +820,54 @@ Ocupación: Administradora de Servicios Generales – Gestión de Estacionamient
 Lugar donde vive: San Miguel, Lima  
 Duración de la entrevista: 22:12 – 29:46
 
-Personalidad: Responsable, organizada y práctica
+Personalidad: Responsable, organizada y práctica.
 
 <div style="text-align: center;">
   <img src="./assets/img/Chapter-II/admin-maricarmen.png" alt="Administradora Maricarmen Tejada" width="100%" />
 </div><br>
 
-En resumen, Maricarmen Tejada es administradora de servicios generales en el campus universitario de San Miguel, con más de 12 años de experiencia gestionando estacionamientos y coordinando a su equipo de vigilantes y personal de control de accesos.  
-Utiliza principalmente **laptop** para correos, reportes y hojas de cálculo, pero también el **celular** para coordinar por WhatsApp. Su navegador habitual es **Google Chrome**, con uso ocasional de Edge. Los **canales de comunicación** que más emplea son el **correo institucional**, **WhatsApp** y, para reuniones, Microsoft Teams.
+En resumen, Maricarmen Tejada es administradora de servicios generales en el campus de San Miguel con más de 12 años de experiencia gestionando estacionamientos y coordinando personal. Usa principalmente **laptop** para correos, reportes y hojas de cálculo, y **celular** para coordinar por WhatsApp; su navegador habitual es **Google Chrome**. Sus principales canales de comunicación son **correo institucional**, **WhatsApp** y **Microsoft Teams**.  
+Experimenta gran **frustración por la congestión en horas pico**, pues la gestión de ocupación es **manual** y su equipo depende de conteos y reportes, lo que provoca **errores humanos**, **quejas de usuarios** y **falta de información en tiempo real**. Considera que un **sistema automatizado** aportaría **visibilidad inmediata**, menos carga de trabajo y mejor experiencia para los usuarios. Respalda la liberación automática de reservas no usadas y la existencia de un **panel web con reportes en tiempo real**, aunque advierte barreras como **resistencia de usuarios**, **costos de implementación** y necesidad de **soporte técnico constante**. Mide el éxito en base a **tiempo de búsqueda de estacionamiento**, **rotación de espacios**, **nivel de ocupación** y **reducción de quejas**.
+<br><br>
 
-Maricarmen experimenta una **alta frustración** por la congestión en horas pico, ya que debe atender simultáneamente múltiples quejas, lo que interrumpe sus labores. Actualmente la **gestión de ocupación es manual**, basada en conteos y reportes del personal de seguridad. Los principales problemas que identifica son **errores humanos**, **quejas de usuarios** y **falta de información en tiempo real**.
+**Entrevista 02 (Administradores)**  
 
-Considera que un **sistema automatizado** brindaría gran valor al permitir **visibilidad inmediata de la ocupación**, reducción de la carga de trabajo del equipo y una mejor experiencia para los usuarios. Apoya la idea de **liberar automáticamente las reservas no utilizadas** y cree fundamental contar con un **panel web en tiempo real** que genere reportes semanales o mensuales para la toma de decisiones. Señala posibles barreras como **resistencia inicial de algunos usuarios**, **costos de implementación** y la necesidad de **soporte técnico continuo**. Finalmente, propone indicadores de éxito como el **tiempo promedio de búsqueda de estacionamiento**, la **rotación de espacios**, el **nivel de ocupación en horas pico** y la **reducción de quejas**.
+Nombres: Carlos  
+Apellidos: Méndez  
+Edad: 42  
+Sexo: Masculino  
+Cargo: Jefe de Operaciones  
+Universidad: UPC – Campus Monterrico  
+Lugar de residencia: Surco, Lima  
+Duración de la entrevista: 29:47 – 37:18
+
+Personalidad: Práctico, ordenado y exigente; busca soluciones rápidas y claras en la operación diaria.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/admin-2.png" alt="Administrador Carlos Méndez" width="100%" />
+</div><br>
+
+En resumen, Carlos Méndez es jefe de operaciones en la UPC Monterrico y vive en Surco. Usa principalmente el **celular** para coordinar con su equipo de seguridad y logística, y la **computadora** para reportes. Su **navegador habitual** es **Google Chrome**. Se comunica por **correo institucional**, **WhatsApp**, llamadas y reuniones en **Microsoft Teams**. Gestiona los estacionamientos **de forma manual**, recibiendo reportes por radio y registrando datos en Excel. Identifica como principales problemas los **errores humanos**, las **quejas de usuarios** y la **falta de datos en tiempo real**. Considera **difícil controlar la rotación** en horas pico y valora un sistema que permita **monitoreo en vivo**, **liberación automática de espacios** y **reportes automáticos**. Reconoce posibles barreras como **resistencia de usuarios**, **costos de implementación** y la necesidad de **soporte técnico constante**.
+<br><br>
+
+**Entrevista 03 (Administradores)**  
+
+Nombres: Javier  
+Apellidos: Salazar  
+Edad: 38  
+Sexo: Masculino  
+Cargo: Coordinador Administrativo  
+Universidad: UPC – Campus Villa  
+Lugar de residencia: (No especificado)  
+Duración de la entrevista: 37:19 – 45:56 
+
+Personalidad: Resolutivo, paciente y comunicativo; escucha antes de actuar y toma decisiones rápidas cuando es necesario.
+
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-II/admin-3.png" alt="Administrador Javier Salazar" width="100%" />
+</div><br>
+
+En resumen, Javier Salazar es coordinador administrativo en la UPC Villa con 7 años de experiencia. Usa principalmente el **celular** para coordinar con su equipo y la **laptop** para reportes. Su **navegador principal** es **Google Chrome**, con uso ocasional de Edge. Se comunica por **correo institucional**, **WhatsApp** y reuniones en **Microsoft Teams**. Administra el estacionamiento **manualmente**, recibiendo reportes por radio o mensajes y, a veces, en Excel. Enfrenta **errores humanos**, **falta de datos en tiempo real** y **quejas frecuentes de usuarios**. Destaca la necesidad de un sistema que brinde **información en vivo**, **libere reservas no utilizadas** y genere **reportes automáticos**. Considera como retos la **resistencia de algunos usuarios**, el **costo inicial** y la importancia de un **buen soporte técnico** para evitar fallas en horas críticas.
 <br><br>
 
 
