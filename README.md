@@ -1519,6 +1519,8 @@ URL Vertabelo para apreciar mejor el diagrama de base de datos IAM: <a href="htt
 ### 4.2.3. Bounded Context: Space & IoT Management
 #### 4.2.3.1. Domain Layer
 
+**Agregados y Entidades del Dominio Space & IoT Management en nuestro Web/Mobile Application**
+
 En nuestras aplicaciones web y móvil, la carpeta `domain` dentro del Bounded Context **Space & IoT Management** contiene las entidades y agregados del dominio, representadas como clases con sus atributos y constructores. Cada clase encapsula la lógica de negocio principal asociada a espacios de estacionamiento y dispositivos IoT.
 
 ---
@@ -1679,6 +1681,8 @@ Representa un sensor ultrasónico HC-SR04 asociado a un espacio.
 
 #### 4.2.3.2. Interface Layer
 
+**Interface Layer – Presentación de la Aplicación**  
+
 La carpeta `Interfaces/REST` representa la capa de presentación de la arquitectura, encargada de recibir solicitudes HTTP, transformarlas en comandos o queries, y devolver respuestas adecuadas al cliente.
 
 ---
@@ -1734,6 +1738,51 @@ Estos controladores definen los endpoints públicos de la aplicación y orquesta
 <br>
 
 #### 4.2.3.3. Application Layer
+
+**Servicios de Aplicación – Gestión de Flujos de Negocio**
+
+---
+
+### Command Services
+| Clase | Descripción |
+|-------|------------|
+| ParkingSpaceCommandService.cs | Maneja comandos para crear un espacio de estacionamiento, actualizar su estado o configurar parámetros de ocupación. Utiliza el agregado ParkingSpace. |
+| IoTDeviceCommandService.cs | Administra la creación, configuración y actualización de dispositivos IoT (ESP32). |
+| SensorCommandService.cs | Administra la creación y actualización de sensores HC-SR04 asociados a los espacios de estacionamiento. |
+| LEDCommandService.cs | Administra la actualización de LEDs RGB de los espacios (colores y estado). |
+
+---
+
+### Query Services
+| Clase | Descripción |
+|-------|------------|
+| ParkingSpaceQueryService.cs | Devuelve información de espacios filtrada por ID, estado, disponibilidad o asignación. Utiliza ParkingSpaceResource para evitar ciclos. |
+| IoTDeviceQueryService.cs | Lista dispositivos IoT por ID, estado, ubicación o conectividad. |
+| SensorQueryService.cs | Devuelve información de sensores por ID, estado o espacio asociado. |
+| LEDQueryService.cs | Lista el estado de LEDs por espacio, color actual y estado operativo. |
+
+---
+
+### Capabilities del Bounded Context Space & IoT Management
+*Extraído del Bounded Context Canvas y el Event Storming elaborado:*
+
+<br>
+
+| Capability (Funcionalidad) | Tipo    | Handler Responsable                               | Descripción                                                                 |
+|----------------------------|--------|--------------------------------------------------|----------------------------------------------------------------------------|
+| ✅ Assign Space            | Command | SpaceCommandService.Handle(AssignSpaceCommand)  | Asigna un espacio disponible a un usuario tras la creación de la reserva. |
+| ✅ Release Space           | Command | SpaceCommandService.Handle(ReleaseSpaceCommand) | Libera el espacio cuando el usuario decide retirarse, actualizando estado y tiempo. |
+| ✅ Update Space Status     | Command | SpaceCommandService.Handle(UpdateSpaceStatusCommand) | Cambia el estado del espacio (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE). |
+| ✅ Vehicle Detected        | Event   | SpaceEventHandler.Handle(VehicleDetectedEvent)  | Sensor detecta presencia de un vehículo y actualiza automáticamente el estado del espacio. |
+| ✅ Vehicle Left            | Event   | SpaceEventHandler.Handle(VehicleLeftEvent)      | Sensor detecta que el vehículo se retiró y activa liberación de espacio y cálculo de tiempo. |
+| ✅ LED Status Changed      | Event   | IoTCommandService.Handle(UpdateLEDStatusCommand) | Actualiza color de LED según estado del espacio (verde, azul, rojo). |
+| ✅ Sensor Data Received    | Event   | IoTCommandService.Handle(ProcessSensorDataEvent) | Recibe y procesa datos de sensores HC-SR04 para detección de vehículos. |
+| ✅ Timer Started           | Event   | TimeTrackingService.Handle(StartTimerEvent)     | Inicia cronómetro cuando se detecta que un vehículo ha ocupado un espacio. |
+| ✅ Timer Stopped           | Event   | TimeTrackingService.Handle(StopTimerEvent)      | Detiene cronómetro cuando el usuario libera el espacio. |
+| ✅ Duration Calculated     | Event   | TimeTrackingService.Handle(CalculateDurationEvent) | Calcula el tiempo total que el usuario ocupó el espacio y lo registra en el historial. |
+
+<br>
+
 #### 4.2.3.4. Infrastructure Layer
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
