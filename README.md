@@ -1475,6 +1475,14 @@ Esto asegura que la gestión del sistema de estacionamientos no solo sea operati
 ##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
 
+URL Vertabelo para apreciar mejor el diagrama de base de datos Analytics & Reporting: <a href="https://my.vertabelo.com/doc/yV4QquKh1vFJgVa60d7UfUDGHXiNYsSE">https://my.vertabelo.com/doc/yV4QquKh1vFJgVa60d7UfUDGHXiNYsSE</a>
+<br><br>
+
+**Analytics & Reporting Database Design Diagram**
+<div style="text-align: center;">
+  <img src="./assets/img/Chapter-IV/analytics-datatbase-diagram.png" alt="Analytics & Reporting Database Design Diagram" width="90%" />
+</div><br><br>
+
 ### 4.2.7. Bounded Context: Notification
 #### 4.2.7.1. Domain Layer
 #### 4.2.7.2. Interface Layer
