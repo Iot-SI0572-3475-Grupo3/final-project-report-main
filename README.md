@@ -1678,6 +1678,61 @@ Representa un sensor ultrasónico HC-SR04 asociado a un espacio.
 <br>
 
 #### 4.2.3.2. Interface Layer
+
+La carpeta `Interfaces/REST` representa la capa de presentación de la arquitectura, encargada de recibir solicitudes HTTP, transformarlas en comandos o queries, y devolver respuestas adecuadas al cliente.
+
+---
+
+### Resources
+Las clases Resource funcionan como objetos de transferencia entre el mundo externo (API REST) y la capa de aplicación.
+
+| Archivo | Función |
+|---------|---------|
+| CreateParkingSpaceResource.cs | Recibe datos para crear un nuevo espacio de estacionamiento desde el cliente. |
+| UpdateSpaceStatusResource.cs | Permite actualizar el estado de un espacio (AVAILABLE, RESERVED, OCCUPIED, MAINTENANCE). |
+| ParkingSpaceResource.cs | Devuelve información de un espacio de estacionamiento. |
+| CreateIoTDeviceResource.cs | Recibe datos para registrar un nuevo dispositivo IoT (ESP32). |
+| IoTDeviceResource.cs | Devuelve información de un dispositivo IoT. |
+| UpdateSensorStateResource.cs | Permite cambiar el estado de un sensor (activo/inactivo). |
+| SensorResource.cs | Devuelve información de un sensor HC-SR04. |
+| UpdateLEDStatusResource.cs | Permite actualizar el color o estado de un LED de un espacio. |
+| LEDResource.cs | Devuelve información del LED asociado a un espacio. |
+
+---
+
+### Transform / Assemblers
+Las clases de la carpeta `Transform` (también llamadas Assemblers) son responsables de:
+
+- Convertir Resources en Command Objects para que los maneje la capa de aplicación.
+- Convertir entidades del dominio en Resources para que sean devueltos en la respuesta de la API.
+
+| Archivo | Función |
+|---------|---------|
+| CreateParkingSpaceCommandFromResourceAssembler.cs | Transforma `CreateParkingSpaceResource` en `CreateParkingSpaceCommand`. |
+| UpdateSpaceStatusCommandFromResourceAssembler.cs | Transforma `UpdateSpaceStatusResource` en `UpdateSpaceStatusCommand`. |
+| ParkingSpaceResourceFromEntityAssembler.cs | Convierte una entidad `ParkingSpace` en `ParkingSpaceResource`. |
+| CreateIoTDeviceCommandFromResourceAssembler.cs | Transforma `CreateIoTDeviceResource` en `CreateIoTDeviceCommand`. |
+| IoTDeviceResourceFromEntityAssembler.cs | Convierte una entidad `IoTDevice` en `IoTDeviceResource`. |
+| UpdateSensorStateCommandFromResourceAssembler.cs | Transforma `UpdateSensorStateResource` en `UpdateSensorStateCommand`. |
+| SensorResourceFromEntityAssembler.cs | Convierte una entidad `Sensor` en `SensorResource`. |
+| UpdateLEDStatusCommandFromResourceAssembler.cs | Transforma `UpdateLEDStatusResource` en `UpdateLEDStatusCommand`. |
+| LEDResourceFromEntityAssembler.cs | Convierte una entidad `LED` en `LEDResource`. |
+
+---
+
+### Controllers
+Cada entidad clave en el Bounded Context `Space & IoT Management` cuenta con un REST Controller.  
+Estos controladores definen los endpoints públicos de la aplicación y orquestan los flujos de ejecución:
+
+| Controlador | Ruta base típica | Responsabilidad principal |
+|-------------|-----------------|--------------------------|
+| ParkingSpaceController.cs | /api/parkingspace | Gestiona la creación, actualización y consulta de espacios de estacionamiento. |
+| IoTDeviceController.cs | /api/iotdevice | Maneja el registro y consulta de dispositivos IoT (ESP32). |
+| SensorController.cs | /api/sensor | Expone endpoints para crear, actualizar y consultar sensores HC-SR04. |
+| LEDController.cs | /api/led | Expone endpoints para actualizar y consultar el estado de los LEDs de los espacios. |
+
+<br>
+
 #### 4.2.3.3. Application Layer
 #### 4.2.3.4. Infrastructure Layer
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
