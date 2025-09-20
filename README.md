@@ -617,6 +617,22 @@ El segmento de Administrador de Estacionamiento representa a profesionales respo
 
 ### 2.3.2. User Task Matrix
 
+En esta sección se muestra la User Task Matrix, que permite identificar las tareas más importantes y frecuentes de los usuarios de SafePark: conductores universitarios y administradores de estacionamientos. La matriz ayuda a comparar sus actividades, destacando similitudes y diferencias en frecuencia e importancia. Este análisis, basado en los User Personas, permite comprender mejor sus necesidades y desafíos, enfocando el diseño de SafePark en funciones que optimicen la experiencia de los conductores y faciliten la gestión eficiente de los administradores.
+
+| Task | Conductores universitarios (Frecuencia / Importancia) | Administradores (Frecuencia / Importancia) |
+|------|-------------------------------------------------------|-------------------------------------------|
+| Buscar un espacio disponible al llegar al campus | Alta / Alta | Media / Alta |
+| Reservar un espacio con anticipación mediante la app | Alta / Alta | Media / Media |
+| Recibir notificaciones sobre disponibilidad o reservas | Media / Alta | Media / Media |
+| Liberar espacios no utilizados o reservas vencidas | Baja / Media | Alta / Alta |
+| Consultar el panel de ocupación en tiempo real | Baja / Media | Alta / Alta |
+| Gestionar incidencias por ocupación irregular | Baja / Media | Alta / Alta |
+| Optimizar la rotación de vehículos en horarios pico | Media / Media | Alta / Alta |
+| Evaluar eficiencia y generar reportes de ocupación | Baja / Baja | Alta / Alta |
+| Planificar tiempos de llegada y rutas al campus | Alta / Media | Baja / Baja |
+
+<br>
+
 ### 2.3.3. User Journey Mapping
 
 ### 2.3.4. Empathy Mapping
