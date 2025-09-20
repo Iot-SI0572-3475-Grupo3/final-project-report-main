@@ -67,13 +67,14 @@
       </td>
     </tr>
     <tr>
-      <td>xx</td>
-      <td>xx</td>
+      <td>18/09/2025</td>
+      <td>Leonardo Linares</td>
       <td>
         <ul>
-          <li>xx</li>
-          <li>xx</li>
-          <li>xx</li>
+          <li>Analisis Competitivo, Impact y Journey Mappings</li>
+          <li>Base de datos, Diagrama de clases and Component C4 para Time Tracking y Penalty Management BC</li>
+          <li>Domain, Interface, Application e Infrastructure Layers</li>
+          <li>Implementacion student outcome</li>
         </ul>
       </td>
     </tr>
@@ -358,11 +359,11 @@ Nuestra misión es brindar un sistema de estacionamiento automatizado que integr
 
 | Miembros del Equipo                  | Código Estudiante | Carrera                | Descripción | Imagen |
 |-------------------------------------|------------------|-----------------------|-------------|--------|
-| Aquije Quiroga, Luis Enrique         | U202114936       | Ingeniería de Software |             |        |
-| Chávez Rojas, Carlos Raúl Guillermo  | U201910317       | Ingeniería de Software |             |        |
-| Linares Tejada, Leonardo Félix Jesús | U202211168       | Ingeniería de Software |             |        |
-| Ruiz Blas, Luciano Stefano           | U20211F978       | Ingeniería de Software |             |        |
-| Salgado Luna, Fernando Brian         | U202212023       | Ingeniería de Software | Soy Fernando Salgado, tengo 20 años y me apasiona la tecnología. Tengo experiencia en desarrollo frontend y backend, trabajando con lenguajes y tecnologías como Python, C++, C#, Java, HTML, CSS, JavaScript, MySQL, así como frameworks de frontend como Vue.js y Angular. Disfruto resolviendo problemas y buscando soluciones prácticas que contribuyan a los proyectos en los que participo. | |
+| Aquije Quiroga, Luis Enrique         | U202114936       | Ingeniería de Software |             | <img src="assets/team-members/.png" width="80">    |
+| Chávez Rojas, Carlos Raúl Guillermo  | U201910317       | Ingeniería de Software |             | <img src="assets/team-members/.png" width="80">       |
+| Linares Tejada, Leonardo Félix Jesús | U202211168       | Ingeniería de Software | Mi nombre es Leonardo Linares, tengo 20 años y estoy en el 8vo ciclo de la UPC, estudiando para ser un Ingeniero de Software. Actualmente, tengo conocimientos sobre lenguajes y tecnologias como Python, C++, C#, HTML, JavaScript, MySQL, etc. |  <img src="assets/team-members/yo.png" width="80">      |
+| Ruiz Blas, Luciano Stefano           | U20211F978       | Ingeniería de Software |             |   <img src="assets/team-members/.png" width="80">     |
+| Salgado Luna, Fernando Brian         | U202212023       | Ingeniería de Software | Soy Fernando Salgado, tengo 20 años y me apasiona la tecnología. Tengo experiencia en desarrollo frontend y backend, trabajando con lenguajes y tecnologías como Python, C++, C#, Java, HTML, CSS, JavaScript, MySQL, así como frameworks de frontend como Vue.js y Angular. Disfruto resolviendo problemas y buscando soluciones prácticas que contribuyan a los proyectos en los que participo. | <img src="assets/team-members/.png" width="80"> |
 
 <br>
 
