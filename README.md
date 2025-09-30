@@ -359,11 +359,11 @@ Nuestra misión es brindar un sistema de estacionamiento automatizado que integr
 
 | Miembros del Equipo                  | Código Estudiante | Carrera                | Descripción | Imagen |
 |-------------------------------------|------------------|-----------------------|-------------|--------|
-| Aquije Quiroga, Luis Enrique         | U202114936       | Ingeniería de Software | Soy Luis Aquije Quiroga, estudiante de Ingeniería de Software en la UPC. Me apasiona el desarrollo de software y la programación, especialmente en el área de sistemas embebidos y IoT. Disfruto trabajando en proyectos innovadores que combinen hardware y software para crear soluciones tecnológicas que mejoren la vida de las personas. Soy una persona creativa, analítica y comprometida con la excelencia en cada proyecto en el que participo. | <img src="assets/img/Chapter-I/foto_luis.jpg" width="80">    |
-| Chávez Rojas, Carlos Raúl Guillermo  | U201910317       | Ingeniería de Software |Tengo 23 años y estudio la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Me apasiona el mundo digital y la capacidad de la tecnología para solucionar problemas y crear nuevas experiencias. Soy una persona proactiva, responsable y con gran capacidad de aprendizaje. Tengo un fuerte interés por la investigación y la innovación, y estoy siempre buscando nuevas formas de mejorar mis habilidades y conocimientos.| <img src="assets/img/Chapter-I/foto_carlos.jpeg" width="80">       |
-| Linares Tejada, Leonardo Félix Jesús | U202211168       | Ingeniería de Software | Mi nombre es Leonardo Linares, tengo 20 años y estoy en el 8vo ciclo de la UPC, estudiando para ser un Ingeniero de Software. Actualmente, tengo conocimientos sobre lenguajes y tecnologias como Python, C++, C#, HTML, JavaScript, MySQL, etc. |  <img src="assets/img/Chapter-I/yo.png" width="80">      |
-| Ruiz Blas, Luciano Stefano           | U20211F978       | Ingeniería de Software | Soy Luciano Ruiz Blas, estudiante de Ingeniería de Software en la UPC. Me encanta desarrollar software y conseguir buenos resultados, especialmente trabajando con inteligencia artificial y en equipo. Disfruto enfrentando desafíos técnicos y colaborando con mis compañeros para crear soluciones innovadoras que generen un impacto positivo. |   <img src="assets/img/Chapter-I/foto_luciano.png" width="80">     |
-| Salgado Luna, Fernando Brian         | U202212023       | Ingeniería de Software | Soy Fernando Salgado, tengo 20 años y me apasiona la tecnología. Tengo experiencia en desarrollo frontend y backend, trabajando con lenguajes y tecnologías como Python, C++, C#, Java, HTML, CSS, JavaScript, MySQL, así como frameworks de frontend como Vue.js y Angular. Disfruto resolviendo problemas y buscando soluciones prácticas que contribuyan a los proyectos en los que participo. | <img src="assets/img/Chapter-I/foto_fernando.png" width="80"> |
+| Aquije Quiroga, Luis Enrique         | U202114936       | Ingeniería de Software | Soy Luis Aquije Quiroga, estudiante de Ingeniería de Software en la UPC. Me apasiona el desarrollo de software y la programación, especialmente en el área de sistemas embebidos y IoT. Disfruto trabajando en proyectos innovadores que combinen hardware y software para crear soluciones tecnológicas que mejoren la vida de las personas. Soy una persona creativa, analítica y comprometida con la excelencia en cada proyecto en el que participo. | <img src="https://i.imgur.com/TY0nlhl.jpeg" width="80">    |
+| Chávez Rojas, Carlos Raúl Guillermo  | U201910317       | Ingeniería de Software |Tengo 23 años y estudio la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Me apasiona el mundo digital y la capacidad de la tecnología para solucionar problemas y crear nuevas experiencias. Soy una persona proactiva, responsable y con gran capacidad de aprendizaje. Tengo un fuerte interés por la investigación y la innovación, y estoy siempre buscando nuevas formas de mejorar mis habilidades y conocimientos.| <img src="https://i.imgur.com/04sSCTv.jpeg" width="80">       |
+| Linares Tejada, Leonardo Félix Jesús | U202211168       | Ingeniería de Software | Mi nombre es Leonardo Linares, tengo 20 años y estoy en el 8vo ciclo de la UPC, estudiando para ser un Ingeniero de Software. Actualmente, tengo conocimientos sobre lenguajes y tecnologias como Python, C++, C#, HTML, JavaScript, MySQL, etc. |  <img src="https://i.imgur.com/mYIBD7P.png" width="80">      |
+| Ruiz Blas, Luciano Stefano           | U20211F978       | Ingeniería de Software | Soy Luciano Ruiz Blas, estudiante de Ingeniería de Software en la UPC. Me encanta desarrollar software y conseguir buenos resultados, especialmente trabajando con inteligencia artificial y en equipo. Disfruto enfrentando desafíos técnicos y colaborando con mis compañeros para crear soluciones innovadoras que generen un impacto positivo. |   <img src="https://i.imgur.com/DBYeKYT.png" width="80">     |
+| Salgado Luna, Fernando Brian         | U202212023       | Ingeniería de Software | Soy Fernando Salgado, tengo 20 años y me apasiona la tecnología. Tengo experiencia en desarrollo frontend y backend, trabajando con lenguajes y tecnologías como Python, C++, C#, Java, HTML, CSS, JavaScript, MySQL, así como frameworks de frontend como Vue.js y Angular. Disfruto resolviendo problemas y buscando soluciones prácticas que contribuyan a los proyectos en los que participo. | <img src="https://i.imgur.com/an9eXbc.png" width="80"> |
 
 <br>
 
@@ -557,7 +557,7 @@ y lo sabremos cuando el **90% de los usuarios** confirme haber entendido las ale
 
 Se ha utilizado el Lean UX Canvas como una herramienta estratégica clave para estructurar y validar ágilmente el concepto del producto. Este enfoque permite al equipo identificar con claridad el problema de negocio, definir a los usuarios objetivo, formular hipótesis comprobables y diseñar los experimentos mínimos necesarios para aprender e iterar rápidamente sobre la solución. De esta manera, se reduce significativamente el riesgo de desarrollar funcionalidades que no generen un valor real para el usuario final.
 
-<img src="./assets/img/Chapter-I/lean-ux-canvas.png">
+<img src="https://i.imgur.com/KkPBE2K.png">
 
 <br>
 
@@ -599,10 +599,10 @@ Necesitan un sistema que **automatice el control, genere reportes y libere autom
     <tbody>
         <tr style="text-align: center;">
             <td colspan="2">Empresas</td>
-            <td><strong>SafePark</strong><br><img src="./assets/img/Chapter-II/safepark-logo.png"></td>
-            <td><strong>ParkSmart</strong><br><img src="./assets/img/Chapter-II/parksmart-logo.png"></td>
-            <td><strong>ParkingDoor</strong><br><img src="./assets/img/Chapter-II/parkingdoor-logo.png"></td>
-            <td><strong>Parkealo</strong><br><img src="./assets/img/Chapter-II/parkealo-logo.png"></td>
+            <td><strong>SafePark</strong><br><img src="https://i.imgur.com/4jN5NH4.png"></td>
+            <td><strong>ParkSmart</strong><br><img src="https://i.imgur.com/bAH2cNN.png"></td>
+            <td><strong>ParkingDoor</strong><br><img src="https://i.imgur.com/KJuyEsm.png"></td>
+            <td><strong>Parkealo</strong><br><img src="https://i.imgur.com/xo9tpvf.png"></td>
         </tr>
         <!-- Perfil -->
         <tr>
@@ -763,7 +763,7 @@ Duración de la entrevista: 00:00 – 6:29
 Personalidad: Responsable, puntual y sociable.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/conductor-manuel.png" alt="Conductor Universitario Manuel Chavez" width="100%" />
+  <img src="https://i.imgur.com/6IsrYSr.png" alt="Conductor Universitario Manuel Chavez" width="100%" />
 </div><br>
 
 En resumen, Manuel Chavez es estudiante de Ingeniería de Sistemas en la UPC de San Isidro y vive en San Borja, desde donde se traslada en auto al campus con una duración de viaje que varía entre 25 y 40 minutos según el tráfico. Utiliza principalmente el **celular** para revisar mensajes en WhatsApp, correos y escuchar música, mientras que la **laptop** la reserva para trabajos y proyectos académicos. Su **navegador habitual** es **Google Chrome**, sincronizado con su cuenta de Gmail para guardar contraseñas, marcadores y acceder a Drive. Se comunica sobre todo por **WhatsApp** y **correo institucional**, y solo realiza llamadas en casos urgentes. Usa el **estacionamiento de la universidad casi todos los días**, encontrando espacio en menos de 5 minutos si llega antes de las 7:30 a. m., pero demorando entre 15 y 20 minutos si llega después de las 8:00 a. m. Señala como principales problemas la alta demanda de espacios, la congestión en las entradas y el tráfico interno generado por vehículos que esperan una salida. Considera que un sistema que permita **reservar un espacio antes de llegar** sería **muy útil**, y ve razonable un límite de 30 minutos antes de liberar la reserva para que otros puedan ocupar el espacio. Le gustaría recibir **notificaciones en el celular** sobre la disponibilidad de espacios o el vencimiento de su reserva. Para una aplicación de estacionamiento, prioriza que sea **rápida, confiable y de uso sencillo**, con información actualizada en tiempo real, preferiblemente gratuita, que muestre un **mapa del campus** con los espacios disponibles, permita **reservar en uno o dos clics** y se integre con el **carné universitario** para validar rápidamente la entrada.
@@ -783,7 +783,7 @@ Duración de la entrevista: 06:30 – 16:22
 Personalidad: Organizado, responsable y puntual.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/conductor-2.png" alt="Conductor Universitario Diego Sanchez" width="100%" />
+  <img src="https://i.imgur.com/lCEGYVb.png" alt="Conductor Universitario Diego Sanchez" width="100%" />
 </div><br>
 
 En resumen, Diego Sanchez es estudiante de Ingeniería Industrial en la UPC Monterrico y vive en Surco, a unos 15 minutos del campus. Usa principalmente el **celular** para clases, correos y coordinación de trabajos, mientras que la **laptop** la emplea solo en casa. Su **navegador habitual** es **Google Chrome** y se comunica sobre todo por **WhatsApp**, **correo institucional** y **Microsoft Teams**. Conduce al campus **4–5 veces por semana** y en hora punta puede tardar **15–20 minutos** en encontrar estacionamiento, lo que le genera estrés por la **falta de información en tiempo real** y el **desorden interno**. Considera muy útil un sistema de **reserva previa**, acepta un **límite de 30 minutos** para mantener la reserva y valora recibir **notificaciones en el celular**. Para una aplicación de estacionamiento, prioriza que sea **sencilla, rápida, confiable y gratuita**, idealmente integrada con el **carné universitario** para validar el ingreso.
@@ -803,7 +803,7 @@ Duración de la entrevista: 16:23 – 22:07
 Personalidad: Disciplinado, organizado y puntual.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/conductor-3.png" alt="Conductor Universitario Álvaro Rivas" width="100%" />
+  <img src="https://i.imgur.com/NbsbufW.png" alt="Conductor Universitario Álvaro Rivas" width="100%" />
 </div><br>
 
 En resumen, Álvaro Rivas es estudiante de Administración y Negocios Internacionales en la UPC San Isidro y vive en Miraflores. Usa principalmente el **celular** para clases, coordinación y finanzas personales, mientras que la **laptop** la utiliza en casa para trabajos. Su **navegador habitual** es **Google Chrome**, con uso ocasional de Safari. Se comunica sobre todo por **WhatsApp**, **correo institucional** y **Microsoft Teams**. Conduce al campus **casi todos los días**, demorando **5 minutos si llega temprano** y **15–20 minutos en hora punta**, lo que le genera tensión por la **incertidumbre y el tráfico interno**. Considera muy útil un sistema de **reserva previa de estacionamiento**, ve adecuado un **límite de 30 minutos** y valora recibir **notificaciones en el celular**. Para una aplicación de estacionamiento, prioriza que sea **rápida, confiable, de uso sencillo y gratuita**, con integración al **carné universitario** y un **historial de uso** para planificar mejor sus horarios.
@@ -823,7 +823,7 @@ Duración de la entrevista: 22:12 – 29:46
 Personalidad: Responsable, organizada y práctica.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/admin-maricarmen.png" alt="Administradora Maricarmen Tejada" width="100%" />
+  <img src="https://i.imgur.com/JMEt7bU.png" alt="Administradora Maricarmen Tejada" width="100%" />
 </div><br>
 
 En resumen, Maricarmen Tejada es administradora de servicios generales en el campus de San Miguel con más de 12 años de experiencia gestionando estacionamientos y coordinando personal. Usa principalmente **laptop** para correos, reportes y hojas de cálculo, y **celular** para coordinar por WhatsApp; su navegador habitual es **Google Chrome**. Sus principales canales de comunicación son **correo institucional**, **WhatsApp** y **Microsoft Teams**.  
@@ -844,7 +844,7 @@ Duración de la entrevista: 29:47 – 37:18
 Personalidad: Práctico, ordenado y exigente; busca soluciones rápidas y claras en la operación diaria.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/admin-2.png" alt="Administrador Carlos Méndez" width="100%" />
+  <img src="https://i.imgur.com/LbtXDat.png" alt="Administrador Carlos Méndez" width="100%" />
 </div><br>
 
 En resumen, Carlos Méndez es jefe de operaciones en la UPC Monterrico y vive en Surco. Usa principalmente el **celular** para coordinar con su equipo de seguridad y logística, y la **computadora** para reportes. Su **navegador habitual** es **Google Chrome**. Se comunica por **correo institucional**, **WhatsApp**, llamadas y reuniones en **Microsoft Teams**. Gestiona los estacionamientos **de forma manual**, recibiendo reportes por radio y registrando datos en Excel. Identifica como principales problemas los **errores humanos**, las **quejas de usuarios** y la **falta de datos en tiempo real**. Considera **difícil controlar la rotación** en horas pico y valora un sistema que permita **monitoreo en vivo**, **liberación automática de espacios** y **reportes automáticos**. Reconoce posibles barreras como **resistencia de usuarios**, **costos de implementación** y la necesidad de **soporte técnico constante**.
@@ -864,7 +864,7 @@ Duración de la entrevista: 37:19 – 45:56
 Personalidad: Resolutivo, paciente y comunicativo; escucha antes de actuar y toma decisiones rápidas cuando es necesario.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/admin-3.png" alt="Administrador Javier Salazar" width="100%" />
+  <img src="https://i.imgur.com/nTJD6nX.png" alt="Administrador Javier Salazar" width="100%" />
 </div><br>
 
 En resumen, Javier Salazar es coordinador administrativo en la UPC Villa con 7 años de experiencia. Usa principalmente el **celular** para coordinar con su equipo y la **laptop** para reportes. Su **navegador principal** es **Google Chrome**, con uso ocasional de Edge. Se comunica por **correo institucional**, **WhatsApp** y reuniones en **Microsoft Teams**. Administra el estacionamiento **manualmente**, recibiendo reportes por radio o mensajes y, a veces, en Excel. Enfrenta **errores humanos**, **falta de datos en tiempo real** y **quejas frecuentes de usuarios**. Destaca la necesidad de un sistema que brinde **información en vivo**, **libere reservas no utilizadas** y genere **reportes automáticos**. Considera como retos la **resistencia de algunos usuarios**, el **costo inicial** y la importancia de un **buen soporte técnico** para evitar fallas en horas críticas.
@@ -878,19 +878,19 @@ Con el fin de analizar las entrevistas realizadas a **conductores universitarios
 <h4>Preguntas generales</h4>
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis1.png" alt="Navegador y dispositivo preferido" width="70%" />
+  <img src="https://i.imgur.com/st6C6Gp.png" alt="Navegador y dispositivo preferido" width="70%" />
 </div>
 
 En cuanto a dispositivos, predominan el **celular** y la **laptop**, confirmando que los usuarios acceden a herramientas digitales principalmente desde entornos móviles.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis2.png" alt="Navegador y dispositivo preferido" width="70%" />
+  <img src="https://i.imgur.com/wlp8VnK.png" alt="Navegador y dispositivo preferido" width="70%" />
 </div>
 
 La mayoría de los entrevistados utiliza **Google Chrome** como navegador principal, aunque se hace mención a **Safari**.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis3.png" alt="Navegador y dispositivo preferido" width="70%" />
+  <img src="https://i.imgur.com/aPOzcgR.png" alt="Navegador y dispositivo preferido" width="70%" />
 </div>
 Los canales de interacción más comunes son **WhatsApp**, **correo electrónico** y **llamadas**, con pequeña valoración de **apps móviles**.  
 
