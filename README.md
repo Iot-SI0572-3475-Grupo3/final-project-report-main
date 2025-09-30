@@ -4883,11 +4883,159 @@ URL Structurizr para apreciar mejor los diagramas de componentes IAM: <a href="h
 
 ### 6.1.1. Software Development Environment Configuration
 
+Los productos involucrados para la solución IoT SmartParking UPC son:
+
+- **Landing Page**: Tiene como propósito presentar el sistema SmartParking UPC a los visitantes, mostrando las características principales del sistema de estacionamiento inteligente, sus beneficios para la comunidad universitaria, y proporcionando acceso directo tanto a la aplicación web como a la descarga de la aplicación móvil. Incluye secciones informativas sobre automatización, tiempo ilimitado de uso, y tecnología IoT implementada.
+
+- **Web Application**: La aplicación web permite a los miembros de la comunidad UPC (estudiantes, docentes y personal administrativo) gestionar sus reservas de estacionamiento, visualizar en tiempo real el estado de los espacios disponibles mediante integración con sensores IoT, y acceder a su historial de uso. Para los administradores, proporciona un panel completo para gestionar espacios, configurar parámetros del sistema, monitorear dispositivos ESP32, visualizar métricas y reportes de ocupación, y gestionar penalizaciones por ausencias.
+
+- **Mobile Application**: Brinda a los miembros UPC acceso móvil a todas las funcionalidades clave del sistema SmartParking desde cualquier dispositivo. Permite reservar espacios, recibir notificaciones push en tiempo real sobre el estado de reservas, confirmación automática de llegadas, alertas de ausencias, y visualizar cronómetros de tiempo de uso. La aplicación móvil mantiene paridad funcional con la aplicación web, simplificando la navegación para mostrar lo esencial de cada segmento.
+
+- **Web Services (RESTful API)**: El servicio API principal proporciona endpoints RESTful para la integración con Web Application y Mobile Application. Maneja toda la lógica de negocio del sistema incluyendo: autenticación y autorización mediante JWT, gestión de usuarios UPC (@upc.edu.pe), administración de reservas con tiempo ilimitado, sistema de cronometraje automático, gestión de penalizaciones configurables, analytics y reportes de uso, sistema de notificaciones multicanal (email, push, WebSocket), y sincronización bidireccional con Edge API.
+
+- **Edge API**: La Edge API actúa como intermediario entre los dispositivos IoT en el estacionamiento (ESP32 con sensores ultrasónicos HC-SR04) y la infraestructura central en la nube. Procesa datos a nivel local para asegurar respuestas rápidas en la detección automática de vehículos, gestiona el estado en tiempo real de los 3 espacios de estacionamiento, controla LEDs RGB indicadores y display OLED, y mantiene cache local de configuraciones para operación offline. Se sincroniza con el RESTful API principal para actualizar estados y recibir comandos de control.
+
+- **Embedded Application**: Las aplicaciones embebidas se ejecutan directamente en el dispositivo ESP32, gestionando la comunicación con el hardware IoT: lectura de sensores ultrasónicos HC-SR04 para detección de presencia vehicular, control de LEDs RGB para indicadores visuales (verde=disponible, rojo=ocupado, amarillo=reservado), manejo del display OLED 128x64 para mostrar información del sistema, comunicación bidireccional con Edge API mediante HTTP/JSON sobre WiFi, y procesamiento local de comandos de control enviados desde la infraestructura central.
+
 ### 6.1.2. Source Code Management
+
+En esta sección explicamos la forma en que estamos controlando los diferentes aspectos de nuestro proyecto. Basándonos en GitFlow, nos hemos organizado de tal modo que hemos trabajado con Feature Branches (ramas por feature) y mediante pull requests, las hemos unido al develop y posteriormente a la rama main.
+
+Para su nomenclatura hemos seguido la siguiente estructura:
+
+**Prefijo**: Comienza con `feature/` para indicar claramente que se trata de una rama de función
+
+**Nombre descriptivo**: Proporciona un nombre conciso y descriptivo en inglés para la funcionalidad
+
+**Ejemplos de nomenclatura de ramas**:
+- `feature/parking-space-detection`
+- `feature/reservation-management`
+- `feature/iot-sensor-integration`
+- `feature/user-authentication`
+
+Adicionalmente usamos **Conventional Commits** para la nomenclatura de commits:
+
+- `feat:` para nuevas funcionalidades
+- `fix:` para corrección de errores
+- `docs:` para documentación
+- `test:` para pruebas
+- `refactor:` para refactorización de código
+- `style:` para cambios de formato
+- `chore:` para tareas de mantenimiento
+
+Para los releases: `release-*` (ejemplo: `release-1.0.0`)
+
+Para los hotfixes: `hotfix-*` (ejemplo: `hotfix-1.0.1`)
+
+Aplicamos **Semantic Versioning** para la numeración de los releases siguiendo el formato: `MAJOR.MINOR.PATCH`
+
+Adjuntamos los enlaces para visualizar los repositorios de la organización SmartParking UPC:
+
+- **Repositorio de Landing Page**:
+  
+  https://github.com/SmartParking-UPC/landing-page.git
+  
+  Elaborado con HTML5, CSS3 y JavaScript.
+
+- **Repositorio de Web Application**:
+  
+  https://github.com/SmartParking-UPC/web-application.git
+  
+  Elaborado con Angular Framework, TypeScript y Tailwind CSS.
+
+- **Repositorio de Web Services (RESTful API)**:
+  
+  https://github.com/SmartParking-UPC/web-services.git
+  
+  Elaborado con Spring Boot y Java.
+
+- **Repositorio de Mobile Application**:
+  
+  https://github.com/SmartParking-UPC/mobile-application.git
+  
+  Elaborado con Flutter y Dart.
+
+- **Repositorio del Documento del Proyecto**:
+  
+  https://github.com/SmartParking-UPC/project-report.git
+  
+  Elaborado en Markdown.
 
 ### 6.1.3. Source Code Style Guide & Conventions
 
+**Lenguaje HTML, CSS y JavaScript (Landing Page)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| HTML Style Guide and Coding Conventions<br>https://www.w3schools.com/html/html5_syntax.asp | Utilizamos las convenciones estándar de HTML5 para mantener un código semántico, accesible y compatible con todos los navegadores. Incluye uso adecuado de etiquetas semánticas, atributos ARIA para accesibilidad (a11y), y estructura apropiada para SEO. |
+| Google HTML/CSS Style Guide<br>https://google.github.io/styleguide/htmlcssguide.html | Adoptamos las mejores prácticas de Google para escribir HTML y CSS limpio, mantenible y consistente en todo el proyecto. |
+
+**Lenguaje TypeScript y Angular (Web Application)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Angular Coding Style Guide<br>https://angular.io/guide/styleguide | Seguimos la guía oficial de estilo de Angular para mantener consistencia en la estructura de componentes, servicios, módulos y naming conventions. Incluye organización de carpetas, nomenclatura de archivos, y mejores prácticas para desarrollo con TypeScript. |
+| Google TypeScript Style Guide<br>https://google.github.io/styleguide/tsguide.html | Aplicamos las convenciones de TypeScript de Google para tipos, interfaces, clases y funciones, asegurando código type-safe y mantenible. |
+
+**Tailwind CSS (Web Application)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Tailwind CSS Documentation<br>https://tailwindcss.com/docs | Utilizamos las utility classes de Tailwind CSS siguiendo sus convenciones oficiales para un diseño consistente y responsivo. Adoptamos el enfoque utility-first para estilización de componentes. |
+
+**Lenguaje Java y Spring Boot (Web Services)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Google Java Style Guide<br>https://google.github.io/styleguide/javaguide.html | Utilizamos la guía de estilo de Java de Google para mantener código limpio, legible y consistente. Incluye convenciones para nombrado de clases, métodos, variables, formato de código y documentación JavaDoc. |
+| Spring Boot Features & Best Practices<br>https://docs.spring.io/spring-boot/docs/current/reference/html/ | Aplicamos las mejores prácticas recomendadas por Spring Boot para la estructura de proyectos, configuración de beans, manejo de dependencias, y desarrollo de RESTful APIs. |
+
+**Lenguaje Dart (Mobile Application - Flutter)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Effective Dart: Style<br>https://dart.dev/effective-dart/style | Utilizamos la guía oficial de estilo de Dart para mantener código consistente en la aplicación móvil. Incluye convenciones para nombrado de clases, funciones, variables, carpetas y archivos, así como formato de código y documentación. |
+| Flutter Style Guide<br>https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo | Aplicamos las recomendaciones específicas de Flutter para organización de widgets, state management, y estructura de proyectos. |
+
+**Lenguaje Gherkin (Testing - Archivos .feature)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Gherkin Conventions for Readable Specifications<br>https://specflow.org/gherkin/gherkin-conventions-for-readable-specifications/ | Utilizamos las convenciones de Gherkin para escribir escenarios de prueba legibles y comprensibles, siguiendo el formato Given-When-Then para definir criterios de aceptación de User Stories. |
+
+**Lenguaje Markdown (Documentación)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| The Markdown Guide<br>https://www.markdownguide.org/ | Seguimos la guía oficial de Markdown para toda la documentación del proyecto, incluyendo README files, documentación técnica y el reporte final del proyecto. |
+
 ### 6.1.4. Software Deployment Configuration
+
+A continuación se detalla el conjunto de herramientas para el despliegue de cada producto de la solución IoT SmartParking UPC.
+
+**Landing Page**
+
+Para el despliegue de la Landing Page, se utilizará GitHub Pages por su simplicidad y automatización de despliegue directo desde el repositorio.
+
+**Web Application**
+
+Para el despliegue de la Web Application, se utilizará Vercel por su fácil integración con repositorios de GitHub, Angular framework y despliegue automatizado rápido y fácil.
+
+**Web Services (RESTful API)**
+
+Los servicios web se empaquetarán y desplegarán como contenedores utilizando Docker, lo que garantiza portabilidad, escalabilidad y una configuración consistente del entorno. Se utilizará Railway o Render para hosting de contenedores con integración continua desde GitHub.
+
+**Edge API**
+
+El despliegue de la Edge API está en evaluación. Se considerará una solución que permita baja latencia y procesamiento cercano a los dispositivos IoT, como Cloudflare Workers, AWS Lambda@Edge, o Railway para una implementación inicial con Flask y Python.
+
+**Mobile Application**
+
+Para la distribución de la aplicación móvil durante el desarrollo y pruebas, se utilizará Firebase App Distribution, permitiendo enviar versiones preliminares a testers internos de manera segura, rápida y con seguimiento de métricas de uso y errores. Para producción se considerará Google Play Store y Apple App Store.
+
+**Embedded Application**
+
+El despliegue de la Embedded Application dependerá del hardware ESP32. Se evaluarán opciones como actualizaciones OTA (Over-the-Air) mediante servicios personalizados utilizando protocolos ligeros como HTTP para sincronización remota, o actualización manual mediante conexión USB con Arduino IDE/PlatformIO durante la fase inicial de desarrollo.
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
