@@ -1344,86 +1344,91 @@ Incrementar en 25% la rotación de espacios en 6 meses mediante liberación auto
 ### 4.1.1. EventStorming
 
 Imagen del Event Storming general en su fase final: 
-![image](./assets/img/Chapter-IV/eventstorming.jpg)
+![image](https://i.imgur.com/btwdP5e.jpeg)
 
 Imagen con resultado del Event Storming en relación a Identity and Access Management (IAM) Bounded Context:
-![image](./assets/img/Chapter-IV/iam-eventstorming.png)
+![image](https://i.imgur.com/57lmMNB.png)
 
 Imagen con resultado del Event Storming en relación a Reservation Management Bounded Context:
-![image](./assets/img/Chapter-IV/reservation-eventstorming.png)
+![image](https://i.imgur.com/qo2kHnj.png)
 
 Imagen con resultado del Event Storming en relación a Space & IoT Management Bounded Context:
-![image](./assets/img/Chapter-IV/iot-eventstorming.png)
+![image](https://i.imgur.com/C1UnzdI.png)
 
 Imagen con resultado del Event Storming en relación a Time Tracking Bounded Context:
-![image](./assets/img/Chapter-IV/timeTracking-eventstorming.png)
+![image](https://i.imgur.com/XsIYLbg.png)
 
 Imagen con resultado del Event Storming en relación a Penalty Management Bounded Context:
-![image](./assets/img/Chapter-IV/penalty-eventstorming.png)
+![image](https://i.imgur.com/Xl2RAnx.png)
 
 Imagen con resultado del Event Storming en relación a Analytics & Reporting Bounded Context:
-![image](./assets/img/Chapter-IV/analytics-eventstorming.png)
+![image](https://i.imgur.com/LeJdzwo.png)
 
 Imagen con resultado del Event Storming en relación a Notification Bounded Context:
-![image](./assets/img/Chapter-IV/notification-eventstorming.png)
+![image](https://i.imgur.com/a9jClY0.png)
 
 #### 4.1.1.1. Candidate Context Discovery
 
 **Paso 1: Unstructured Exploration:** Comenzamos identificando todos los eventos de dominio que ocurren en el sistema SmartParking UPC. Durante esta fase, el equipo se enfocó en capturar eventos como "Usuario registrado en el sistema", "Espacio de estacionamiento detectado como ocupado", "Reserva confirmada exitosamente", "Sesión de estacionamiento iniciada", "Penalización aplicada por ausencia", entre otros. Cada evento fue documentado en post-its en Miro, considerando el flujo completo desde la perspectiva del usuario universitario hasta la gestión administrativa.  
 **Imagen de la Reunión:**  
-![Captura de pantalla de la reunión - Paso 1](./assets/img/Chapter-IV/meeting-step1.png)  
+![Captura de pantalla de la reunión - Paso 1](https://i.imgur.com/Sj0EwYy.jpeg)  
 **Imagen ejemplo:**  
-![image](./assets/img/Chapter-IV/Step%201_%20Unstructured%20Exploration.jpg)
+![image](https://i.imgur.com/9VNqlDW.jpeg)
 
 **Paso 2: Timelines:** Organizamos los eventos identificados en secuencias temporales que representan los diferentes flujos de usuario en SmartParking. Desarrollamos el flujo principal donde un estudiante busca un espacio disponible, realiza una reserva, llega al campus, confirma su llegada, estaciona su vehículo, y finalmente libera el espacio. También consideramos flujos alternativos como cancelaciones de reserva, penalizaciones por no presentarse, y escenarios de espacios ocupados inesperadamente.  
 **Imagen de la Reunión:**  
-![Captura de pantalla de la reunión - Paso 2](./assets/img/Chapter-IV/meeting-step2.jpg)  
+![Captura de pantalla de la reunión - Paso 2](https://i.imgur.com/Mt8ZbUP.jpeg)  
 **Imagen ejemplo:**  
-![image](./assets/img/Chapter-IV/Step%202_%20Timelines.jpg)
+![image](https://i.imgur.com/jLtk831.jpeg)
 
 **Paso 3: Pain Points:** Identificamos los principales problemas que enfrentan los usuarios en el sistema actual de estacionamientos de la UPC. Entre estos se encuentran la falta de información en tiempo real sobre disponibilidad, la dificultad para encontrar espacios libres, la ausencia de un sistema de reservas, la falta de notificaciones sobre el estado de los espacios, y la inexistencia de un sistema de penalizaciones para usuarios que no cumplen con sus reservas.
 
+**Imagen de la Reunión:**  
+![Captura de pantalla de la reunión - Paso 3](https://i.imgur.com/VqR21UY.jpeg)  
+**Imagen ejemplo:**  
+![image](https://i.imgur.com/g7eZVCM.jpeg)
+
 **Paso 4: Pivotal Points:** Definimos los eventos críticos que marcan cambios significativos en el estado del sistema. Estos incluyen momentos como cuando un sensor IoT detecta la presencia de un vehículo, cuando un usuario confirma su llegada al espacio reservado, cuando se inicia el cronometraje de una sesión de estacionamiento, y cuando se aplica una penalización por ausencia.  
 **Imagen de la Reunión:**  
-![Captura de pantalla de la reunión - Paso 4](./assets/img/Chapter-IV/meeting-step4.jpg)  
+![Captura de pantalla de la reunión - Paso 4](https://i.imgur.com/JLlhTjb.jpeg)  
 **Imagen ejemplo:**  
-![image](./assets/img/Chapter-IV/Step%204_%20Pivotal%20Points.jpg)
+![image](https://i.imgur.com/aTpgPVS.jpeg)
 
 **Paso 5: Commands:** Especificamos las acciones que los usuarios y el sistema pueden ejecutar para generar los eventos identificados. Los comandos incluyen "Registrar usuario", "Buscar espacios disponibles", "Crear reserva", "Confirmar llegada", "Iniciar sesión de estacionamiento", "Finalizar sesión", "Aplicar penalización", "Generar reporte de uso", entre otros. Cada comando fue asociado con los actores correspondientes: estudiantes, docentes, personal administrativo y administradores del sistema.  
 **Imagen de la Reunión:**  
-![Captura de pantalla de la reunión - Paso 5](./assets/img/Chapter-IV/meeting-step5.jpg)  
+![Captura de pantalla de la reunión - Paso 5](https://i.imgur.com/kKF5NAe.jpeg)  
 **Imagen ejemplo:**  
-![image](./assets/img/Chapter-IV/Step%205_%20Commands.jpg)
+![image](https://i.imgur.com/y5DjQNx.jpeg)
 
 **Paso 6: Policies:** Establecimos reglas de negocio automatizadas que se ejecutan sin intervención directa del usuario. Estas políticas incluyen la detección automática de vehículos mediante sensores ultrasónicos ESP32, la aplicación automática de penalizaciones cuando un usuario no se presenta a su reserva, la generación automática de alertas cuando un espacio permanece ocupado más tiempo del reservado, y la actualización automática de métricas de uso del sistema.  
 **Imagen de la reunión:**  
-![Captura de pantalla de la reunión - Paso 6](./assets/img/Chapter-IV/meeting-step6.png)  
+![Captura de pantalla de la reunión - Paso 6](https://i.imgur.com/uoI9ddE.jpeg)  
 **Imagen ejemplo:**  
-![image](./assets/img/Chapter-IV/Step%206_%20Policies.jpg)
+![image](https://i.imgur.com/CU7X3qC.jpeg)
 
 **Paso 7: Read Models:** Definimos las vistas de datos necesarias para soportar las consultas de los usuarios y administradores. Estos modelos incluyen la vista de disponibilidad de espacios en tiempo real, el historial personal de reservas del usuario, el dashboard administrativo con métricas de ocupación, los reportes de eficiencia por espacio, y las consultas de patrones de uso del estacionamiento.  
 **Imagen de la Reunión:**  
-![Captura de pantalla de la reunión - Paso 7](./assets/img/Chapter-IV/meeting-step7.jpg)  
+![Captura de pantalla de la reunión - Paso 7](https://i.imgur.com/LIG143h.jpeg)  
 **Imagen ejemplo:**  
-![image](./assets/img/Chapter-IV/Step%207_%20Read%20Models.jpg)
+![image](https://i.imgur.com/waZvaxI.jpeg)
 
 **Paso 8: External Systems:** Identificamos los sistemas externos que interactúan con SmartParking pero no forman parte de su dominio core. Estos incluyen los sensores IoT ESP32 con sensores ultrasónicos, el sistema de notificaciones push para móviles, la base de datos de usuarios de la UPC, el sistema de correo electrónico institucional, y potenciales integraciones futuras con sistemas de pago o Active Directory de la universidad.
 **Imagen de la Reunión:**  
-![Captura de pantalla de la reunión - Paso 8](./assets/img/Chapter-IV/meeting-step8.jpg)  
+![Captura de pantalla de la reunión - Paso 8](https://i.imgur.com/VbbsB2R.jpeg)  
 **Imagen ejemplo:**  
-![image](./assets/img/Chapter-IV/Step%208_%20External%20Systems.jpg)
+![image](https://i.imgur.com/AxwW9oY.jpeg)
 
 **Paso 9: Aggregates:** Agrupamos las entidades relacionadas en agregados que mantienen la consistencia de datos. Los agregados principales incluyen UserAccount (usuario y perfil), Reservation (reserva y sus estados), ParkingSpace (espacio físico y sensores asociados), TimeTrackingSession (sesión de estacionamiento y cronometraje), PenaltyRecord (registro de penalizaciones), y AnalyticsData (métricas y reportes).  
 **Imagen de la Reunión:**  
-![Captura de pantalla de la reunión - Paso 9](./assets/img/Chapter-IV/meeting-step9.jpg)
+![Captura de pantalla de la reunión - Paso 9](https://i.imgur.com/vVAJMQl.jpeg)
 **Imagen ejemplo:**  
-![image](./assets/img/Chapter-IV/Step%209_%20Agreggates.jpg)
+![image](https://i.imgur.com/LWq90Lc.jpeg)
 
 **Paso 10: Bounded Context:** Agrupamos los agregados relacionados en contextos delimitados que representan áreas de responsabilidad específicas. Esto resultó en siete bounded contexts: Identity and Access Management (gestión de usuarios y autenticación), Reservation Management (gestión de reservas), Space & IoT Management (gestión de espacios y sensores), Time Tracking (cronometraje de sesiones), Penalty Management (gestión de penalizaciones), Analytics & Reporting (métricas y reportes), y Notification (sistema de notificaciones).
 **Imagen de la Reunión:**  
-![Captura de pantalla de la reunión - Paso 7](./assets/img/Chapter-IV/meeting-step10.jpg)  
+![Captura de pantalla de la reunión - Paso 10](https://i.imgur.com/xst8gc2.jpeg)  
 **Imagen ejemplo:**  
-![image](./assets/img/Chapter-IV/Step%2010_%20Bounded%20Context.jpg)
+![image](https://i.imgur.com/eIGjc3p.jpeg)
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -1431,259 +1436,259 @@ Imagen con resultado del Event Storming en relación a Notification Bounded Cont
 <h3>Escenario: El sensor detecta un vehículo entrando en un espacio.</h3>
 <p>Para este escenario, cuando el Sensor IoT detecta la entrada de un vehículo, emite el evento Vehículo detectado hacia Space & IoT Management. Este bounded context consulta a Reservation Management (Verificar reserva) para saber si existe una reserva activa para ese place_id y timestamp dentro del período de tolerancia. Si la reserva es válida, Reservation Management envía a Time Tracking el comando Reserva confirmada para iniciar la sesión de tiempo y asociarla al reservation_id y user_id.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow1.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/34NOQZP.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: El sensor detecta un vehículo entrando en un espacio.</h3>
 <p>Para este escenario, el Sensor IoT emite el evento Vehículo no detectado hacia Space & IoT Management, que ordena a Time Tracking (Stop Timer – Command) detener la sesión y solicita a Reservation Management (Release Space – Command) liberar la plaza. Con ello, Space & IoT actualiza el estado del espacio a libre y los datos de tiempo quedan disponibles para Analytics & Reporting.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow2.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/jK3dveU.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: El dispositivo IoT queda fuera de línea</h3>
 <p>Para este escenario, el módulo de borde informa a Space & IoT Management el evento Heartbeat perdido. El contexto marca el espacio con estado desconocido, avisa a Notification (Admin alert – Command) y registra telemetría en Analytics & Reporting (Device telemetry – Event) para seguimiento de salud.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow3.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/W8XNF4Q.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: El administrador marca un espacio en mantenimiento</h3>
 <p>Para este escenario, el Administrador envía a Space & IoT Management el comando Set maintenance. El contexto bloquea asignaciones informando a Reservation Management (Inhabilitar asignación – Command), notifica a usuarios vía Notification y publica el evento Estado de espacio = MANTENIMIENTO para consumidores interesados.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow4.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/YzpBkxe.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Filtrado de falsos positivos de sensores</h3>
 <p>Para este escenario, el Sensor IoT genera un evento de Lectura inestable que llega a Space & IoT Management. Se aplica la política DEBOUNCE (no se cambia el estado hasta confirmar persistencia), se registra la anomalía en Analytics & Reporting y no se emite cambio de ocupación mientras dure la inestabilidad.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow5.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/HCnKGXf.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Ocupación no autorizada detectada</h3>
 <p>Para este escenario, el Sensor IoT reporta Vehículo detectado y Space & IoT Management consulta a Reservation Management (Verificar reserva – Query). Al no existir reserva vigente, ordena a Penalty Management Registrar infracción y a Notification Alertar admin; opcionalmente inicia una sesión en Time Tracking marcada como no autorizada según política, dejando el estado del espacio como ocupado (no autorizado).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow6.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/mmZu2Mb.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h2>Time Tracking</h2>
 <h3>Escenario: Inicio de sesión de estacionamiento.</h3>
 <p>Para este escenario, cuando el Sensor IoT detecta la entrada de un vehículo, emite el evento Vehículo detectado hacia Space & IoT Management. Este bounded context consulta a Reservation Management (Verificar reserva) para saber si existe una reserva activa para ese place_id y timestamp dentro del período de tolerancia. Si la reserva es válida, Reservation Management envía a Time Tracking el comando Reserva confirmada para iniciar la sesión de tiempo y asociarla al reservation_id y user_id.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow7.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/99n9xMe.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Detener temporizador por salida de vehículo.</h3>
 <p>Para este escenario, Space & IoT comunica la salida y envía a Time Tracking el comando Stop Timer. Time Tracking calcula la duración, emite Timer Stopped y Time Record Created (Event) hacia Analytics & Reporting; el release del espacio lo coordina Reservation Management.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow8.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/3g5wrZu.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Política de llegada tardía.</h3>
 <p>Para este escenario, una Arrival Policy de Reservation Management solicita a Time Tracking evaluar la sesión; al no existir llegada en ventana, Time Tracking emite No-Show Detected (Event) hacia Penalty Management y Reservation Management (para auto-release). No se inicia sesión y se registra evidencia temporal.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow9.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/2qLxdwr.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Actualización de estadísticas de uso.</h3>
 <p>Para este escenario, cuando Time Tracking genera un registro de tiempo, publica Time Record Created (Event) y Usage Statistics Updated (Event) a Analytics & Reporting para refrescar KPIs (ocupación, rotación, permanencia). No hay comandos de retorno.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow10.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/TElcUk4.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Detección de sesión extendida.</h3>
 <p>Para este escenario, Time Tracking detecta que la sesión supera el fin programado y emite Duration Exceeded (Event). Se avisa mediante Notification al usuario (gracia/upsell de extensión) y, si la política lo exige, se informa a Penalty Management para sanción por exceso.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow11.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/zDkxjxo.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Cierre automático de sesión inactiva.</h3>
 <p>Para este escenario, una Timer Stop Policy (ej. inactividad prolongada o cierre nocturno) ordena a Time Tracking el comando Stop Timer. Time Tracking cierra la sesión, emite Time Record Created y notifica a Reservation Management para liberar el espacio y a Space & IoT para sincronizar estado.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow12.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/TX4QJV4.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h2>Penalty Management</h2>
 <h3>Escenario: Registro de ausencia.</h3>
 <p>Para este escenario, cuando Reservation Management detecta que el usuario no llegó (p. ej., por Auto-Release), envía a Penalty Management el comando Register Absence. Penalty incrementa el contador, emite Absence Registered (Event) y ordena a Notification informar al usuario; además envía métricas a Analytics & Reporting.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow13.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/A8f90QY.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Emisión de advertencia.</h3>
 <p>Para este escenario, al alcanzar el umbral de la política (p. ej., 1 no-show), Penalty Management aplica Absence Policy y emite Warning Issued (Event), ordenando a Notification el envío del aviso formal.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow14.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/m7xu7mS.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Suspensión de usuario.</h3>
 <p>Para este escenario, si el contador supera el umbral de suspensión (p. ej., 3 no-show en 30 días), Penalty Management ejecuta Suspension Policy y emite User Suspended (Event); ordena a IAM aplicar el bloqueo de acceso y a Notification comunicar la sanción a usuario y admin.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow15.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/Wvrn4yn.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Reinicio de contador de ausencias.</h3>
 <p>Para este escenario, cuando Reservation Management confirma llegadas correctas por un período o por acción administrativa, se dispara en Penalty Management el comando Reset Absence Counter. El contexto emite Absence Counter Reset (Event) y actualiza el historial.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow16.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/SCbUeO4.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Penalización por ocupación no autorizada.</h3>
 <p>Para este escenario, si Space & IoT Management reporta Unauthorized Occupancy (Event), Penalty Management registra la infracción (Penalty Recorded – Event), ordena a Notification alertar al admin/usuario y, según política, acumula puntos para futuras medidas (advertencia/suspensión).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow17.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/BmGJLpV.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Generación de reporte de sanciones.</h3>
 <p>Para este escenario, Analytics & Reporting consulta a Penalty Management (Request Penalty Data – Query). Penalty retorna el dataset agregado y emite Penalty Report Generated (Event) para refrescar dashboards y KPIs (no-show rate, reincidencia, suspensiones).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow18.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/KwPP5E7.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h2>Reservation Management</h2>
 <h3>Escenario: Creación de reserva y validación de disponibilidad.</h3>
 <p>Para este escenario, el Usuario solicita crear una reserva y Reservation Management valida disponibilidad consultando a Space & IoT Management (capacidad/espacios compatibles). Si es viable, confirma y notifica al usuario mediante Notification, emitiendo el evento Reservation Created.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow19.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/ieTCi2y.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Asignación de espacio a una reserva.</h3>
 <p>Para este escenario, una política de asignación o un scheduler pide a Reservation Management fijar un espacio concreto. El contexto coordina con Space & IoT la asignación, pre-crea la sesión en Time Tracking (opcional) y emite Reservation Updated con el place_id asignado.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow20.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/es0tPPK.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Confirmación de llegada del usuario.</h3>
 <p>Para este escenario, el Usuario (o la detección desde Space & IoT) activa la confirmación de llegada; Reservation Management valida ventana de grace y ordena a Time Tracking iniciar el timer. Se emite Arrival Confirmed y la reserva pasa a estado en uso.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow21.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/NZUysKo.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Cancelación de reserva y liberación de espacio.</h3>
 <p>Para este escenario, el Usuario solicita cancelar; Reservation Management ordena a Space & IoT liberar el espacio y a Notification enviar la confirmación de cancelación. Se emite Reservation Cancelled para consumidores (p. ej., analítica).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow22.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/gghkoEl.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Auto-Release por no arribo (no-show).</h3>
 <p>Para este escenario, al vencer el grace period sin llegada, la política dispara el Auto-Release: Reservation Management libera el espacio en Space & IoT, registra la ausencia en Penalty Management y emite Reservation Auto-Released.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow23.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/l3ujBkn.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Reasignación automática de espacio.</h3>
 <p>Para este escenario, ante indisponibilidad (mantenimiento/ocupación prolongada), Reservation Management ejecuta la reasignación a otro espacio disponible, coordina con Space & IoT y notifica el cambio al usuario; emite Reservation Reallocated.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow24.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/vEm3oG4.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h2>Notification</h2>
 <h3>Escenario: Confirmación de reserva.</h3>
 <p>Para este escenario, Reservation Management envía a Notification el comando Enviar confirmación. Notification resuelve preferencias de canal y plantilla, distribuye el mensaje al usuario y emite Reservation Confirmation Sent (Event) para auditoría.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow25.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/MQTy7QG.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Cancelación de reserva.</h3>
 <p>Para este escenario, Reservation Management ordena a Notification Notificar cancelación. Notification personaliza el contenido (motivo, reembolso si aplica), entrega por los canales del usuario y emite Reservation Cancelled Notification Sent (Event).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow26.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/pQFpTZb.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Aviso de mantenimiento de espacio.</h3>
 <p>Para este escenario, Space & IoT Management solicita a Notification Avisar a usuarios afectados. Notification consulta a Reservation Management los usuarios/reservas impactados en la franja y envía un broadcast (usuario y/o admin). Emite Maintenance Notification Sent (Event).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow27.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/INI3sLn.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Alerta de dispositivo IoT sin conexión.</h3>
 <p>Para este escenario, Space & IoT Management envía a Notification el comando Admin alert por heartbeat perdido. Notification aplica throttling/agrupación, entrega al on-call/admins y emite Device Offline Alert Sent (Event).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow28.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/WsxFvfJ.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Ocupación no autorizada.</h3>
 <p>Para este escenario, Space & IoT Management ordena a Notification Alertar admin ante Unauthorized Occupancy. Notification envía el mensaje con evidencia básica (lugar, hora, id de detección) y emite Unauthorized Occupancy Alert Sent (Event).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow29.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/tYymZPn.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Suspensión de usuario (por penalización).</h3>
 <p>Para este escenario, Penalty Management indica a Notification Enviar aviso de suspensión. Notification comunica al usuario (período, motivo, pasos para apelación) y opcionalmente a admins; emite User Suspension Notification Sent (Event).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow30.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/D2J6MON.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h2>Analytics & Reporting</h2>
 <h3>Escenario: Actualización de métricas de uso (tiempos de estancia).</h3>
 <p>Para este escenario, Time Tracking publica Time Record Created (Event) y Analytics & Reporting agrega KPIs (duración, rotación, ocupación por franja), emitiendo Usage Statistics Updated (Event) para dashboards.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow31.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/GGVTQYm.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Tablero de ocupación y disponibilidad (estado en tiempo casi real).</h3>
 <p>Para este escenario, Space & IoT envía Space Status Updated (Event) y Reservation Management envía Reservation Created/Cancelled/Reallocated (Event); Analytics & Reporting fusiona señales y publica Occupancy Snapshot Updated (Event) (estado casi real).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow32.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/OHFe0QU.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Salud de dispositivos y telemetría (uptime / heartbeat).</h3>
 <p>Para este escenario, Space & IoT emite Device Heartbeat Lost/Recovered (Event); Analytics & Reporting calcula uptime/MTTR/MTBF y genera Device Health Report Generated (Event), además puede ordenar a Notification un resumen a admins.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow33.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/akQN46E.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: No-show y penalizaciones (cumplimiento de políticas)</h3>
 <p>Para este escenario, Reservation Management emite Reservation Auto-Released (Event) y Penalty Management emite Penalty Recorded/Absence Registered (Event); Analytics & Reporting actualiza KPIs (tasa de no-show, reincidencia) y publica Penalty Metrics Updated (Event); opcionalmente ordena a Notification enviar resumen periódico.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow34.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/1hDIRjk.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Informes de SLA y eficiencia operativa (reportes bajo demanda)</h3>
 <p>Para este escenario, Analytics & Reporting consulta a Time Tracking, Reservation Management y Space & IoT (Queries de datos crudos), consolida y emite SLA Report Generated (Event); puede instruir a Notification a distribuir el informe.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow35.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/jJkB8NH.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Pronóstico de demanda y recomendaciones (capacity planning)</h3>
 <p>Para este escenario, Analytics & Reporting entrena/ejecuta modelos con históricos y publica Demand Forecast Published (Event) hacia Reservation Management y Space & IoT; además envía Suggest Reallocation Policy (Command) a Reservation y puede notificar a admins con recomendaciones.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow36.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/UhjobhC.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h2>IAM (Identity & Access Management)</h2>
 <h3>Escenario: Registro y verificación de usuario (onboarding).</h3>
 <p>Para este escenario, Admin/Usuario → IAM envía el comando Create User; IAM → Notification envía el comando Send Verification y IAM emite User Created (Event). Notification confirma entrega con Verification Delivered (Event).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow37.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/H4xxjhV.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Autenticación y emisión de token (inicio de sesión).</h3>
 <p>Para este escenario, Usuario → IAM envía el comando Authenticate; IAM emite Access Token Issued (Event). Los demás BCs realizan consulta a IAM (Validate Token – Query) y IAM responde con Token Validated/Rejected (Event).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow38.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/ZcN3rP9.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Autorización de operación sensible (RBAC / ABAC).</h3>
 <p>Para este escenario, un BC (p. ej., Space & IoT/Reservation) consulta a IAM con Check Permission (Query) para actionId/resource. IAM evalúa política y emite Authorization Decision: Granted/Denied (Event); opcionalmente IAM → Notification Notify Access Denied (Command).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow39.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/FOk8ozr.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Step-up / MFA para acción privilegiada.</h3>
 <p>Para este escenario, el BC que dispara (p. ej., Space & IoT) envía a IAM el comando Require StepUp; IAM → Notification Send MFA (Command); Usuario → IAM Verify StepUp (Command); IAM emite StepUpGranted (Event) y el BC vuelve a consultar permisos (Check Permission – Query), ahora concedidos por el contexto reforzado.</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow40.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/X6oPqcs.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Suspensión y levantamiento por penalización (integración con Penalty).</h3>
 <p>Para este escenario, Penalty Management → IAM envía comando Suspend User; IAM emite User Suspended (Event) y IAM → Notification Send Suspension Notice (Command). Para restituir, Penalty → IAM Reinstate User (Command) y IAM emite User Reinstated (Event).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow41.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/Isg3aYe.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 <h3>Escenario: Gestión de credenciales y sesiones (dispositivos y seguridad).</h3>
 <p>Para este escenario, Space & IoT → IAM envía comando Register Device; IAM emite Device Credentials Issued (Event). Para rotación, Space & IoT → IAM Rotate Device Keys (Command) y IAM emite Device Keys Rotated (Event). Ante incidente, Admin/SOC → IAM Revoke All Tokens (Command) y IAM emite Sessions Revoked (Event).</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/f229c98227118c228f9902decc4c41606b1e75ae/assets/img/Chapter-IV/flow42.png" alt="Message Flow Organizational Management" width="90%" />
+  <img src="https://i.imgur.com/UMgFEl3.png" alt="Message Flow Organizational Management" width="90%" />
 </div><br>
 
 
@@ -1695,7 +1700,7 @@ En el siguiente apartado se grafican los candidate bounded context. El grupo tom
 <h2>Space & IoT Management Bounded Context</h2>
 <p>Responsable de la interacción con el mundo físico. Su principal tarea es monitorear el estado de cada espacio de estacionamiento a través de sensores IoT. .</p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/9691e0c18dc66ab9688c434b117e9873ecead165/assets/img/Chapter-IV/space-iot-management-bounded-context.jpg" width="90%"/>
+  <img src="https://i.imgur.com/SRDezIJ.jpeg" width="90%"/>
 </div><br>
 
 Este *bounded context* está encargado de detectar cuando un vehiculo entra o sale, actualizar el estado del espacio y notificar a otros contextos sobre estos eventos.
@@ -1705,7 +1710,7 @@ Este *bounded context* está encargado de detectar cuando un vehiculo entra o sa
 Responsable de medir y registrar el tiempo. Su única responsabilidad es iniciar un temporizador cuando un vehículo ocupa un espacio y detenerlo cuando se va. No toma decisiones sobre penalizaciones o reglas de negocio; simplemente provee la métrica de tiempo para que otros contextos puedan actuar en consecuencia.
 </p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/time-tracking-bounded-context.jpg" width="90%"/>
+  <img src="https://i.imgur.com/Pg5zye2.jpeg" width="90%"/>
 </div>
 
 Este *bounded context* notifica cuando un usuario excede su tiempo de reserva, y envía los datos de tiempo de estacionamiento para análisis y reportes.
@@ -1715,7 +1720,7 @@ Este *bounded context* notifica cuando un usuario excede su tiempo de reserva, y
 Responsable de la disciplina y el cumplimiento de las reglas. Su función es aplicar las políticas de penalización del negocio. Recibe notificaciones de otros contextos sobre infracciones (ej. tiempo excedido, no-shows) y se encarga de calcular las penalizaciones correspondientes, emitir advertencias y, si es necesario, suspender a los usuarios.
 </p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/penalty-management-bounded-context.jpg" width="90%"/>
+  <img src="https://i.imgur.com/p6abzcg.jpeg" width="90%"/>
 </div>
 
 Este *bounded context* recibe notificaciones de otros contextos sobre infracciones y se encarga de calcular las penalizaciones correspondientes, emitir advertencias y, si es necesario, suspender a los usuarios.
@@ -1725,7 +1730,7 @@ Este *bounded context* recibe notificaciones de otros contextos sobre infraccion
 Este es el corazón de la funcionalidad del negocio. Su responsabilidad es gestionar todo el ciclo de vida de una reserva: desde que un usuario la solicita, la confirma y se le asigna un espacio, hasta que expira o es cancelada. Este contexto valida las reglas de negocio (ej. tiempo límite de llegada, espacios disponibles) y coordina la asignación de espacios, garantizando que el proceso sea justo y eficiente.
 </p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/reservation-management-bounded-context.jpg" width="90%"/>
+  <img src="https://i.imgur.com/pxQxxYL.jpeg" width="90%"/>
 </div>
 
 Este *bounded context* se encarga de validar las reglas de negocio y coordina la asignación de espacios, garantizando que el proceso sea justo y eficiente.
@@ -1735,7 +1740,7 @@ Este *bounded context* se encarga de validar las reglas de negocio y coordina la
 Responsable de recopilar y analizar datos para la toma de decisiones. Su función es centralizar la información de todo el sistema para generar métricas, reportes y dashboards. Proporciona una visión de alto nivel a los administradores sobre el rendimiento operativo, la utilización de espacios y el comportamiento de los usuarios.
 </p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/analytics-reporting-bounded-context.jpg" width="90%"/>
+  <img src="https://i.imgur.com/JfYdcjE.jpeg" width="90%"/>
 </div>
 
 Este *bounded context* centraliza la información de todo el sistema para generar métricas, reportes y dashboards. Proporciona una visión de alto nivel a los administradores sobre el rendimiento operativo, la utilización de espacios y el comportamiento de los usuarios.
@@ -1745,7 +1750,7 @@ Este *bounded context* centraliza la información de todo el sistema para genera
 Responsable de la comunicación automatizada. Su única responsabilidad es enviar mensajes a usuarios y administradores a través de diversos canales (email, SMS, notificaciones push). Recibe solicitudes de otros contextos (ej. "envía una confirmación de reserva") y se encarga de gestionar el proceso de envío de manera eficiente y confiable.
 </p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/notification-bounded-context.jpg" width="90%"/>
+  <img src="https://i.imgur.com/K4QDaGR.jpeg" width="90%"/>
 </div>
 
 Este *bounded context* recibe solicitudes de otros contextos y se encarga de gestionar el proceso de envío de manera eficiente y confiable.
@@ -1755,7 +1760,7 @@ Este *bounded context* recibe solicitudes de otros contextos y se encarga de ges
 Este contexto es el guardián de la seguridad y el acceso. Su responsabilidad es gestionar las identidades de los usuarios y controlar quién puede acceder a qué funcionalidades del sistema. Se encarga de la autenticación, el registro de usuarios, la gestión de perfiles y la asignación de roles y permisos, asegurando que solo las personas autorizadas puedan interactuar con el sistema de manera segura.
 </p>
 <div style="text-align: center;">
-  <img src="https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main/blob/6523c0f0bf730b72ff4c903fc6fdf549650d2a3e/assets/img/Chapter-IV/iam-identity-access-management-bounded-context.jpg" width="90%"/>
+  <img src="https://i.imgur.com/LLgffoX.jpeg" width="90%"/>
 </div>
 
 Este *bounded context* se encarga de la autenticación, el registro de usuarios, la gestión de perfiles y la asignación de roles y permisos, asegurando que solo las personas autorizadas puedan interactuar con el sistema de manera segura.
