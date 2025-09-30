@@ -1112,25 +1112,25 @@ El equipo ejecutó una sesión de 4 horas aplicando la metodología Big Picture 
 
 #### Captura 1: Generación Inicial de Eventos
 
-![Captura de pantalla de la reunión - Paso 1](./assets/img/Chapter-IV/meeting-step1.jpg)
+![Captura de pantalla de la reunión - Paso 1](https://i.imgur.com/XoJqDNH.jpeg)
 
 **Descripción:** Esta captura corresponde al Step 1: Unstructured Exploration del proceso. El equipo generó todos los eventos de dominio de SafePark durante la fase de brainstorming colaborativo. Los 43 post-its naranjas están distribuidos aleatoriamente en el tablero, reflejando el conocimiento inicial del equipo sobre el sistema antes de cualquier organización. Se pueden observar eventos como "User Authenticated", "Reservation Created", "Vehicle Detected", "Timer Started", entre otros, capturando la comprensión completa del dominio SafePark.
 
 #### Captura 2: Ordenamiento Cronológico
 
-![Captura de pantalla de la reunión - Paso 2](./assets/img/Chapter-IV/meeting-step2.jpg)
+![Captura de pantalla de la reunión - Paso 2](https://i.imgur.com/Wf21RsG.jpeg)
 
 Los eventos organizados cronológicamente muestran el flujo desde "User Registered" hasta "Admin Alert Sent", revelando dependencias entre bounded contexts.
 
 #### Captura 3: Tablero Completo
 
-![Captura de pantalla de la reunión - Paso 10](./assets/img/Chapter-IV/meeting-step10.jpg)
+![Captura de pantalla de la reunión - Paso 10](https://i.imgur.com/I4R6Yvk.jpeg)
 
 Resultado final mostrando los 7 bounded contexts, actores (Conductores, Administradores) y sistemas externos (ESP32, sensores HC-SR04, LEDs).
 
 #### Captura 4: Problemas Identificados
 
-![Captura de pantalla de la reunión - Paso 3](./assets/img/Chapter-IV/meeting-step3.jpg)
+![Captura de pantalla de la reunión - Paso 3](https://i.imgur.com/kr44KKy.jpeg)
 
 Problemas detectados: desconexión IoT, sincronización sensor-sistema, overflow de notificaciones y gestión de excepciones.
 
@@ -1287,13 +1287,13 @@ En el desarrollo de nuestro proyecto, aplicamos la metodología **Impact Mapping
 __Business goal:__  
 Reducir en 30% el tiempo de búsqueda de estacionamiento en 3 meses
 <div style="text-align: center;">
-  <img src="assets/img/Chapter-III/impact-map-conductor.png" alt="Impact Map – Manuel (Conductor Universitario)" width="90%" />
+  <img src="https://i.imgur.com/uA2VzMV.png" alt="Impact Map – Manuel (Conductor Universitario)" width="90%" />
 </div>  
 
 __Business goal:__  
 Incrementar en 25% la rotación de espacios en 6 meses mediante liberación automática de reservas no utilizadas.
 <div style="text-align: center;">
-  <img src="assets/img/Chapter-III/impact-map-admin.png" alt="Impact Map – Maricarmen (Administradora de Estacionamiento)" width="90%" />
+  <img src="https://i.imgur.com/nZS0v8E.png" alt="Impact Map – Maricarmen (Administradora de Estacionamiento)" width="90%" />
 </div>  
 
 
