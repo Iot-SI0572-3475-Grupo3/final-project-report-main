@@ -5039,25 +5039,145 @@ El despliegue de la Embedded Application dependerá del hardware ESP32. Se evalu
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
-### 6.2.X. Sprint n
+### 6.2.1. Sprint 1
 
-#### 6.2.X.1. Sprint Planning n
+#### 6.2.1.1. Sprint Planning 1
 
-#### 6.2.X.2. Aspect Leaders and Collaborators
+| **Sprint #** | Sprint 1 |
+|--------------|----------|
+| **Sprint Planning Background** | |
+| **Date** | 2025-10-06 |
+| **Time** | 03:00 PM |
+| **Location** | Reunión virtual vía Google Meet |
+| **Prepared By** | Luciano Ruiz |
+| **Attendees (to planning meeting)** | Todos los miembros del equipo |
+| **Sprint Goal & User Stories** | |
+| **Sprint 1 Goal** | Establecer la base del sistema con autenticación, landing page y API core para que los usuarios puedan registrarse y conocer el producto. Métrica de cumplimiento: 100% de usuarios UPC pueden registrarse e iniciar sesión exitosamente usando su correo institucional @upc.edu.pe |
+| **Sprint 1 Velocity** | 19 story points |
+| **Sum of Story Points** | 19 story points |
 
-#### 6.2.X.3. Sprint Backlog n
+#### 6.2.1.2. Aspect Leaders and Collaborators
 
-#### 6.2.X.4. Development Evidence for Sprint Review
+A continuación explicamos la organización que tuvimos con respecto a los distintos Bounded Context y Landing Page a la hora de elaborar nuestros entregables de este Sprint.
 
-#### 6.2.X.5. Testing Suite Evidence for Sprint Review
+| Team Member (Last Name, First Name) | GitHub Username | IAM Bounded Context | Landing Page |
+|------------------------------------|-----------------|---------------------|---------------|
+| Salgado Luna, Fernando Brian | fersalgado26 | C | C |
+| Ruiz Blas, Luciano Stefano | LucianRuiz | L | L |
+| Linares Tejada, Leonardo Félix Jesús | LeoShadic345 | C | C |
+| Chávez Rojas, Carlos Raúl Guillermo | CarlosChavez19 | C | C |
+| Aquije Quiroga, Luis Enrique | LuisAquije123 | C | C |
 
-#### 6.2.X.6. Execution Evidence for Sprint Review
+**Leyenda:** L = Leader, C = Collaborator
 
-#### 6.2.X.7. Services Documentation Evidence for Sprint Review
+#### 6.2.1.3. Sprint Backlog 1
 
-#### 6.2.X.8. Software Deployment Evidence for Sprint Review
+**Introducción**
 
-#### 6.2.X.9. Team Collaboration Insights during Sprint
+El Sprint 1 se enfoca en construir la base fundamental del sistema SmartParking UPC. En este sprint implementaremos el sistema de autenticación completo con JWT, permitiendo que los miembros de la UPC se registren usando su correo institucional. También desarrollaremos la landing page que servirá como punto de entrada para dar a conocer el producto a los visitantes. Adicionalmente, implementaremos la funcionalidad de gestión de perfil personal para que los usuarios puedan mantener actualizada su información.
+
+Este sprint establece los cimientos técnicos y arquitectónicos sobre los cuales se construirán las funcionalidades de reservas e IoT en los siguientes sprints.
+
+**User Stories Incluidas en el Sprint 1:**
+- US01 - Registro Usuario UPC (3 Story Points)
+- US02 - Autenticación Usuario (3 Story Points)
+- TS01 - API Autenticación JWT (5 Story Points)
+- US26 - Landing Page Principal (2 Story Points)
+- US27 - Descarga de Aplicaciones (2 Story Points)
+- US03 - Gestión Perfil Personal (3 Story Points)
+- US28 - Información Técnica (1 Story Point)
+
+
+| User Story | | Work-Item / Task | | | | | |
+|------------|--|------------------|--|--|--|--|--|
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** (To-do / In-Process / To-Review / Done) |
+| US01 | Registro Usuario UPC | T1.1 | Backend de registro completo | Crear modelo de datos, endpoint POST /api/auth/register y validación email @upc.edu.pe | 8 | Fernando Salgado | Done |
+| US01 | Registro Usuario UPC | T1.2 | Frontend de registro | Desarrollar UI de formulario de registro con validaciones | 6 | Luciano Ruiz | Done |
+| US01 | Registro Usuario UPC | T1.3 | Servicios de confirmación | Implementar envío de correo y clasificación automática de roles | 5 | Leonardo Linares | Done |
+| US02 | Autenticación Usuario | T2.1 | Backend de autenticación | Implementar endpoint POST /api/auth/login y manejo de sesiones seguras | 6 | Luciano Ruiz | Done |
+| US02 | Autenticación Usuario | T2.2 | Frontend de login | Crear UI de formulario de login con validaciones y manejo de errores | 6 | Leonardo Linares | Done |
+| US02 | Autenticación Usuario | T2.3 | Navegación post-login | Implementar redirección y lógica de navegación después del login | 3 | Carlos Chávez | Done |
+| TS01 | API Autenticación JWT | T3.1 | Configuración y generación JWT | Setup de librerías JWT, secrets y lógica de creación de tokens | 6 | Luciano Ruiz | Done |
+| TS01 | API Autenticación JWT | T3.2 | Middleware y validación | Crear middleware de validación y endpoint de verificación | 6 | Leonardo Linares | Done |
+| TS01 | API Autenticación JWT | T3.3 | Refresh tokens y documentación | Implementar sistema de renovación de tokens y documentación API | 7 | Carlos Chávez | Done |
+| US26 | Landing Page Principal | T4.1 | Estructura y Hero Section | Crear estructura HTML base y sección hero con propuesta de valor | 5 | Luciano Ruiz | Done |
+| US26 | Landing Page Principal | T4.2 | Contenido principal | Desarrollar secciones de características y beneficios | 5 | Leonardo Linares | Done |
+| US26 | Landing Page Principal | T4.3 | Footer y responsive design | Implementar footer y optimizar para dispositivos móviles | 4 | Carlos Chávez | Done |
+| US27 | Descarga de Aplicaciones | T6.1 | Botones de descarga | Crear botones claros para App Web y App Móvil (iOS/Android) | 4 | Fernando Salgado | Done |
+| US27 | Descarga de Aplicaciones | T6.2 | Configuración de enlaces | Establecer enlaces correctos a stores y aplicaciones | 3 | Leonardo Linares | Done |
+| US27 | Descarga de Aplicaciones | T6.3 | Sección de acceso rápido | Implementar sección destacada con acceso fácil a las aplicaciones | 3 | Carlos Chávez | Done |
+| US03 | Gestión Perfil Personal | T5.1 | Backend de perfil | Crear endpoints GET y PUT /api/users/profile con validaciones | 6 | Leonardo Linares | Done |
+| US03 | Gestión Perfil Personal | T5.2 | UI de visualización | Desarrollar interfaz para mostrar datos del perfil | 4 | Carlos Chávez | Done |
+| US03 | Gestión Perfil Personal | T5.3 | Formulario de edición | Crear formulario para editar datos personales con validaciones | 5 | Luis Aquije | Done |
+| US28 | Información Técnica | T7.1 | Mostrar tecnologías utilizadas | Crear sección que muestre el stack tecnológico y herramientas de desarrollo | 3 | Fernando Salgado | Done |
+
+
+#### 6.2.1.4. Development Evidence for Sprint Review
+
+[Esta sección se completará con tabla de commits]
+
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review
+
+## IAM (Identity and Access Management) Bounded Context
+
+```gherkin
+Feature: Registro de usuarios UPC
+
+  Scenario: Registro exitoso con correo institucional
+    Given Un usuario accede al formulario de registro
+    When Ingresa un correo válido @upc.edu.pe y completa todos los campos requeridos
+    Then El sistema debe registrar al usuario y enviar un correo de confirmación
+
+  Scenario: Validación de correo institucional
+    Given Un usuario intenta registrarse
+    When Ingresa un correo que no pertenece al dominio @upc.edu.pe
+    Then El sistema debe mostrar un error indicando que solo se permiten correos UPC
+
+Feature: Autenticación de usuarios
+
+  Scenario: Login exitoso
+    Given Un usuario registrado accede al formulario de login
+    When Ingresa credenciales válidas
+    Then El sistema debe autenticar al usuario y generar un token JWT
+
+  Scenario: Login con credenciales incorrectas
+    Given Un usuario accede al formulario de login
+    When Ingresa credenciales incorrectas
+    Then El sistema debe mostrar un mensaje de error y no permitir el acceso
+
+  Scenario: Verificación de token JWT
+    Given Un usuario autenticado realiza una petición
+    When El sistema valida el token JWT
+    Then Debe permitir el acceso si el token es válido
+
+Feature: Gestión de perfil personal
+
+  Scenario: Visualizar perfil de usuario
+    Given Un usuario autenticado accede a su perfil
+    When Solicita ver su información personal
+    Then El sistema debe mostrar todos los datos del perfil
+
+  Scenario: Actualizar información del perfil
+    Given Un usuario autenticado accede a su perfil
+    When Modifica sus datos personales y guarda los cambios
+    Then El sistema debe actualizar la información y mostrar un mensaje de confirmación
+```
+
+#### 6.2.1.6. Execution Evidence for Sprint Review
+
+[Esta sección se completará con evidencia de visualizacion de fronted y landing]
+
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+[Esta sección se completará con evidencia de documentación de servicios durante la ejecución del sprint]
+
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+[Esta sección se completará con evidencia de despliegue durante la ejecución del sprint]
+
+#### 6.2.1.9. Team Collaboration Insights during Sprint
+
+[Esta sección se completará con insights de colaboración del equipo durante la ejecución del sprint]
 
 ## 6.3. Validation Interviews
 
