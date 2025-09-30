@@ -895,7 +895,7 @@ La mayoría de los entrevistados utiliza **Google Chrome** como navegador princi
 Los canales de interacción más comunes son **WhatsApp**, **correo electrónico** y **llamadas**, con pequeña valoración de **apps móviles**.  
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis4.png" alt="Navegador y dispositivo preferido" width="70%" />
+  <img src="https://i.imgur.com/4IbFXRG.png" alt="Navegador y dispositivo preferido" width="70%" />
 </div>
 En la escala de frustración por problemas de movilidad o tiempo, la mayoría de los conductores reportan un nivel **4**, mientras que otros tienen un nivel **3 y 5**, evidenciando molestias constantes en su rutina universitaria.
 
@@ -903,37 +903,37 @@ En la escala de frustración por problemas de movilidad o tiempo, la mayoría de
 <h4>Análisis segmento Conductores Universitarios</h4>
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-uni1.png" alt="Frecuencia de uso del estacionamiento" width="70%" />
+  <img src="https://i.imgur.com/lKCaFUG.png" alt="Frecuencia de uso del estacionamiento" width="70%" />
 </div>
 
 La mayoría utiliza el estacionamiento **todos los dias**, seguido de quienes lo usan **3–4 veces por semana**.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-uni2.png" alt="Tiempo promedio para encontrar estacionamiento" width="70%" />
+  <img src="https://i.imgur.com/SqXi4zw.png" alt="Tiempo promedio para encontrar estacionamiento" width="70%" />
 </div>
 
 El **tiempo de búsqueda de un espacio** se concentra entre **10 y 20 minutos**, con casos que superan los 20 minutos en horas pico.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-uni3.png" alt="Principales inconvenientes" width="70%" />
+  <img src="https://i.imgur.com/1dNay9h.png" alt="Principales inconvenientes" width="70%" />
 </div>
 
 Los principales inconvenientes son la **falta de espacios disponibles**, la **demora en encontrar lugar** y el **estrés** asociado.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-uni4.png" alt="Utilidad de reservar espacios" width="70%" />
+  <img src="https://i.imgur.com/GNCxYYf.png" alt="Utilidad de reservar espacios" width="70%" />
 </div>
 
 La idea de **reservar un espacio antes de llegar al campus** se valora con puntajes de **4 y 5**, considerándola muy útil.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-uni5.png" alt="Opinión sobre límite de 30 min" width="70%" />
+  <img src="https://i.imgur.com/ysZFN70.png" alt="Opinión sobre límite de 30 min" width="70%" />
 </div>
 
 Respecto al **límite de 30 minutos para liberar reservas**, la mayoría lo considera **adecuado** (3–5).
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-uni6.png" alt="Características más valoradas en la app" width="70%" />
+  <img src="https://i.imgur.com/vN5Tpxx.png" alt="Características más valoradas en la app" width="70%" />
 </div>
 
 Las características más valoradas en una app de estacionamiento son **rapidez**, **facilidad de uso** y **confiabilidad**, con la **gratuidad** como valor agregado.
@@ -942,37 +942,37 @@ Las características más valoradas en una app de estacionamiento son **rapidez*
 <h4>Análisis segmento Administradores</h4>
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-admin1.png" alt="Método de gestión de ocupación" width="70%" />
+  <img src="https://i.imgur.com/lKCaFUG.png" alt="Método de gestión de ocupación" width="70%" />
 </div>
 
 Casi todos los administradores, gestionan la ocupación de forma **manual**, mediante observación y reportes del personal de seguridad. Mientras que solo uno maneja la gestión con un software básico.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-admin2.png" alt="Problemas principales" width="70%" />
+  <img src="https://i.imgur.com/oARbNZB.png" alt="Problemas principales" width="70%" />
 </div>
 
 Los problemas más frecuentes son **errores manuales**, **quejas de usuarios** y **falta de control**.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-admin3.png" alt="Dificultad de controlar la rotación" width="70%" />
+  <img src="https://i.imgur.com/m6WNUlE.png" alt="Dificultad de controlar la rotación" width="70%" />
 </div>
 
 Controlar la **rotación de vehículos en horas pico** se califica entre **3, 4 y 5**, reflejando la alta dificultad.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-admin4.png" alt="Beneficios esperados de un sistema automatizado" width="70%" />
+  <img src="https://i.imgur.com/uWTvOSi.png" alt="Beneficios esperados de un sistema automatizado" width="70%" />
 </div>
 
 De los beneficios esperados del sistema, el que más se espera es el de **Mayor Control**, seguido de la optimización de tiempos, la reducción de erroes y una mejor experiencia de usuario.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-admin5.png" alt="Opinión sobre liberación automática" width="70%" />
+  <img src="https://i.imgur.com/MuvntLg.png" alt="Opinión sobre liberación automática" width="70%" />
 </div>
 
 La idea de **liberar automáticamente los espacios reservados no utilizados** obtiene una valoración **muy alta (5/5)**.
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-II/interview-analysis-admin6.png" alt="Utilidad de un panel web en tiempo real" width="70%" />
+  <img src="https://i.imgur.com/c9Cq2CT.png" alt="Utilidad de un panel web en tiempo real" width="70%" />
 </div>
 
 Contar con un **panel web en tiempo real** para monitoreo y reportes automáticos es considerado **fundamental**, con puntajes de **5/5**.
@@ -1002,7 +1002,7 @@ Para comprender mejor cómo los usuarios interactuarán con nuestro producto, em
 
 ## Conductor Universitario
 
-<img src="./assets/img/Chapter-II/user-persona-conductores.png">
+<img src="https://i.imgur.com/l6nSnYZ.png">
 
 El segmento de Conductor Universitario representa a estudiantes, docentes y personal administrativo que buscan optimizar su tiempo y reducir la incertidumbre al estacionar dentro del campus. Este perfil se caracteriza por su enfoque en la eficiencia, la planificación y el uso de soluciones tecnológicas confiables que faciliten la movilidad y organización diaria. Buscan una solución integral que permita consultar disponibilidad en tiempo real, reservar espacios con anticipación y recibir notificaciones claras sobre sus reservas. Este segmento tiene un perfil demográfico de 18 a 35 años, usuarios frecuentes de smartphones y laptops, que valoran interfaces intuitivas y rápidas, así como herramientas de coordinación digital como WhatsApp y correo institucional.
 
@@ -1010,7 +1010,7 @@ El segmento de Conductor Universitario representa a estudiantes, docentes y pers
 
 ## Administrador de Estacionamiento
 
-<img src="./assets/img/Chapter-II/user-persona-administradores.png">
+<img src="https://i.imgur.com/xQAaz8v.png">
 
 El segmento de Administrador de Estacionamiento representa a profesionales responsables de supervisar y gestionar los estacionamientos universitarios, buscando eficiencia operativa, control centralizado y reducción de errores manuales. Este perfil valora tecnologías confiables que faciliten la automatización de reservas, liberación de espacios, generación de reportes y métricas en tiempo real, mejorando la gestión de su equipo y la experiencia de los usuarios. El rango demográfico es de 30 a 60 años, con formación en administración o gestión de operaciones, y usuarios frecuentes de laptops y smartphones, que requieren interfaces web intuitivas y paneles de control claros para una operación eficiente.
 
@@ -1050,7 +1050,7 @@ __Estacionamiento y asistencia a clases:__ Finalmente encuentra un espacio tras 
 __Salida del campus:__ Al retirarse, piensa en lo útil que sería una aplicación que permita **reservar** o recibir **alertas en tiempo real**. Termina el día con **expectativa** de una futura solución tecnológica.  
 
 <div style="text-align: center;">
-  <img src="assets/img/Chapter-II/journey-conductor.png" alt="Journey Map Conductor" width="70%" />
+  <img src="https://i.imgur.com/X5wROvI.png" alt="Journey Map Conductor" width="70%" />
 </div><br>
 
 __User Journey Map – Maricarmen Tejada – Administradora de Estacionamiento (As-Is)__  
@@ -1066,7 +1066,7 @@ __Elaboración de reportes:__ Al final del turno, recopila datos en hojas de cá
 __Cierre del día:__ Revisa que todo quede en orden para el siguiente turno, pero se siente **agotada** y con la expectativa de contar con una herramienta que permita automatizar reservas, alertas y reportes.  
 
 <div style="text-align: center;">
-  <img src="assets/img/Chapter-II/journey-admin.png" alt="Journey Map Admin" width="70%" />
+  <img src="https://i.imgur.com/D1bqQFm.png" alt="Journey Map Admin" width="70%" />
 </div> 
 
 ### 2.3.4. Empathy Mapping
@@ -1079,7 +1079,7 @@ En este mapa de empatía, se ha representado al conductor universitario como el 
 Durante el análisis, se observa que los conductores sienten frustración por la congestión y la desorganización en los estacionamientos, y ansiedad por la posibilidad de llegar tarde a clases o reuniones. Normalmente intentan salir con mucha anticipación o dar vueltas alrededor del campus para encontrar un lugar, lo que afecta su productividad y estado de ánimo.  
 Sus necesidades principales son contar con un sistema que permita reservar espacios con anticipación, recibir información confiable en tiempo real y reducir la incertidumbre en su rutina diaria. Buscan una herramienta tecnológica rápida, confiable y gratuita que les brinde tranquilidad, control y eficiencia en su movilidad.
 
-<img src="./assets/img/Chapter-II/empathy-mapping-conductor.png">
+<img src="https://i.imgur.com/HZRlKdI.png">
 
 <br>
 
@@ -1089,7 +1089,7 @@ En este mapa de empatía, se ha representado al administrador como el principal 
 Durante el análisis, se observa que los administradores enfrentan problemas diarios por la desorganización, quejas de usuarios y limitaciones de procesos manuales. Normalmente intentan resolver estos problemas con métodos tradicionales o herramientas digitales limitadas, que no siempre cumplen con sus expectativas.  
 Sus necesidades principales son contar con un sistema automatizado que gestione reservas, libere espacios no utilizados, genere métricas en tiempo real y permita tomar decisiones basadas en datos. Buscan tecnología confiable que mejore la eficiencia operativa y garantice una experiencia positiva para los usuarios del campus.
 
-<img src="./assets/img/Chapter-II/empathy-mapping-administradores.png">
+<img src="https://i.imgur.com/8VUwMaI.png">
 
 <br>
 
