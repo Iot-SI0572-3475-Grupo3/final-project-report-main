@@ -1908,7 +1908,7 @@ Aunque implementa una arquitectura monolítica, los Bounded Contexts identificad
 - Determinan las interfaces entre componentes
 - Facilitan la evolución futura hacia microservicios si fuera necesario
 
-![Context Mapping](./assets/img/Chapter-IV/context-mapping-map.png)
+![Context Mapping](https://i.imgur.com/taLOsPT.png)
 
 ### 4.1.3. Software Architecture
 
@@ -1918,20 +1918,20 @@ URL Structurizr para apreciar mejor los diagramas C4: <a href="https://structuri
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 El System Landscape Diagram ilustra la arquitectura general del sistema SmartParking, mostrando los diferentes actores y componentes que lo componen en el contexto universitario. Este diagrama proporciona una visión general de cómo se organizan los distintos usuarios y servicios en el ecosistema del sistema, así como las relaciones entre ellos. Los miembros universitarios (estudiantes, docentes y personal administrativo) no se consideran actores internos del sistema, sino como actores externos que interactúan y se benefician del sistema de gestión inteligente de estacionamientos. En este caso, el sistema SmartParking se despliega como una solución integral que puede ser implementada en cualquier campus universitario, manteniendo la flexibilidad para futuras integraciones con sistemas institucionales como Active Directory. El diagrama incluye dos grupos principales de usuarios: Miembros Universitarios (que utilizan el sistema para encontrar y reservar espacios) y Administradores (que gestionan y supervisan el funcionamiento del sistema). La arquitectura está diseñada para ser escalable y adaptable a diferentes entornos universitarios, proporcionando un servicio gratuito de estacionamiento inteligente mediante tecnología IoT.<br>
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/systemLandscape-c4.png" alt="System Landscape Diagram" width="90%" />
+  <img src="https://i.imgur.com/0l8fJ1V.png" alt="System Landscape Diagram" width="90%" />
 </div><br><br>
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 El diagrama de contexto del sistema ilustra la interacción entre el sistema SmartParking y los actores externos que interactúan con él. Este diagrama proporciona una visión general de cómo el sistema se integra como una solución autónoma para la gestión de estacionamientos universitarios. En este caso, el sistema SmartParking opera de manera independiente sin dependencias críticas de sistemas externos, manteniendo toda la funcionalidad core internamente. Los Miembros Universitarios interactúan con el sistema para realizar reservas de espacios de estacionamiento, consultar disponibilidad en tiempo real, recibir notificaciones automáticas de confirmación de llegada/salida y gestionar sus reservas activas. Los Administradores utilizan el sistema para configurar espacios de estacionamiento, supervisar la ocupación en tiempo real, gestionar usuarios del sistema y generar reportes operacionales. El sistema mantiene un diseño limpio sin integraciones complejas, enfocándose en proporcionar una experiencia de usuario fluida y una gestión eficiente de recursos de estacionamiento mediante tecnología IoT avanzada.<br>
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/systemcontext-c4.png" alt="Context Diagram" width="90%" />
+  <img src="https://i.imgur.com/mkmfAbg.png" alt="Context Diagram" width="90%" />
 </div><br><br>
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 A continuación, se presenta el diagrama de contenedores del sistema SmartParking, que ilustra los diferentes componentes y su interacción dentro de la arquitectura del software. Este diagrama proporciona una visión detallada de cómo se organizan los distintos servicios y aplicaciones en el sistema, así como las relaciones entre ellos. El sistema SmartParking se basa en una arquitectura híbrida RESTful API + Edge Computing que se divide en varios contenedores especializados, cada uno con funcionalidades y responsabilidades específicas. Los usuarios podrán utilizar la Landing Page estática para conocer las características del sistema y acceder a las aplicaciones. Una vez registrados, tendrán acceso a una aplicación web (Angular) y aplicación móvil (Flutter), las cuales consumirán datos desde la RESTful API principal desarrollada en Spring Boot + Java con base de datos MySQL.
 En el contexto de IoT, existen dispositivos ESP32 físicos con sensores ultrasónicos que funcionan como sistemas externos hardware. Los datos de estos dispositivos son procesados a través de una Embedded Application (C++ + ESP32 Framework) que actúa como intermediario, enviando información procesada hacia el Edge API (Flask + Python) con base de datos SQLite local para procesamiento en tiempo real con latencia mínima. El Edge API sincroniza los datos relevantes con la RESTful API principal, creando un flujo de datos eficiente: Hardware IoT → Embedded App → Edge API → RESTful API → Frontend Applications. Esta arquitectura garantiza escalabilidad distribuida, procesamiento local de sensores, y una experiencia de usuario fluida tanto para reservas como para detección automática de vehículos.<br>
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/containers-c4.png" alt="Container Diagram" width="90%" />
+  <img src="https://i.imgur.com/B3aKIuH.png" alt="Container Diagram" width="90%" />
 </div><br><br>
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
@@ -2448,17 +2448,17 @@ URL Structurizr para apreciar mejor los diagramas de componentes IAM: <a href="h
 
 **IAM Web Services Component Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/iam-webservice-component-c4.png" alt="IAM Web Service Component Diagram" width="90%" />
+  <img src="https://i.imgur.com/wbIQfLg.png" alt="IAM Web Service Component Diagram" width="90%" />
 </div><br><br>
 
 **IAM Mobile Application Component Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/iam-mobile-component-c4.png" alt="IAM Mobile Component Diagram" width="90%" />
+  <img src="https://i.imgur.com/lDndU8r.png" alt="IAM Mobile Component Diagram" width="90%" />
 </div><br><br>
 
 **IAM Web Application Component Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/iam-webapplication-component-c4.png" alt="IAM Web Application Component Diagram" width="90%" />
+  <img src="https://i.imgur.com/53ZftUj.png" alt="IAM Web Application Component Diagram" width="90%" />
 </div><br><br>
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2470,7 +2470,7 @@ URL para apreciar mejor el diagrama de clases del dominio IAM: <a href="#">[Enla
 
 **IAM Domain Layer Class Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/iam-diagramclass.png" alt="IAM Domain Layer Class Diagram" width="90%" />
+  <img src="https://i.imgur.com/UbXPUSW.png" alt="IAM Domain Layer Class Diagram" width="90%" />
 </div><br><br>
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
@@ -2480,7 +2480,7 @@ URL Vertabelo para apreciar mejor el diagrama de base de datos IAM: <a href="htt
 
 **IAM Database Design Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/iam-database-diagram.png" alt="IAM Database Design Diagram" width="90%" />
+  <img src="https://i.imgur.com/tJFUGIW.png" alt="IAM Database Design Diagram" width="90%" />
 </div><br><br>
 
 ### 4.2.2. Bounded Context: Reservation Management
@@ -3125,12 +3125,12 @@ Sistema de logging para auditoría y debugging.
 
 **Web Services Component Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/reservation-webservice-c4.png" alt="Reservation Management Web Services Component Diagram" width="90%" />
+  <img src="https://i.imgur.com/Y5ZUepw.png" alt="Reservation Management Web Services Component Diagram" width="90%" />
 </div><br><br>
 
 **Web Applications Component Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/reservation-webapplication-c4.png" alt="Reservation Management Web Applications Component Diagram" width="90%" />
+  <img src="https://i.imgur.com/lGUbppt.png" alt="Reservation Management Web Applications Component Diagram" width="90%" />
 </div><br><br>
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
@@ -3138,14 +3138,14 @@ Sistema de logging para auditoría y debugging.
 
 **Reservation Management Domain Layer Class Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/reservation-diagramclass-c5.png" alt="Reservation Management Domain Layer Class Diagram" width="90%" />
+  <img src="https://i.imgur.com/evxUlhz.png" alt="Reservation Management Domain Layer Class Diagram" width="90%" />
 </div><br><br>
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
 
 **Reservation Management Database Design Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/reservation-database-diagram.png" alt="Reservation Management Database Design Diagram" width="90%" />
+  <img src="https://i.imgur.com/EuZ7BAJ.png" alt="Reservation Management Database Design Diagram" width="90%" />
 </div><br><br>
 
 ### 4.2.3. Bounded Context: Space & IoT Management
@@ -3435,7 +3435,7 @@ En el diagrama de componentes en el contexto Space & IoT Management se puede obs
 
 ### Web Services
 
-<img src="./assets/img/Chapter-IV/space-iot-web-services.png">
+<img src="https://i.imgur.com/VfBVaEg.png">
 
 Se muestra el diagrama de componentes del Web Services, desde la solicitud del front end, comunicación con otros bounded contexts y consultas a la base de datos.
 
@@ -3443,7 +3443,7 @@ Se muestra el diagrama de componentes del Web Services, desde la solicitud del f
 
 ### Web Application
 
-<img src="./assets/img/Chapter-IV/space-iot-web-app.png">
+<img src="https://i.imgur.com/fKoCJNF.png">
 
 Se muestra el diagrama de componentes de Web Application, mostrando los componentes y páginas relacionados entre sí.
 
@@ -3451,7 +3451,7 @@ Se muestra el diagrama de componentes de Web Application, mostrando los componen
 
 ### Mobile Application
 
-<img src="./assets/img/Chapter-IV/space-iot-mobile.png">
+<img src="https://i.imgur.com/C7oBxjC.png">
 
 Se muestra el diagrama de componentes del Mobile Application, mostrando los Widgets relacionados entre sí.
 
@@ -3464,19 +3464,19 @@ Se muestra el diagrama de componentes del Mobile Application, mostrando los Widg
 
 En el siguiente diagrama de clases se muestran las interfaces, clases e implementaciones de repositorios que conforman el bounded context actual. Este diagrama permite visualizar la estructura interna del dominio, así como las relaciones y dependencias entre los distintos componentes que lo integran.
 
-<img src="./assets/img/Chapter-IV/space-iot-domain-layer-class-diagram.png">
+<img src="https://i.imgur.com/YtDmkqA.png">
 
 <br>
 
 **Bounded Context Domain Layer Class Diagrams Embedded Application**
 
-<img src="./assets/img/Chapter-IV/space-iot-embedded-class-diagram.png">
+<img src="https://i.imgur.com/Rvs9aCi.png">
 
 <br>
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
-<img src="./assets/img/Chapter-IV/space-iot-database-diagram.jpeg">
+<img src="https://i.imgur.com/9IGdxFC.jpeg">
 
 <br>
 
@@ -3732,7 +3732,7 @@ Implementación de Repositories y adaptadores externos.
 En el diagrama de componentes del contexto **Time Tracking** se observa la interacción del usuario con el servicio para iniciar y finalizar sesiones de tiempo, además de las dependencias entre controladores, servicios de aplicación, agregados de dominio y repositorios.  
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/time-component-c4.png" alt="Time Tracking Component C4" width="90%" />
+  <img src="https://i.imgur.com/XJDckqd.png" alt="Time Tracking Component C4" width="90%" />
 </div><br>
 
 URL Structurizr: https://structurizr.com/share/102034
@@ -3743,7 +3743,7 @@ URL Structurizr: https://structurizr.com/share/102034
 El siguiente diagrama de clases muestra las entidades, servicios de dominio, interfaces de repositorio y sus relaciones que conforman el **bounded context Time Tracking**. Incluye las clases **TimeSession**, **Timer**, **TimeRecord**, el servicio de dominio **DurationCalculator** y las interfaces de repositorios que garantizan la persistencia.  
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/time-diagramclass.png" alt="Time Tracking Domain Layer Class Diagram" width="90%" />
+  <img src="https://i.imgur.com/vifphvL.png" alt="Time Tracking Domain Layer Class Diagram" width="90%" />
 </div><br>
 
 Link: https://lucid.app/lucidchart/12a7e0a9-9b1c-48d8-a6dd-ab1b1fdc7d9c/edit?viewport_loc=-456%2C-116%2C2232%2C1049%2CHWEp-vi-RSFO&invitationId=inv_c243830e-22c1-42ae-a345-cae63204a020
@@ -3753,7 +3753,7 @@ Link: https://lucid.app/lucidchart/12a7e0a9-9b1c-48d8-a6dd-ab1b1fdc7d9c/edit?vie
 El diagrama entidad-relación (ERD) de la base de datos para **Time Tracking** presenta las tablas **TimeSessions**, **Timers** y **TimeRecords**, junto con sus llaves primarias, foráneas y restricciones, reflejando la persistencia de sesiones, cronómetros y registros históricos.  
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/time-database.png" alt="Time Tracking Database Design Diagram" width="90%" />
+  <img src="https://i.imgur.com/sY9TC6J.png" alt="Time Tracking Database Design Diagram" width="90%" />
 </div><br>
 
 ### 4.2.5. Bounded Context: Penalty Management
@@ -3942,7 +3942,7 @@ Implementación de Repositories y adaptadores externos.
 En el diagrama de componentes del contexto **Penalty Management** se evidencia la orquestación de ausencias, advertencias y suspensiones. Se detallan los controladores REST, servicios de aplicación, agregados de dominio y repositorios encargados de administrar reglas de penalización, contadores de ausencias y suspensiones.  
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/penalty-component-c4.png" alt="Penalty Management Component C4" width="90%" />
+  <img src="https://i.imgur.com/1Eeg4st.png" alt="Penalty Management Component C4" width="90%" />
 </div><br>
 
 URL Structurizr: https://structurizr.com/share/84646
@@ -3953,7 +3953,7 @@ URL Structurizr: https://structurizr.com/share/84646
 En este diagrama se aprecian las entidades **Absence**, **AbsenceCounter**, **Suspension**, **Warning** y el value object **PenaltyRules**, además de las interfaces de repositorio y servicios de dominio que encapsulan la lógica de negocio del **bounded context Penalty Management**.  
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/penalty-diagramclass.png" alt="Penalty Management Domain Layer Class Diagram" width="90%" />
+  <img src="https://i.imgur.com/eYVlMo8.png" alt="Penalty Management Domain Layer Class Diagram" width="90%" />
 </div><br>
 
 Link: https://lucid.app/lucidchart/4d516fa9-fed5-4131-8a22-16207e3b05a0/edit?viewport_loc=-3820%2C-575%2C6132%2C2883%2CHWEp-vi-RSFO&invitationId=inv_709a7505-bf02-440a-87b9-406019cc1dca
@@ -3963,7 +3963,7 @@ Link: https://lucid.app/lucidchart/4d516fa9-fed5-4131-8a22-16207e3b05a0/edit?vie
 El diagrama entidad-relación (ERD) de **Penalty Management** representa las tablas **Absences**, **AbsenceCounters**, **Suspensions** y **Warnings**, incluyendo sus claves primarias, relaciones de usuario y constraints necesarias para gestionar las penalizaciones.  
 
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/penalty-database.png" alt="Penalty Management Database Design Diagram" width="90%" />
+  <img src="https://i.imgur.com/eQAKdko.png" alt="Penalty Management Database Design Diagram" width="90%" />
 </div><br>
 
 ### 4.2.6. Bounded Context: Analytics & Reporting
@@ -4265,12 +4265,12 @@ Esto asegura que la gestión del sistema de estacionamientos no solo sea operati
 
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
 
-  <img src="./assets/img/Chapter-IV/Analytics_Reporting_c4.png" alt="Context Diagram" width="90%" />
+  <img src="https://i.imgur.com/1YfJIVk.png" alt="Context Diagram" width="90%" />
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
 
-  <img src="./assets/img/Chapter-IV/analysis_class_diagram.png" alt="Context Diagram"/>
+  <img src="https://i.imgur.com/86z49sX.png" alt="Context Diagram"/>
 
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
 
@@ -4279,7 +4279,7 @@ URL Vertabelo para apreciar mejor el diagrama de base de datos Analytics & Repor
 
 **Analytics & Reporting Database Design Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/analytics-datatbase-diagram.png" alt="Analytics & Reporting Database Design Diagram" width="90%" />
+  <img src="https://i.imgur.com/CCGMdhv.png" alt="Analytics & Reporting Database Design Diagram" width="90%" />
 </div><br><br>
 
 ### 4.2.7. Bounded Context: Notification
@@ -4827,20 +4827,20 @@ URL Structurizr para apreciar mejor los diagramas de componentes IAM: <a href="h
 <br><br>
 **IAM Web Services Component Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/notification-webservice-c4.png" alt="IAM Web Service Component Diagram" width="90%" />
+  <img src="https://i.imgur.com/tbV38Z1.png" alt="IAM Web Service Component Diagram" width="90%" />
 </div><br><br>
 
 **IAM Web Applications Component Diagram**
 <div style="text-align: center;">
-  <img src="./assets/img/Chapter-IV/notification-webapplication-c4.png" alt="IAM Web Service Component Diagram" width="90%" />
+  <img src="https://i.imgur.com/Ee3sNR4.png" alt="IAM Web Service Component Diagram" width="90%" />
 </div><br><br>
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
-<img src="./assets/img/Chapter-IV/notification-diagramclass.png" alt="Context Diagram"/>
+<img src="https://i.imgur.com/xbPOLxr.png" alt="Context Diagram"/>
 
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram
-<img src="./assets/img/Chapter-IV/notification-database-diagram.png" alt="Context Diagram"/>
+<img src="https://i.imgur.com/cN33j8E.png" alt="Context Diagram"/>
 
 
 # Capítulo V: Solution UI/UX Design
