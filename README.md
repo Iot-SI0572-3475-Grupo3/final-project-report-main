@@ -15,7 +15,7 @@
     <strong>Product: SmartParking</strong><br>
 </p>
 
-## Integrantes del Equip:
+## Integrantes del Equipo:
 
 <div align="center">
 
