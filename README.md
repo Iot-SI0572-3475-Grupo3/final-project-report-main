@@ -4850,14 +4850,195 @@ URL Structurizr para apreciar mejor los diagramas de componentes IAM: <a href="h
 ## 5.1. Style Guidelines
 
 ### 5.1.1. General Style Guidelines
+El diseño visual de SmartPark se fundamenta en una identidad coherente, moderna y profesional que busca transmitir confianza, accesibilidad y eficiencia. Estas directrices generales garantizan consistencia visual en todos los productos digitales del ecosistema Landing Page, Web Application y Mobile Application, alineándose con los principios de usabilidad y claridad, adaptado al contexto de una startup tecnológica universitaria.
+
+#### Lenguaje y tono de comunicación
+
+El lenguaje empleado en la Landing Page y en las aplicaciones web y móvil de SmartPark es claro, directo y accesible, evitando tecnicismos innecesarios. La comunicación mantiene un tono amigable, profesional y confiable, orientado a inspirar seguridad y cercanía con el usuario.
+El idioma principal es el inglés, aunque el sistema está preparado para su internacionalización (i18n), permitiendo la traducción al español según las preferencias del usuario.
+
+#### Tipografía
+
+La tipografía oficial de SmartPark es Inter. Su diseño geométrico y su amplia disponibilidad en plataformas digitales la hacen ideal para interfaces responsivas.
+Se emplean diferentes pesos para establecer jerarquías visuales claras:
+
+<img src="https://i.imgur.com/FAZcTst.png" alt="Typography"/>
+
+Esta estructura tipográfica busca facilitar la lectura en pantallas pequeñas y grandes, mejorando la comprensión visual del contenido.
+
+#### Colores
+
+La paleta de colores de SmartPark se basa en tonos sobrios y profesionales, destacando el azul como color principal por su asociación con la tecnología, confianza y seguridad. Los colores secundarios y de estado refuerzan la accesibilidad, jerarquía visual y retroalimentación al usuario.
+
+<img src="https://i.imgur.com/rTunLja.png" alt="Colors"/>
+
+- Azul primario	#2C5282: Elementos principales (botones, encabezados, iconos destacados).
+- Gris oscuro	#4A5568: Textos secundarios o bordes.
+- Gris medio	#718096: Textos muted o placeholders.
+- Negro azulado	#1A202C: Color principal para textos.
+- Blanco humo	#F8F9FA: Fondos y áreas neutras.
+
+#### Colores de estado
+<img src="https://i.imgur.com/kYmmT0I.png" alt="Colors"/>
+
+- Azul claro	#4572F2: Notificaciones informativas.
+- Amarillo	#EAB308: Alertas o advertencias.
+- Verde	#22C55E: Confirmaciones exitosas.
+- Rojo	#E31919: Errores o fallos.
+
+#### Spacing y Layout
+
+El espaciado en las interfaces de SmartPark sigue una estructura modular basada en múltiplos de 4 y 8 píxeles, siguiendo los estándares de Material Design. Este sistema facilita la coherencia visual y mejora la alineación entre componentes.
+Los márgenes y paddings se mantienen equilibrados para garantizar legibilidad y resaltar los elementos interactivos. Las interfaces priorizan la claridad visual, evitando saturación y promoviendo un flujo natural de navegación.
+
+#### Principios de diseño
+
+Las decisiones visuales del Design System de SmartPark se sustentan en los siguientes principios:
+
+<ol> 
+<li>Claridad: cada elemento debe tener un propósito claro y ser comprensible sin instrucciones adicionales.</li>
+<li>Consistencia: los patrones de color, tipografía y espaciado se aplican uniformemente en todos los productos.</li>
+<li>Accesibilidad: contraste suficiente entre texto y fondo, tipografía legible y adaptabilidad a distintos dispositivos.</li>
+<li>Empatía: el diseño se orienta a la comodidad del usuario, reduciendo la carga cognitiva y ofreciendo respuestas visuales intuitivas.</li>
+<li>Escalabilidad: el sistema visual está pensado para crecer con el producto, permitiendo integrar nuevas funciones sin perder coherencia estética.</li>
+</ol>
+
 
 ### 5.1.2. Web, Mobile and IoT Style Guidelines
+El diseño de interfaces de SafePark se ha desarrollado bajo un enfoque responsive, accesible y coherente entre plataformas, garantizando que tanto los usuarios finales como los administradores disfruten de una experiencia fluida, clara y funcional en cualquier dispositivo. Las directrices visuales y de interacción se basan en los principios de Material Design y Human Interface Guidelines, adaptadas a las necesidades de una solución IoT con componentes físicos y digitales integrados.
+
+#### Web Application (Conductores y Administradores)
+
+La Web Application de SafePark actúa como un punto de acceso universal para los distintos perfiles de usuario. Está diseñada con un enfoque responsive, garantizando una correcta visualización en laptops, tablets y dispositivos móviles.
+
+1. **Interfaz para Conductores Universitarios**
+
+- Objetivo: Permitir a los usuarios reservar espacios, visualizar disponibilidad y consultar su historial de uso.
+- Estructura: La navegación principal se organiza mediante un header superior con accesos rápidos a Inicio, Mis reservaciones, Historial y Perfil.
+- Estilo visual: Predominan los fondos claros, manteniendo una estética limpia y confiable.
+- Interacción: Los botones poseen estados visuales definidos (hover, active, disabled) para brindar retroalimentación inmediata.
+- Accesibilidad: Se emplean contrastes adecuados y textos legibles.
+- Notificaciones: Mensajes contextuales informan sobre reservas confirmadas, tiempos de llegada o cancelaciones automáticas.
+
+2. **Interfaz para Administradores de Estacionamiento**
+
+- Objetivo: Facilitar la supervisión, control y toma de decisiones sobre los espacios disponibles y las reservas activas.
+- Estructura: La navegación principal se organiza mediante un header superior con accesos rápidos a Panel, Usuarios, Reportes, Configuracion.
+- Visualización de datos: Los gráficos y tablas presentan información en tiempo real sobre la ocupación, penalizaciones y métricas operativas.
+- Color e iconografía: Se emplean tonos sobrios y consistentes con la identidad visual general, complementados con íconos minimalistas para mejorar la comprensión visual.
+- Interacción: Las acciones principales (crear, editar, suspender, exportar) se destacan en azul, mientras que las secundarias permanecen en gris o blanco humo.
+
+Ambas vistas comparten el mismo sistema de diseño, manteniendo uniformidad en la tipografía, los colores de estado, los espaciados modulares y los componentes de interfaz.
+
+#### Mobile Application (App para Conductores Universitarios)
+
+La aplicación móvil está optimizada para ofrecer una experiencia rápida e intuitiva a los conductores, priorizando la simplicidad en la reserva y el control de espacios.
+
+ - Estructura: Navegación mediante una barra inferior con secciones principales: Home, Reservations, History y Profile.
+ - Estilo visual: Los componentes mantienen la misma paleta de colores que la web app, garantizando coherencia visual.
+ - Interacción táctil: Los botones cumplen con las guías de interacción mínima de 48x48 pixeles y animaciones sutiles al presionar.
+ - Notificaciones push: El sistema envía alertas sobre el vencimiento de reservas, confirmaciones o incidencias del sistema.
+ - Accesibilidad: Los textos se adaptan al tamaño de pantalla y permiten escalado mediante las configuraciones del dispositivo.
+ - Internacionalización: Implementación de i18n para alternar entre inglés y español.
+
+Esta aplicación está desarrollada para mantener una experiencia continua con la web, permitiendo a los usuarios iniciar sesión y acceder a sus reservas desde cualquier plataforma sin pérdida de datos.
+
+IoT Application User Interface (Interfaz de Sensores y Control IoT)
+
+El ecosistema IoT de SafePark conecta sensores físicos con la plataforma digital, permitiendo el monitoreo y la gestión automática de espacios.
+
+- Visualización: Los espacios de estacionamiento se muestran en una vista de mapa esquemático, donde los sensores reportan su estado mediante colores:
+  - Verde: espacio libre.
+  - Rojo: ocupado.
+  - Amarillo: Reservado
+  - Gris: fuera de servicio o en mantenimiento.
+- Diseño visual: Los elementos se presentan en alto contraste para garantizar visibilidad desde monitores o pantallas industriales.
+- Consistencia visual: Se emplean las mismas fuentes, colores y componentes del sistema de diseño, reforzando la identidad de marca en el entorno físico-digital.
+- Usabilidad: Los administradores pueden filtrar sensores por estado o área, facilitando la detección de incidencias y el control operativo.
 
 ## 5.2. Information Architecture
-
 ### 5.2.1. Organization Systems
 
+El sistema de organización de SafePark se fundamenta en la claridad, consistencia y eficiencia en la presentación del contenido, garantizando que tanto los usuarios conductores como los administradores comprendan la información sin dificultad.
+Las estructuras se han definido considerando el tipo de información, el flujo de tareas y el contexto de uso en cada plataforma (Web, Mobile e IoT).
+
+1. Sistemas de organización visual
+
+Jerárquica (Visual Hierarchy):
+Es el sistema de organización predominante en todas las interfaces. Los elementos se distribuyen según su relevancia funcional, priorizando primero las acciones principales (botones de reserva, confirmación o monitoreo), luego la información complementaria y finalmente los detalles secundarios.
+La jerarquía se logra mediante el uso de tipografía (peso y tamaño), color y espaciado, siguiendo los principios de diseño visual definidos en el capítulo anterior.
+
+Secuencial (Step-by-step organization):
+Este tipo de organización se aplica en procesos que requieren una secuencia lógica de pasos, como el flujo de reserva de estacionamiento o la gestión de usuarios administradores.
+En estos casos, el sistema guía al usuario paso a paso, evitando errores y reduciendo la carga cognitiva.
+
+Matricial (Matrix Organization):
+Se utiliza en la interfaz de administración de sensores y visualización IoT, donde se presenta información bidimensional (espacios × estados). Este formato permite a los administradores identificar rápidamente qué zonas presentan problemas, qué sensores están activos y cuáles requieren mantenimiento.
+
+2. Esquemas de categorización de contenido
+
+- Por audiencia (user groups):
+El sistema organiza los contenidos según el tipo de usuario:
+
+  - Conductores universitarios: Acceden a funciones de reserva, historial y perfil.
+  - Administradores: Gestionan sensores, usuarios, reportes y configuración del sistema.
+Esta diferenciación permite mostrar solo la información relevante a cada perfil.
+- Cronológico:
+Aplicado en las secciones de historial de reservas y reportes de uso, donde la información se presenta en orden temporal descendente, priorizando las acciones o eventos más recientes.
+- Por tópicos:
+Utilizado en los paneles de administración y módulos de configuración, donde la información se agrupa por temas como Usuarios, Zonas de estacionamiento, Dispositivos IoT y Alertas del sistema.
+- Alfabético:
+Implementado en los listados de usuarios, zonas o dispositivos, especialmente cuando la cantidad de registros es amplia. Este esquema facilita la búsqueda rápida dentro de tablas o listas desplegables.
+
+En conjunto, estos sistemas aseguran una organización lógica, comprensible y adaptable a las diferentes necesidades de los usuarios y contextos de uso de SafePark.
+
 ### 5.2.2. Labeling Systems
+
+El sistema de etiquetado de SafePark tiene como objetivo simplificar la representación de la información y garantizar que los usuarios comprendan fácilmente cada acción o categoría. Las etiquetas son breves, claras y consistentes entre las interfaces, evitando ambigüedades y tecnicismos innecesarios.
+
+1. Principios de etiquetado
+
+- Claridad: Cada etiqueta comunica una acción o concepto de forma directa.
+- Consistencia: Las etiquetas mantienen la misma terminología en web, móvil e IoT.
+- Brevedad: Se priorizan palabras cortas y de alta familiaridad.
+- Universalidad: Se empleara inglés como idioma principal, con soporte de traducción (i18n) al español.
+- Asociación semántica: Las etiquetas están acompañadas de iconos representativos, reforzando el reconocimiento visual de las funciones.
+
+2. Tipos de etiquetas
+
+- Acciones principales:
+Utilizadas en botones y llamadas a la acción.
+Ejemplos:
+
+  - Reserve, Confirm, Cancel, Edit, Save, Update.
+  - En español: Reservar, Confirmar, Cancelar, Editar, Guardar, Actualizar.
+
+- Categorías y módulos:
+Se aplican en menús, pestañas y paneles laterales.
+Ejemplos:
+
+  - Dashboard, Reservations, Users, Reports, Settings, Zones, Devices.
+
+- Estados del sistema:
+Empleados para identificar condiciones operativas o resultados de acciones.
+Ejemplos:
+
+  - Active, Inactive, Pending, Completed, Error, Warning, Success.
+- Asociaciones visuales:
+
+  - Verde = Success / Available
+  - Rojo = Error / Occupied
+  - Amarillo = Warning / Maintenance
+
+- Datos contextuales:
+Usados en tablas y tarjetas informativas, para etiquetar datos de usuario, horario o ubicación.
+Ejemplos:
+
+  - User ID, Zone Name, Start Time, End Time, Status.
+
+c. Asociación entre etiquetas e íconos
+
+Cada etiqueta textual está vinculada a un ícono visual correspondiente (por ejemplo, un ícono de “carro” para Reservations o un “engranaje” para Settings). Esto refuerza la comprensión inmediata de las acciones, especialmente en entornos móviles o pantallas pequeñas.
 
 ### 5.2.3. SEO Tags and Meta Tags
 
