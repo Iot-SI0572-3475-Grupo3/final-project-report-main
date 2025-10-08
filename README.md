@@ -3,25 +3,23 @@
 <p align="center">
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"></img><br>
     <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
-    <strong>Ingeniería de Software</strong><br>
-    <strong>1ASI0572 - Desarrollo de Soluciones IoT - 3475</strong><br>
+    <strong>Ingeniería de Software - Ciclo 7</strong><br>
+    <strong>1ASI0572 - 202520 - Desarrollo de Soluciones IoT</strong><br>
+    <strong>NRC: 3475</strong><br>
     <strong>Profesor: Marco Antonio Leon Baca </strong><br>
-    <br>INFORME
+    <br>Informe de Trabajo Final
 </p>
 
-<center>
+<p align="center">
+    <strong>Startup: SmartPark Solutions</strong><br>
+    <strong>Product: SmartParking</strong><br>
+</p>
 
-#### Startup: **SmartPark**
-
-#### Product: **SmartPark**
-
-</center>
-
-## Team  Members:
+## Integrantes del Equip:
 
 <div align="center">
 
-|               Member                |    Code    |
+|               Apellidos y Nombres                |    Código    |
 | :---------------------------------: | :--------: |
 | Salgado Luna, Fernando Brian  | u202212023 |
 | Ruiz Blas, Luciano Stefano  | U20211F978 |
@@ -30,6 +28,10 @@
 | Aquije Quiroga, Luis Enrique  | u202114936 |
 
 </div>
+
+<p align="center">
+    <strong>Octubre, 2025</strong>
+</p>
 
 <div style="page-break-after: always;"></div>
 
