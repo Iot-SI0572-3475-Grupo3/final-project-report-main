@@ -349,9 +349,9 @@ En esta sección se ofrece una descripción del startup y se detallan los perfil
 
 ### 1.1.1. Descripción de la Startup
 
-SmartParking Solutions es una startup enfocada en el desarrollo de soluciones de Internet de las Cosas (IoT) aplicadas al ámbito universitario. Su producto principal, SafePark, es un sistema automatizado de reserva gratuita de estacionamientos universitarios, diseñado para optimizar el uso de espacios en campus mediante sensores IoT, una aplicación móvil y un dashboard administrativo web.
+SmartParking Solutions es una startup enfocada en el desarrollo de soluciones de Internet de las Cosas (IoT) aplicadas al ámbito universitario. Su producto principal, SmartParking, es un sistema automatizado de reserva gratuita de estacionamientos universitarios, diseñado para optimizar el uso de espacios en campus mediante sensores IoT, una aplicación móvil y un dashboard administrativo web.
 
-El objetivo de la startup es ofrecer una solución tecnológica que simplifique la experiencia de los conductores y, al mismo tiempo, optimice la gestión de los administradores de estacionamientos. SafePark busca reducir el tiempo perdido en la búsqueda de espacios, incrementar la seguridad en la operación y generar un modelo de negocio escalable que aporte valor a usuarios, empresas y ciudades.
+El objetivo de la startup es ofrecer una solución tecnológica que simplifique la experiencia de los conductores y, al mismo tiempo, optimice la gestión de los administradores de estacionamientos. SmartParking busca reducir el tiempo perdido en la búsqueda de espacios, incrementar la seguridad en la operación y generar un modelo de negocio escalable que aporte valor a usuarios, empresas y ciudades.
 
 Nuestra visión es consolidarnos como un referente en el ámbito de la movilidad inteligente en Latinoamérica, contribuyendo al desarrollo de ciudades más sostenibles, organizadas y seguras, donde el estacionamiento deje de ser un problema cotidiano y se convierta en un proceso ágil y confiable.
 
@@ -389,7 +389,7 @@ Nuestra misión es brindar un sistema de estacionamiento automatizado que integr
 
 ### 1.2.2. Lean UX Process
 
-A través de la metodología Lean UX podemos desarrollar y comprobar propuestas de solución que priorizan al usuario, concentrándonos en generar valor mediante procesos ágiles y optimizados. En este apartado se identifican los desafíos fundamentales que experimentan los usuarios, las premisas comerciales y de experiencia de usuario, junto con las hipótesis que orientarán la construcción del sistema SafePark. Esta aproximación garantiza que todas las decisiones de diseño se fundamenten en datos concretos y en la verificación temprana con los usuarios objetivo.
+A través de la metodología Lean UX podemos desarrollar y comprobar propuestas de solución que priorizan al usuario, concentrándonos en generar valor mediante procesos ágiles y optimizados. En este apartado se identifican los desafíos fundamentales que experimentan los usuarios, las premisas comerciales y de experiencia de usuario, junto con las hipótesis que orientarán la construcción del sistema SmartParking. Esta aproximación garantiza que todas las decisiones de diseño se fundamenten en datos concretos y en la verificación temprana con los usuarios objetivo.
 
 #### 1.2.2.1. Lean UX Problem Statements
 
@@ -397,7 +397,7 @@ A través de la metodología Lean UX podemos desarrollar y comprobar propuestas 
 Actualmente, los estacionamientos universitarios continúan funcionando bajo modelos tradicionales donde los procesos son manuales y poco prácticos. Los conductores universitarios suelen perder tiempo buscando un espacio disponible, y los administradores carecen de herramientas tecnológicas que les permitan tener control en tiempo real de la operación.  
 La mayoría de las soluciones disponibles se limitan a ofrecer sistemas básicos de acceso, sin integrar una experiencia completa que automatice la asignación de espacios, el guiado al conductor, la reserva previa gratuita de un lugar con un tiempo límite de llegada.  
 
-**SafePark**, desarrollado por *SmartParking Solutions*, busca cubrir esta necesidad a través de un sistema que combina **sensores IoT**, una **aplicación móvil para usuarios** y un **panel de control web para administradores**. Con esta propuesta, se pretende optimizar la experiencia del conductor, reducir los tiempos de búsqueda y facilitar la gestión de los espacios en un solo ecosistema digital gratuito para la comunidad universitaria.  
+**SmartParking**, desarrollado por *SmartPark Solutions*, busca cubrir esta necesidad a través de un sistema que combina **sensores IoT**, una **aplicación móvil para usuarios** y un **panel de control web para administradores**. Con esta propuesta, se pretende optimizar la experiencia del conductor, reducir los tiempos de búsqueda y facilitar la gestión de los espacios en un solo ecosistema digital gratuito para la comunidad universitaria.  
 
 El punto de partida se orientará a **estacionamientos de campus universitarios**, donde la rapidez y la conveniencia son factores críticos tanto para usuarios como para operadores.  
 El éxito se reflejará en indicadores como una reducción del tiempo promedio de búsqueda de estacionamiento, un mayor aprovechamiento de los espacios disponibles y la satisfacción de los administradores al contar con reportes claros sobre ocupación.  
@@ -405,7 +405,7 @@ El éxito se reflejará en indicadores como una reducción del tiempo promedio d
 ---
 
 **Dominio:**  
-SafePark se ubica dentro del dominio de la **gestión inteligente de estacionamientos universitarios**, un área donde convergen la movilidad en campus, la experiencia del usuario y las tecnologías emergentes como el **Internet de las Cosas (IoT)**.  
+SmartParking se ubica dentro del dominio de la **gestión inteligente de estacionamientos universitarios**, un área donde convergen la movilidad en campus, la experiencia del usuario y las tecnologías emergentes como el **Internet de las Cosas (IoT)**.  
 Su enfoque está en digitalizar la operación diaria de estacionamientos universitarios, ofreciendo **automatización, control remoto, opciones de reserva previa gratuita con tiempos límite de llegada y escalabilidad en la administración**.  
 
 ---
@@ -423,7 +423,7 @@ Su enfoque está en digitalizar la operación diaria de estacionamientos univers
 ---
 
 **Visión / Estrategia:**  
-La visión de **SafePark** es ofrecer una **solución integral de estacionamiento universitario** que logre simplificar la vida de los conductores universitarios y al mismo tiempo brinde un control más inteligente a los administradores.  
+La visión de **SmartParking** es ofrecer una **solución integral de estacionamiento universitario** que logre simplificar la vida de los conductores universitarios y al mismo tiempo brinde un control más inteligente a los administradores.  
 La estrategia se centra en combinar **sensores IoT** con **interfaces intuitivas** que hagan posible una experiencia fluida, confiable y escalable. Entre sus diferenciadores está la **gestión eficiente de reservas gratuitas**, que garantiza disponibilidad ordenada en contextos universitarios de alta demanda.  
 
 ---
@@ -460,7 +460,7 @@ El lanzamiento inicial se enfocará en **estacionamientos de campus universitari
 - **Incremento de la rotación de espacios:** Se espera al menos un 25% más de disponibilidad efectiva gracias a la liberación automática de reservas no utilizadas en 30 minutos.  
 - **Optimización del uso de espacios:** Los administradores proyectan un mejor aprovechamiento de espacios al reducir espacios ociosos.  
 - **Reducción de costos operativos:** Con la automatización, se estima un 30% menos de incidencias manuales en asignación de espacios.  
-- **Reputación y competitividad:** Los campus universitarios que implementen **SafePark** serán percibidos como modernos, confiables y organizados, mejorando la experiencia estudiantil.  
+- **Reputación y competitividad:** Los campus universitarios que implementen **SmartParking** serán percibidos como modernos, confiables y organizados, mejorando la experiencia estudiantil.  
 
 ---
 
@@ -544,7 +544,7 @@ y lo sabremos cuando al menos el **60% de los administradores** use los reportes
 **Hipótesis 4**  
 Creemos que si el servicio se ofrece de forma completamente gratuita para la comunidad universitaria,  
 esto logrará mayor adopción y satisfacción de los usuarios,  
-y lo sabremos cuando el **80% de los conductores universitarios** prefiera usar **SafePark** frente a buscar espacios manualmente.  
+y lo sabremos cuando el **80% de los conductores universitarios** prefiera usar **SmartParking** frente a buscar espacios manualmente.  
 
 ---
 
@@ -565,7 +565,7 @@ Se ha utilizado el Lean UX Canvas como una herramienta estratégica clave para e
 
 ## 1.3. Segmentos objetivo
 
-El sistema **SafePark** está enfocado en los principales actores que enfrentan directamente la problemática de disponibilidad y gestión eficiente de estacionamientos en campus universitarios:  
+El sistema **SmartParking** está enfocado en los principales actores que enfrentan directamente la problemática de disponibilidad y gestión eficiente de estacionamientos en campus universitarios:  
 
 ### 1. Conductores (estudiantes, docentes y personal administrativo)  
 Estudiantes, docentes y personal administrativo de **18 a 65 años** que usan vehículo propio para llegar al campus.  
@@ -601,7 +601,7 @@ Necesitan un sistema que **automatice el control, genere reportes y libere autom
     <tbody>
         <tr style="text-align: center;">
             <td colspan="2">Empresas</td>
-            <td><strong>SafePark</strong><br><img src="https://i.imgur.com/4jN5NH4.png"></td>
+            <td><strong>SmartParking</strong><br><img src="https://i.imgur.com/Ih6tqJw.png"></td>
             <td><strong>ParkSmart</strong><br><img src="https://i.imgur.com/bAH2cNN.png"></td>
             <td><strong>ParkingDoor</strong><br><img src="https://i.imgur.com/KJuyEsm.png"></td>
             <td><strong>Parkealo</strong><br><img src="https://i.imgur.com/xo9tpvf.png"></td>
@@ -698,16 +698,16 @@ Necesitan un sistema que **automatice el control, genere reportes y libere autom
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
 **A) Diferenciación de Servicios**  
-SafePark se posicionará como la solución más especializada para el ámbito universitario, ofreciendo reservas gratuitas anticipadas, notificaciones inteligentes y liberación automática de espacios no utilizados. A diferencia de competidores como **ParkSmart** o **ParkingDoor**, SafePark no requiere grandes inversiones en hardware ni se limita únicamente al acceso, sino que integra la experiencia completa de gestión y uso en campus.
+SmartParking se posicionará como la solución más especializada para el ámbito universitario, ofreciendo reservas gratuitas anticipadas, notificaciones inteligentes y liberación automática de espacios no utilizados. A diferencia de competidores como **ParkSmart** o **ParkingDoor**, SmartParking no requiere grandes inversiones en hardware ni se limita únicamente al acceso, sino que integra la experiencia completa de gestión y uso en campus.
 
 **B) Calidad Constante**  
-La confiabilidad del sistema será un diferenciador frente a alternativas locales como **Parkealo**. SafePark implementará pilotos en universidades peruanas para validar métricas de ahorro de tiempo y mejora en la rotación de espacios. A partir de los resultados y del feedback de los usuarios, se aplicarán actualizaciones periódicas que garanticen un sistema robusto y en evolución continua.
+La confiabilidad del sistema será un diferenciador frente a alternativas locales como **Parkealo**. SmartParking implementará pilotos en universidades peruanas para validar métricas de ahorro de tiempo y mejora en la rotación de espacios. A partir de los resultados y del feedback de los usuarios, se aplicarán actualizaciones periódicas que garanticen un sistema robusto y en evolución continua.
 
 **C) Servicio al Cliente de Calidad**  
-El soporte será un punto clave frente a soluciones internacionales. SafePark ofrecerá atención personalizada en español, capacitación a administradores universitarios y un canal directo de soporte 24/7. Esto garantizará que tanto los estudiantes como los gestores del campus puedan utilizar el sistema desde el primer día sin fricciones, aumentando la satisfacción y la adopción.
+El soporte será un punto clave frente a soluciones internacionales. SmartParking ofrecerá atención personalizada en español, capacitación a administradores universitarios y un canal directo de soporte 24/7. Esto garantizará que tanto los estudiantes como los gestores del campus puedan utilizar el sistema desde el primer día sin fricciones, aumentando la satisfacción y la adopción.
 
 **D) Alianzas Estratégicas**  
-SafePark buscará convenios con universidades, asociaciones estudiantiles y entidades educativas para acelerar la implementación en campus. Asimismo, establecerá acuerdos con empresas locales de tecnología IoT para reducir costos de hardware y asegurar la escalabilidad. Estas alianzas permitirán a SafePark diferenciarse de competidores como **Parkealo**, que se enfocan en un mercado más comercial, al consolidarse como el referente en soluciones de movilidad universitaria.
+SmartParking buscará convenios con universidades, asociaciones estudiantiles y entidades educativas para acelerar la implementación en campus. Asimismo, establecerá acuerdos con empresas locales de tecnología IoT para reducir costos de hardware y asegurar la escalabilidad. Estas alianzas permitirán a SmartParking diferenciarse de competidores como **Parkealo**, que se enfocan en un mercado más comercial, al consolidarse como el referente en soluciones de movilidad universitaria.
 
 ## 2.2. Entrevistas
 
@@ -744,7 +744,7 @@ En esta sección se presentarán las preguntas empleadas en las entrevistas, inc
 - ¿Qué opinas de implementar un sistema que libere automáticamente los espacios reservados no utilizados?
 - ¿Qué tan útil sería contar con un panel web que muestre en tiempo real la ocupación y genere reportes automáticos?
 - ¿Qué barreras crees que podrían surgir al implementar un sistema inteligente de reservas (resistencia de usuarios, falta de infraestructura, costos)?
-- ¿Qué indicadores te ayudarían a evaluar si un sistema como SafePark realmente mejora la eficiencia operativa del estacionamiento?
+- ¿Qué indicadores te ayudarían a evaluar si un sistema como SmartParking realmente mejora la eficiencia operativa del estacionamiento?
 
 ### 2.2.2. Registro de entrevistas
 A continuación, se registraron todas las entrevistas realizadas para nuestra solución, categorizadas según su segmento objetivo, y con un resumen que destaca las características y críticas realizadas sobre nuestro proyecto.
@@ -1019,7 +1019,7 @@ El segmento de Administrador de Estacionamiento representa a profesionales respo
 <br>
 
 ### 2.3.2. User Task Matrix
-En esta sección se muestra la User Task Matrix, que permite identificar las tareas más importantes y frecuentes de los usuarios de SafePark: conductores universitarios y administradores de estacionamientos. La matriz ayuda a comparar sus actividades, destacando similitudes y diferencias en frecuencia e importancia. Este análisis, basado en los User Personas, permite comprender mejor sus necesidades y desafíos, enfocando el diseño de SafePark en funciones que optimicen la experiencia de los conductores y faciliten la gestión eficiente de los administradores.
+En esta sección se muestra la User Task Matrix, que permite identificar las tareas más importantes y frecuentes de los usuarios de SmartParking: conductores universitarios y administradores de estacionamientos. La matriz ayuda a comparar sus actividades, destacando similitudes y diferencias en frecuencia e importancia. Este análisis, basado en los User Personas, permite comprender mejor sus necesidades y desafíos, enfocando el diseño de SmartParking en funciones que optimicen la experiencia de los conductores y faciliten la gestión eficiente de los administradores.
 
 | Task | Conductores universitarios (Frecuencia / Importancia) | Administradores (Frecuencia / Importancia) |
 |------|-------------------------------------------------------|-------------------------------------------|
@@ -1037,7 +1037,7 @@ En esta sección se muestra la User Task Matrix, que permite identificar las tar
 
 ### 2.3.3. User Journey Mapping  
 
-En esta sección se presentan los **User Journey Mapping** de los dos perfiles de usuario principales, resaltando las etapas clave de interacción con **SafePark**, los puntos de contacto, así como las emociones y experiencias que viven en cada fase. El objetivo es identificar oportunidades de mejora para optimizar su experiencia.  
+En esta sección se presentan los **User Journey Mapping** de los dos perfiles de usuario principales, resaltando las etapas clave de interacción con **SmartParking**, los puntos de contacto, así como las emociones y experiencias que viven en cada fase. El objetivo es identificar oportunidades de mejora para optimizar su experiencia.  
 
 __User Journey Map – Manuel Rojas – Conductor Universitario (As-Is)__  
 
@@ -1073,11 +1073,11 @@ __Cierre del día:__ Revisa que todo quede en orden para el siguiente turno, per
 
 ### 2.3.4. Empathy Mapping
 
-El Empathy Mapping permite comprender a fondo las necesidades, emociones y comportamientos de los usuarios, identificando oportunidades para mejorar su experiencia. A continuación, se presentan los mapas de empatía de los dos segmentos objetivo de SafePark: Conductores Universitarios y Administradores de Estacionamientos.
+El Empathy Mapping permite comprender a fondo las necesidades, emociones y comportamientos de los usuarios, identificando oportunidades para mejorar su experiencia. A continuación, se presentan los mapas de empatía de los dos segmentos objetivo de SmartParking: Conductores Universitarios y Administradores de Estacionamientos.
 
 ## Empathy Map del Conductor Universitario
 
-En este mapa de empatía, se ha representado al conductor universitario como el principal usuario de la aplicación SafePark. Este segmento busca reducir el tiempo y el estrés que genera la búsqueda de estacionamiento dentro del campus, asegurando un espacio disponible al llegar.  
+En este mapa de empatía, se ha representado al conductor universitario como el principal usuario de la aplicación SmartParking. Este segmento busca reducir el tiempo y el estrés que genera la búsqueda de estacionamiento dentro del campus, asegurando un espacio disponible al llegar.  
 Durante el análisis, se observa que los conductores sienten frustración por la congestión y la desorganización en los estacionamientos, y ansiedad por la posibilidad de llegar tarde a clases o reuniones. Normalmente intentan salir con mucha anticipación o dar vueltas alrededor del campus para encontrar un lugar, lo que afecta su productividad y estado de ánimo.  
 Sus necesidades principales son contar con un sistema que permita reservar espacios con anticipación, recibir información confiable en tiempo real y reducir la incertidumbre en su rutina diaria. Buscan una herramienta tecnológica rápida, confiable y gratuita que les brinde tranquilidad, control y eficiencia en su movilidad.
 
@@ -1099,15 +1099,15 @@ Sus necesidades principales son contar con un sistema automatizado que gestione 
 
 ### Introducción
 
-En esta sección el equipo introduce, resume el proceso realizado por el equipo y presenta capturas y explicaciones de las etapas del Big Picture Event Storming. En una sesión colaborativa, el equipo se enfocó en entender el dominio del negocio SafePark en general, plasmando los eventos significativos y sus relaciones. Es una primera aproximación visual de alto nivel que explora el landscape del negocio, identificando procesos clave, exponiendo potenciales problemas u oportunidades. En https://bit.ly/bpes-guide encontrará un Step-by-Step Guide para realizar el proceso.
+En esta sección el equipo introduce, resume el proceso realizado por el equipo y presenta capturas y explicaciones de las etapas del Big Picture Event Storming. En una sesión colaborativa, el equipo se enfocó en entender el dominio del negocio SmartParking en general, plasmando los eventos significativos y sus relaciones. Es una primera aproximación visual de alto nivel que explora el landscape del negocio, identificando procesos clave, exponiendo potenciales problemas u oportunidades. En https://bit.ly/bpes-guide encontrará un Step-by-Step Guide para realizar el proceso.
 
 ### Proceso Realizado
 
-El equipo ejecutó una sesión de 4 horas aplicando la metodología Big Picture Event Storming para mapear el dominio SafePark:
+El equipo ejecutó una sesión de 4 horas aplicando la metodología Big Picture Event Storming para mapear el dominio SmartParking:
 
 - **Etapa 1: Generación de Eventos (45 min)** - El equipo generó colaborativamente 43 eventos de dominio usando post-its naranjas.
 - **Etapa 2: Ordenamiento Temporal (60 min)** - Los eventos se organizaron cronológicamente revelando flujos del sistema.
-- **Etapa 3: Identificación de Actores (30 min)** - Se añadieron actores y sistemas externos que interactúan con SafePark.
+- **Etapa 3: Identificación de Actores (30 min)** - Se añadieron actores y sistemas externos que interactúan con SmartParking.
 - **Etapa 4: Storytelling (45 min)** - El equipo validó la coherencia narrando la historia completa del sistema.
 
 ### Capturas y Explicaciones
@@ -1116,7 +1116,7 @@ El equipo ejecutó una sesión de 4 horas aplicando la metodología Big Picture 
 
 ![Captura de pantalla de la reunión - Paso 1](https://i.imgur.com/XoJqDNH.jpeg)
 
-**Descripción:** Esta captura corresponde al Step 1: Unstructured Exploration del proceso. El equipo generó todos los eventos de dominio de SafePark durante la fase de brainstorming colaborativo. Los 43 post-its naranjas están distribuidos aleatoriamente en el tablero, reflejando el conocimiento inicial del equipo sobre el sistema antes de cualquier organización. Se pueden observar eventos como "User Authenticated", "Reservation Created", "Vehicle Detected", "Timer Started", entre otros, capturando la comprensión completa del dominio SafePark.
+**Descripción:** Esta captura corresponde al Step 1: Unstructured Exploration del proceso. El equipo generó todos los eventos de dominio de SmartParking durante la fase de brainstorming colaborativo. Los 43 post-its naranjas están distribuidos aleatoriamente en el tablero, reflejando el conocimiento inicial del equipo sobre el sistema antes de cualquier organización. Se pueden observar eventos como "User Authenticated", "Reservation Created", "Vehicle Detected", "Timer Started", entre otros, capturando la comprensión completa del dominio SmartParking.
 
 #### Captura 2: Ordenamiento Cronológico
 
@@ -1190,7 +1190,7 @@ Problemas detectados: desconexión IoT, sincronización sensor-sistema, overflow
 
 ### Conclusiones
 
-El trabajo de Big Picture Event Storming estableció una base sólida para el desarrollo de SafePark. El equipo identificó 43 eventos organizados en 7 bounded contexts, validando la viabilidad técnica del sistema de reservas gratuitas integrado con dispositivos IoT. Se detectaron problemas críticos relacionados con la sincronización IoT y se desarrolló un lenguaje ubícuo que facilitará la comunicación durante el desarrollo del sistema.
+El trabajo de Big Picture Event Storming estableció una base sólida para el desarrollo de SmartParking. El equipo identificó 43 eventos organizados en 7 bounded contexts, validando la viabilidad técnica del sistema de reservas gratuitas integrado con dispositivos IoT. Se detectaron problemas críticos relacionados con la sincronización IoT y se desarrolló un lenguaje ubícuo que facilitará la comunicación durante el desarrollo del sistema.
 
 ## 2.5. Ubiquitous Language  
 
@@ -1199,7 +1199,7 @@ Esta sección presenta un glosario de términos y conceptos clave del dominio, d
 | Término (Inglés)    | Término (Español)        | Definición |
 |---------------------|--------------------------|------------|
 | **Parking Spot**    | Espacio de estacionamiento | Lugar físico destinado al estacionamiento de un vehículo dentro del campus universitario. |
-| **Reservation**     | Reserva                  | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SafePark. |
+| **Reservation**     | Reserva                  | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SmartParking. |
 | **Reservation Status** | Estado de la reserva   | Condición actual de una reserva, por ejemplo: confirmada, pendiente, cancelada o expirada. |
 | **Arrival Time**    | Hora de llegada          | Momento en el que el conductor debe llegar al espacio reservado antes de que se libere automáticamente. |
 | **No-show**         | No presentación          | Situación en la que un conductor no ocupa el espacio reservado dentro del tiempo límite establecido. |
@@ -1215,7 +1215,7 @@ Esta sección presenta un glosario de términos y conceptos clave del dominio, d
 | Término (Inglés) | Término (Español)      | Definición                                                                                       |
 |------------------|-----------------------|-------------------------------------------------------------------------------------------------|
 | Parking Spot      | Espacio de estacionamiento | Lugar físico destinado al estacionamiento de un vehículo dentro del campus universitario.       |
-| Reservation       | Reserva               | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SafePark. |
+| Reservation       | Reserva               | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SmartParking. |
 | Reservation Status | Estado de la reserva  | Condición actual de una reserva, por ejemplo: confirmada, pendiente, cancelada o expirada.     |
 | Arrival Time      | Hora de llegada       | Momento en el que el conductor debe llegar al espacio reservado antes de que se libere automáticamente. |
 | No-show           | No presentación       | Situación en la que un conductor no ocupa el espacio reservado dentro del tiempo límite establecido. |
@@ -1233,26 +1233,26 @@ Esta sección presenta un glosario de términos y conceptos clave del dominio, d
 ## 3.1. User Stories
 
 
-Redactamos las historias de usuario para el sistema de gestión de estacionamientos SafePark basándonos en las necesidades y problemas identificados en los segmentos de conductores universitarios y administradores del campus. Las historias de usuario describen las funcionalidades y características que los usuarios finales esperan del sistema, y se utilizan como guía para diseñar y desarrollar una experiencia eficiente, confiable y tecnológica para la gestión de reservas, ocupación y control de espacios de estacionamiento.
+Redactamos las historias de usuario para el sistema de gestión de estacionamientos SmartParking basándonos en las necesidades y problemas identificados en los segmentos de conductores universitarios y administradores del campus. Las historias de usuario describen las funcionalidades y características que los usuarios finales esperan del sistema, y se utilizan como guía para diseñar y desarrollar una experiencia eficiente, confiable y tecnológica para la gestión de reservas, ocupación y control de espacios de estacionamiento.
 
 <br>
 
 | Epic/Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
 |---------------|--------|------------|-------------------------|---------------------------|
 | EP01 | Gestión de Identidad y Acceso | Como miembro UPC quiero registrarme, autenticarme y gestionar mi perfil para acceder al sistema de estacionamiento. | – | – |
-| US01 | Registro de Usuario UPC | Como estudiante/docente/personal de UPC quiero registrarme con mi email institucional (@upc.edu.pe) para acceder a SafePark. | Given que soy miembro de UPC con email válido When completo el formulario de registro Then el sistema valida mi email y crea mi cuenta And recibo un correo de confirmación And mi perfil se clasifica como “Estudiante”, “Docente” o “Personal Administrativo”. | EP01 |
-| US02 | Autenticación de Usuario | Como miembro registrado quiero iniciar sesión en SafePark para acceder a mis funcionalidades. | Given que tengo una cuenta activa When ingreso mi email y contraseña válidos Then el sistema me autentica y me redirige al dashboard And mi sesión permanece activa And veo mi estado actual (reservas, ausencias, etc.). | EP01 |
+| US01 | Registro de Usuario UPC | Como estudiante/docente/personal de UPC quiero registrarme con mi email institucional (@upc.edu.pe) para acceder a SmartParking. | Given que soy miembro de UPC con email válido When completo el formulario de registro Then el sistema valida mi email y crea mi cuenta And recibo un correo de confirmación And mi perfil se clasifica como “Estudiante”, “Docente” o “Personal Administrativo”. | EP01 |
+| US02 | Autenticación de Usuario | Como miembro registrado quiero iniciar sesión en SmartParking para acceder a mis funcionalidades. | Given que tengo una cuenta activa When ingreso mi email y contraseña válidos Then el sistema me autentica y me redirige al dashboard And mi sesión permanece activa And veo mi estado actual (reservas, ausencias, etc.). | EP01 |
 | US03 | Gestión de Perfil Personal | Como usuario autenticado quiero actualizar mi información personal para mantener mis datos al día. | Given que estoy autenticado When accedo a “Mi Perfil” Then puedo editar nombre, teléfono y preferencias de notificación And los cambios se guardan And no puedo cambiar mi email institucional ni tipo de usuario. | EP01 |
 | EP02 | Gestión de Reservas Flexibles | Como miembro UPC quiero crear, consultar y cancelar reservas con detección automática, sin necesidad de definir hora de salida. | – | – |
 | US04 | Crear Nueva Reserva | Como miembro UPC quiero crear una reserva de estacionamiento para asegurar mi espacio. | Given que no tengo una reserva activa y hay espacios disponibles When selecciono fecha y hora de inicio (máx. 24h anticipación) Then el sistema asigna un espacio disponible And recibo confirmación con detalles And tengo ventana de 30 min para llegar And no necesito definir hora de fin. | EP02 |
 | US05 | Ver Estado de Reservas | Como usuario con reserva quiero ver el estado actual de mis reservas para saber dónde y cuándo debo llegar. | Given que tengo una reserva activa When accedo al dashboard Then veo mi espacio asignado con fecha y hora And veo tiempo restante para llegar (cuenta regresiva) And veo el estado general de espacios. | EP02 |
 | US06 | Cancelar Reserva | Como usuario con reserva quiero cancelarla para liberar el espacio si ya no lo necesito. | Given que tengo una reserva activa no confirmada When selecciono “Cancelar Reserva” Then el sistema libera el espacio And recibo confirmación And puedo crear otra reserva. | EP02 |
-| US07 | Confirmación Automática de Llegada | Como usuario quiero que SafePark detecte mi llegada automáticamente al estacionar. | Given que tengo una reserva activa y llego a mi espacio When estaciono mi vehículo Then el sensor detecta ocupación And el LED cambia a rojo (ocupado) And el cronómetro inicia And recibo confirmación de inicio. | EP02 |
-| US08 | Finalización Automática de Sesión | Como usuario quiero que SafePark detecte mi salida para cerrar la sesión. | Given que tengo una sesión activa When retiro mi vehículo Then el sensor detecta espacio libre And el cronómetro se detiene And recibo resumen de sesión And el LED cambia a verde (libre). | EP02 |
+| US07 | Confirmación Automática de Llegada | Como usuario quiero que SmartParking detecte mi llegada automáticamente al estacionar. | Given que tengo una reserva activa y llego a mi espacio When estaciono mi vehículo Then el sensor detecta ocupación And el LED cambia a rojo (ocupado) And el cronómetro inicia And recibo confirmación de inicio. | EP02 |
+| US08 | Finalización Automática de Sesión | Como usuario quiero que SmartParking detecte mi salida para cerrar la sesión. | Given que tengo una sesión activa When retiro mi vehículo Then el sensor detecta espacio libre And el cronómetro se detiene And recibo resumen de sesión And el LED cambia a verde (libre). | EP02 |
 | EP03 | Control de Espacios IoT | Como sistema quiero gestionar espacios físicos e integrar dispositivos ESP32 para monitoreo en tiempo real. | – | – |
 | US09 | Monitoreo de Estado de Espacios | Como usuario quiero ver el estado actual de todos los espacios para conocer disponibilidad en tiempo real. | Given que estoy en el dashboard When consulto el estado de espacios Then veo los 3 espacios (A, B, C) con estado: Libre, Reservado, Ocupado o Mantenimiento And se actualiza cada 15s And veo LED correspondiente. | EP03 |
 | US10 | Indicación Visual de Espacio Asignado | Como usuario quiero identificar fácilmente mi espacio asignado para estacionar correctamente. | Given que tengo una reserva confirmada When llego al estacionamiento Then el LED de mi espacio parpadea en azul And el display muestra “Espacio [X] reservado para [Usuario]”. | EP03 |
-| EP04 | Seguimiento de Tiempo Real | Como usuario quiero que SafePark registre y muestre el tiempo de uso en vivo sin límites temporales. | – | – |
+| EP04 | Seguimiento de Tiempo Real | Como usuario quiero que SmartParking registre y muestre el tiempo de uso en vivo sin límites temporales. | – | – |
 | US11 | Cronometraje Automático | Como usuario quiero que el sistema registre automáticamente mi tiempo de uso. | Given que confirmé mi llegada When el sensor detecta ocupación Then el cronómetro inicia And puedo ver tiempo transcurrido en la app And se registra hasta mi salida. | EP04 |
 | US12 | Visualización de Tiempo en Vivo | Como usuario quiero ver mi tiempo de uso actual en la app. | Given que tengo sesión activa When consulto el dashboard Then veo tiempo transcurrido actualizado en vivo And hora de inicio And datos sincronizados con IoT. | EP04 |
 | US13 | Historial de Tiempos de Uso | Como usuario quiero ver mi historial de sesiones para conocer mis patrones de uso. | Given que tengo sesiones anteriores When accedo a “Mi Historial” Then veo lista de últimas 20 sesiones con fecha, duración y espacio And estadísticas personales And puedo filtrar por rango de fechas. | EP04 |
@@ -1284,7 +1284,7 @@ Redactamos las historias de usuario para el sistema de gestión de estacionamien
 
 ## 3.2. Impact Mapping  
 
-En el desarrollo de nuestro proyecto, aplicamos la metodología **Impact Mapping** como herramienta estratégica para asegurar que cada funcionalidad de **SafePark** se alinee con los objetivos de negocio y con las verdaderas necesidades de nuestros usuarios. Esta técnica permitió identificar con claridad qué queremos lograr, quiénes son los actores clave, cómo pueden influir en el resultado y qué acciones priorizar, evitando invertir recursos en características que no aporten valor directo.  
+En el desarrollo de nuestro proyecto, aplicamos la metodología **Impact Mapping** como herramienta estratégica para asegurar que cada funcionalidad de **SmartParking** se alinee con los objetivos de negocio y con las verdaderas necesidades de nuestros usuarios. Esta técnica permitió identificar con claridad qué queremos lograr, quiénes son los actores clave, cómo pueden influir en el resultado y qué acciones priorizar, evitando invertir recursos en características que no aporten valor directo.  
 
 __Business goal:__  
 Reducir en 30% el tiempo de búsqueda de estacionamiento en 3 meses
