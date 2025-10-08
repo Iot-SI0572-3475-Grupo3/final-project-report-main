@@ -5041,10 +5041,68 @@ c. Asociación entre etiquetas e íconos
 Cada etiqueta textual está vinculada a un ícono visual correspondiente (por ejemplo, un ícono de “carro” para Reservations o un “engranaje” para Settings). Esto refuerza la comprensión inmediata de las acciones, especialmente en entornos móviles o pantallas pequeñas.
 
 ### 5.2.3. SEO Tags and Meta Tags
+Con el objetivo de mejorar la visibilidad de SmartParking en los motores de búsqueda, atraer nuevos usuarios y proporcionar información relevante sobre la Landing Page y la Web Application, se incorporarán las siguientes Meta Tags como etiquetas HTML en el <head> de las páginas principales:
+<title>SmartParking – Smart IoT Parking System for University Campuses</title>
+<meta name="description" content="SmartParking is a smart parking solution designed for universities. Reserve your space in advance, monitor real-time availability, and optimize campus mobility with IoT technology.">
+<meta name="keywords" content="smart parking, IoT, university parking, campus mobility, parking reservation, SmartPark Solutions, parking management system">
+<meta name="author" content="SmartPark Solutions">
+
+Asimismo, para potenciar la presencia de la aplicación móvil en tiendas digitales (App Store Optimization - ASO), se definirán los siguientes elementos informativos:
+
+**App Title:** SmartParking – University Smart Park
+**App Subtitle:** Reserve, arrive, and park with confidence
+**App Description:** SmartParking is a smart parking app for university campuses powered by IoT. Easily reserve your space before arriving, receive real-time updates, and avoid long waits or uncertainty. Administrators can monitor occupancy, automate space release, and generate reports with ease.
+**App Keywords:** smart parking, IoT, university, mobility, parking app, campus parking, SmartPark Solutions
+**App Author:** SmartPark Solutions
+**App Category:** Productivity / Mobility
 
 ### 5.2.4. Searching Systems
+En la plataforma de SmartParking, los principales usuarios que utilizan sistemas de búsqueda y filtrado son los administradores de estacionamiento, quienes requieren acceder de forma ágil a información relacionada con reservas, usuarios y métricas operativas. Para evitar la sobrecarga de información y facilitar la toma de decisiones, se han diseñado mecanismos de búsqueda intuitivos y filtros específicos según cada módulo del sistema.
+
+- **Búsqueda y filtrado en Dashboard Administrativo**
+En esta sección, los administradores pueden visualizar el estado general del sistema y filtrar los datos mostrados según fecha y hora de las reservas.
+Este filtro permite analizar la ocupación y rotación de espacios en periodos determinados, facilitando la detección de picos de demanda y la planificación operativa.
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/LQQuXr6.png" alt="Filtrado en Dashboard Administrativo" width="50%" /> </div><br>
+
+- **Búsqueda y filtrado en Gestión de Usuarios**
+Dentro del módulo de gestión de usuarios, los administradores cuentan con una barra de búsqueda que permite localizar rápidamente a un usuario específico ingresando su nombre o correo institucional.
+Además, pueden aplicar filtros adicionales por Estado (Activo, Suspendido) y por Tipo de Usuario (Estudiante, Docente, Personal Administrativo).
+Este sistema mejora el control y la supervisión del comportamiento de los usuarios dentro de la plataforma.
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/uLrotRp.png" alt="Búsqueda en Gestión de Usuarios" width="50%" /> </div><br>
+
+- **Filtrado en Reportes y Métricas**
+En el módulo de reportes, los administradores pueden filtrar los resultados por período temporal, seleccionando entre Hoy, Semana o Mes.
+Este sistema permite visualizar rápidamente las tendencias de uso, identificar patrones de ocupación y generar reportes comparativos con base en intervalos de tiempo específicos.
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/TnE0VuG.png" alt="Filtros en Reportes y Métricas" width="50%" /> </div><br>
+
+Estos mecanismos de búsqueda y filtrado están diseñados bajo principios de claridad, consistencia y eficiencia, garantizando que los administradores encuentren la información relevante sin esfuerzo, optimizando su gestión y mejorando la experiencia de uso dentro del ecosistema SmartParking.
 
 ### 5.2.5. Navigation Systems
+El sistema de navegación de SmartPark se ha diseñado para guiar de manera intuitiva a los usuarios universitarios (conductores) y administradores a través de las distintas plataformas del ecosistema (Landing Page, Web Application y Mobile App).
+El objetivo principal es permitir que los usuarios cumplan sus metas, como reservar un espacio, visualizar disponibilidad o gestionar el estacionamiento, de forma rápida, clara y sin perder orientación dentro del sistema.
+
+1. Navegación para Usuarios Universitarios
+
+Los usuarios universitarios, que interactúan principalmente desde la Aplicación Web y Móvil, cuentan con una estructura de navegación simple, jerárquica y consistente.
+
+La interfaz está compuesta por tres pestañas principales: "Inicio", para la visualización general de los espacios disponibles en tiempo real, "Reservas", que muestra el historial de reservas realizadas por el usuario, y "Perfil", que permite al usuario editar sus datos personales, como nombre, teléfono y preferencias de notificación.
+
+Todas accesibles desde una barra superior de navegación:
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/BHb48DP.png" alt="Vista Inicio - Home" width="55%" /> </div><br>
+
+2. Navegación para Administradores
+
+Los administradores acceden desde la Web Application, que cuenta con una estructura modular y jerárquica organizada por pestañas superiores (topbar).
+
+Tiene cuatro pestañas: "Dashboard", que es la vista principal donde pueden observar métricas globales, ocupación actual y alertas del sistema, "Usuarios", donde puede buscar, filtrar y gestionar los perfiles de los miembros del campus, "Reportes y Métricas", para filtrar información por periodo (Hoy, Semana, Mes) y generar reportes descargables, y "Configuración" para acceder a parámetros del sistema (ventana de llegada, penalizaciones, límites de reservas, etc.).
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/jqHuM21.png" alt="Navegación Administradores" width="55%" /> </div><br>
+
+En conjunto, estos sistemas de navegación garantizan una experiencia coherente y fluida entre las plataformas de SmartPark, permitiendo que cada tipo de usuario —ya sea conductor o administrador— pueda alcanzar sus objetivos con facilidad, minimizando la carga cognitiva y el tiempo de interacción.
 
 ## 5.3. Landing Page UI Design
 
