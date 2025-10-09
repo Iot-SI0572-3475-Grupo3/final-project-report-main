@@ -5292,6 +5292,7 @@ Este prototipo permite simular la navegación real del usuario y sirve como guí
 <img src="https://i.imgur.com/i9DOlzJ.png" width="75%" />
 
 Link User: https://www.figma.com/proto/GTZj2RO4JUsdBDxsrO7nVV/SafePark?node-id=2-418&t=03ju0Sb7p0VKa1ap-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2%3A418&show-proto-sidebar=1
+
 Link Admin: https://www.figma.com/proto/GTZj2RO4JUsdBDxsrO7nVV/SafePark?node-id=341-7485&t=03ju0Sb7p0VKa1ap-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=341%3A7485&show-proto-sidebar=1
 
 # Capítulo VI: Product Implementation, Validation & Deployment
