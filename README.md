@@ -5063,12 +5063,12 @@ Con el objetivo de mejorar la visibilidad de SmartParking en los motores de bús
 ```
 Asimismo, para potenciar la presencia de la aplicación móvil en tiendas digitales (App Store Optimization - ASO), se definirán los siguientes elementos informativos:
 
-**App Title:** SmartParking – University Smart Park
-**App Subtitle:** Reserve, arrive, and park with confidence
-**App Description:** SmartParking is a smart parking app for university campuses powered by IoT. Easily reserve your space before arriving, receive real-time updates, and avoid long waits or uncertainty. Administrators can monitor occupancy, automate space release, and generate reports with ease.
-**App Keywords:** smart parking, IoT, university, mobility, parking app, campus parking, SmartPark Solutions
-**App Author:** SmartPark Solutions
-**App Category:** Productivity / Mobility
+- **App Title:** SmartParking – University Smart Park
+- **App Subtitle:** Reserve, arrive, and park with confidence
+- **App Description:** SmartParking is a smart parking app for university campuses powered by IoT. Easily reserve your space before arriving, receive real-time updates, and avoid long waits or uncertainty. Administrators can monitor occupancy, automate space release, and generate reports with ease.
+- **App Keywords:** smart parking, IoT, university, mobility, parking app, campus parking, SmartPark Solutions
+- **App Author:** SmartPark Solutions
+- **App Category:** Productivity / Mobility
 
 ### 5.2.4. Searching Systems
 En la plataforma de SmartParking, los principales usuarios que utilizan sistemas de búsqueda y filtrado son los administradores de estacionamiento, quienes requieren acceder de forma ágil a información relacionada con reservas, usuarios y métricas operativas. Para evitar la sobrecarga de información y facilitar la toma de decisiones, se han diseñado mecanismos de búsqueda intuitivos y filtros específicos según cada módulo del sistema.
