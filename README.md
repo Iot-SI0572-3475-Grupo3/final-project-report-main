@@ -317,7 +317,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p/>
         TP1:
         <p/>
-        Luciano Ruiz: 
+        Luciano Ruiz: Distribui las tareas nuevamente para esta nueva entrega, de manera justa y que favorezca las habilidades del equipo. Además de aportar ayuda en todo momento.
         <p/>
         Fernando: 
         <p/>
@@ -5286,7 +5286,13 @@ Estos diagramas permiten visualizar cómo los conductores, administradores y el 
 <img src="https://i.imgur.com/3uYxo5A.png" width="75%" />
 
 ## 5.5. Applications Prototyping
+El prototipado de SmartParking fue elaborado en Figma, integrando las pantallas y flujos principales definidos en las fases de diseño UX/UI.
+Este prototipo permite simular la navegación real del usuario y sirve como guía directa para la etapa de desarrollo del producto.
 
+<img src="https://i.imgur.com/i9DOlzJ.png" width="75%" />
+
+Link User: https://www.figma.com/proto/GTZj2RO4JUsdBDxsrO7nVV/SafePark?node-id=2-418&t=03ju0Sb7p0VKa1ap-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2%3A418&show-proto-sidebar=1
+Link Admin: https://www.figma.com/proto/GTZj2RO4JUsdBDxsrO7nVV/SafePark?node-id=341-7485&t=03ju0Sb7p0VKa1ap-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=341%3A7485&show-proto-sidebar=1
 
 # Capítulo VI: Product Implementation, Validation & Deployment
 
