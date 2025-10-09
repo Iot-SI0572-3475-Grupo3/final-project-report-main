@@ -5593,21 +5593,66 @@ Feature: Gestión de perfil personal
     Then El sistema debe actualizar la información y mostrar un mensaje de confirmación
 ```
 
-#### 6.2.1.6. Execution Evidence for Sprint Review
+Sprint 1: En este entregable, hemos logrado desarrollar la Landing Page y parte del Web Application para nuestra Startup SmartParking.
 
-[Esta sección se completará con evidencia de visualizacion de fronted y landing]
+- El link de la landing page es el siguiente: https://iot-si0572-3475-grupo3.github.io/landing-page/
+
+Imagen 1: Hero Section, en esta sección se visualiza el menú superior de la landing page, así como una imagen principal llamtiva y atractiva al cliente.
+
+<img src="https://i.imgur.com/KGSKv49.png" width="75%" />
+
+Imagen 2: Vista de Caracteristicas, dedicada a los Servicios ofrecidos por SmartParking.
+
+<img src="https://i.imgur.com/5EEBvyK.png" width="75%" />
+
+- El link de la Web application: https://smart-parking-iot-3475.netlify.app/
+
+
+<img src="https://i.imgur.com/EtgF2lv.png" width="75%" />
+
+<img src="https://i.imgur.com/6X9mRad.png" width="75%" />
+
+<img src="https://i.imgur.com/dKrjzGR.png" width="75%" />
+
+
 
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
-[Esta sección se completará con evidencia de documentación de servicios durante la ejecución del sprint]
+En este sprint se cumplió el objetivo de desarrollar la Landing Page y el Web Application; sin embargo, al ser Landing Page y Web Application, no requiere de documentación relacionada a Web Services.
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
-[Esta sección se completará con evidencia de despliegue durante la ejecución del sprint]
+En este sprint, se completó el desarrollo de la landing page y el Web Application, a continuación, se detallan el conjunto de herramientas utilizadas para su despliegue:
+
+Git: Utilizado como sistema de control de versiones para facilitar el trabajo en equipo durante el desarrollo de los artefactos.
+GitFlow: Implementado como flujo de trabajo para gestionar el progreso individual de cada miembro del equipo en el desarrollo del los artefactos.
+GitHub: Empleado como plataforma colaborativa para almacenar las versiones del proyceto y facilitar el desarrollo conjunto del equipo.
+Netlify: Plataforma utilizada para el despliegue del Web Application, conectandolo al repositorio de Github y sincronizar los cambios.
+
+#### Evidencias Landing Page
+
+Se ha creado un Github Page en el repositorio de la Landing Page, para su despliegue rápido y sencillo. No hay problemas de configuración o despliegue, ya que es una página estática.
+
+<img src="https://i.imgur.com/bIHBAlb.png" width="75%" />
+
+
+#### Evidencias Web Application
+
+Se selecciona el repositorio de Github el cual va alimentar el proyecto desplegado.
+
+<img src="https://i.imgur.com/jPtuTun.png" width="75%" />
+
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
-[Esta sección se completará con insights de colaboración del equipo durante la ejecución del sprint]
+En este Sprint 1, todos hemos colaborado en conjunto para el desarrollo de los artefactos: Landing Page y Web Application.
+
+A continuación se muestran las colaboraciones individuales por cada artefacto terminado durante este sprint.
+
+Web Application En las siguientes imágenes se evidencia la colaboración activa de cada miembro del equipo en el desarrollo de la Web Application.
+
+
+<img src="https://i.imgur.com/jPtuTun.png" width="75%" />
 
 
 # Conclusiones
