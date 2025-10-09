@@ -3,25 +3,23 @@
 <p align="center">
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"></img><br>
     <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
-    <strong>Ingeniería de Software</strong><br>
-    <strong>1ASI0572 - Desarrollo de Soluciones IoT - 3475</strong><br>
+    <strong>Ingeniería de Software - Ciclo 7</strong><br>
+    <strong>1ASI0572 - 202520 - Desarrollo de Soluciones IoT</strong><br>
+    <strong>NRC: 3475</strong><br>
     <strong>Profesor: Marco Antonio Leon Baca </strong><br>
-    <br>INFORME
+    <br>Informe de Trabajo Final
 </p>
 
-<center>
+<p align="center">
+    <strong>Startup: SmartPark Solutions</strong><br>
+    <strong>Product: SmartParking</strong><br>
+</p>
 
-#### Startup: **SmartPark**
-
-#### Product: **SmartPark**
-
-</center>
-
-## Team  Members:
+## Integrantes del Equipo:
 
 <div align="center">
 
-|               Member                |    Code    |
+|               Apellidos y Nombres                |    Código    |
 | :---------------------------------: | :--------: |
 | Salgado Luna, Fernando Brian  | u202212023 |
 | Ruiz Blas, Luciano Stefano  | U20211F978 |
@@ -30,6 +28,10 @@
 | Aquije Quiroga, Luis Enrique  | u202114936 |
 
 </div>
+
+<p align="center">
+    <strong>Octubre, 2025</strong>
+</p>
 
 <div style="page-break-after: always;"></div>
 
@@ -79,13 +81,13 @@
       </td>
     </tr>
     <tr>
-      <td>xx</td>
-      <td>xx</td>
+      <td>08/10/2025</td>
+      <td>Leonardo Linares / Carlos Chávez</td>
       <td>
         <ul>
-          <li>xx</li>
-          <li>xx</li>
-          <li>xx</li>
+          <li>Capítulo V: Solution UI/UX Design</li>
+          <li>Capítulo VI: Product Implementation, Validation & Deployment - Sprint 1</li>
+          <li>Landing Page y primera versión del Frontend</li>
         </ul>
       </td>
     </tr>
@@ -312,9 +314,22 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         Carlos: Contribuí en el desarrollo de los Bounded Contexts de Analytics & Reporting y Notification, además de participar en la elaboración de los diagramas C4 y la arquitectura del sistema para garantizar una solución robusta y escalable.
         <p/>
         Luis Aquije: Participé en el desarrollo de los Bounded Contexts de Reservation Management y Parking Management, además de colaborar en la definición de la arquitectura del sistema y la integración de los componentes IoT.
+        <p/>
+        TP1:
+        <p/>
+        Luciano Ruiz: Distribui las tareas nuevamente para esta nueva entrega, de manera justa y que favorezca las habilidades del equipo. Además de aportar ayuda en todo momento.
+        <p/>
+        Fernando: 
+        <p/>
+        Leonardo: A partir de la reunion de equipo, logre hacer mis partes del los capitulos V-VI, corregir a fondo el documento, y la creación de los wireframes y mockups.
+        <p/>
+        Carlos: 
+        <p/>
+        Luis Aquije: 
     </td>
     <td>
         TB1: En esta entrega logramos trabajar en equipo, apoyándonos mutuamente y colaborando en la redacción del informe. Cada uno de los integrantes participó activamente en el desarrollo de las secciones asignadas, lo que permitió un avance significativo en el proyecto. La comunicación constante y la disposición para ayudar a los demás fueron clave para el éxito de esta entrega.</p>
+        TP1: </p>
      </td>
   </tr>
   <tr>
@@ -327,14 +342,14 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p/>
         Fernando: Establecí las bases para el desarrollo de la interfaz de usuario y la experiencia móvil, además de coordinar las tareas de frontend y backend para asegurar una integración fluida entre los componentes del sistema.
         <p/>
-        Leonardo: Ayude en la elaboración del capitulo IV con los Bounded Contexts de Time Tracking y Penalty Management, y delimite el analisis competitivo, los journey e impact mappings y analisis de entrevistas
+        Leonardo: Ayude en la elaboración de los capitulos V-VI con la cración de los wireframes, mockups y user flows.
         <p/>
-        Carlos: Planifiqué y estructuré la arquitectura de datos y los sistemas de reportes, además de establecer las métricas y KPIs necesarios para el monitoreo y análisis del rendimiento del sistema.
+        Carlos: 
         <p/>
-        Luis Aquije: Coordiné la integración de los sensores IoT con la plataforma, además de establecer los protocolos de comunicación y las interfaces necesarias para el funcionamiento del sistema de estacionamiento inteligente.
+        Luis Aquije: 
     <td>
-    TB1: En esta entrega, logramos establecer un entorno colaborativo e inclusivo, donde cada miembro del equipo pudo expresar sus ideas y contribuir al desarrollo del proyecto. La planificación de tareas y el cumplimiento de objetivos fueron fundamentales para avanzar en la redacción del informe y en la elaboración de los diagramas y documentos requeridos. La comunicación constante y el uso del tablero Kanban facilitaron la organización y el seguimiento de las tareas asignadas.
-    </p>
+    TB1: En esta entrega, logramos establecer un entorno colaborativo e inclusivo, donde cada miembro del equipo pudo expresar sus ideas y contribuir al desarrollo del proyecto. La planificación de tareas y el cumplimiento de objetivos fueron fundamentales para avanzar en la redacción del informe y en la elaboración de los diagramas y documentos requeridos. La comunicación constante y el uso del tablero Kanban facilitaron la organización y el seguimiento de las tareas asignadas.</p>
+    TP1: </p>
   </td>
   </tr>
 </table>
@@ -347,9 +362,9 @@ En esta sección se ofrece una descripción del startup y se detallan los perfil
 
 ### 1.1.1. Descripción de la Startup
 
-SmartParking Solutions es una startup enfocada en el desarrollo de soluciones de Internet de las Cosas (IoT) aplicadas al ámbito universitario. Su producto principal, SafePark, es un sistema automatizado de reserva gratuita de estacionamientos universitarios, diseñado para optimizar el uso de espacios en campus mediante sensores IoT, una aplicación móvil y un dashboard administrativo web.
+SmartParking Solutions es una startup enfocada en el desarrollo de soluciones de Internet de las Cosas (IoT) aplicadas al ámbito universitario. Su producto principal, SmartParking, es un sistema automatizado de reserva gratuita de estacionamientos universitarios, diseñado para optimizar el uso de espacios en campus mediante sensores IoT, una aplicación móvil y un dashboard administrativo web.
 
-El objetivo de la startup es ofrecer una solución tecnológica que simplifique la experiencia de los conductores y, al mismo tiempo, optimice la gestión de los administradores de estacionamientos. SafePark busca reducir el tiempo perdido en la búsqueda de espacios, incrementar la seguridad en la operación y generar un modelo de negocio escalable que aporte valor a usuarios, empresas y ciudades.
+El objetivo de la startup es ofrecer una solución tecnológica que simplifique la experiencia de los conductores y, al mismo tiempo, optimice la gestión de los administradores de estacionamientos. SmartParking busca reducir el tiempo perdido en la búsqueda de espacios, incrementar la seguridad en la operación y generar un modelo de negocio escalable que aporte valor a usuarios, empresas y ciudades.
 
 Nuestra visión es consolidarnos como un referente en el ámbito de la movilidad inteligente en Latinoamérica, contribuyendo al desarrollo de ciudades más sostenibles, organizadas y seguras, donde el estacionamiento deje de ser un problema cotidiano y se convierta en un proceso ágil y confiable.
 
@@ -387,7 +402,7 @@ Nuestra misión es brindar un sistema de estacionamiento automatizado que integr
 
 ### 1.2.2. Lean UX Process
 
-A través de la metodología Lean UX podemos desarrollar y comprobar propuestas de solución que priorizan al usuario, concentrándonos en generar valor mediante procesos ágiles y optimizados. En este apartado se identifican los desafíos fundamentales que experimentan los usuarios, las premisas comerciales y de experiencia de usuario, junto con las hipótesis que orientarán la construcción del sistema SafePark. Esta aproximación garantiza que todas las decisiones de diseño se fundamenten en datos concretos y en la verificación temprana con los usuarios objetivo.
+A través de la metodología Lean UX podemos desarrollar y comprobar propuestas de solución que priorizan al usuario, concentrándonos en generar valor mediante procesos ágiles y optimizados. En este apartado se identifican los desafíos fundamentales que experimentan los usuarios, las premisas comerciales y de experiencia de usuario, junto con las hipótesis que orientarán la construcción del sistema SmartParking. Esta aproximación garantiza que todas las decisiones de diseño se fundamenten en datos concretos y en la verificación temprana con los usuarios objetivo.
 
 #### 1.2.2.1. Lean UX Problem Statements
 
@@ -395,7 +410,7 @@ A través de la metodología Lean UX podemos desarrollar y comprobar propuestas 
 Actualmente, los estacionamientos universitarios continúan funcionando bajo modelos tradicionales donde los procesos son manuales y poco prácticos. Los conductores universitarios suelen perder tiempo buscando un espacio disponible, y los administradores carecen de herramientas tecnológicas que les permitan tener control en tiempo real de la operación.  
 La mayoría de las soluciones disponibles se limitan a ofrecer sistemas básicos de acceso, sin integrar una experiencia completa que automatice la asignación de espacios, el guiado al conductor, la reserva previa gratuita de un lugar con un tiempo límite de llegada.  
 
-**SafePark**, desarrollado por *SmartParking Solutions*, busca cubrir esta necesidad a través de un sistema que combina **sensores IoT**, una **aplicación móvil para usuarios** y un **panel de control web para administradores**. Con esta propuesta, se pretende optimizar la experiencia del conductor, reducir los tiempos de búsqueda y facilitar la gestión de los espacios en un solo ecosistema digital gratuito para la comunidad universitaria.  
+**SmartParking**, desarrollado por *SmartPark Solutions*, busca cubrir esta necesidad a través de un sistema que combina **sensores IoT**, una **aplicación móvil para usuarios** y un **panel de control web para administradores**. Con esta propuesta, se pretende optimizar la experiencia del conductor, reducir los tiempos de búsqueda y facilitar la gestión de los espacios en un solo ecosistema digital gratuito para la comunidad universitaria.  
 
 El punto de partida se orientará a **estacionamientos de campus universitarios**, donde la rapidez y la conveniencia son factores críticos tanto para usuarios como para operadores.  
 El éxito se reflejará en indicadores como una reducción del tiempo promedio de búsqueda de estacionamiento, un mayor aprovechamiento de los espacios disponibles y la satisfacción de los administradores al contar con reportes claros sobre ocupación.  
@@ -403,7 +418,7 @@ El éxito se reflejará en indicadores como una reducción del tiempo promedio d
 ---
 
 **Dominio:**  
-SafePark se ubica dentro del dominio de la **gestión inteligente de estacionamientos universitarios**, un área donde convergen la movilidad en campus, la experiencia del usuario y las tecnologías emergentes como el **Internet de las Cosas (IoT)**.  
+SmartParking se ubica dentro del dominio de la **gestión inteligente de estacionamientos universitarios**, un área donde convergen la movilidad en campus, la experiencia del usuario y las tecnologías emergentes como el **Internet de las Cosas (IoT)**.  
 Su enfoque está en digitalizar la operación diaria de estacionamientos universitarios, ofreciendo **automatización, control remoto, opciones de reserva previa gratuita con tiempos límite de llegada y escalabilidad en la administración**.  
 
 ---
@@ -421,7 +436,7 @@ Su enfoque está en digitalizar la operación diaria de estacionamientos univers
 ---
 
 **Visión / Estrategia:**  
-La visión de **SafePark** es ofrecer una **solución integral de estacionamiento universitario** que logre simplificar la vida de los conductores universitarios y al mismo tiempo brinde un control más inteligente a los administradores.  
+La visión de **SmartParking** es ofrecer una **solución integral de estacionamiento universitario** que logre simplificar la vida de los conductores universitarios y al mismo tiempo brinde un control más inteligente a los administradores.  
 La estrategia se centra en combinar **sensores IoT** con **interfaces intuitivas** que hagan posible una experiencia fluida, confiable y escalable. Entre sus diferenciadores está la **gestión eficiente de reservas gratuitas**, que garantiza disponibilidad ordenada en contextos universitarios de alta demanda.  
 
 ---
@@ -458,7 +473,7 @@ El lanzamiento inicial se enfocará en **estacionamientos de campus universitari
 - **Incremento de la rotación de espacios:** Se espera al menos un 25% más de disponibilidad efectiva gracias a la liberación automática de reservas no utilizadas en 30 minutos.  
 - **Optimización del uso de espacios:** Los administradores proyectan un mejor aprovechamiento de espacios al reducir espacios ociosos.  
 - **Reducción de costos operativos:** Con la automatización, se estima un 30% menos de incidencias manuales en asignación de espacios.  
-- **Reputación y competitividad:** Los campus universitarios que implementen **SafePark** serán percibidos como modernos, confiables y organizados, mejorando la experiencia estudiantil.  
+- **Reputación y competitividad:** Los campus universitarios que implementen **SmartParking** serán percibidos como modernos, confiables y organizados, mejorando la experiencia estudiantil.  
 
 ---
 
@@ -542,7 +557,7 @@ y lo sabremos cuando al menos el **60% de los administradores** use los reportes
 **Hipótesis 4**  
 Creemos que si el servicio se ofrece de forma completamente gratuita para la comunidad universitaria,  
 esto logrará mayor adopción y satisfacción de los usuarios,  
-y lo sabremos cuando el **80% de los conductores universitarios** prefiera usar **SafePark** frente a buscar espacios manualmente.  
+y lo sabremos cuando el **80% de los conductores universitarios** prefiera usar **SmartParking** frente a buscar espacios manualmente.  
 
 ---
 
@@ -563,7 +578,7 @@ Se ha utilizado el Lean UX Canvas como una herramienta estratégica clave para e
 
 ## 1.3. Segmentos objetivo
 
-El sistema **SafePark** está enfocado en los principales actores que enfrentan directamente la problemática de disponibilidad y gestión eficiente de estacionamientos en campus universitarios:  
+El sistema **SmartParking** está enfocado en los principales actores que enfrentan directamente la problemática de disponibilidad y gestión eficiente de estacionamientos en campus universitarios:  
 
 ### 1. Conductores (estudiantes, docentes y personal administrativo)  
 Estudiantes, docentes y personal administrativo de **18 a 65 años** que usan vehículo propio para llegar al campus.  
@@ -599,7 +614,7 @@ Necesitan un sistema que **automatice el control, genere reportes y libere autom
     <tbody>
         <tr style="text-align: center;">
             <td colspan="2">Empresas</td>
-            <td><strong>SafePark</strong><br><img src="https://i.imgur.com/4jN5NH4.png"></td>
+            <td><strong>SmartParking</strong><br><img src="https://i.imgur.com/Ih6tqJw.png"></td>
             <td><strong>ParkSmart</strong><br><img src="https://i.imgur.com/bAH2cNN.png"></td>
             <td><strong>ParkingDoor</strong><br><img src="https://i.imgur.com/KJuyEsm.png"></td>
             <td><strong>Parkealo</strong><br><img src="https://i.imgur.com/xo9tpvf.png"></td>
@@ -696,16 +711,16 @@ Necesitan un sistema que **automatice el control, genere reportes y libere autom
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
 **A) Diferenciación de Servicios**  
-SafePark se posicionará como la solución más especializada para el ámbito universitario, ofreciendo reservas gratuitas anticipadas, notificaciones inteligentes y liberación automática de espacios no utilizados. A diferencia de competidores como **ParkSmart** o **ParkingDoor**, SafePark no requiere grandes inversiones en hardware ni se limita únicamente al acceso, sino que integra la experiencia completa de gestión y uso en campus.
+SmartParking se posicionará como la solución más especializada para el ámbito universitario, ofreciendo reservas gratuitas anticipadas, notificaciones inteligentes y liberación automática de espacios no utilizados. A diferencia de competidores como **ParkSmart** o **ParkingDoor**, SmartParking no requiere grandes inversiones en hardware ni se limita únicamente al acceso, sino que integra la experiencia completa de gestión y uso en campus.
 
 **B) Calidad Constante**  
-La confiabilidad del sistema será un diferenciador frente a alternativas locales como **Parkealo**. SafePark implementará pilotos en universidades peruanas para validar métricas de ahorro de tiempo y mejora en la rotación de espacios. A partir de los resultados y del feedback de los usuarios, se aplicarán actualizaciones periódicas que garanticen un sistema robusto y en evolución continua.
+La confiabilidad del sistema será un diferenciador frente a alternativas locales como **Parkealo**. SmartParking implementará pilotos en universidades peruanas para validar métricas de ahorro de tiempo y mejora en la rotación de espacios. A partir de los resultados y del feedback de los usuarios, se aplicarán actualizaciones periódicas que garanticen un sistema robusto y en evolución continua.
 
 **C) Servicio al Cliente de Calidad**  
-El soporte será un punto clave frente a soluciones internacionales. SafePark ofrecerá atención personalizada en español, capacitación a administradores universitarios y un canal directo de soporte 24/7. Esto garantizará que tanto los estudiantes como los gestores del campus puedan utilizar el sistema desde el primer día sin fricciones, aumentando la satisfacción y la adopción.
+El soporte será un punto clave frente a soluciones internacionales. SmartParking ofrecerá atención personalizada en español, capacitación a administradores universitarios y un canal directo de soporte 24/7. Esto garantizará que tanto los estudiantes como los gestores del campus puedan utilizar el sistema desde el primer día sin fricciones, aumentando la satisfacción y la adopción.
 
 **D) Alianzas Estratégicas**  
-SafePark buscará convenios con universidades, asociaciones estudiantiles y entidades educativas para acelerar la implementación en campus. Asimismo, establecerá acuerdos con empresas locales de tecnología IoT para reducir costos de hardware y asegurar la escalabilidad. Estas alianzas permitirán a SafePark diferenciarse de competidores como **Parkealo**, que se enfocan en un mercado más comercial, al consolidarse como el referente en soluciones de movilidad universitaria.
+SmartParking buscará convenios con universidades, asociaciones estudiantiles y entidades educativas para acelerar la implementación en campus. Asimismo, establecerá acuerdos con empresas locales de tecnología IoT para reducir costos de hardware y asegurar la escalabilidad. Estas alianzas permitirán a SmartParking diferenciarse de competidores como **Parkealo**, que se enfocan en un mercado más comercial, al consolidarse como el referente en soluciones de movilidad universitaria.
 
 ## 2.2. Entrevistas
 
@@ -742,7 +757,7 @@ En esta sección se presentarán las preguntas empleadas en las entrevistas, inc
 - ¿Qué opinas de implementar un sistema que libere automáticamente los espacios reservados no utilizados?
 - ¿Qué tan útil sería contar con un panel web que muestre en tiempo real la ocupación y genere reportes automáticos?
 - ¿Qué barreras crees que podrían surgir al implementar un sistema inteligente de reservas (resistencia de usuarios, falta de infraestructura, costos)?
-- ¿Qué indicadores te ayudarían a evaluar si un sistema como SafePark realmente mejora la eficiencia operativa del estacionamiento?
+- ¿Qué indicadores te ayudarían a evaluar si un sistema como SmartParking realmente mejora la eficiencia operativa del estacionamiento?
 
 ### 2.2.2. Registro de entrevistas
 A continuación, se registraron todas las entrevistas realizadas para nuestra solución, categorizadas según su segmento objetivo, y con un resumen que destaca las características y críticas realizadas sobre nuestro proyecto.
@@ -1017,7 +1032,7 @@ El segmento de Administrador de Estacionamiento representa a profesionales respo
 <br>
 
 ### 2.3.2. User Task Matrix
-En esta sección se muestra la User Task Matrix, que permite identificar las tareas más importantes y frecuentes de los usuarios de SafePark: conductores universitarios y administradores de estacionamientos. La matriz ayuda a comparar sus actividades, destacando similitudes y diferencias en frecuencia e importancia. Este análisis, basado en los User Personas, permite comprender mejor sus necesidades y desafíos, enfocando el diseño de SafePark en funciones que optimicen la experiencia de los conductores y faciliten la gestión eficiente de los administradores.
+En esta sección se muestra la User Task Matrix, que permite identificar las tareas más importantes y frecuentes de los usuarios de SmartParking: conductores universitarios y administradores de estacionamientos. La matriz ayuda a comparar sus actividades, destacando similitudes y diferencias en frecuencia e importancia. Este análisis, basado en los User Personas, permite comprender mejor sus necesidades y desafíos, enfocando el diseño de SmartParking en funciones que optimicen la experiencia de los conductores y faciliten la gestión eficiente de los administradores.
 
 | Task | Conductores universitarios (Frecuencia / Importancia) | Administradores (Frecuencia / Importancia) |
 |------|-------------------------------------------------------|-------------------------------------------|
@@ -1035,7 +1050,7 @@ En esta sección se muestra la User Task Matrix, que permite identificar las tar
 
 ### 2.3.3. User Journey Mapping  
 
-En esta sección se presentan los **User Journey Mapping** de los dos perfiles de usuario principales, resaltando las etapas clave de interacción con **SafePark**, los puntos de contacto, así como las emociones y experiencias que viven en cada fase. El objetivo es identificar oportunidades de mejora para optimizar su experiencia.  
+En esta sección se presentan los **User Journey Mapping** de los dos perfiles de usuario principales, resaltando las etapas clave de interacción con **SmartParking**, los puntos de contacto, así como las emociones y experiencias que viven en cada fase. El objetivo es identificar oportunidades de mejora para optimizar su experiencia.  
 
 __User Journey Map – Manuel Rojas – Conductor Universitario (As-Is)__  
 
@@ -1071,11 +1086,11 @@ __Cierre del día:__ Revisa que todo quede en orden para el siguiente turno, per
 
 ### 2.3.4. Empathy Mapping
 
-El Empathy Mapping permite comprender a fondo las necesidades, emociones y comportamientos de los usuarios, identificando oportunidades para mejorar su experiencia. A continuación, se presentan los mapas de empatía de los dos segmentos objetivo de SafePark: Conductores Universitarios y Administradores de Estacionamientos.
+El Empathy Mapping permite comprender a fondo las necesidades, emociones y comportamientos de los usuarios, identificando oportunidades para mejorar su experiencia. A continuación, se presentan los mapas de empatía de los dos segmentos objetivo de SmartParking: Conductores Universitarios y Administradores de Estacionamientos.
 
 ## Empathy Map del Conductor Universitario
 
-En este mapa de empatía, se ha representado al conductor universitario como el principal usuario de la aplicación SafePark. Este segmento busca reducir el tiempo y el estrés que genera la búsqueda de estacionamiento dentro del campus, asegurando un espacio disponible al llegar.  
+En este mapa de empatía, se ha representado al conductor universitario como el principal usuario de la aplicación SmartParking. Este segmento busca reducir el tiempo y el estrés que genera la búsqueda de estacionamiento dentro del campus, asegurando un espacio disponible al llegar.  
 Durante el análisis, se observa que los conductores sienten frustración por la congestión y la desorganización en los estacionamientos, y ansiedad por la posibilidad de llegar tarde a clases o reuniones. Normalmente intentan salir con mucha anticipación o dar vueltas alrededor del campus para encontrar un lugar, lo que afecta su productividad y estado de ánimo.  
 Sus necesidades principales son contar con un sistema que permita reservar espacios con anticipación, recibir información confiable en tiempo real y reducir la incertidumbre en su rutina diaria. Buscan una herramienta tecnológica rápida, confiable y gratuita que les brinde tranquilidad, control y eficiencia en su movilidad.
 
@@ -1097,15 +1112,15 @@ Sus necesidades principales son contar con un sistema automatizado que gestione 
 
 ### Introducción
 
-En esta sección el equipo introduce, resume el proceso realizado por el equipo y presenta capturas y explicaciones de las etapas del Big Picture Event Storming. En una sesión colaborativa, el equipo se enfocó en entender el dominio del negocio SafePark en general, plasmando los eventos significativos y sus relaciones. Es una primera aproximación visual de alto nivel que explora el landscape del negocio, identificando procesos clave, exponiendo potenciales problemas u oportunidades. En https://bit.ly/bpes-guide encontrará un Step-by-Step Guide para realizar el proceso.
+En esta sección el equipo introduce, resume el proceso realizado por el equipo y presenta capturas y explicaciones de las etapas del Big Picture Event Storming. En una sesión colaborativa, el equipo se enfocó en entender el dominio del negocio SmartParking en general, plasmando los eventos significativos y sus relaciones. Es una primera aproximación visual de alto nivel que explora el landscape del negocio, identificando procesos clave, exponiendo potenciales problemas u oportunidades. En https://bit.ly/bpes-guide encontrará un Step-by-Step Guide para realizar el proceso.
 
 ### Proceso Realizado
 
-El equipo ejecutó una sesión de 4 horas aplicando la metodología Big Picture Event Storming para mapear el dominio SafePark:
+El equipo ejecutó una sesión de 4 horas aplicando la metodología Big Picture Event Storming para mapear el dominio SmartParking:
 
 - **Etapa 1: Generación de Eventos (45 min)** - El equipo generó colaborativamente 43 eventos de dominio usando post-its naranjas.
 - **Etapa 2: Ordenamiento Temporal (60 min)** - Los eventos se organizaron cronológicamente revelando flujos del sistema.
-- **Etapa 3: Identificación de Actores (30 min)** - Se añadieron actores y sistemas externos que interactúan con SafePark.
+- **Etapa 3: Identificación de Actores (30 min)** - Se añadieron actores y sistemas externos que interactúan con SmartParking.
 - **Etapa 4: Storytelling (45 min)** - El equipo validó la coherencia narrando la historia completa del sistema.
 
 ### Capturas y Explicaciones
@@ -1114,7 +1129,7 @@ El equipo ejecutó una sesión de 4 horas aplicando la metodología Big Picture 
 
 ![Captura de pantalla de la reunión - Paso 1](https://i.imgur.com/XoJqDNH.jpeg)
 
-**Descripción:** Esta captura corresponde al Step 1: Unstructured Exploration del proceso. El equipo generó todos los eventos de dominio de SafePark durante la fase de brainstorming colaborativo. Los 43 post-its naranjas están distribuidos aleatoriamente en el tablero, reflejando el conocimiento inicial del equipo sobre el sistema antes de cualquier organización. Se pueden observar eventos como "User Authenticated", "Reservation Created", "Vehicle Detected", "Timer Started", entre otros, capturando la comprensión completa del dominio SafePark.
+**Descripción:** Esta captura corresponde al Step 1: Unstructured Exploration del proceso. El equipo generó todos los eventos de dominio de SmartParking durante la fase de brainstorming colaborativo. Los 43 post-its naranjas están distribuidos aleatoriamente en el tablero, reflejando el conocimiento inicial del equipo sobre el sistema antes de cualquier organización. Se pueden observar eventos como "User Authenticated", "Reservation Created", "Vehicle Detected", "Timer Started", entre otros, capturando la comprensión completa del dominio SmartParking.
 
 #### Captura 2: Ordenamiento Cronológico
 
@@ -1188,7 +1203,7 @@ Problemas detectados: desconexión IoT, sincronización sensor-sistema, overflow
 
 ### Conclusiones
 
-El trabajo de Big Picture Event Storming estableció una base sólida para el desarrollo de SafePark. El equipo identificó 43 eventos organizados en 7 bounded contexts, validando la viabilidad técnica del sistema de reservas gratuitas integrado con dispositivos IoT. Se detectaron problemas críticos relacionados con la sincronización IoT y se desarrolló un lenguaje ubícuo que facilitará la comunicación durante el desarrollo del sistema.
+El trabajo de Big Picture Event Storming estableció una base sólida para el desarrollo de SmartParking. El equipo identificó 43 eventos organizados en 7 bounded contexts, validando la viabilidad técnica del sistema de reservas gratuitas integrado con dispositivos IoT. Se detectaron problemas críticos relacionados con la sincronización IoT y se desarrolló un lenguaje ubícuo que facilitará la comunicación durante el desarrollo del sistema.
 
 ## 2.5. Ubiquitous Language  
 
@@ -1197,7 +1212,7 @@ Esta sección presenta un glosario de términos y conceptos clave del dominio, d
 | Término (Inglés)    | Término (Español)        | Definición |
 |---------------------|--------------------------|------------|
 | **Parking Spot**    | Espacio de estacionamiento | Lugar físico destinado al estacionamiento de un vehículo dentro del campus universitario. |
-| **Reservation**     | Reserva                  | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SafePark. |
+| **Reservation**     | Reserva                  | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SmartParking. |
 | **Reservation Status** | Estado de la reserva   | Condición actual de una reserva, por ejemplo: confirmada, pendiente, cancelada o expirada. |
 | **Arrival Time**    | Hora de llegada          | Momento en el que el conductor debe llegar al espacio reservado antes de que se libere automáticamente. |
 | **No-show**         | No presentación          | Situación en la que un conductor no ocupa el espacio reservado dentro del tiempo límite establecido. |
@@ -1213,7 +1228,7 @@ Esta sección presenta un glosario de términos y conceptos clave del dominio, d
 | Término (Inglés) | Término (Español)      | Definición                                                                                       |
 |------------------|-----------------------|-------------------------------------------------------------------------------------------------|
 | Parking Spot      | Espacio de estacionamiento | Lugar físico destinado al estacionamiento de un vehículo dentro del campus universitario.       |
-| Reservation       | Reserva               | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SafePark. |
+| Reservation       | Reserva               | Acción mediante la cual un conductor asegura un espacio de estacionamiento de forma anticipada a través de la app SmartParking. |
 | Reservation Status | Estado de la reserva  | Condición actual de una reserva, por ejemplo: confirmada, pendiente, cancelada o expirada.     |
 | Arrival Time      | Hora de llegada       | Momento en el que el conductor debe llegar al espacio reservado antes de que se libere automáticamente. |
 | No-show           | No presentación       | Situación en la que un conductor no ocupa el espacio reservado dentro del tiempo límite establecido. |
@@ -1231,26 +1246,26 @@ Esta sección presenta un glosario de términos y conceptos clave del dominio, d
 ## 3.1. User Stories
 
 
-Redactamos las historias de usuario para el sistema de gestión de estacionamientos SafePark basándonos en las necesidades y problemas identificados en los segmentos de conductores universitarios y administradores del campus. Las historias de usuario describen las funcionalidades y características que los usuarios finales esperan del sistema, y se utilizan como guía para diseñar y desarrollar una experiencia eficiente, confiable y tecnológica para la gestión de reservas, ocupación y control de espacios de estacionamiento.
+Redactamos las historias de usuario para el sistema de gestión de estacionamientos SmartParking basándonos en las necesidades y problemas identificados en los segmentos de conductores universitarios y administradores del campus. Las historias de usuario describen las funcionalidades y características que los usuarios finales esperan del sistema, y se utilizan como guía para diseñar y desarrollar una experiencia eficiente, confiable y tecnológica para la gestión de reservas, ocupación y control de espacios de estacionamiento.
 
 <br>
 
 | Epic/Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
 |---------------|--------|------------|-------------------------|---------------------------|
 | EP01 | Gestión de Identidad y Acceso | Como miembro UPC quiero registrarme, autenticarme y gestionar mi perfil para acceder al sistema de estacionamiento. | – | – |
-| US01 | Registro de Usuario UPC | Como estudiante/docente/personal de UPC quiero registrarme con mi email institucional (@upc.edu.pe) para acceder a SafePark. | Given que soy miembro de UPC con email válido When completo el formulario de registro Then el sistema valida mi email y crea mi cuenta And recibo un correo de confirmación And mi perfil se clasifica como “Estudiante”, “Docente” o “Personal Administrativo”. | EP01 |
-| US02 | Autenticación de Usuario | Como miembro registrado quiero iniciar sesión en SafePark para acceder a mis funcionalidades. | Given que tengo una cuenta activa When ingreso mi email y contraseña válidos Then el sistema me autentica y me redirige al dashboard And mi sesión permanece activa And veo mi estado actual (reservas, ausencias, etc.). | EP01 |
+| US01 | Registro de Usuario UPC | Como estudiante/docente/personal de UPC quiero registrarme con mi email institucional (@upc.edu.pe) para acceder a SmartParking. | Given que soy miembro de UPC con email válido When completo el formulario de registro Then el sistema valida mi email y crea mi cuenta And recibo un correo de confirmación And mi perfil se clasifica como “Estudiante”, “Docente” o “Personal Administrativo”. | EP01 |
+| US02 | Autenticación de Usuario | Como miembro registrado quiero iniciar sesión en SmartParking para acceder a mis funcionalidades. | Given que tengo una cuenta activa When ingreso mi email y contraseña válidos Then el sistema me autentica y me redirige al dashboard And mi sesión permanece activa And veo mi estado actual (reservas, ausencias, etc.). | EP01 |
 | US03 | Gestión de Perfil Personal | Como usuario autenticado quiero actualizar mi información personal para mantener mis datos al día. | Given que estoy autenticado When accedo a “Mi Perfil” Then puedo editar nombre, teléfono y preferencias de notificación And los cambios se guardan And no puedo cambiar mi email institucional ni tipo de usuario. | EP01 |
 | EP02 | Gestión de Reservas Flexibles | Como miembro UPC quiero crear, consultar y cancelar reservas con detección automática, sin necesidad de definir hora de salida. | – | – |
 | US04 | Crear Nueva Reserva | Como miembro UPC quiero crear una reserva de estacionamiento para asegurar mi espacio. | Given que no tengo una reserva activa y hay espacios disponibles When selecciono fecha y hora de inicio (máx. 24h anticipación) Then el sistema asigna un espacio disponible And recibo confirmación con detalles And tengo ventana de 30 min para llegar And no necesito definir hora de fin. | EP02 |
 | US05 | Ver Estado de Reservas | Como usuario con reserva quiero ver el estado actual de mis reservas para saber dónde y cuándo debo llegar. | Given que tengo una reserva activa When accedo al dashboard Then veo mi espacio asignado con fecha y hora And veo tiempo restante para llegar (cuenta regresiva) And veo el estado general de espacios. | EP02 |
 | US06 | Cancelar Reserva | Como usuario con reserva quiero cancelarla para liberar el espacio si ya no lo necesito. | Given que tengo una reserva activa no confirmada When selecciono “Cancelar Reserva” Then el sistema libera el espacio And recibo confirmación And puedo crear otra reserva. | EP02 |
-| US07 | Confirmación Automática de Llegada | Como usuario quiero que SafePark detecte mi llegada automáticamente al estacionar. | Given que tengo una reserva activa y llego a mi espacio When estaciono mi vehículo Then el sensor detecta ocupación And el LED cambia a rojo (ocupado) And el cronómetro inicia And recibo confirmación de inicio. | EP02 |
-| US08 | Finalización Automática de Sesión | Como usuario quiero que SafePark detecte mi salida para cerrar la sesión. | Given que tengo una sesión activa When retiro mi vehículo Then el sensor detecta espacio libre And el cronómetro se detiene And recibo resumen de sesión And el LED cambia a verde (libre). | EP02 |
+| US07 | Confirmación Automática de Llegada | Como usuario quiero que SmartParking detecte mi llegada automáticamente al estacionar. | Given que tengo una reserva activa y llego a mi espacio When estaciono mi vehículo Then el sensor detecta ocupación And el LED cambia a rojo (ocupado) And el cronómetro inicia And recibo confirmación de inicio. | EP02 |
+| US08 | Finalización Automática de Sesión | Como usuario quiero que SmartParking detecte mi salida para cerrar la sesión. | Given que tengo una sesión activa When retiro mi vehículo Then el sensor detecta espacio libre And el cronómetro se detiene And recibo resumen de sesión And el LED cambia a verde (libre). | EP02 |
 | EP03 | Control de Espacios IoT | Como sistema quiero gestionar espacios físicos e integrar dispositivos ESP32 para monitoreo en tiempo real. | – | – |
 | US09 | Monitoreo de Estado de Espacios | Como usuario quiero ver el estado actual de todos los espacios para conocer disponibilidad en tiempo real. | Given que estoy en el dashboard When consulto el estado de espacios Then veo los 3 espacios (A, B, C) con estado: Libre, Reservado, Ocupado o Mantenimiento And se actualiza cada 15s And veo LED correspondiente. | EP03 |
 | US10 | Indicación Visual de Espacio Asignado | Como usuario quiero identificar fácilmente mi espacio asignado para estacionar correctamente. | Given que tengo una reserva confirmada When llego al estacionamiento Then el LED de mi espacio parpadea en azul And el display muestra “Espacio [X] reservado para [Usuario]”. | EP03 |
-| EP04 | Seguimiento de Tiempo Real | Como usuario quiero que SafePark registre y muestre el tiempo de uso en vivo sin límites temporales. | – | – |
+| EP04 | Seguimiento de Tiempo Real | Como usuario quiero que SmartParking registre y muestre el tiempo de uso en vivo sin límites temporales. | – | – |
 | US11 | Cronometraje Automático | Como usuario quiero que el sistema registre automáticamente mi tiempo de uso. | Given que confirmé mi llegada When el sensor detecta ocupación Then el cronómetro inicia And puedo ver tiempo transcurrido en la app And se registra hasta mi salida. | EP04 |
 | US12 | Visualización de Tiempo en Vivo | Como usuario quiero ver mi tiempo de uso actual en la app. | Given que tengo sesión activa When consulto el dashboard Then veo tiempo transcurrido actualizado en vivo And hora de inicio And datos sincronizados con IoT. | EP04 |
 | US13 | Historial de Tiempos de Uso | Como usuario quiero ver mi historial de sesiones para conocer mis patrones de uso. | Given que tengo sesiones anteriores When accedo a “Mi Historial” Then veo lista de últimas 20 sesiones con fecha, duración y espacio And estadísticas personales And puedo filtrar por rango de fechas. | EP04 |
@@ -1282,7 +1297,7 @@ Redactamos las historias de usuario para el sistema de gestión de estacionamien
 
 ## 3.2. Impact Mapping  
 
-En el desarrollo de nuestro proyecto, aplicamos la metodología **Impact Mapping** como herramienta estratégica para asegurar que cada funcionalidad de **SafePark** se alinee con los objetivos de negocio y con las verdaderas necesidades de nuestros usuarios. Esta técnica permitió identificar con claridad qué queremos lograr, quiénes son los actores clave, cómo pueden influir en el resultado y qué acciones priorizar, evitando invertir recursos en características que no aporten valor directo.  
+En el desarrollo de nuestro proyecto, aplicamos la metodología **Impact Mapping** como herramienta estratégica para asegurar que cada funcionalidad de **SmartParking** se alinee con los objetivos de negocio y con las verdaderas necesidades de nuestros usuarios. Esta técnica permitió identificar con claridad qué queremos lograr, quiénes son los actores clave, cómo pueden influir en el resultado y qué acciones priorizar, evitando invertir recursos en características que no aporten valor directo.  
 
 __Business goal:__  
 Reducir en 30% el tiempo de búsqueda de estacionamiento en 3 meses
@@ -5039,29 +5054,245 @@ c. Asociación entre etiquetas e íconos
 Cada etiqueta textual está vinculada a un ícono visual correspondiente (por ejemplo, un ícono de “carro” para Reservations o un “engranaje” para Settings). Esto refuerza la comprensión inmediata de las acciones, especialmente en entornos móviles o pantallas pequeñas.
 
 ### 5.2.3. SEO Tags and Meta Tags
+Con el objetivo de mejorar la visibilidad de SmartParking en los motores de búsqueda, atraer nuevos usuarios y proporcionar información relevante sobre la Landing Page y la Web Application, se incorporarán las siguientes Meta Tags como etiquetas HTML en el <head> de las páginas principales:
+```html
+<title>SmartParking – Smart IoT Parking System for University Campuses</title>
+<meta name="description" content="SmartParking is a smart parking solution designed for universities. Reserve your space in advance, monitor real-time availability, and optimize campus mobility with IoT technology.">
+<meta name="keywords" content="smart parking, IoT, university parking, campus mobility, parking reservation, SmartPark Solutions, parking management system">
+<meta name="author" content="SmartPark Solutions">
+```
+Asimismo, para potenciar la presencia de la aplicación móvil en tiendas digitales (App Store Optimization - ASO), se definirán los siguientes elementos informativos:
+
+- **App Title:** SmartParking – University Smart Park
+- **App Subtitle:** Reserve, arrive, and park with confidence
+- **App Description:** SmartParking is a smart parking app for university campuses powered by IoT. Easily reserve your space before arriving, receive real-time updates, and avoid long waits or uncertainty. Administrators can monitor occupancy, automate space release, and generate reports with ease.
+- **App Keywords:** smart parking, IoT, university, mobility, parking app, campus parking, SmartPark Solutions
+- **App Author:** SmartPark Solutions
+- **App Category:** Productivity / Mobility
 
 ### 5.2.4. Searching Systems
+En la plataforma de SmartParking, los principales usuarios que utilizan sistemas de búsqueda y filtrado son los administradores de estacionamiento, quienes requieren acceder de forma ágil a información relacionada con reservas, usuarios y métricas operativas. Para evitar la sobrecarga de información y facilitar la toma de decisiones, se han diseñado mecanismos de búsqueda intuitivos y filtros específicos según cada módulo del sistema.
+
+- **Búsqueda y filtrado en Dashboard Administrativo**
+En esta sección, los administradores pueden visualizar el estado general del sistema y filtrar los datos mostrados según fecha y hora de las reservas.
+Este filtro permite analizar la ocupación y rotación de espacios en periodos determinados, facilitando la detección de picos de demanda y la planificación operativa.
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/LQQuXr6.png" alt="Filtrado en Dashboard Administrativo" width="50%" /> </div><br>
+
+- **Búsqueda y filtrado en Gestión de Usuarios**
+Dentro del módulo de gestión de usuarios, los administradores cuentan con una barra de búsqueda que permite localizar rápidamente a un usuario específico ingresando su nombre o correo institucional.
+Además, pueden aplicar filtros adicionales por Estado (Activo, Suspendido) y por Tipo de Usuario (Estudiante, Docente, Personal Administrativo).
+Este sistema mejora el control y la supervisión del comportamiento de los usuarios dentro de la plataforma.
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/uLrotRp.png" alt="Búsqueda en Gestión de Usuarios" width="50%" /> </div><br>
+
+- **Filtrado en Reportes y Métricas**
+En el módulo de reportes, los administradores pueden filtrar los resultados por período temporal, seleccionando entre Hoy, Semana o Mes.
+Este sistema permite visualizar rápidamente las tendencias de uso, identificar patrones de ocupación y generar reportes comparativos con base en intervalos de tiempo específicos.
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/TnE0VuG.png" alt="Filtros en Reportes y Métricas" width="50%" /> </div><br>
+
+Estos mecanismos de búsqueda y filtrado están diseñados bajo principios de claridad, consistencia y eficiencia, garantizando que los administradores encuentren la información relevante sin esfuerzo, optimizando su gestión y mejorando la experiencia de uso dentro del ecosistema SmartParking.
 
 ### 5.2.5. Navigation Systems
+El sistema de navegación de SmartPark se ha diseñado para guiar de manera intuitiva a los usuarios universitarios (conductores) y administradores a través de las distintas plataformas del ecosistema (Landing Page, Web Application y Mobile App).
+El objetivo principal es permitir que los usuarios cumplan sus metas, como reservar un espacio, visualizar disponibilidad o gestionar el estacionamiento, de forma rápida, clara y sin perder orientación dentro del sistema.
+
+1. Navegación para Usuarios Universitarios
+
+Los usuarios universitarios, que interactúan principalmente desde la Aplicación Web y Móvil, cuentan con una estructura de navegación simple, jerárquica y consistente.
+
+La interfaz está compuesta por tres pestañas principales: "Inicio", para la visualización general de los espacios disponibles en tiempo real, "Reservas", que muestra el historial de reservas realizadas por el usuario, y "Perfil", que permite al usuario editar sus datos personales, como nombre, teléfono y preferencias de notificación.
+
+Todas accesibles desde una barra superior de navegación:
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/BHb48DP.png" alt="Vista Inicio - Home" width="55%" /> </div><br>
+
+2. Navegación para Administradores
+
+Los administradores acceden desde la Web Application, que cuenta con una estructura modular y jerárquica organizada por pestañas superiores (topbar).
+
+Tiene cuatro pestañas: "Dashboard", que es la vista principal donde pueden observar métricas globales, ocupación actual y alertas del sistema, "Usuarios", donde puede buscar, filtrar y gestionar los perfiles de los miembros del campus, "Reportes y Métricas", para filtrar información por periodo (Hoy, Semana, Mes) y generar reportes descargables, y "Configuración" para acceder a parámetros del sistema (ventana de llegada, penalizaciones, límites de reservas, etc.).
+
+<div style="text-align: center;"> <img src="https://i.imgur.com/jqHuM21.png" alt="Navegación Administradores" width="55%" /> </div><br>
+
+En conjunto, estos sistemas de navegación garantizan una experiencia coherente y fluida entre las plataformas de SmartPark, permitiendo que cada tipo de usuario —ya sea conductor o administrador— pueda alcanzar sus objetivos con facilidad, minimizando la carga cognitiva y el tiempo de interacción.
 
 ## 5.3. Landing Page UI Design
 
 ### 5.3.1. Landing Page Wireframe
+El wireframe diseñado para la Landing Page de SmartPark en su versión Desktop Web Browser presenta una disposición estructurada por secciones verticales, priorizando la claridad visual y la navegación fluida.
+En la parte superior se encuentra un encabezado fijo (sticky header) con el menú principal de navegación, que ofrece acceso directo a las secciones clave del sitio: Inicio, Características Principales, Tecnologías usadas y sobre Nostros.
+
+Este diseño asegura que el usuario mantenga el control de la navegación en todo momento, incluso al desplazarse por el contenido.
+
+<img src="https://i.imgur.com/Z88N9rk.png" width="55%" />
+<img src="https://i.imgur.com/bcZmvDI.png" width="55%" />
+<img src="https://i.imgur.com/3RiI1mg.png" width="55%" />
+<img src="https://i.imgur.com/ivZmsig.png" width="55%" />
+<img src="https://i.imgur.com/s6TytRJ.png" width="55%" />
+<img src="https://i.imgur.com/BdzaoJk.png" width="55%" />
+<img src="https://i.imgur.com/7D0YLji.png" width="55%" />
+<img src="https://i.imgur.com/5NoN3hX.png" width="55%" />
 
 ### 5.3.2. Landing Page Mock-up
+El mock-up de la Landing Page de SmartPark refleja una identidad visual moderna, tecnológica y profesional, en coherencia con las directrices gráficas definidas en la sección 5.1 (Style Guidelines).
+La paleta cromática se centra en el azul primario (#2C5282), transmitiendo confianza, seguridad y modernidad, complementado con tonos neutros que refuerzan la legibilidad y el equilibrio visual.
+La tipografía oficial “Inter” contribuye a la claridad y fluidez de lectura, ofreciendo una estética contemporánea que se adapta armoniosamente a entornos digitales.
+
+El diseño visual se basa en los principios de proximidad, alineación, contraste y repetición, logrando una composición equilibrada y funcional.
+
+<img src="https://i.imgur.com/ae2ycjs.png" width="55%" />
+<img src="https://i.imgur.com/tmQ8O0V.png" width="55%" />
+<img src="https://i.imgur.com/E7LQeay.png" width="55%" />
+<img src="https://i.imgur.com/w3KPb8V.png" width="55%" />
+<img src="https://i.imgur.com/6kombuo.png" width="55%" />
+<img src="https://i.imgur.com/BTBcQYZ.png" width="55%" />
+<img src="https://i.imgur.com/h5C3dCf.png" width="55%" />
+
+Link: https://iot-si0572-3475-grupo3.github.io/landing-page/
 
 ## 5.4. Applications UX/UI Design
 
 ### 5.4.1. Applications Wireframes
 
+Los wireframes de la aplicación de SmartParking fueron diseñados para ofrecer una experiencia fluida, clara y consistente.
+El objetivo principal del diseño es garantizar que cada acción clave del usuario se realice con el menor número posible de pasos, manteniendo una navegación intuitiva.
+
+En la versión Web, se incluye un encabezado superior fijo que contiene el logotipo de SmartPark Solutions y el menú principal con accesos a las secciones Dashboard, Usuarios, Reportes y Configuración.
+Debajo, se presenta el contenido dinámico según el rol del usuario:
+
+Conductores universitarios: visualizan sus reservas activas, historial y perfil personal.
+
+Administradores: acceden al panel con métricas en tiempo real, gestión de usuarios, sensores IoT y reportes operativos.
+
+La información se distribuye de forma jerárquica y equilibrada, aplicando los principios de claridad visual, proximidad y consistencia, asegurando que las secciones sean fácilmente reconocibles y accesibles desde cualquier dispositivo.
+
+- **Authentication:**
+
+<img src="https://i.imgur.com/yqx6r87.png" width="75%" />
+<img src="https://i.imgur.com/lG1Rdtw.png" width="75%" />
+<img src="https://i.imgur.com/8KyEiN4.png" width="75%" />
+<img src="https://i.imgur.com/yOjBzDo.png" width="75%" />
+
+- **User Dashboard:**
+
+<img src="https://i.imgur.com/76j5sZO.png" width="75%" />
+<img src="https://i.imgur.com/JkdDFB4.png" width="75%" />
+<img src="https://i.imgur.com/q5TFf3w.png" width="75%" />
+<img src="https://i.imgur.com/CBxxk3h.png" width="75%" />
+<img src="https://i.imgur.com/6RqKnWS.png" width="75%" />
+
+- **Profile, Notifications, History & Penalties:**
+
+<img src="https://i.imgur.com/4plPOSG.png" width="75%" />
+<img src="https://i.imgur.com/o4YY8s8.png" width="75%" />
+<img src="https://i.imgur.com/lS86ZmN.png" width="75%" />
+<img src="https://i.imgur.com/NGQ6SQr.png" width="75%" />
+<img src="https://i.imgur.com/mQNYKtX.png" width="75%" />
+<img src="https://i.imgur.com/VMBB8Wc.png" width="75%" />
+
+- **Admin Panel:**
+
+<img src="https://i.imgur.com/jbulQlK.png" width="75%" />
+<img src="https://i.imgur.com/vOCo585.png" width="75%" />
+<img src="https://i.imgur.com/QYptLBP.png" width="75%" />
+<img src="https://i.imgur.com/SZpxfOX.png" width="75%" />
+
 ### 5.4.2. Applications Wireflow Diagrams
 
+En esta sección presentaremos los Wireflow Diagrams, los cuales definen el flujo de nuestra aplicación. Hemos relacionado cada uno a un User Goal, el cual determina cuál será el resultado final del flujo:
+
+- **Registrarse y Recuperar Contraseña:**
+<img src="https://i.imgur.com/FrPsmNX.png" width="75%" />
+
+- **Iniciar Sesión:**
+<img src="https://i.imgur.com/tJw5JKi.png" width="75%" />
+<img src="https://i.imgur.com/xkh37xT.png" width="75%" />
+
+- **Añadir Reserva, y visualizar el tiempo:**
+<img src="https://i.imgur.com/7T9MGsI.png" width="75%" />
+
+- **Editar Perfil, y configurar notifications:**
+<img src="https://i.imgur.com/ApgUAy4.png" width="75%" />
+
+- **Ver historial de reservas, y detalles:**
+<img src="https://i.imgur.com/IpFls3G.png" width="75%" />
+
+- **Ver penalizaciones:**
+<img src="https://i.imgur.com/ixhU9XH.png" width="75%" />
+
+- **Panel Administrativo:**
+<img src="https://i.imgur.com/eJEdUiD.png" width="75%" />
+
 ### 5.4.2. Applications Mock-ups
+Los mock-ups de la aplicación de SmartParking reflejan la identidad visual definida en las Style Guidelines (Sección 5.1), aplicando la paleta azul corporativa (#2C5282), tipografía Inter y una composición visual limpia y moderna.
+El objetivo es ofrecer una experiencia coherente, funcional y estéticamente agradable tanto para usuarios conductores como administradores.
+
+- **Authentication:**
+
+<img src="https://i.imgur.com/UiBAZFJ.png" width="75%" />
+<img src="https://i.imgur.com/oroC3Et.png" width="75%" />
+<img src="https://i.imgur.com/uVVN6eK.png" width="75%" />
+<img src="https://i.imgur.com/QzSR07T.png" width="75%" />
+
+- **User Dashboard:**
+
+<img src="https://i.imgur.com/gRieI1R.png" width="75%" />
+<img src="https://i.imgur.com/71LtmIH.png" width="75%" />
+<img src="https://i.imgur.com/MzR7TCT.png" width="75%" />
+<img src="https://i.imgur.com/eK0M4Ob.png" width="75%" />
+<img src="https://i.imgur.com/SmYx8zu.png" width="75%" />
+
+- **Profile, Notifications, History & Penalties:**
+
+<img src="https://i.imgur.com/EA7jlLu.png" width="75%" />
+<img src="https://i.imgur.com/PX4g9zM.png" width="75%" />
+<img src="https://i.imgur.com/xbpalyL.png" width="75%" />
+<img src="https://i.imgur.com/QugmOtV.png" width="75%" />
+<img src="https://i.imgur.com/0oqEED9.png" width="75%" />
+<img src="https://i.imgur.com/6aqCfdK.png" width="75%" />
+
+- **Admin Panel:**
+
+<img src="https://i.imgur.com/gK8Nu92.png" width="75%" />
+<img src="https://i.imgur.com/JBKLEUx.png" width="75%" />
+<img src="https://i.imgur.com/5DWdW2Q.png" width="75%" />
+<img src="https://i.imgur.com/jy0Bgtb.png" width="75%" />
 
 ### 5.4.3. Applications User Flow Diagrams
+Los User Flow Diagrams representan los caminos que los distintos usuarios pueden seguir dentro del ecosistema SmartParking.
+Estos diagramas permiten visualizar cómo los conductores, administradores y el sistema IoT interactúan entre sí para cumplir sus objetivos.
+
+- **Registrarse y Recuperar Contraseña:**
+<img src="https://i.imgur.com/NKRLBCr.png" width="75%" />
+
+- **Iniciar Sesión:**
+<img src="https://i.imgur.com/Mply8Uo.png" width="75%" />
+
+- **Añadir Reserva, y visualizar el tiempo:**
+<img src="https://i.imgur.com/FVJ1fhr.png" width="75%" />
+
+- **Editar Perfil, y configurar notifications:**
+<img src="https://i.imgur.com/nhZuJcV.png" width="75%" />
+
+- **Ver historial de reservas:**
+<img src="https://i.imgur.com/IPz6Q9b.png" width="75%" />
+
+- **Ver penalizaciones:**
+<img src="https://i.imgur.com/Hp0CGhf.png" width="75%" />
+
+- **Panel Administrativo:**
+<img src="https://i.imgur.com/3uYxo5A.png" width="75%" />
 
 ## 5.5. Applications Prototyping
+El prototipado de SmartParking fue elaborado en Figma, integrando las pantallas y flujos principales definidos en las fases de diseño UX/UI.
+Este prototipo permite simular la navegación real del usuario y sirve como guía directa para la etapa de desarrollo del producto.
 
+<img src="https://i.imgur.com/i9DOlzJ.png" width="75%" />
+
+Link User: https://www.figma.com/proto/GTZj2RO4JUsdBDxsrO7nVV/SafePark?node-id=2-418&t=03ju0Sb7p0VKa1ap-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2%3A418&show-proto-sidebar=1
+Link Admin: https://www.figma.com/proto/GTZj2RO4JUsdBDxsrO7nVV/SafePark?node-id=341-7485&t=03ju0Sb7p0VKa1ap-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=341%3A7485&show-proto-sidebar=1
 
 # Capítulo VI: Product Implementation, Validation & Deployment
 
@@ -5069,50 +5300,362 @@ Cada etiqueta textual está vinculada a un ícono visual correspondiente (por ej
 
 ### 6.1.1. Software Development Environment Configuration
 
+Los productos involucrados para la solución IoT SmartParking UPC son:
+
+- **Landing Page**: Tiene como propósito presentar el sistema SmartParking UPC a los visitantes, mostrando las características principales del sistema de estacionamiento inteligente, sus beneficios para la comunidad universitaria, y proporcionando acceso directo tanto a la aplicación web como a la descarga de la aplicación móvil. Incluye secciones informativas sobre automatización, tiempo ilimitado de uso, y tecnología IoT implementada.
+
+- **Web Application**: La aplicación web permite a los miembros de la comunidad UPC (estudiantes, docentes y personal administrativo) gestionar sus reservas de estacionamiento, visualizar en tiempo real el estado de los espacios disponibles mediante integración con sensores IoT, y acceder a su historial de uso. Para los administradores, proporciona un panel completo para gestionar espacios, configurar parámetros del sistema, monitorear dispositivos ESP32, visualizar métricas y reportes de ocupación, y gestionar penalizaciones por ausencias.
+
+- **Mobile Application**: Brinda a los miembros UPC acceso móvil a todas las funcionalidades clave del sistema SmartParking desde cualquier dispositivo. Permite reservar espacios, recibir notificaciones push en tiempo real sobre el estado de reservas, confirmación automática de llegadas, alertas de ausencias, y visualizar cronómetros de tiempo de uso. La aplicación móvil mantiene paridad funcional con la aplicación web, simplificando la navegación para mostrar lo esencial de cada segmento.
+
+- **Web Services (RESTful API)**: El servicio API principal proporciona endpoints RESTful para la integración con Web Application y Mobile Application. Maneja toda la lógica de negocio del sistema incluyendo: autenticación y autorización mediante JWT, gestión de usuarios UPC (@upc.edu.pe), administración de reservas con tiempo ilimitado, sistema de cronometraje automático, gestión de penalizaciones configurables, analytics y reportes de uso, sistema de notificaciones multicanal (email, push, WebSocket), y sincronización bidireccional con Edge API.
+
+- **Edge API**: La Edge API actúa como intermediario entre los dispositivos IoT en el estacionamiento (ESP32 con sensores ultrasónicos HC-SR04) y la infraestructura central en la nube. Procesa datos a nivel local para asegurar respuestas rápidas en la detección automática de vehículos, gestiona el estado en tiempo real de los 3 espacios de estacionamiento, controla LEDs RGB indicadores y display OLED, y mantiene cache local de configuraciones para operación offline. Se sincroniza con el RESTful API principal para actualizar estados y recibir comandos de control.
+
+- **Embedded Application**: Las aplicaciones embebidas se ejecutan directamente en el dispositivo ESP32, gestionando la comunicación con el hardware IoT: lectura de sensores ultrasónicos HC-SR04 para detección de presencia vehicular, control de LEDs RGB para indicadores visuales (verde=disponible, rojo=ocupado, amarillo=reservado), manejo del display OLED 128x64 para mostrar información del sistema, comunicación bidireccional con Edge API mediante HTTP/JSON sobre WiFi, y procesamiento local de comandos de control enviados desde la infraestructura central.
+
 ### 6.1.2. Source Code Management
+
+En esta sección explicamos la forma en que estamos controlando los diferentes aspectos de nuestro proyecto. Basándonos en GitFlow, nos hemos organizado de tal modo que hemos trabajado con Feature Branches (ramas por feature) y mediante pull requests, las hemos unido al develop y posteriormente a la rama main.
+
+Para su nomenclatura hemos seguido la siguiente estructura:
+
+**Prefijo**: Comienza con `feature/` para indicar claramente que se trata de una rama de función
+
+**Nombre descriptivo**: Proporciona un nombre conciso y descriptivo en inglés para la funcionalidad
+
+**Ejemplos de nomenclatura de ramas**:
+- `feature/parking-space-detection`
+- `feature/reservation-management`
+- `feature/iot-sensor-integration`
+- `feature/user-authentication`
+
+Adicionalmente usamos **Conventional Commits** para la nomenclatura de commits:
+
+- `feat:` para nuevas funcionalidades
+- `fix:` para corrección de errores
+- `docs:` para documentación
+- `test:` para pruebas
+- `refactor:` para refactorización de código
+- `style:` para cambios de formato
+- `chore:` para tareas de mantenimiento
+
+Para los releases: `release-*` (ejemplo: `release-1.0.0`)
+
+Para los hotfixes: `hotfix-*` (ejemplo: `hotfix-1.0.1`)
+
+Aplicamos **Semantic Versioning** para la numeración de los releases siguiendo el formato: `MAJOR.MINOR.PATCH`
+
+Adjuntamos los enlaces para visualizar los repositorios de la organización SmartParking UPC:
+
+- **Repositorio de Landing Page**:
+  
+  https://github.com/SmartParking-UPC/landing-page.git
+  
+  Elaborado con HTML5, CSS3 y JavaScript.
+
+- **Repositorio de Web Application**:
+  
+  https://github.com/SmartParking-UPC/web-application.git
+  
+  Elaborado con Angular Framework, TypeScript y Tailwind CSS.
+
+- **Repositorio de Web Services (RESTful API)**:
+  
+  https://github.com/SmartParking-UPC/web-services.git
+  
+  Elaborado con Spring Boot y Java.
+
+- **Repositorio de Mobile Application**:
+  
+  https://github.com/SmartParking-UPC/mobile-application.git
+  
+  Elaborado con Flutter y Dart.
+
+- **Repositorio del Documento del Proyecto**:
+  
+  https://github.com/SmartParking-UPC/project-report.git
+  
+  Elaborado en Markdown.
 
 ### 6.1.3. Source Code Style Guide & Conventions
 
+**Lenguaje HTML, CSS y JavaScript (Landing Page)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| HTML Style Guide and Coding Conventions<br>https://www.w3schools.com/html/html5_syntax.asp | Utilizamos las convenciones estándar de HTML5 para mantener un código semántico, accesible y compatible con todos los navegadores. Incluye uso adecuado de etiquetas semánticas, atributos ARIA para accesibilidad (a11y), y estructura apropiada para SEO. |
+| Google HTML/CSS Style Guide<br>https://google.github.io/styleguide/htmlcssguide.html | Adoptamos las mejores prácticas de Google para escribir HTML y CSS limpio, mantenible y consistente en todo el proyecto. |
+
+**Lenguaje TypeScript y Angular (Web Application)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Angular Coding Style Guide<br>https://angular.io/guide/styleguide | Seguimos la guía oficial de estilo de Angular para mantener consistencia en la estructura de componentes, servicios, módulos y naming conventions. Incluye organización de carpetas, nomenclatura de archivos, y mejores prácticas para desarrollo con TypeScript. |
+| Google TypeScript Style Guide<br>https://google.github.io/styleguide/tsguide.html | Aplicamos las convenciones de TypeScript de Google para tipos, interfaces, clases y funciones, asegurando código type-safe y mantenible. |
+
+**Tailwind CSS (Web Application)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Tailwind CSS Documentation<br>https://tailwindcss.com/docs | Utilizamos las utility classes de Tailwind CSS siguiendo sus convenciones oficiales para un diseño consistente y responsivo. Adoptamos el enfoque utility-first para estilización de componentes. |
+
+**Lenguaje Java y Spring Boot (Web Services)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Google Java Style Guide<br>https://google.github.io/styleguide/javaguide.html | Utilizamos la guía de estilo de Java de Google para mantener código limpio, legible y consistente. Incluye convenciones para nombrado de clases, métodos, variables, formato de código y documentación JavaDoc. |
+| Spring Boot Features & Best Practices<br>https://docs.spring.io/spring-boot/docs/current/reference/html/ | Aplicamos las mejores prácticas recomendadas por Spring Boot para la estructura de proyectos, configuración de beans, manejo de dependencias, y desarrollo de RESTful APIs. |
+
+**Lenguaje Dart (Mobile Application - Flutter)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Effective Dart: Style<br>https://dart.dev/effective-dart/style | Utilizamos la guía oficial de estilo de Dart para mantener código consistente en la aplicación móvil. Incluye convenciones para nombrado de clases, funciones, variables, carpetas y archivos, así como formato de código y documentación. |
+| Flutter Style Guide<br>https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo | Aplicamos las recomendaciones específicas de Flutter para organización de widgets, state management, y estructura de proyectos. |
+
+**Lenguaje Gherkin (Testing - Archivos .feature)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| Gherkin Conventions for Readable Specifications<br>https://specflow.org/gherkin/gherkin-conventions-for-readable-specifications/ | Utilizamos las convenciones de Gherkin para escribir escenarios de prueba legibles y comprensibles, siguiendo el formato Given-When-Then para definir criterios de aceptación de User Stories. |
+
+**Lenguaje Markdown (Documentación)**
+
+| Referencias Adoptadas | Explicación y Convenciones |
+|-----------|-----------|
+| The Markdown Guide<br>https://www.markdownguide.org/ | Seguimos la guía oficial de Markdown para toda la documentación del proyecto, incluyendo README files, documentación técnica y el reporte final del proyecto. |
+
 ### 6.1.4. Software Deployment Configuration
+
+A continuación se detalla el conjunto de herramientas para el despliegue de cada producto de la solución IoT SmartParking UPC.
+
+**Landing Page**
+
+Para el despliegue de la Landing Page, se utilizará GitHub Pages por su simplicidad y automatización de despliegue directo desde el repositorio.
+
+**Web Application**
+
+Para el despliegue de la Web Application, se utilizará Vercel por su fácil integración con repositorios de GitHub, Angular framework y despliegue automatizado rápido y fácil.
+
+**Web Services (RESTful API)**
+
+Los servicios web se empaquetarán y desplegarán como contenedores utilizando Docker, lo que garantiza portabilidad, escalabilidad y una configuración consistente del entorno. Se utilizará Railway o Render para hosting de contenedores con integración continua desde GitHub.
+
+**Edge API**
+
+El despliegue de la Edge API está en evaluación. Se considerará una solución que permita baja latencia y procesamiento cercano a los dispositivos IoT, como Cloudflare Workers, AWS Lambda@Edge, o Railway para una implementación inicial con Flask y Python.
+
+**Mobile Application**
+
+Para la distribución de la aplicación móvil durante el desarrollo y pruebas, se utilizará Firebase App Distribution, permitiendo enviar versiones preliminares a testers internos de manera segura, rápida y con seguimiento de métricas de uso y errores. Para producción se considerará Google Play Store y Apple App Store.
+
+**Embedded Application**
+
+El despliegue de la Embedded Application dependerá del hardware ESP32. Se evaluarán opciones como actualizaciones OTA (Over-the-Air) mediante servicios personalizados utilizando protocolos ligeros como HTTP para sincronización remota, o actualización manual mediante conexión USB con Arduino IDE/PlatformIO durante la fase inicial de desarrollo.
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
-### 6.2.X. Sprint n
+### 6.2.1. Sprint 1
 
-#### 6.2.X.1. Sprint Planning n
+#### 6.2.1.1. Sprint Planning 1
 
-#### 6.2.X.2. Aspect Leaders and Collaborators
+| **Sprint #** | Sprint 1 |
+|--------------|----------|
+| **Sprint Planning Background** | |
+| **Date** | 2025-10-06 |
+| **Time** | 03:00 PM |
+| **Location** | Reunión virtual vía Google Meet |
+| **Prepared By** | Luciano Ruiz |
+| **Attendees (to planning meeting)** | Todos los miembros del equipo |
+| **Sprint Goal & User Stories** | |
+| **Sprint 1 Goal** | Establecer la base del sistema con autenticación, landing page y API core para que los usuarios puedan registrarse y conocer el producto. Métrica de cumplimiento: 100% de usuarios UPC pueden registrarse e iniciar sesión exitosamente usando su correo institucional @upc.edu.pe |
+| **Sprint 1 Velocity** | 19 story points |
+| **Sum of Story Points** | 19 story points |
 
-#### 6.2.X.3. Sprint Backlog n
+#### 6.2.1.2. Aspect Leaders and Collaborators
 
-#### 6.2.X.4. Development Evidence for Sprint Review
+A continuación explicamos la organización que tuvimos con respecto a los distintos Bounded Context y Landing Page a la hora de elaborar nuestros entregables de este Sprint.
 
-#### 6.2.X.5. Testing Suite Evidence for Sprint Review
+| Team Member (Last Name, First Name) | GitHub Username | IAM Bounded Context | Landing Page |
+|------------------------------------|-----------------|---------------------|---------------|
+| Salgado Luna, Fernando Brian | fersalgado26 | C | C |
+| Ruiz Blas, Luciano Stefano | LucianRuiz | L | L |
+| Linares Tejada, Leonardo Félix Jesús | LeoShadic345 | C | C |
+| Chávez Rojas, Carlos Raúl Guillermo | CarlosChavez19 | C | C |
+| Aquije Quiroga, Luis Enrique | LuisAquije123 | C | C |
 
-#### 6.2.X.6. Execution Evidence for Sprint Review
+**Leyenda:** L = Leader, C = Collaborator
 
-#### 6.2.X.7. Services Documentation Evidence for Sprint Review
+#### 6.2.1.3. Sprint Backlog 1
 
-#### 6.2.X.8. Software Deployment Evidence for Sprint Review
+**Introducción**
 
-#### 6.2.X.9. Team Collaboration Insights during Sprint
+El Sprint 1 se enfoca en construir la base fundamental del sistema SmartParking UPC. En este sprint implementaremos el sistema de autenticación completo con JWT, permitiendo que los miembros de la UPC se registren usando su correo institucional. También desarrollaremos la landing page que servirá como punto de entrada para dar a conocer el producto a los visitantes. Adicionalmente, implementaremos la funcionalidad de gestión de perfil personal para que los usuarios puedan mantener actualizada su información.
 
-## 6.3. Validation Interviews
+Este sprint establece los cimientos técnicos y arquitectónicos sobre los cuales se construirán las funcionalidades de reservas e IoT en los siguientes sprints.
 
-### 6.3.1. Diseño de Entrevistas
+**User Stories Incluidas en el Sprint 1:**
+- US01 - Registro Usuario UPC (3 Story Points)
+- US02 - Autenticación Usuario (3 Story Points)
+- TS01 - API Autenticación JWT (5 Story Points)
+- US26 - Landing Page Principal (2 Story Points)
+- US27 - Descarga de Aplicaciones (2 Story Points)
+- US03 - Gestión Perfil Personal (3 Story Points)
+- US28 - Información Técnica (1 Story Point)
 
-### 6.3.2. Registro de Entrevistas
 
-### 6.3.3. Evaluaciones según heurísticas
+| User Story | | Work-Item / Task | | | | | |
+|------------|--|------------------|--|--|--|--|--|
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** (To-do / In-Process / To-Review / Done) |
+| US01 | Registro Usuario UPC | T1.1 | Backend de registro completo | Crear modelo de datos, endpoint POST /api/auth/register y validación email @upc.edu.pe | 8 | Fernando Salgado | Done |
+| US01 | Registro Usuario UPC | T1.2 | Frontend de registro | Desarrollar UI de formulario de registro con validaciones | 6 | Luciano Ruiz | Done |
+| US01 | Registro Usuario UPC | T1.3 | Servicios de confirmación | Implementar envío de correo y clasificación automática de roles | 5 | Leonardo Linares | Done |
+| US02 | Autenticación Usuario | T2.1 | Backend de autenticación | Implementar endpoint POST /api/auth/login y manejo de sesiones seguras | 6 | Luciano Ruiz | Done |
+| US02 | Autenticación Usuario | T2.2 | Frontend de login | Crear UI de formulario de login con validaciones y manejo de errores | 6 | Leonardo Linares | Done |
+| US02 | Autenticación Usuario | T2.3 | Navegación post-login | Implementar redirección y lógica de navegación después del login | 3 | Carlos Chávez | Done |
+| TS01 | API Autenticación JWT | T3.1 | Configuración y generación JWT | Setup de librerías JWT, secrets y lógica de creación de tokens | 6 | Luciano Ruiz | Done |
+| TS01 | API Autenticación JWT | T3.2 | Middleware y validación | Crear middleware de validación y endpoint de verificación | 6 | Leonardo Linares | Done |
+| TS01 | API Autenticación JWT | T3.3 | Refresh tokens y documentación | Implementar sistema de renovación de tokens y documentación API | 7 | Carlos Chávez | Done |
+| US26 | Landing Page Principal | T4.1 | Estructura y Hero Section | Crear estructura HTML base y sección hero con propuesta de valor | 5 | Luciano Ruiz | Done |
+| US26 | Landing Page Principal | T4.2 | Contenido principal | Desarrollar secciones de características y beneficios | 5 | Leonardo Linares | Done |
+| US26 | Landing Page Principal | T4.3 | Footer y responsive design | Implementar footer y optimizar para dispositivos móviles | 4 | Carlos Chávez | Done |
+| US27 | Descarga de Aplicaciones | T6.1 | Botones de descarga | Crear botones claros para App Web y App Móvil (iOS/Android) | 4 | Fernando Salgado | Done |
+| US27 | Descarga de Aplicaciones | T6.2 | Configuración de enlaces | Establecer enlaces correctos a stores y aplicaciones | 3 | Leonardo Linares | Done |
+| US27 | Descarga de Aplicaciones | T6.3 | Sección de acceso rápido | Implementar sección destacada con acceso fácil a las aplicaciones | 3 | Carlos Chávez | Done |
+| US03 | Gestión Perfil Personal | T5.1 | Backend de perfil | Crear endpoints GET y PUT /api/users/profile con validaciones | 6 | Leonardo Linares | Done |
+| US03 | Gestión Perfil Personal | T5.2 | UI de visualización | Desarrollar interfaz para mostrar datos del perfil | 4 | Carlos Chávez | Done |
+| US03 | Gestión Perfil Personal | T5.3 | Formulario de edición | Crear formulario para editar datos personales con validaciones | 5 | Luis Aquije | Done |
+| US28 | Información Técnica | T7.1 | Mostrar tecnologías utilizadas | Crear sección que muestre el stack tecnológico y herramientas de desarrollo | 3 | Fernando Salgado | Done |
 
-## 6.4. Video About-the-Product
+
+#### 6.2.1.4. Development Evidence for Sprint Review
+
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review
+
+## IAM (Identity and Access Management) Bounded Context
+
+```gherkin
+Feature: Registro de usuarios UPC
+
+  Scenario: Registro exitoso con correo institucional
+    Given Un usuario accede al formulario de registro
+    When Ingresa un correo válido @upc.edu.pe y completa todos los campos requeridos
+    Then El sistema debe registrar al usuario y enviar un correo de confirmación
+
+  Scenario: Validación de correo institucional
+    Given Un usuario intenta registrarse
+    When Ingresa un correo que no pertenece al dominio @upc.edu.pe
+    Then El sistema debe mostrar un error indicando que solo se permiten correos UPC
+
+Feature: Autenticación de usuarios
+
+  Scenario: Login exitoso
+    Given Un usuario registrado accede al formulario de login
+    When Ingresa credenciales válidas
+    Then El sistema debe autenticar al usuario y generar un token JWT
+
+  Scenario: Login con credenciales incorrectas
+    Given Un usuario accede al formulario de login
+    When Ingresa credenciales incorrectas
+    Then El sistema debe mostrar un mensaje de error y no permitir el acceso
+
+  Scenario: Verificación de token JWT
+    Given Un usuario autenticado realiza una petición
+    When El sistema valida el token JWT
+    Then Debe permitir el acceso si el token es válido
+
+Feature: Gestión de perfil personal
+
+  Scenario: Visualizar perfil de usuario
+    Given Un usuario autenticado accede a su perfil
+    When Solicita ver su información personal
+    Then El sistema debe mostrar todos los datos del perfil
+
+  Scenario: Actualizar información del perfil
+    Given Un usuario autenticado accede a su perfil
+    When Modifica sus datos personales y guarda los cambios
+    Then El sistema debe actualizar la información y mostrar un mensaje de confirmación
+```
+
+#### 6.2.1.6. Execution Evidence for Sprint Review
+
+Sprint 1: En este entregable, hemos logrado desarrollar la Landing Page y parte del Web Application para nuestra Startup SmartParking.
+
+- El link de la landing page es el siguiente: https://iot-si0572-3475-grupo3.github.io/landing-page/
+
+Imagen 1: Hero Section, en esta sección se visualiza el menú superior de la landing page, así como una imagen principal llamtiva y atractiva al cliente.
+
+<img src="https://i.imgur.com/KGSKv49.png" width="75%" />
+
+Imagen 2: Vista de Caracteristicas, dedicada a los Servicios ofrecidos por SmartParking.
+
+<img src="https://i.imgur.com/5EEBvyK.png" width="75%" />
+
+- El link de la Web application: https://smart-parking-iot-3475.netlify.app/
+
+
+<img src="https://i.imgur.com/EtgF2lv.png" width="75%" />
+
+<img src="https://i.imgur.com/6X9mRad.png" width="75%" />
+
+<img src="https://i.imgur.com/dKrjzGR.png" width="75%" />
+
+
+
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+En este sprint se cumplió el objetivo de desarrollar la Landing Page y el Web Application; sin embargo, al ser Landing Page y Web Application, no requiere de documentación relacionada a Web Services.
+
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+En este sprint, se completó el desarrollo de la landing page y el Web Application, a continuación, se detallan el conjunto de herramientas utilizadas para su despliegue:
+
+Git: Utilizado como sistema de control de versiones para facilitar el trabajo en equipo durante el desarrollo de los artefactos.
+GitFlow: Implementado como flujo de trabajo para gestionar el progreso individual de cada miembro del equipo en el desarrollo del los artefactos.
+GitHub: Empleado como plataforma colaborativa para almacenar las versiones del proyceto y facilitar el desarrollo conjunto del equipo.
+Netlify: Plataforma utilizada para el despliegue del Web Application, conectandolo al repositorio de Github y sincronizar los cambios.
+
+#### Evidencias Landing Page
+
+Se ha creado un Github Page en el repositorio de la Landing Page, para su despliegue rápido y sencillo. No hay problemas de configuración o despliegue, ya que es una página estática.
+
+<img src="https://i.imgur.com/bIHBAlb.png" width="75%" />
+
+
+#### Evidencias Web Application
+
+Se selecciona el repositorio de Github el cual va alimentar el proyecto desplegado.
+
+<img src="https://i.imgur.com/jPtuTun.png" width="75%" />
+
+
+#### 6.2.1.9. Team Collaboration Insights during Sprint
+
+En este Sprint 1, todos hemos colaborado en conjunto para el desarrollo de los artefactos: Landing Page y Web Application.
+
+A continuación se muestran las colaboraciones individuales por cada artefacto terminado durante este sprint.
+
+Web Application En las siguientes imágenes se evidencia la colaboración activa de cada miembro del equipo en el desarrollo de la Web Application.
+
+
+<img src="https://i.imgur.com/jPtuTun.png" width="75%" />
+
 
 
 # Conclusiones
 
-## Conclusiones y recomendaciones
+- **Integración tecnológica completa:**
+SmartParking UPC logró combinar componentes IoT, web y móvil dentro de una arquitectura modular y escalable basada en microservicios, garantizando interoperabilidad entre hardware (ESP32) y software (API REST, Angular, Flutter).
 
-## Video About-the-Team
+- **Automatización y eficiencia operativa:**
+El sistema permitió automatizar procesos críticos como detección de vehículos, reservas, liberación automática de espacios y registro de ausencias, reduciendo la carga manual de los administradores y mejorando la rotación de estacionamientos.
+
+- **Desarrollo ágil y controlado:**
+El uso de GitFlow, Conventional Commits y Semantic Versioning, junto con la metodología ágil por sprints, permitió un desarrollo ordenado, trazable y colaborativo, con pruebas Gherkin que garantizaron la calidad funcional del producto.
+
+- **Impacto institucional y experiencia de usuario:**
+SmartParking fortalece la gestión sostenible y moderna del campus UPC, ofreciendo una experiencia UI/UX intuitiva y coherente para conductores y administradores, contribuyendo a la digitalización eficiente de los servicios universitarios.
 
 # Bibliografía
 
