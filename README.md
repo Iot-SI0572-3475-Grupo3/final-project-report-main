@@ -319,17 +319,17 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p/>
         Luciano Ruiz: Distribui las tareas nuevamente para esta nueva entrega, de manera justa y que favorezca las habilidades del equipo. Además de aportar ayuda en todo momento.
         <p/>
-        Fernando: 
+        Fernando: A partir de la delegación de equipo, me encargue de la creación de las vistas de Notifications y History.
         <p/>
         Leonardo: A partir de la reunion de equipo, logre hacer mis partes del los capitulos V-VI, corregir a fondo el documento, y la creación de los wireframes y mockups.
         <p/>
-        Carlos: 
+        Carlos: Elaboré los diagramas de despliegue y contribuí a la documentación técnica del sprint, asegurando la coherencia entre los repositorios y la arquitectura del proyecto.
         <p/>
-        Luis Aquije: 
+        Luis Aquije: Apoyé en la validación funcional del Landing Page, y las diferentes vistas para el Sprint 1.
     </td>
     <td>
         TB1: En esta entrega logramos trabajar en equipo, apoyándonos mutuamente y colaborando en la redacción del informe. Cada uno de los integrantes participó activamente en el desarrollo de las secciones asignadas, lo que permitió un avance significativo en el proyecto. La comunicación constante y la disposición para ayudar a los demás fueron clave para el éxito de esta entrega.</p>
-        TP1: </p>
+        TP1: En esta entrega, el equipo demostró un liderazgo compartido sólido. Cada miembro asumió responsabilidades específicas para la realización de las vistas del Sprint 1, contribuyendo desde su especialidad para culminar con un producto funcional y documentado.</p>
      </td>
   </tr>
   <tr>
@@ -342,14 +342,26 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p/>
         Fernando: Establecí las bases para el desarrollo de la interfaz de usuario y la experiencia móvil, además de coordinar las tareas de frontend y backend para asegurar una integración fluida entre los componentes del sistema.
         <p/>
+        Leonardo: Ayude en la elaboración del capitulo IV con los Bounded Contexts de Time Tracking y Penalty Management, y delimite el analisis competitivo, los journey e impact mappings y analisis de entrevistas
+        <p/>
+        Carlos: Planifiqué y estructuré la arquitectura de datos y los sistemas de reportes, además de establecer las métricas y KPIs necesarios para el monitoreo y análisis del rendimiento del sistema.
+        <p/>
+        Luis Aquije: Coordiné la integración de los sensores IoT con la plataforma, además de establecer los protocolos de comunicación y las interfaces necesarias para el funcionamiento del sistema de estacionamiento inteligente.</p>
+    <p>
+        TP1:
+        <p/>
+        Luciano Ruiz: Lideré la planificación del sprint 1, estableciendo prioridades y gestionando la carga de trabajo de forma equitativa. Garantizamos que todos los módulos estuvieran alineados con los objetivos del proyecto.
+        <p/>
+        Fernando: Coordiné la integración entre los módulos frontend para el Sprint 1, participando en la revisión de commits y pruebas realizadas antes del despliegue.
+        <p/>
         Leonardo: Ayude en la elaboración de los capitulos V-VI con la cración de los wireframes, mockups y user flows.
         <p/>
-        Carlos: 
+        Carlos: Contribuí a la organización de las tareas en GitHub Projects y a la verificación de los user goals para el Sprint 1.
         <p/>
-        Luis Aquije: 
+        Luis Aquije: Realicé pruebas funcionales para la revisión del sprint, validando el cumplimiento de las metas técnicas.
     <td>
     TB1: En esta entrega, logramos establecer un entorno colaborativo e inclusivo, donde cada miembro del equipo pudo expresar sus ideas y contribuir al desarrollo del proyecto. La planificación de tareas y el cumplimiento de objetivos fueron fundamentales para avanzar en la redacción del informe y en la elaboración de los diagramas y documentos requeridos. La comunicación constante y el uso del tablero Kanban facilitaron la organización y el seguimiento de las tareas asignadas.</p>
-    TP1: </p>
+    TP1: En esta etapa final, el equipo consolidó su dinámica de trabajo ágil, logrando un flujo de comunicación eficiente y una ejecución ordenada de las tareas para el Sprint 1 de Landing Page y presentar un avance del Frontend.</p>
   </td>
   </tr>
 </table>
