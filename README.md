@@ -81,13 +81,13 @@
       </td>
     </tr>
     <tr>
-      <td>xx</td>
-      <td>xx</td>
+      <td>08/10/2025</td>
+      <td>Leonardo Linares / Carlos Chávez</td>
       <td>
         <ul>
-          <li>xx</li>
-          <li>xx</li>
-          <li>xx</li>
+          <li>Capítulo V: Solution UI/UX Design</li>
+          <li>Capítulo VI: Product Implementation, Validation & Deployment - Sprint 1</li>
+          <li>Landing Page y primera versión del Frontend</li>
         </ul>
       </td>
     </tr>
@@ -314,9 +314,22 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         Carlos: Contribuí en el desarrollo de los Bounded Contexts de Analytics & Reporting y Notification, además de participar en la elaboración de los diagramas C4 y la arquitectura del sistema para garantizar una solución robusta y escalable.
         <p/>
         Luis Aquije: Participé en el desarrollo de los Bounded Contexts de Reservation Management y Parking Management, además de colaborar en la definición de la arquitectura del sistema y la integración de los componentes IoT.
+        <p/>
+        TP1:
+        <p/>
+        Luciano Ruiz: 
+        <p/>
+        Fernando: 
+        <p/>
+        Leonardo: A partir de la reunion de equipo, logre hacer mis partes del los capitulos V-VI, corregir a fondo el documento, y la creación de los wireframes y mockups.
+        <p/>
+        Carlos: 
+        <p/>
+        Luis Aquije: 
     </td>
     <td>
         TB1: En esta entrega logramos trabajar en equipo, apoyándonos mutuamente y colaborando en la redacción del informe. Cada uno de los integrantes participó activamente en el desarrollo de las secciones asignadas, lo que permitió un avance significativo en el proyecto. La comunicación constante y la disposición para ayudar a los demás fueron clave para el éxito de esta entrega.</p>
+        TP1: </p>
      </td>
   </tr>
   <tr>
@@ -329,14 +342,14 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         <p/>
         Fernando: Establecí las bases para el desarrollo de la interfaz de usuario y la experiencia móvil, además de coordinar las tareas de frontend y backend para asegurar una integración fluida entre los componentes del sistema.
         <p/>
-        Leonardo: Ayude en la elaboración del capitulo IV con los Bounded Contexts de Time Tracking y Penalty Management, y delimite el analisis competitivo, los journey e impact mappings y analisis de entrevistas
+        Leonardo: Ayude en la elaboración de los capitulos V-VI con la cración de los wireframes, mockups y user flows.
         <p/>
-        Carlos: Planifiqué y estructuré la arquitectura de datos y los sistemas de reportes, además de establecer las métricas y KPIs necesarios para el monitoreo y análisis del rendimiento del sistema.
+        Carlos: 
         <p/>
-        Luis Aquije: Coordiné la integración de los sensores IoT con la plataforma, además de establecer los protocolos de comunicación y las interfaces necesarias para el funcionamiento del sistema de estacionamiento inteligente.
+        Luis Aquije: 
     <td>
-    TB1: En esta entrega, logramos establecer un entorno colaborativo e inclusivo, donde cada miembro del equipo pudo expresar sus ideas y contribuir al desarrollo del proyecto. La planificación de tareas y el cumplimiento de objetivos fueron fundamentales para avanzar en la redacción del informe y en la elaboración de los diagramas y documentos requeridos. La comunicación constante y el uso del tablero Kanban facilitaron la organización y el seguimiento de las tareas asignadas.
-    </p>
+    TB1: En esta entrega, logramos establecer un entorno colaborativo e inclusivo, donde cada miembro del equipo pudo expresar sus ideas y contribuir al desarrollo del proyecto. La planificación de tareas y el cumplimiento de objetivos fueron fundamentales para avanzar en la redacción del informe y en la elaboración de los diagramas y documentos requeridos. La comunicación constante y el uso del tablero Kanban facilitaron la organización y el seguimiento de las tareas asignadas.</p>
+    TP1: </p>
   </td>
   </tr>
 </table>
@@ -5212,60 +5225,64 @@ En esta sección presentaremos los Wireflow Diagrams, los cuales definen el fluj
 <img src="https://i.imgur.com/eJEdUiD.png" width="75%" />
 
 ### 5.4.2. Applications Mock-ups
+Los mock-ups de la aplicación de SmartParking reflejan la identidad visual definida en las Style Guidelines (Sección 5.1), aplicando la paleta azul corporativa (#2C5282), tipografía Inter y una composición visual limpia y moderna.
+El objetivo es ofrecer una experiencia coherente, funcional y estéticamente agradable tanto para usuarios conductores como administradores.
 
 - **Authentication:**
 
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
+<img src="https://i.imgur.com/UiBAZFJ.png" width="75%" />
+<img src="https://i.imgur.com/oroC3Et.png" width="75%" />
+<img src="https://i.imgur.com/uVVN6eK.png" width="75%" />
+<img src="https://i.imgur.com/QzSR07T.png" width="75%" />
 
 - **User Dashboard:**
 
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
+<img src="https://i.imgur.com/gRieI1R.png" width="75%" />
+<img src="https://i.imgur.com/71LtmIH.png" width="75%" />
+<img src="https://i.imgur.com/MzR7TCT.png" width="75%" />
+<img src="https://i.imgur.com/eK0M4Ob.png" width="75%" />
+<img src="https://i.imgur.com/SmYx8zu.png" width="75%" />
 
 - **Profile, Notifications, History & Penalties:**
 
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
+<img src="https://i.imgur.com/EA7jlLu.png" width="75%" />
+<img src="https://i.imgur.com/PX4g9zM.png" width="75%" />
+<img src="https://i.imgur.com/xbpalyL.png" width="75%" />
+<img src="https://i.imgur.com/QugmOtV.png" width="75%" />
+<img src="https://i.imgur.com/0oqEED9.png" width="75%" />
+<img src="https://i.imgur.com/6aqCfdK.png" width="75%" />
 
 - **Admin Panel:**
 
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
-<img src="" width="75%" />
+<img src="https://i.imgur.com/gK8Nu92.png" width="75%" />
+<img src="https://i.imgur.com/JBKLEUx.png" width="75%" />
+<img src="https://i.imgur.com/5DWdW2Q.png" width="75%" />
+<img src="https://i.imgur.com/jy0Bgtb.png" width="75%" />
 
 ### 5.4.3. Applications User Flow Diagrams
+Los User Flow Diagrams representan los caminos que los distintos usuarios pueden seguir dentro del ecosistema SmartParking.
+Estos diagramas permiten visualizar cómo los conductores, administradores y el sistema IoT interactúan entre sí para cumplir sus objetivos.
 
 - **Registrarse y Recuperar Contraseña:**
-<img src="" width="75%" />
+<img src="https://i.imgur.com/NKRLBCr.png" width="75%" />
 
 - **Iniciar Sesión:**
-<img src="" width="75%" />
+<img src="https://i.imgur.com/Mply8Uo.png" width="75%" />
 
 - **Añadir Reserva, y visualizar el tiempo:**
-<img src="" width="75%" />
+<img src="https://i.imgur.com/FVJ1fhr.png" width="75%" />
 
 - **Editar Perfil, y configurar notifications:**
-<img src="" width="75%" />
+<img src="https://i.imgur.com/nhZuJcV.png" width="75%" />
 
-- **Ver historial de reservas, y detalles:**
-<img src="" width="75%" />
+- **Ver historial de reservas:**
+<img src="https://i.imgur.com/IPz6Q9b.png" width="75%" />
 
 - **Ver penalizaciones:**
-<img src="" width="75%" />
+<img src="https://i.imgur.com/Hp0CGhf.png" width="75%" />
 
 - **Panel Administrativo:**
-<img src="" width="75%" />
+<img src="https://i.imgur.com/3uYxo5A.png" width="75%" />
 
 ## 5.5. Applications Prototyping
 
