@@ -5136,15 +5136,136 @@ El diseño visual se basa en los principios de proximidad, alineación, contrast
 <img src="https://i.imgur.com/BTBcQYZ.png" width="55%" />
 <img src="https://i.imgur.com/h5C3dCf.png" width="55%" />
 
+Link: https://iot-si0572-3475-grupo3.github.io/landing-page/
+
 ## 5.4. Applications UX/UI Design
 
 ### 5.4.1. Applications Wireframes
 
+Los wireframes de la aplicación de SmartParking fueron diseñados para ofrecer una experiencia fluida, clara y consistente.
+El objetivo principal del diseño es garantizar que cada acción clave del usuario se realice con el menor número posible de pasos, manteniendo una navegación intuitiva.
+
+En la versión Web, se incluye un encabezado superior fijo que contiene el logotipo de SmartPark Solutions y el menú principal con accesos a las secciones Dashboard, Usuarios, Reportes y Configuración.
+Debajo, se presenta el contenido dinámico según el rol del usuario:
+
+Conductores universitarios: visualizan sus reservas activas, historial y perfil personal.
+
+Administradores: acceden al panel con métricas en tiempo real, gestión de usuarios, sensores IoT y reportes operativos.
+
+La información se distribuye de forma jerárquica y equilibrada, aplicando los principios de claridad visual, proximidad y consistencia, asegurando que las secciones sean fácilmente reconocibles y accesibles desde cualquier dispositivo.
+
+- **Authentication:**
+
+<img src="https://i.imgur.com/yqx6r87.png" width="75%" />
+<img src="https://i.imgur.com/lG1Rdtw.png" width="75%" />
+<img src="https://i.imgur.com/8KyEiN4.png" width="75%" />
+<img src="https://i.imgur.com/yOjBzDo.png" width="75%" />
+
+- **User Dashboard:**
+
+<img src="https://i.imgur.com/76j5sZO.png" width="75%" />
+<img src="https://i.imgur.com/JkdDFB4.png" width="75%" />
+<img src="https://i.imgur.com/q5TFf3w.png" width="75%" />
+<img src="https://i.imgur.com/CBxxk3h.png" width="75%" />
+<img src="https://i.imgur.com/6RqKnWS.png" width="75%" />
+
+- **Profile, Notifications, History & Penalties:**
+
+<img src="https://i.imgur.com/4plPOSG.png" width="75%" />
+<img src="https://i.imgur.com/o4YY8s8.png" width="75%" />
+<img src="https://i.imgur.com/lS86ZmN.png" width="75%" />
+<img src="https://i.imgur.com/NGQ6SQr.png" width="75%" />
+<img src="https://i.imgur.com/mQNYKtX.png" width="75%" />
+<img src="https://i.imgur.com/VMBB8Wc.png" width="75%" />
+
+- **Admin Panel:**
+
+<img src="https://i.imgur.com/jbulQlK.png" width="75%" />
+<img src="https://i.imgur.com/vOCo585.png" width="75%" />
+<img src="https://i.imgur.com/QYptLBP.png" width="75%" />
+<img src="https://i.imgur.com/SZpxfOX.png" width="75%" />
+
 ### 5.4.2. Applications Wireflow Diagrams
+
+En esta sección presentaremos los Wireflow Diagrams, los cuales definen el flujo de nuestra aplicación. Hemos relacionado cada uno a un User Goal, el cual determina cuál será el resultado final del flujo:
+
+- **Registrarse y Recuperar Contraseña:**
+<img src="https://i.imgur.com/FrPsmNX.png" width="75%" />
+
+- **Iniciar Sesión:**
+<img src="https://i.imgur.com/tJw5JKi.png" width="75%" />
+<img src="https://i.imgur.com/xkh37xT.png" width="75%" />
+
+- **Añadir Reserva, y visualizar el tiempo:**
+<img src="https://i.imgur.com/7T9MGsI.png" width="75%" />
+
+- **Editar Perfil, y configurar notifications:**
+<img src="https://i.imgur.com/ApgUAy4.png" width="75%" />
+
+- **Ver historial de reservas, y detalles:**
+<img src="https://i.imgur.com/IpFls3G.png" width="75%" />
+
+- **Ver penalizaciones:**
+<img src="https://i.imgur.com/ixhU9XH.png" width="75%" />
+
+- **Panel Administrativo:**
+<img src="https://i.imgur.com/eJEdUiD.png" width="75%" />
 
 ### 5.4.2. Applications Mock-ups
 
+- **Authentication:**
+
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+
+- **User Dashboard:**
+
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+
+- **Profile, Notifications, History & Penalties:**
+
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+
+- **Admin Panel:**
+
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+<img src="" width="75%" />
+
 ### 5.4.3. Applications User Flow Diagrams
+
+- **Registrarse y Recuperar Contraseña:**
+<img src="" width="75%" />
+
+- **Iniciar Sesión:**
+<img src="" width="75%" />
+
+- **Añadir Reserva, y visualizar el tiempo:**
+<img src="" width="75%" />
+
+- **Editar Perfil, y configurar notifications:**
+<img src="" width="75%" />
+
+- **Ver historial de reservas, y detalles:**
+<img src="" width="75%" />
+
+- **Ver penalizaciones:**
+<img src="" width="75%" />
+
+- **Panel Administrativo:**
+<img src="" width="75%" />
 
 ## 5.5. Applications Prototyping
 
@@ -5450,16 +5571,6 @@ Feature: Gestión de perfil personal
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
 [Esta sección se completará con insights de colaboración del equipo durante la ejecución del sprint]
-
-## 6.3. Validation Interviews
-
-### 6.3.1. Diseño de Entrevistas
-
-### 6.3.2. Registro de Entrevistas
-
-### 6.3.3. Evaluaciones según heurísticas
-
-## 6.4. Video About-the-Product
 
 
 # Conclusiones
