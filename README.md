@@ -5592,9 +5592,17 @@ Feature: Gestión de perfil personal
 
 # Conclusiones
 
-## Conclusiones y recomendaciones
+- **Integración tecnológica completa:**
+SmartParking UPC logró combinar componentes IoT, web y móvil dentro de una arquitectura modular y escalable basada en microservicios, garantizando interoperabilidad entre hardware (ESP32) y software (API REST, Angular, Flutter).
 
-## Video About-the-Team
+- **Automatización y eficiencia operativa:**
+El sistema permitió automatizar procesos críticos como detección de vehículos, reservas, liberación automática de espacios y registro de ausencias, reduciendo la carga manual de los administradores y mejorando la rotación de estacionamientos.
+
+- **Desarrollo ágil y controlado:**
+El uso de GitFlow, Conventional Commits y Semantic Versioning, junto con la metodología ágil por sprints, permitió un desarrollo ordenado, trazable y colaborativo, con pruebas Gherkin que garantizaron la calidad funcional del producto.
+
+- **Impacto institucional y experiencia de usuario:**
+SmartParking fortalece la gestión sostenible y moderna del campus UPC, ofreciendo una experiencia UI/UX intuitiva y coherente para conductores y administradores, contribuyendo a la digitalización eficiente de los servicios universitarios.
 
 # Bibliografía
 
