@@ -5055,11 +5055,12 @@ Cada etiqueta textual está vinculada a un ícono visual correspondiente (por ej
 
 ### 5.2.3. SEO Tags and Meta Tags
 Con el objetivo de mejorar la visibilidad de SmartParking en los motores de búsqueda, atraer nuevos usuarios y proporcionar información relevante sobre la Landing Page y la Web Application, se incorporarán las siguientes Meta Tags como etiquetas HTML en el <head> de las páginas principales:
+```html
 <title>SmartParking – Smart IoT Parking System for University Campuses</title>
 <meta name="description" content="SmartParking is a smart parking solution designed for universities. Reserve your space in advance, monitor real-time availability, and optimize campus mobility with IoT technology.">
 <meta name="keywords" content="smart parking, IoT, university parking, campus mobility, parking reservation, SmartPark Solutions, parking management system">
 <meta name="author" content="SmartPark Solutions">
-
+```
 Asimismo, para potenciar la presencia de la aplicación móvil en tiendas digitales (App Store Optimization - ASO), se definirán los siguientes elementos informativos:
 
 **App Title:** SmartParking – University Smart Park
