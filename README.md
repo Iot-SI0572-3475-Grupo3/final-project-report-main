@@ -5107,8 +5107,34 @@ En conjunto, estos sistemas de navegación garantizan una experiencia coherente 
 ## 5.3. Landing Page UI Design
 
 ### 5.3.1. Landing Page Wireframe
+El wireframe diseñado para la Landing Page de SmartPark en su versión Desktop Web Browser presenta una disposición estructurada por secciones verticales, priorizando la claridad visual y la navegación fluida.
+En la parte superior se encuentra un encabezado fijo (sticky header) con el menú principal de navegación, que ofrece acceso directo a las secciones clave del sitio: Inicio, Características Principales, Tecnologías usadas y sobre Nostros.
+
+Este diseño asegura que el usuario mantenga el control de la navegación en todo momento, incluso al desplazarse por el contenido.
+
+<img src="https://i.imgur.com/Z88N9rk.png" width="55%" />
+<img src="https://i.imgur.com/bcZmvDI.png" width="55%" />
+<img src="https://i.imgur.com/3RiI1mg.png" width="55%" />
+<img src="https://i.imgur.com/ivZmsig.png" width="55%" />
+<img src="https://i.imgur.com/s6TytRJ.png" width="55%" />
+<img src="https://i.imgur.com/BdzaoJk.png" width="55%" />
+<img src="https://i.imgur.com/7D0YLji.png" width="55%" />
+<img src="https://i.imgur.com/5NoN3hX.png" width="55%" />
 
 ### 5.3.2. Landing Page Mock-up
+El mock-up de la Landing Page de SmartPark refleja una identidad visual moderna, tecnológica y profesional, en coherencia con las directrices gráficas definidas en la sección 5.1 (Style Guidelines).
+La paleta cromática se centra en el azul primario (#2C5282), transmitiendo confianza, seguridad y modernidad, complementado con tonos neutros que refuerzan la legibilidad y el equilibrio visual.
+La tipografía oficial “Inter” contribuye a la claridad y fluidez de lectura, ofreciendo una estética contemporánea que se adapta armoniosamente a entornos digitales.
+
+El diseño visual se basa en los principios de proximidad, alineación, contraste y repetición, logrando una composición equilibrada y funcional.
+
+<img src="https://i.imgur.com/ae2ycjs.png" width="55%" />
+<img src="https://i.imgur.com/tmQ8O0V.png" width="55%" />
+<img src="https://i.imgur.com/E7LQeay.png" width="55%" />
+<img src="https://i.imgur.com/w3KPb8V.png" width="55%" />
+<img src="https://i.imgur.com/6kombuo.png" width="55%" />
+<img src="https://i.imgur.com/BTBcQYZ.png" width="55%" />
+<img src="https://i.imgur.com/h5C3dCf.png" width="55%" />
 
 ## 5.4. Applications UX/UI Design
 
