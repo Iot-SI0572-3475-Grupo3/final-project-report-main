@@ -1,13 +1,12 @@
-# <center>Informe del Trabajo Final</center>
-
 <p align="center">
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"></img><br>
     <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
-    <strong>Ingeniería de Software - Ciclo 7</strong><br>
-    <strong>1ASI0572 - 202520 - Desarrollo de Soluciones IoT</strong><br>
+    <strong>Ingeniería de Software - Ciclo 2025-20</strong><br>
+    <strong>Código de curso: 1ASI0572 <br>
+    <strong>Nombre del curso: Desarrollo de Soluciones IoT</strong><br>
     <strong>NRC: 3475</strong><br>
     <strong>Profesor: Marco Antonio Leon Baca </strong><br>
-    <br>Informe de Trabajo Final
+    <br><strong>Informe de Trabajo Final</strong>
 </p>
 
 <p align="center">
@@ -19,18 +18,19 @@
 
 <div align="center">
 
-|               Apellidos y Nombres                |    Código    |
-| :---------------------------------: | :--------: |
-| Salgado Luna, Fernando Brian  | u202212023 |
-| Ruiz Blas, Luciano Stefano  | U20211F978 |
-| Linares Tejada, Leonardo Félix Jesús  | u202211168 |
-| Chávez Rojas, Carlos Raúl Guillermo  | u201910317 |
-| Aquije Quiroga, Luis Enrique  | u202114936 |
+|   Código   |          Apellidos y Nombres         |
+| :--------: | :----------------------------------: |
+| u202212023 |     Salgado Luna, Fernando Brian     |
+| U20211F978 |      Ruiz Blas, Luciano Stefano      |
+| u202211168 | Linares Tejada, Leonardo Félix Jesús |
+| u201910317 |  Chávez Rojas, Carlos Raúl Guillermo |
+| u202114936 |     Aquije Quiroga, Luis Enrique     |
+
 
 </div>
 
 <p align="center">
-    <strong>Octubre, 2025</strong>
+    <strong>Noviembre, 2025</strong>
 </p>
 
 <div style="page-break-after: always;"></div>
