@@ -5197,8 +5197,6 @@ El diseño visual se basa en los principios de proximidad, alineación, contrast
 <img src="https://i.imgur.com/BTBcQYZ.png" width="55%" />
 <img src="https://i.imgur.com/h5C3dCf.png" width="55%" />
 
-Link: https://iot-si0572-3475-grupo3.github.io/landing-page/
-
 ## 5.4. Applications UX/UI Design
 
 ### 5.4.1. Applications Wireframes
@@ -5671,6 +5669,7 @@ Se ha creado un Github Page en el repositorio de la Landing Page, para su despli
 
 <img src="https://i.imgur.com/bIHBAlb.png" width="75%" />
 
+Link: https://iot-si0572-3475-grupo3.github.io/landing-page/
 
 #### Evidencias Web Application
 
@@ -6119,6 +6118,29 @@ Esto permite una visualización rápida y clara del estado del estacionamiento.
 Con esta implementación, se demostró exitosamente el funcionamiento integral del sistema SmartParking, desde la detección física hasta la visualización remota. El prototipo constituye la base funcional para la comunicación entre el entorno físico (IoT) y el ecosistema de servicios de la aplicación móvil y el panel administrativo.
 
 **Frontend:**
+- **Dasboard / Página Principal:**
+
+<img src="https://i.imgur.com/ukcGDl5.png" width="75%" />
+
+- **Reservar espacio / Confirmación:**
+
+<img src="https://i.imgur.com/H5At3Vk.png" width="75%" />
+
+- **Reserva completada / registrada:**
+
+<img src="https://i.imgur.com/fdNMWZ3.png" width="75%" />
+
+- **Página de la reserva con contador:**
+
+<img src="https://i.imgur.com/JUmyjWx.png" width="75%" />
+
+- **Vista previa al historial de reservas realizadas:**
+
+<img src="https://i.imgur.com/5QuBXrQ.png" width="75%" />
+
+- **Vista del coche estacionado, cuando esta a punto de terminar su hora:**
+
+<img src="https://i.imgur.com/sVCiXwp.png" width="75%" />
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
