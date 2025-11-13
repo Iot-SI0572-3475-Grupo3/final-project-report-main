@@ -6204,9 +6204,13 @@ A continuación, se presenta un listado junto con las evidencias de los distinto
 **Aplicación Web (Frontend)**
 
 **Proveedor de Hosting:** Netlify
+
 **Link:** https://smart-parking-iot-3475.netlify.app
+
 **Repositorio:** GitHub
+
 **Integración Continua:** Netlify CI
+
 **Proceso:**
 - El despliegue se automatizó mediante la integración continua proporcionada por Netlify.
 - Cada push a la rama principal dispara un build automático que valida, compila y publica la aplicación. Se configuraron reglas básicas de validación y verificación para asegurar que el código sea estable antes de su despliegue.
