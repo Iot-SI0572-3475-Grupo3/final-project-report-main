@@ -6094,9 +6094,29 @@ Feature: Manejo automático de notificaciones del sistema
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
-Para esta entrega, el equipo se enfocó en la implementación de sensores clave de movimiento, utilizando la plataforma de simulación Wokwi:
+Para esta iteración, el equipo de SmartParking se enfocó en la integración e implementación funcional del sistema de monitoreo de espacios de estacionamiento utilizando la plataforma de simulación Wokwi, y la construcción del Frontend. El prototipo combina sensores ultrasónicos, indicadores visuales LED RGB, conexión Wi-Fi y un panel OLED, todos controlados mediante una placa ESP32 DevKit v1.
 
 **Wokwi:**
+
+<img src="https://i.imgur.com/pitm09K.png" width="75%" />
+
+Durante esta ejecución, se lograron los siguientes hitos:
+
+- **Sensores ultrasónicos HC-SR04:** Se configuraron tres sensores independientes, cada uno asignado a una plaza de estacionamiento (A, B y C). Estos miden la distancia entre el vehículo y el sensor para determinar si el espacio está libre, ocupado o reservado, según umbrales definidos (40 cm para ocupado y 80 cm para libre).
+
+- **Indicadores LED RGB:** Cada plaza cuenta con un LED RGB de ánodo común que cambia de color según el estado del espacio:
+    - Verde para espacio libre.
+    - Rojo para espacio ocupado.
+    - Azul para espacio reservado.
+Esto permite una visualización rápida y clara del estado del estacionamiento.
+
+- **Pantalla OLED SSD1306 (128x64):** Se utilizó para mostrar información consolidada del sistema, incluyendo el conteo de espacios libres, ocupados y reservados, junto con el estado individual de cada plaza (A, B, C).
+
+**Conectividad Wi-Fi y envío a la nube:** El módulo ESP32 se conectó a la red Wokwi-GUEST y envió los datos de ocupación al servicio ThingSpeak, donde se registran las métricas en tiempo real. Esto habilita la futura integración con el módulo de Analytics & Reporting para generar reportes históricos y dashboards remotos.
+
+**Lógica de control integrada:** El sistema detecta la distancia medida, determina el estado del espacio mediante reglas lógicas, actualiza el color de los LEDs, renderiza la información en la pantalla OLED y finalmente envía los datos a la nube.
+
+Con esta implementación, se demostró exitosamente el funcionamiento integral del sistema SmartParking, desde la detección física hasta la visualización remota. El prototipo constituye la base funcional para la comunicación entre el entorno físico (IoT) y el ecosistema de servicios de la aplicación móvil y el panel administrativo.
 
 **Frontend:**
 
