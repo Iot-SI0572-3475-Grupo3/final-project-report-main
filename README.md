@@ -264,7 +264,7 @@ En esta sección, regirstraremos los cambios y logros que se completaron en cada
       + [6.1.4. Software Deployment Configuration](#614-software-deployment-configuration)
    * [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
       + [6.2.1. Sprint 1](#621-sprint-1)
-         - [6.2.1.1. Sprint Planning n](#6211-sprint-planning-1)
+         - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
          - [6.2.1.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
          - [6.2.1.3. Sprint Backlog 1](#6213-sprint-backlog-1)
          - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
@@ -273,10 +273,10 @@ En esta sección, regirstraremos los cambios y logros que se completaron en cada
          - [6.2.1.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
          - [6.2.1.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
          - [6.2.1.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
-      + [6.2.2. Sprint n](#622-sprint-2)
-         - [6.2.2.1. Sprint Planning n](#6221-sprint-planning-2)
+      + [6.2.2. Sprint 2](#622-sprint-2)
+         - [6.2.2.1. Sprint Planning 2](#6221-sprint-planning-2)
          - [6.2.2.2. Aspect Leaders and Collaborators](#6222-aspect-leaders-and-collaborators)
-         - [6.2.2.3. Sprint Backlog n](#6223-sprint-backlog-2)
+         - [6.2.2.3. Sprint Backlog 2](#6223-sprint-backlog-2)
          - [6.2.2.4. Development Evidence for Sprint Review](#6224-development-evidence-for-sprint-review)
          - [6.2.2.5. Testing Suite Evidence for Sprint Review](#6225-testing-suite-evidence-for-sprint-review)
          - [6.2.2.6. Execution Evidence for Sprint Review](#6226-execution-evidence-for-sprint-review)
@@ -5627,6 +5627,7 @@ Feature: Gestión de perfil personal
     When Modifica sus datos personales y guarda los cambios
     Then El sistema debe actualizar la información y mostrar un mensaje de confirmación
 ```
+#### 6.2.1.6. Execution Evidence for Sprint Review
 
 Sprint 1: En este entregable, hemos logrado desarrollar la Landing Page y parte del Web Application para nuestra Startup SmartParking.
 
@@ -5792,7 +5793,304 @@ El Sprint 2 se enfoca en el desarrollo de las historias de usuario para el front
 
 Como parte del proceso de desarrollo, se llevaron a cabo pruebas de aceptación (Acceptance Tests) correspondientes a las User Stories definidas para este sprint, con el objetivo de validar que cada funcionalidad cumpliera con los criterios de aceptación establecidos y asegurar la calidad del producto entregado.
 
-## ** Bounded Context
+## Analytics & Reporting Bounded Context
+```gherkin
+Feature: Generación de métricas de uso de estacionamientos
+
+  Scenario: Registro automático de métrica de uso por espacio
+    Given Un vehículo ocupa un espacio de estacionamiento
+    When El sistema recibe los datos desde los sensores IoT
+    Then Debe generar una métrica de uso con hora de inicio, fin y duración
+
+  Scenario: Validación de tiempos de ocupación
+    Given Se genera una métrica de uso
+    When El tiempo de inicio es posterior al tiempo de fin
+    Then El sistema debe invalidar la métrica y registrar un error de datos
+
+  Scenario: Cálculo de duración de ocupación
+    Given Se registra un evento de entrada y salida de vehículo
+    When Se calcula la duración
+    Then El sistema debe asegurar que la duración sea mayor a 0 minutos
+
+
+Feature: Reportes de eficiencia de espacios
+
+  Scenario: Generación de reporte de eficiencia por espacio
+    Given Un administrador solicita un reporte de eficiencia
+    When Se selecciona un rango de fechas válido
+    Then El sistema debe generar un reporte con la tasa de eficiencia por espacio
+
+  Scenario: Validación de rango de eficiencia
+    Given Se genera un reporte de eficiencia
+    When El cálculo de eficiencia excede el 100%
+    Then El sistema debe corregir el valor y registrar el error en el log
+
+  Scenario: Consulta de reportes históricos
+    Given Un administrador accede al panel de reportes
+    When Solicita ver reportes de periodos anteriores
+    Then El sistema debe listar los reportes almacenados en la base de datos
+
+
+Feature: Análisis de patrones de comportamiento de usuarios
+
+  Scenario: Detección de horas pico de uso
+    Given El sistema dispone de datos históricos de ocupación
+    When Se ejecuta el análisis de patrones
+    Then Debe identificar las horas de mayor uso promedio (peakHours)
+
+  Scenario: Cálculo de duración promedio
+    Given Se analizan las métricas de uso de varios usuarios
+    When Se ejecuta la función calculateAverageDuration
+    Then El sistema debe mostrar la duración promedio de ocupación
+
+  Scenario: Generación de patrones de comportamiento
+    Given El sistema ha recopilado métricas de uso por usuario
+    When Se aplica el análisis de patrones
+    Then Se debe generar un patrón de comportamiento anonimizado por usuario
+
+
+Feature: Gestión del dashboard administrativo
+
+  Scenario: Creación de dashboard personalizado
+    Given Un administrador desea configurar su panel de control
+    When Agrega widgets con KPIs relevantes
+    Then El sistema debe crear un dashboard y almacenarlo en caché
+
+  Scenario: Actualización de widgets en el dashboard
+    Given Un dashboard ya existente
+    When El administrador agrega o elimina un widget
+    Then El sistema debe actualizar la configuración y reflejar los cambios en tiempo real
+
+  Scenario: Visualización del dashboard
+    Given Un administrador autenticado accede a su panel
+    When Solicita ver el dashboard configurado
+    Then El sistema debe mostrar todos los KPIs y su estado actual
+
+
+Feature: Exportación de reportes
+
+  Scenario: Exportar reporte a formato PDF
+    Given Un administrador selecciona un reporte generado
+    When Solicita exportarlo en formato PDF
+    Then El sistema debe generar un archivo PDF válido para descarga
+
+  Scenario: Exportar reporte a formato CSV o XLSX
+    Given Un administrador desea procesar los datos en otra herramienta
+    When Selecciona el formato CSV o XLSX
+    Then El sistema debe validar el formato y exportar correctamente el reporte
+
+  Scenario: Validación de formato de exportación
+    Given Un usuario intenta exportar un reporte
+    When Selecciona un formato no soportado
+    Then El sistema debe mostrar un error indicando los formatos válidos (PDF, CSV, XLSX)
+```
+## Space & IoT Management Bounded Context
+```gherkin
+Feature: Gestión de espacios de estacionamiento
+
+  Scenario: Asignar un espacio disponible a una reserva
+    Given Un usuario ha realizado una reserva válida
+    When El sistema ejecuta el comando AssignSpaceCommand
+    Then Debe asignarse un espacio con estado "AVAILABLE" y vincularlo a la reserva
+
+  Scenario: Liberar un espacio ocupado
+    Given Un espacio tiene una reserva activa
+    When El sistema ejecuta el comando ReleaseSpaceCommand
+    Then El estado del espacio debe cambiar a "AVAILABLE" y registrarse el tiempo de uso
+
+  Scenario: Actualizar el estado del espacio
+    Given Un espacio de estacionamiento se encuentra registrado
+    When Se ejecuta el comando UpdateSpaceStatusCommand con estado "MAINTENANCE"
+    Then El sistema debe actualizar su estado y registrar la fecha de última modificación
+
+  Scenario: Consultar espacio por ID
+    Given Un usuario solicita información de un espacio específico
+    When Se ejecuta la consulta GetParkingSpaceByIdQuery
+    Then El sistema debe retornar los datos completos del espacio solicitado
+
+
+Feature: Gestión de dispositivos IoT (ESP32)
+
+  Scenario: Conectar un dispositivo IoT al sistema
+    Given Un dispositivo ESP32 se inicializa con su dirección IP y MAC
+    When Se ejecuta el comando ConnectIoTDeviceCommand
+    Then El sistema debe registrar el dispositivo como conectado y actualizar su última sincronización
+
+  Scenario: Desconectar un dispositivo IoT
+    Given Un dispositivo IoT está actualmente conectado
+    When Se ejecuta el comando DisconnectIoTDeviceCommand
+    Then El sistema debe marcarlo como desconectado y registrar la fecha de desconexión
+
+  Scenario: Consultar estado de los dispositivos IoT
+    Given Un administrador desea conocer el estado de los ESP32
+    When Se ejecuta la consulta GetIoTDeviceStatusQuery
+    Then El sistema debe devolver la lista de dispositivos con su estado de conexión
+
+
+Feature: Gestión de sensores ultrasónicos (HC-SR04)
+
+  Scenario: Actualizar el estado de un sensor
+    Given Un sensor está asociado a un espacio
+    When Se ejecuta el comando UpdateSensorStateCommand con estado "ERROR"
+    Then El sistema debe actualizar el estado del sensor y registrar el evento
+
+  Scenario: Actualizar la distancia detectada por el sensor
+    Given Un sensor detecta un cambio en la distancia medida
+    When Se ejecuta el comando UpdateSensorDistanceCommand
+    Then El sistema debe guardar la nueva distancia y actualizar la hora de detección
+
+  Scenario: Consultar sensor por espacio asociado
+    Given Un administrador solicita información del sensor de un espacio
+    When Se ejecuta la consulta GetSensorByParkingSpaceIdQuery
+    Then El sistema debe devolver los datos del sensor asociado
+
+
+Feature: Gestión de LEDs de los espacios
+
+  Scenario: Cambiar color de LED según estado del espacio
+    Given Un espacio cambia su estado a "OCCUPIED"
+    When Se ejecuta el comando UpdateLEDStatusCommand
+    Then El sistema debe actualizar el color del LED a rojo e informar el cambio
+
+  Scenario: Consultar estado actual de LEDs
+    Given Un administrador desea revisar los LEDs activos
+    When Se ejecuta la consulta LEDQueryService
+    Then El sistema debe listar cada LED con su color y estado operativo
+
+
+Feature: Detección automática de eventos desde sensores
+
+  Scenario: Detección de llegada de vehículo
+    Given Un sensor HC-SR04 detecta un vehículo
+    When Se emite el evento VehicleDetectedEvent
+    Then El sistema debe actualizar el estado del espacio a "OCCUPIED" y emitir StartTimerEvent
+
+  Scenario: Detección de salida de vehículo
+    Given Un vehículo abandona un espacio
+    When Se emite el evento VehicleLeftEvent
+    Then El sistema debe liberar el espacio, emitir StopTimerEvent y registrar la hora de salida
+
+
+Feature: Sincronización y procesamiento de datos IoT
+
+  Scenario: Procesar datos de sensores recibidos
+    Given Un conjunto de datos es enviado desde el ESP32 central
+    When Se emite el evento SensorDataReceived
+    Then El sistema debe actualizar los estados de sensores y espacios correspondientes
+
+  Scenario: Calcular duración total de uso
+    Given Se ha iniciado y detenido un temporizador de ocupación
+    When Se emite el evento CalculateDurationEvent
+    Then El sistema debe registrar la duración total en el historial del espacio
+
+
+Feature: Persistencia y consultas de datos
+
+  Scenario: Guardar información de espacios y sensores
+    Given Se modifican estados o lecturas de dispositivos
+    When Se invoca SpaceRepository o SensorRepository
+    Then El sistema debe persistir los cambios en la base de datos
+
+  Scenario: Consultar disponibilidad de espacios
+    Given Un usuario desea conocer los espacios libres
+    When Se ejecuta GetAllParkingSpacesQuery
+    Then El sistema debe devolver una lista de espacios con estado "AVAILABLE"
+
+  Scenario: Obtener métricas de uso histórico
+    Given Se almacenan registros de tiempo de uso en TimeTrackingRepository
+    When Un administrador solicita reportes de ocupación
+    Then El sistema debe devolver el historial y estadísticas de uso por espacio
+```
+
+## Reservation Management Bounded Context
+```gherkin
+Feature: Reserva de espacios de coworking UPC
+
+  Scenario: Creación exitosa de una reserva
+    Given Un usuario autenticado accede al módulo de reservas
+    When Selecciona un espacio disponible, una fecha y un horario válidos
+    Then El sistema debe registrar la reserva y mostrar un mensaje de confirmación
+
+  Scenario: Intento de reserva en horario ocupado
+    Given Un usuario autenticado accede al módulo de reservas
+    When Selecciona un horario que ya está reservado por otro usuario
+    Then El sistema debe mostrar un mensaje indicando que el espacio no está disponible
+
+Feature: Gestión de reservas del usuario
+
+  Scenario: Visualizar mis reservas
+    Given Un usuario autenticado accede a la sección "Mis reservas"
+    When Solicita ver su historial de reservas
+    Then El sistema debe mostrar una lista con todas sus reservas activas y pasadas
+
+  Scenario: Cancelar una reserva
+    Given Un usuario autenticado accede a "Mis reservas"
+    When Selecciona una reserva futura y confirma su cancelación
+    Then El sistema debe eliminar la reserva y mostrar un mensaje de confirmación
+
+Feature: Recordatorios y notificaciones
+
+  Scenario: Notificación de reserva próxima
+    Given Un usuario tiene una reserva programada
+    When Falte menos de una hora para el inicio
+    Then El sistema debe enviar una notificación recordando la hora y ubicación del espacio
+
+  Scenario: Notificación de cancelación
+    Given Un usuario cancela una reserva confirmada
+    When La acción se completa
+    Then El sistema debe enviar una notificación confirmando la cancelación
+```
+
+## Notification Bounded Context
+```gherkin
+Feature: Notificaciones del sistema SmartParking UPC
+
+  Scenario: Recepción de notificación por reserva confirmada
+    Given Un usuario ha realizado una reserva de estacionamiento
+    When La reserva es confirmada por el sistema
+    Then El sistema debe enviar una notificación con el título "Reserva confirmada" por correo y push
+
+  Scenario: Recepción de notificación por reserva cancelada
+    Given Un usuario tenía una reserva activa
+    When La reserva es cancelada por el usuario o el sistema
+    Then El sistema debe enviar una notificación informando la cancelación
+
+Feature: Preferencias de notificación del usuario
+
+  Scenario: Actualizar preferencias de canal
+    Given Un usuario accede a su configuración de notificaciones
+    When Desactiva las notificaciones por SMS y deja activas las de correo electrónico
+    Then El sistema debe guardar sus preferencias y solo enviarle correos en adelante
+
+  Scenario: Activar horas de silencio
+    Given Un usuario desea no recibir notificaciones durante la noche
+    When Establece sus horas de silencio de 22:00 a 08:00
+    Then El sistema debe respetar ese horario y no enviar notificaciones no urgentes durante ese periodo
+
+Feature: Visualización de notificaciones en la aplicación
+
+  Scenario: Ver listado de notificaciones
+    Given Un usuario autenticado accede a la sección "Notificaciones"
+    When Solicita ver sus notificaciones más recientes
+    Then El sistema debe mostrar una lista con título, mensaje, fecha y estado (leída/no leída)
+
+  Scenario: Marcar notificación como leída
+    Given Un usuario tiene notificaciones sin leer
+    When Selecciona una notificación y la visualiza
+    Then El sistema debe marcarla como leída y actualizar el contador de notificaciones pendientes
+
+Feature: Manejo automático de notificaciones del sistema
+
+  Scenario: Reintento de envío fallido
+    Given Una notificación no pudo enviarse por problemas de conexión
+    When El sistema detecta el fallo
+    Then Debe reintentar enviarla hasta tres veces antes de marcarla como fallida
+
+  Scenario: Expiración de notificación
+    Given Una notificación tiene una fecha de expiración configurada
+    When La fecha actual supera la expiración
+    Then El sistema debe marcar la notificación como expirada y no intentar enviarla
+```
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
