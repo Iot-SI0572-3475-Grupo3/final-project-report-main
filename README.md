@@ -5703,8 +5703,8 @@ Web Application En las siguientes imágenes se evidencia la colaboración activa
 | **Attendees (to planning meeting)** | Todos los miembros del equipo |
 | **Sprint Goal & User Stories** | |
 | **Sprint 2 Goal** | Para este segundo avance, nos centramos en establecer el backend y frontend del proyecto. A la vez, se logró un primer avance en la integración y simulación con los dispositivos IoT, obteniendo resultados deseados, con el objetivo de establecer la conexión entre ambos aspectos. |
-| **Sprint 2 Velocity** | ** story points |
-| **Sum of Story Points** | ** story points |
+| **Sprint 2 Velocity** | 96 story points |
+| **Sum of Story Points** | 96 story points |
 
 #### 6.2.2.2. Aspect Leaders and Collaborators
 
@@ -5724,18 +5724,69 @@ A continuación explicamos la organización que tuvimos con respecto al Frontend
 
 El Sprint 2 se enfoca en el desarrollo de las historias de usuario para el frontend y el backend, y como se conectan con nuestra simulación de dispositivos IoT
 
-| User Story | | Work-Item / Task | | | | | |
-|------------|--|------------------|--|--|--|--|--|
-| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** (To-do / In-Process / To-Review / Done) |
-| USXX | XXX | TX.1 | XXXX | XXXXXXXXX | 0 | XXXXX | Done |
+| User Story |                                 | Work-Item / Task |                                    |                                                                                             |                        |                  |            |
+| ---------- | ------------------------------- | ---------------- | ---------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------- | ---------------- | ---------- |
+| **Id**     | **Title**                       | **Id**           | **Title**                          | **Description**                                                                             | **Estimation (Hours)** | **Assigned To**  | **Status** |
+| **TS02**   | API Gestión Reservas            | T8.1             | Endpoints CRUD Reservas            | Implementar endpoints RESTful para crear, consultar y cancelar reservas con validaciones    | 8                      | Leonardo Linares | Done       |
+| **US04**   | Crear Nueva Reserva             | T8.2             | UI de creación reserva             | Desarrollar formulario de creación de reserva con validación de horarios y disponibilidad   | 6                      | Fernando Salgado | Done       |
+| **US05**   | Ver Estado Reservas             | T8.3             | Vista mis reservas                 | Crear pantalla para listar reservas activas y pasadas con su estado y tiempo restante       | 5                      | Luis Aquije      | Done       |
+| **US06**   | Cancelar Reserva                | T8.4             | Endpoint y botón de cancelación    | Implementar función de cancelación de reserva en backend y frontend                         | 4                      | Carlos Chávez    | Done       |
+| **TS03**   | Integración IoT ESP32           | T9.1             | Comunicación bidireccional ESP32   | Implementar servidor MQTT o WebSocket para intercambio de estado entre ESP32 y backend      | 10                     | Luciano Ruiz     | Done       |
+| **US09**   | Monitoreo Estado Espacios       | T9.2             | Dashboard en tiempo real           | Crear dashboard que muestre el estado de los espacios en tiempo real (libre/ocupado)        | 8                      | Luis Aquije      | Done       |
+| **US07**   | Confirmación Automática Llegada | T9.3             | Simulación detección llegada       | Simular detección automática desde ESP32 para validar llegada y activar reserva             | 8                      | Luciano Ruiz     | Done       |
+| **US08**   | Finalización Automática Sesión  | T9.4             | Simulación salida automática       | Simular evento de salida desde dispositivo IoT para liberar espacio                         | 6                      | Luis Aquije      | Done       |
+| **US10**   | Indicación Visual Espacio       | T9.5             | LED o visualización asignación     | Simular encendido de indicador LED del espacio asignado mediante IoT                        | 4                      | Luciano Ruiz     | Done       |
+| **US12**   | Visualización Tiempo en Vivo    | T10.1            | Temporizador en UI                 | Mostrar en pantalla el tiempo transcurrido en la sesión en vivo                             | 5                      | Fernando Salgado | Done       |
+| **US11**   | Cronometraje Automático         | T10.2            | Lógica de cronometraje             | Implementar cronómetro automático vinculado al inicio/fin detectado por IoT                 | 5                      | Leonardo Linares | Done       |
+| **US14**   | Registro Automático Ausencias   | T11.1            | Detección y registro de ausencias  | Integrar eventos IoT con backend para marcar ausencias de usuarios sin detección de llegada | 6                      | Luciano Ruiz     | Done       |
+| **TS04**   | Sistema Notificaciones          | T12.1            | Servicio push backend              | Crear servicio push (Firebase o similar) para enviar notificaciones automáticas             | 8                      | Carlos Chávez    | Done       |
+| **US22**   | Notificaciones Reserva          | T12.2            | UI y envío notificaciones reservas | Desarrollar envío y visualización de notificaciones sobre estado de reserva                 | 5                      | Luis Aquije      | Done       |
+| **US23**   | Notificaciones Sesión           | T12.3            | Notificaciones inicio/fin sesión   | Implementar alertas automáticas al iniciar y finalizar sesión                               | 4                      | Leonardo Linares | Done       |
+| **US24**   | Notificaciones Penalizaciones   | T12.4            | Envío penalizaciones               | Generar notificaciones automáticas por ausencias y suspensiones                             | 4                      | Carlos Chávez    | Done       |
+| **US18**   | Dashboard Administrativo        | T13.1            | Vista admin sistema                | Desarrollar dashboard con métricas, estado de usuarios y uso de espacios                    | 10                     | Fernando Salgado | Done       |
+| **US19**   | Gestión Usuarios                | T13.2            | CRUD usuarios admin                | Implementar vistas y endpoints para gestión, suspensión y reactivación de usuarios          | 8                      | Leonardo Linares | Done       |
+| **US21**   | Reportes y Métricas             | T13.3            | Generador de reportes              | Crear módulo que genere reportes sobre uso de espacios y penalizaciones                     | 6                      | Carlos Chávez    | Done       |
+| **US25**   | Configuración Preferencias      | T14.1            | Pantalla de preferencias           | Desarrollar interfaz para configurar alertas y notificaciones personalizadas                | 5                      | Luis Aquije      | Done       |
+
 
 #### 6.2.2.4. Development Evidence for Sprint Review
 
-[Esta sección se completará con tabla de commits]
+**Repository: smartparking-frontend**
 
-| **Repository** | **Branch** | **Commit Id** | **Commit Message** | **Commit Message Body** | **Committed on (Date)** |
-|------------|--------|-----------|----------------|---------------------|---------------------|
-| | | | | | |
+| **Repository**        | **Branch**        | **Commit Id** | **Commit Message**                                                         | **Commit Message Body**                                            | **Committed on (Date)** |
+| --------------------- | ----------------- | ------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------- |
+| smartparking-frontend | main              | ffbb433e7074e48c334576abeb2c71fafd09da0a | initial commit                                                             | Initial commit — setup of project structure.                       | Oct 7, 2025             |
+| smartparking-frontend | develop           | bfa6fd56d5173246d6a3fd062e200e218c53da2a | Add IAM and navbar components, integrate Tailwind CSS                      | Integrated TailwindCSS and implemented navbar for UI consistency.  | Oct 8, 2025             |
+| smartparking-frontend | develop           | 4b6604202868334d432a7c91061718e0702cd929 | Refactor feature structure and remove unused files                         | Cleaned up redundant folders and components.                       | Oct 8, 2025             |
+| smartparking-frontend | feature/dashboard | 30642e6308774b46c9adb52c1ce13799ac21c355 | Add dashboard feature with main components                                 | Implemented Dashboard with layout, cards, and API integration.     | Oct 8, 2025             |
+| smartparking-frontend | feature/dashboard | 2dcf66c3934a0dd0205ff2da1676d0c64193b1cc | Merge pull request #1 from Iot-SI0572-3475-Grupo3/feature/dashboard        | Integrated dashboard feature branch into main.                     | Oct 8, 2025             |
+| smartparking-frontend | feature/profile   | bb0218a9d29f54f87bfc68ba3765b37a3ef69dd4 | feat(profile): add history and profile                                     | Added user history and profile management module.                  | Oct 8, 2025             |
+| smartparking-frontend | feature/profile   | 06735e45b26985b0b99c143c5313de07dcc9220a | feat(profile): add profile feature routes                                  | Configured routing for profile section in React Router.            | Oct 8, 2025             |
+| smartparking-frontend | feature/profile   | 17df065a90f5294592c76bbb19b7a34e933770b5 | feat(profile): create profile pages for settings and history               | Created profile subpages for settings and history views.           | Oct 8, 2025             |
+| smartparking-frontend | feature/profile   | 688a37e1ad0454950d6750b99a3b00b3ddd795b5 | feat(profile): implement reservation history component with pagination     | Added reservation history list with pagination and filters.        | Oct 8, 2025             |
+| smartparking-frontend | feature/profile   | 43aa3107f0a8f27317bc88ab809a54b8722a44dc | feat(profile): implement push notifications settings component             | Developed UI for managing push notification preferences.           | Oct 8, 2025             |
+| smartparking-frontend | feature/profile   | 30d39bc08a3ce0a0b72ebf92c807c2bd63f32dd1 | feat(profile): add notification preference and reservation history models  | Added TypeScript models for notification and reservation entities. | Oct 8, 2025             |
+| smartparking-frontend | feature/profile   | e58fed4789eabd973f1974685e3e83780b81afd0 | Merge remote-tracking branch 'origin/feature/profile' into feature/profile | Merged latest remote updates into profile feature branch.          | Oct 8, 2025             |
+| smartparking-frontend | feature/profile   | 17937e0d5c956d4b57b732735600564c6c08be18 | feat: profile page added                                                   | Initial version of user profile page.                              | Oct 8, 2025             |
+| smartparking-frontend | develop           | 87a25a0a06ae3f930ab1b3a79f1a7ef97078571a | Merge branch 'develop' into feature/profile                                | Merged latest develop branch into profile feature branch.          | Oct 9, 2025             |
+| smartparking-frontend | feature/profile   | 905a3ee028626f6c86c2e5bd35faeacf9e25b0c9 | fix: duplicated profile folder fixed                                       | Removed redundant profile directory to avoid build conflicts.      | Oct 10, 2025            |
+| smartparking-frontend | feature/ui        | be3dcb99d5092d6a88b011f8ecbabce2c851545a | feat: button component added                                               | Added reusable button component with props for type and style.     | Oct 11, 2025            |
+| smartparking-frontend | feature/profile   | 9c65a000051a9c9c028c4b337f60b68bc679bd1d | feat: profile updated                                                      | Updated profile view with dynamic data binding.                    | Oct 11, 2025            |
+| smartparking-frontend | feature/ui        | 8dfa3039098f0306a09c9ab1e4f1ff6708a99c8f | fix: button component fixed                                                | Adjusted button alignment and onClick event handling.              | Oct 22, 2025            |
+| smartparking-frontend | feature/profile   | a1b74e16d5a360469d816ab0136c476f598c7848 | feat: input component added                                                | Implemented reusable input component for login and registration.   | Oct 22, 2025            |
+| smartparking-frontend | feature/profile   | 2b03ffb9e9fe61d2f1eebd3567a99b0334dc2b0b | fix: input component fixed                                                 | Corrected validation logic and input styles for user forms.        | Oct 28, 2025            |
+| smartparking-frontend | feature/profile   | c29e2fb0d4efc46890379b72e7ba6b803910515e | Merge pull request #4 from Iot-SI0572-3475-Grupo3/feature/profile          | Merged profile feature branch into main develop branch.            | Oct 28, 2025            |
+| smartparking-frontend | develop           | 9e4d38ebf88052dbf0f92e8bd252347995c2b55f | feat: httpclient added                                                     | Added HttpClient service integration for API communication.        | Nov 13, 2025            |
+
+**Repository: smartparking-backend**
+
+| **Repository**       | **Branch** | **Commit Id** | **Commit Message**                                       | **Commit Message Body**                                            | **Committed on (Date)** |
+| -------------------- | ---------- | ------------- | -------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------- |
+| smartparking-backend | main       | 270656960cecb749aaf3eea5881558e7aef0eb76 | first commit                                             | Initial backend setup with Spring Boot project structure.          | Nov 6, 2025             |
+| smartparking-backend | develop    | ee196dd5d861a00b75cf20af75130a588a579f73 | Creacion de notificaciones, logica de reservas           | Implemented notification service and reservation management logic. | Nov 9, 2025             |
+| smartparking-backend | develop    | 43a9956326dc9e2c075971e084222b30872e7b98 | Agregar Docker. Agregar logica de expiracion             | Added Docker configuration and token expiration logic.             | Nov 12, 2025            |
+| smartparking-backend | develop    | 7e6c0ebf290f07aec6c5de2f77002a6f9c64ae53 | feat: update correct implementation of swagger and guies | Implemented Swagger configuration and corrected API routes.        | Nov 13, 2025            |
+
 
 #### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
