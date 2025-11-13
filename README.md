@@ -5667,15 +5667,15 @@ Web Application En las siguientes imágenes se evidencia la colaboración activa
 | **Prepared By** | Luciano Ruiz |
 | **Attendees (to planning meeting)** | Todos los miembros del equipo |
 | **Sprint Goal & User Stories** | |
-| **Sprint 2 Goal** | Establecer el backend y frontend del proyecto, y establecer la conexión entre ambos. |
+| **Sprint 2 Goal** | Para este segundo avance, nos centramos en establecer el backend y frontend del proyecto. A la vez, se logró un primer avance en la integración y simulación con los dispositivos IoT, obteniendo resultados deseados, con el objetivo de establecer la conexión entre ambos aspectos. |
 | **Sprint 2 Velocity** | ** story points |
 | **Sum of Story Points** | ** story points |
 
 #### 6.2.2.2. Aspect Leaders and Collaborators
 
-A continuación explicamos la organización que tuvimos con respecto a los distintos Bounded Context, Frontend y Backend a la hora de elaborar nuestros entregables de este Sprint.
+A continuación explicamos la organización que tuvimos con respecto al Frontend, Backend y dispositivos IOT a la hora de elaborar nuestros entregables de este Sprint.
 
-| Team Member (Last Name, First Name) | GitHub Username | Bounded Context | Frontend | Backend |
+| Team Member (Last Name, First Name) | GitHub Username | Frontend | Backend | IOT |
 |------------------------------------|-----------------|---------------------|---------------|------|
 | Salgado Luna, Fernando Brian | fersalgado26 | C | C | C |
 | Ruiz Blas, Luciano Stefano | LucianRuiz | L | L | L |
@@ -5689,11 +5689,9 @@ A continuación explicamos la organización que tuvimos con respecto a los disti
 
 **Introducción**
 
-El Sprint 2 se enfoca en -
+El Sprint 2 se enfoca en el desarrollo de las historias de usuario para el frontend y el backend, y como se conectan con nuestra simulación de dispositivos IoT
 
-Este sprint establece los cimientos técnicos y arquitectónicos sobre los cuales se construirán las funcionalidades de reservas e IoT en los siguientes sprints.
-
-**User Stories Incluidas en el Sprint 1:**
+**User Stories Incluidas en el Sprint 2:**
 - USXX - XXXX (X Story Points)
 
 
@@ -5706,11 +5704,29 @@ Este sprint establece los cimientos técnicos y arquitectónicos sobre los cuale
 
 [Esta sección se completará con tabla de commits]
 
+| **Repository** | **Branch** | **Commit Id** | **Commit Message** | **Commit Message Body** | **Committed on (Date)** |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| | | | | | |
+
 #### 6.2.2.5. Testing Suite Evidence for Sprint Review
+
+Como parte del proceso de desarrollo, se llevaron a cabo pruebas de aceptación (Acceptance Tests) correspondientes a las User Stories definidas para este sprint, con el objetivo de validar que cada funcionalidad cumpliera con los criterios de aceptación establecidos y asegurar la calidad del producto entregado.
+
+## ** Bounded Context
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
+Para esta entrega, el equipo se enfocó en la implementación de sensores clave de movimiento, utilizando la plataforma de simulación Wokwi:
+
+**Wokwi:**
+
+**Frontend:**
+
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
+
+A continuación, se presenta un listado junto con las evidencias de los distintos endpoints disponibles en la API, los cuales permiten la interacción con las entidades principales del sistema.
+
+**Backend:**
 
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
