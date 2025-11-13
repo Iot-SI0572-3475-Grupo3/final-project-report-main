@@ -6146,7 +6146,58 @@ Con esta implementación, se demostró exitosamente el funcionamiento integral d
 
 A continuación, se presenta un listado junto con las evidencias de los distintos endpoints disponibles en la API, los cuales permiten la interacción con las entidades principales del sistema.
 
-**Backend:**
+**Analytics**
+- GET /reservation/dashboard: Obtiene el dashboard del usuario autenticado. Incluye espacios disponibles, sesiones recientes, contador de ausencias (strikes) y si puede reservar.
+
+**IAM**
+- GET /user-profiles/{userId}: Obtiene el perfil público del usuario (nombre, foto, preferencias).
+- PUT /user-profiles/{userId}: Actualiza el perfil del usuario autenticado (nombre, foto, preferencias).
+- POST /user-profiles/{userId}: Crea un perfil de usuario (uso interno al registrarse).
+- DELETE /user-profiles/{userId}: Elimina lógicamente el perfil del usuario.
+- GET /auth/users/{userId}: (ADMIN) Obtiene datos completos del usuario: email, rol, strikes, estado.
+- PUT /auth/users/{userId}: (ADMIN) Actualiza rol, strikes, estado o datos sensibles del usuario.
+- DELETE /auth/users/{userId}: (ADMIN) Elimina permanentemente un usuario del sistema.
+- GET /auth/users: (ADMIN) Lista todos los usuarios con paginación y filtros (rol, estado).
+- POST /auth/users: (ADMIN) Crea un usuario manualmente (útil para pruebas o soporte).
+- POST /auth/users/register/university-member: Registro de miembro universitario. Valida correo @upc.edu.pe.
+- POST /auth/users/register/administrator: (SUPERADMIN) Registro de administrador.
+- POST /auth/users/logout/{sessionId}: Cierra sesión activa e invalida el token.
+- POST /auth/users/login: Inicia sesión. Devuelve JWT y refresh token.
+
+**Notification**
+- GET /notifications/preferences: Obtiene las preferencias de notificación del usuario (push, email, in-app).
+- PUT /notifications/preferences: Actualiza las preferencias de notificación del usuario.
+- POST /notifications/token: Registra el token FCM del dispositivo para notificaciones push.
+- POST /notifications/broadcast: (ADMIN) Envía notificación masiva a todos o por rol.
+- PATCH /notifications/{notificationId}/read: Marca una notificación como leída.
+- GET /notifications: Lista todas las notificaciones del usuario (paginado, filtro por leído/no leído).
+
+**Reservation**
+- POST /reservation: Crea una nueva reserva. Valida disponibilidad, suspensión, horario mínimo (30 min) y anticipación (15 min).
+- POST /reservation/{reservationId}/expire: (IOT/ADMIN) Expira reserva por no llegada. Registra ausencia, aplica strike y libera espacio.
+- POST /reservation/{reservationId}/confirm: Confirma llegada del usuario (escanea QR o IoT detecta entrada). Cambia estado a confirmed.
+- POST /reservation/{reservationId}/complete: Completa la reserva (salida detectada o manual). Libera espacio.
+- POST /reservation/{reservationId}/cancel: Cancela reserva. Libera espacio. Posible penalización si es tarde.
+- POST /reservation/{reservationId}/activate: (IOT) Activa reserva al detectar vehículo. Cambia estado a active.
+- GET /reservation/history: Obtiene el historial completo de reservas del usuario (paginado).
+- GET /reservation/active: Obtiene la reserva activa (active) del usuario.
+
+**Space IoT**
+- PUT /space-iot/parking-spaces/{spaceId}: (IOT) Actualiza el estado del espacio: available, reserved, occupied, maintenance.
+- GET /space-iot/parking-spaces: Lista todos los espacios con su estado actual.
+- POST /space-iot/parking-spaces: (ADMIN) Registra un nuevo espacio (sensor físico).
+- GET /space-iot/parking-spaces/status/{status}: Filtra espacios por estado (available, occupied, etc.).
+- POST /iot/reservation/activate/{spaceId}: (IOT) Detecta vehículo y activa la reserva asociada al espacio.
+
+**Admin Dashboard**
+- GET /admin/dashboard: (ADMIN) Panel de control con espacios ocupados, reservas del día, alertas, suspensiones y sesiones activas.
+- GET /admin/dashboard/ranking?limit=10: (ADMIN) Ranking histórico de usuarios por reservas completadas.
+- GET /admin/dashboard/export: (ADMIN) Descarga reporte en CSV con estadísticas y ranking.
+
+**Backend deployado en Swagger:**
+
+<img src="https://i.imgur.com/kd5EUDz.png" width="100%" />
+<img src="https://i.imgur.com/PnhMG5K.png" width="35%" />
 
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
