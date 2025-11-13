@@ -5654,6 +5654,77 @@ Web Application En las siguientes imágenes se evidencia la colaboración activa
 
 <img src="https://i.imgur.com/jPtuTun.png" width="75%" />
 
+### 6.2.2. Sprint 2
+
+#### 6.2.2.1. Sprint Planning 2
+
+| **Sprint #** | Sprint 2 |
+|--------------|----------|
+| **Sprint Planning Background** | |
+| **Date** | 2025-11-12 |
+| **Time** | 07:00 PM |
+| **Location** | Reunión virtual vía Discord|
+| **Prepared By** | Luciano Ruiz |
+| **Attendees (to planning meeting)** | Todos los miembros del equipo |
+| **Sprint Goal & User Stories** | |
+| **Sprint 2 Goal** | Establecer el backend y frontend del proyecto, y establecer la conexión entre ambos. |
+| **Sprint 2 Velocity** | ** story points |
+| **Sum of Story Points** | ** story points |
+
+#### 6.2.2.2. Aspect Leaders and Collaborators
+
+A continuación explicamos la organización que tuvimos con respecto a los distintos Bounded Context, Frontend y Backend a la hora de elaborar nuestros entregables de este Sprint.
+
+| Team Member (Last Name, First Name) | GitHub Username | Bounded Context | Frontend | Backend |
+|------------------------------------|-----------------|---------------------|---------------|------|
+| Salgado Luna, Fernando Brian | fersalgado26 | C | C | C |
+| Ruiz Blas, Luciano Stefano | LucianRuiz | L | L | L |
+| Linares Tejada, Leonardo Félix Jesús | LeoShadic345 | C | C | C |
+| Chávez Rojas, Carlos Raúl Guillermo | CarlosChavez19 | C | C | C |
+| Aquije Quiroga, Luis Enrique | LuisAquije123 | C | C | C |
+
+**Leyenda:** L = Leader, C = Collaborator
+
+#### 6.2.2.3. Sprint Backlog 2
+
+**Introducción**
+
+El Sprint 2 se enfoca en -
+
+Este sprint establece los cimientos técnicos y arquitectónicos sobre los cuales se construirán las funcionalidades de reservas e IoT en los siguientes sprints.
+
+**User Stories Incluidas en el Sprint 1:**
+- USXX - XXXX (X Story Points)
+
+
+| User Story | | Work-Item / Task | | | | | |
+|------------|--|------------------|--|--|--|--|--|
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** (To-do / In-Process / To-Review / Done) |
+| USXX | XXX | TX.1 | XXXX | XXXXXXXXX | 0 | XXXXX | Done |
+
+#### 6.2.2.4. Development Evidence for Sprint Review
+
+[Esta sección se completará con tabla de commits]
+
+#### 6.2.2.5. Testing Suite Evidence for Sprint Review
+
+#### 6.2.2.6. Execution Evidence for Sprint Review
+
+#### 6.2.2.7. Services Documentation Evidence for Sprint Review
+
+#### 6.2.2.8. Software Deployment Evidence for Sprint Review
+
+#### 6.2.2.9. Team Collaboration Insights during Sprint
+
+## 6.3. Validation Interviews.
+
+### 6.3.1. Diseño de Entrevistas.
+
+### 6.3.2. Registro de Entrevistas.
+
+### 6.3.3. Evaluaciones según heurísticas.
+
+## 6.4. Video About-the-Product.
 
 # Conclusiones
 
