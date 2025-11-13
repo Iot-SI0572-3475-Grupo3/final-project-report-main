@@ -92,14 +92,12 @@
       </td>
     </tr>
     <tr>
-      <td>xx</td>
-      <td>xx</td>
+      <td>13/10/2025</td>
+      <td>Leonardo Linares</td>
       <td>
         <ul>
-          <li>xx</li>
-          <li>xx</li>
-          <li>xx</li>
-          <li>xx</li>
+          <li>Capítulo VI: Sprint 2</li>
+          <li>Frontend y Backend</li>
         </ul>
       </td>
     </tr>
@@ -265,16 +263,26 @@ En esta sección, regirstraremos los cambios y logros que se completaron en cada
       + [6.1.3. Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)
       + [6.1.4. Software Deployment Configuration](#614-software-deployment-configuration)
    * [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
-      + [6.2.X. Sprint n](#62x-sprint-n)
-         - [6.2.X.1. Sprint Planning n](#62x1-sprint-planning-n)
-         - [6.2.X.2. Aspect Leaders and Collaborators](#62x2-aspect-leaders-and-collaborators)
-         - [6.2.X.3. Sprint Backlog n](#62x3-sprint-backlog-n)
-         - [6.2.X.4. Development Evidence for Sprint Review](#62x4-development-evidence-for-sprint-review)
-         - [6.2.X.5. Testing Suite Evidence for Sprint Review](#62x5-testing-suite-evidence-for-sprint-review)
-         - [6.2.X.6. Execution Evidence for Sprint Review](#62x6-execution-evidence-for-sprint-review)
-         - [6.2.X.7. Services Documentation Evidence for Sprint Review](#62x7-services-documentation-evidence-for-sprint-review)
-         - [6.2.X.8. Software Deployment Evidence for Sprint Review](#62x8-software-deployment-evidence-for-sprint-review)
-         - [6.2.X.9. Team Collaboration Insights during Sprint](#62x9-team-collaboration-insights-during-sprint)
+      + [6.2.1. Sprint 1](#621-sprint-1)
+         - [6.2.1.1. Sprint Planning n](#6211-sprint-planning-1)
+         - [6.2.1.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
+         - [6.2.1.3. Sprint Backlog 1](#6213-sprint-backlog-1)
+         - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
+         - [6.2.1.5. Testing Suite Evidence for Sprint Review](#6215-testing-suite-evidence-for-sprint-review)
+         - [6.2.1.6. Execution Evidence for Sprint Review](#6216-execution-evidence-for-sprint-review)
+         - [6.2.1.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
+         - [6.2.1.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
+         - [6.2.1.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
+      + [6.2.2. Sprint n](#622-sprint-2)
+         - [6.2.2.1. Sprint Planning n](#6221-sprint-planning-2)
+         - [6.2.2.2. Aspect Leaders and Collaborators](#6222-aspect-leaders-and-collaborators)
+         - [6.2.2.3. Sprint Backlog n](#6223-sprint-backlog-2)
+         - [6.2.2.4. Development Evidence for Sprint Review](#6224-development-evidence-for-sprint-review)
+         - [6.2.2.5. Testing Suite Evidence for Sprint Review](#6225-testing-suite-evidence-for-sprint-review)
+         - [6.2.2.6. Execution Evidence for Sprint Review](#6226-execution-evidence-for-sprint-review)
+         - [6.2.2.7. Services Documentation Evidence for Sprint Review](#6227-services-documentation-evidence-for-sprint-review)
+         - [6.2.2.8. Software Deployment Evidence for Sprint Review](#6228-software-deployment-evidence-for-sprint-review)
+         - [6.2.2.9. Team Collaboration Insights during Sprint](#6229-team-collaboration-insights-during-sprint)
    * [6.3. Validation Interviews](#63-validation-interviews)
       + [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
       + [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
@@ -326,10 +334,23 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         Carlos: Elaboré los diagramas de despliegue y contribuí a la documentación técnica del sprint, asegurando la coherencia entre los repositorios y la arquitectura del proyecto.
         <p/>
         Luis Aquije: Apoyé en la validación funcional del Landing Page, y las diferentes vistas para el Sprint 1.
+        </p>
+        TB2:
+        <p/>
+        Luciano Ruiz: Estableci los sprints, y participe en el desarrollo de la simulación wokwi y backend.
+        <p/>
+        Fernando: Establecí las bases del frontend, para que sea compatible con los servicios desarrollados en el backend.
+        <p/>
+        Leonardo: Ayude en la elaboración del capitulo VI con la documentación del Sprint 2.
+        <p/>
+        Carlos: Estructuré la arquitectura de datos y los sistemas de reportes para el funcionamiento completo del backend.
+        <p/>
+        Luis Aquije: Realicé pruebas funcionales para el funcionamiento de la simulación wokwi.</p>
     </td>
     <td>
         TB1: En esta entrega logramos trabajar en equipo, apoyándonos mutuamente y colaborando en la redacción del informe. Cada uno de los integrantes participó activamente en el desarrollo de las secciones asignadas, lo que permitió un avance significativo en el proyecto. La comunicación constante y la disposición para ayudar a los demás fueron clave para el éxito de esta entrega.</p>
         TP1: En esta entrega, el equipo demostró un liderazgo compartido sólido. Cada miembro asumió responsabilidades específicas para la realización de las vistas del Sprint 1, contribuyendo desde su especialidad para culminar con un producto funcional y documentado.</p>
+        TB2: En esta entrega, el equipo demostro una buena delegación de tareas, para el desarrollo de las metas propuestas para el Sprint 2, donde cada miembro se apoyaba cuando necesitaban ayuda.</p>
      </td>
   </tr>
   <tr>
@@ -359,9 +380,23 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
         Carlos: Contribuí a la organización de las tareas en GitHub Projects y a la verificación de los user goals para el Sprint 1.
         <p/>
         Luis Aquije: Realicé pruebas funcionales para la revisión del sprint, validando el cumplimiento de las metas técnicas.
+    <p>
+        TB2:
+        <p/>
+        Luciano Ruiz: Estableci los sprints, y participe en el desarrollo de la simulación wokwi y backend.
+        <p/>
+        Fernando: Establecí las bases del frontend, para que sea compatible con los servicios desarrollados en el backend.
+        <p/>
+        Leonardo: Ayude en la elaboración del capitulo VI con la documentación del Sprint 2.
+        <p/>
+        Carlos: Estructuré la arquitectura de datos y los sistemas de reportes para el funcionamiento completo del backend.
+        <p/>
+        Luis Aquije: Realicé pruebas funcionales para el funcionamiento de la simulación wokwi.</p>
+    <p>
     <td>
     TB1: En esta entrega, logramos establecer un entorno colaborativo e inclusivo, donde cada miembro del equipo pudo expresar sus ideas y contribuir al desarrollo del proyecto. La planificación de tareas y el cumplimiento de objetivos fueron fundamentales para avanzar en la redacción del informe y en la elaboración de los diagramas y documentos requeridos. La comunicación constante y el uso del tablero Kanban facilitaron la organización y el seguimiento de las tareas asignadas.</p>
     TP1: En esta etapa final, el equipo consolidó su dinámica de trabajo ágil, logrando un flujo de comunicación eficiente y una ejecución ordenada de las tareas para el Sprint 1 de Landing Page y presentar un avance del Frontend.</p>
+    TB2: En esta entrega, las tareas fueron delegadas según las experiencias de los miembros, por lo que se establecieron las metas a partir de las necesidades del Sprint 2, para poder cumplir con sus objetivos.</p>
   </td>
   </tr>
 </table>
@@ -5687,13 +5722,7 @@ A continuación explicamos la organización que tuvimos con respecto al Frontend
 
 #### 6.2.2.3. Sprint Backlog 2
 
-**Introducción**
-
 El Sprint 2 se enfoca en el desarrollo de las historias de usuario para el frontend y el backend, y como se conectan con nuestra simulación de dispositivos IoT
-
-**User Stories Incluidas en el Sprint 2:**
-- USXX - XXXX (X Story Points)
-
 
 | User Story | | Work-Item / Task | | | | | |
 |------------|--|------------------|--|--|--|--|--|
