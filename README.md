@@ -6222,6 +6222,8 @@ A continuación, se presenta un listado junto con las evidencias de los distinto
 En esta entrega, el equipo se enfoco en el desarrollo e implementacion del frontend, junto a su integracion con el backend. Además de la simulación de los elementos IoT en el Wokwi.
 <img src="https://i.imgur.com/o7PlaFw.png" width="75%" />
 <img src="https://i.imgur.com/R6WoKOq.png" width="70%" />
+<img src="https://i.imgur.com/QW8BZbU.png" width="75%" />
+<img src="https://i.imgur.com/dNZSmsK.png" width="75%" />
 
 ## 6.3. Validation Interviews.
 
