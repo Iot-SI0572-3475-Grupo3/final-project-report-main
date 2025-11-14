@@ -2,7 +2,7 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"></img><br>
     <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
     <strong>Ingeniería de Software - Ciclo 2025-20</strong><br>
-    <strong>Código de curso: 1ASI0572 <br>
+    <strong>Código de curso: 1ASI0572</strong> <br>
     <strong>Nombre del curso: Desarrollo de Soluciones IoT</strong><br>
     <strong>NRC: 3475</strong><br>
     <strong>Profesor: Marco Antonio Leon Baca </strong><br>
