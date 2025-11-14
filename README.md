@@ -6249,6 +6249,18 @@ El uso de GitFlow, Conventional Commits y Semantic Versioning, junto con la meto
 - **Impacto institucional y experiencia de usuario:**
 SmartParking fortalece la gestión sostenible y moderna del campus UPC, ofreciendo una experiencia UI/UX intuitiva y coherente para conductores y administradores, contribuyendo a la digitalización eficiente de los servicios universitarios.
 
+- **Integración funcional del ecosistema IoT–Cloud:**
+Durante este sprint se logró consolidar la comunicación efectiva entre los prototipos IoT (ESP32, sensores ultrasónicos y LEDs RGB) y los servicios en la nube mediante ThingSpeak, permitiendo transmitir datos en tiempo real sobre ocupación y disponibilidad de espacios.
+
+- **Prototipo de monitoreo operativo 100% funcional:**
+Se completó la lógica de detección, visualización y reporte del estado de los estacionamientos, incluyendo lectura de distancias, actualización de LEDs, renderizado en pantalla OLED y envío de métricas, demostrando un flujo estable end-to-end en el sistema de monitoreo.
+
+- **Arquitectura alineada al diseño planteado:**
+Este sprint permitió validar que la arquitectura modular definida (IoT → Cloud → Servicios → Frontend) soporta adecuadamente la captura, procesamiento y exposición de datos, sentando las bases para la futura integración con la aplicación móvil y el dashboard web.
+
+- **Mejoras significativas en la experiencia de usuario administrativo:**
+La información recolectada desde los dispositivos ahora puede visualizarse de forma consolidada en la nube, lo que habilita futuras funcionalidades como dashboards, indicadores y alertas, optimizando la gestión operativa del estacionamiento.
+
 # Bibliografía
 
 # Anexos
