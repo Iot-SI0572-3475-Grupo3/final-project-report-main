@@ -5724,29 +5724,51 @@ A continuación explicamos la organización que tuvimos con respecto al Frontend
 
 El Sprint 2 se enfoca en el desarrollo de las historias de usuario para el frontend y el backend, y como se conectan con nuestra simulación de dispositivos IoT
 
-| User Story |                                 | Work-Item / Task |                                    |                                                                                             |                        |                  |            |
-| ---------- | ------------------------------- | ---------------- | ---------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------- | ---------------- | ---------- |
-| **Id**     | **Title**                       | **Id**           | **Title**                          | **Description**                                                                             | **Estimation (Hours)** | **Assigned To**  | **Status** |
-| **TS02**   | API Gestión Reservas            | T8.1             | Endpoints CRUD Reservas            | Implementar endpoints RESTful para crear, consultar y cancelar reservas con validaciones    | 8                      | Leonardo Linares | Done       |
-| **US04**   | Crear Nueva Reserva             | T8.2             | UI de creación reserva             | Desarrollar formulario de creación de reserva con validación de horarios y disponibilidad   | 6                      | Fernando Salgado | Done       |
-| **US05**   | Ver Estado Reservas             | T8.3             | Vista mis reservas                 | Crear pantalla para listar reservas activas y pasadas con su estado y tiempo restante       | 5                      | Luis Aquije      | Done       |
-| **US06**   | Cancelar Reserva                | T8.4             | Endpoint y botón de cancelación    | Implementar función de cancelación de reserva en backend y frontend                         | 4                      | Carlos Chávez    | Done       |
-| **TS03**   | Integración IoT ESP32           | T9.1             | Comunicación bidireccional ESP32   | Implementar servidor MQTT o WebSocket para intercambio de estado entre ESP32 y backend      | 10                     | Luciano Ruiz     | Done       |
-| **US09**   | Monitoreo Estado Espacios       | T9.2             | Dashboard en tiempo real           | Crear dashboard que muestre el estado de los espacios en tiempo real (libre/ocupado)        | 8                      | Luis Aquije      | Done       |
-| **US07**   | Confirmación Automática Llegada | T9.3             | Simulación detección llegada       | Simular detección automática desde ESP32 para validar llegada y activar reserva             | 8                      | Luciano Ruiz     | Done       |
-| **US08**   | Finalización Automática Sesión  | T9.4             | Simulación salida automática       | Simular evento de salida desde dispositivo IoT para liberar espacio                         | 6                      | Luis Aquije      | Done       |
-| **US10**   | Indicación Visual Espacio       | T9.5             | LED o visualización asignación     | Simular encendido de indicador LED del espacio asignado mediante IoT                        | 4                      | Luciano Ruiz     | Done       |
-| **US12**   | Visualización Tiempo en Vivo    | T10.1            | Temporizador en UI                 | Mostrar en pantalla el tiempo transcurrido en la sesión en vivo                             | 5                      | Fernando Salgado | Done       |
-| **US11**   | Cronometraje Automático         | T10.2            | Lógica de cronometraje             | Implementar cronómetro automático vinculado al inicio/fin detectado por IoT                 | 5                      | Leonardo Linares | Done       |
-| **US14**   | Registro Automático Ausencias   | T11.1            | Detección y registro de ausencias  | Integrar eventos IoT con backend para marcar ausencias de usuarios sin detección de llegada | 6                      | Luciano Ruiz     | Done       |
-| **TS04**   | Sistema Notificaciones          | T12.1            | Servicio push backend              | Crear servicio push (Firebase o similar) para enviar notificaciones automáticas             | 8                      | Carlos Chávez    | Done       |
-| **US22**   | Notificaciones Reserva          | T12.2            | UI y envío notificaciones reservas | Desarrollar envío y visualización de notificaciones sobre estado de reserva                 | 5                      | Luis Aquije      | Done       |
-| **US23**   | Notificaciones Sesión           | T12.3            | Notificaciones inicio/fin sesión   | Implementar alertas automáticas al iniciar y finalizar sesión                               | 4                      | Leonardo Linares | Done       |
-| **US24**   | Notificaciones Penalizaciones   | T12.4            | Envío penalizaciones               | Generar notificaciones automáticas por ausencias y suspensiones                             | 4                      | Carlos Chávez    | Done       |
-| **US18**   | Dashboard Administrativo        | T13.1            | Vista admin sistema                | Desarrollar dashboard con métricas, estado de usuarios y uso de espacios                    | 10                     | Fernando Salgado | Done       |
-| **US19**   | Gestión Usuarios                | T13.2            | CRUD usuarios admin                | Implementar vistas y endpoints para gestión, suspensión y reactivación de usuarios          | 8                      | Leonardo Linares | Done       |
-| **US21**   | Reportes y Métricas             | T13.3            | Generador de reportes              | Crear módulo que genere reportes sobre uso de espacios y penalizaciones                     | 6                      | Carlos Chávez    | Done       |
-| **US25**   | Configuración Preferencias      | T14.1            | Pantalla de preferencias           | Desarrollar interfaz para configurar alertas y notificaciones personalizadas                | 5                      | Luis Aquije      | Done       |
+| User Story | | Work-Item / Task | | | | | |
+|------------|--|------------------|--|--|--|--|--|
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| TS02 | API Gestión Reservas | T8.1 | Endpoints CRUD Reservas | Implementar endpoints para crear, listar y cancelar reservas con validaciones | 8 | Leonardo Linares | Done |
+| TS02 | API Gestión Reservas | T8.2 | Validación reglas de reserva | Implementar reglas: evitar doble reserva, validar disponibilidad y horarios | 5 | Carlos Chávez | Done |
+| TS02 | API Gestión Reservas | T8.3 | Manejo de errores reserva | Implementar respuestas de error (400, 409, 500) y logs ante inconsistencias | 4 | Luciano Ruiz | Done |
+| US04 | Crear Nueva Reserva | T8.4 | UI de creación reserva | Formulario con validación de horarios y disponibilidad | 6 | Fernando Salgado | Done |
+| US04 | Crear Nueva Reserva | T8.5 | Confirmación de reserva | Implementar pantalla/modal de confirmación de reserva exitosa | 3 | Luis Aquije | Done |
+| US04 | Crear Nueva Reserva | T8.6 | Manejo de errores UX | Mostrar mensajes claros si no hay espacio, horarios inválidos o conflicto de reservas | 3 | Luciano Ruiz | Done |
+| US05 | Ver Estado Reservas | T8.7 | Vista mis reservas | Listar reservas activas y pasadas con estado y tiempo restante | 5 | Luis Aquije | Done |
+| US05 | Ver Estado Reservas | T8.8 | Filtro y paginación | Agregar filtros por fecha/estado y paginación para historial largo | 3 | Fernando Salgado | Done |
+| US06 | Cancelar Reserva | T8.9 | Endpoint cancelación | Implementar endpoint seguro para cancelar reserva | 4 | Carlos Chávez | Done |
+| US06 | Cancelar Reserva | T8.10 | UI botón cancelar | Añadir botón de cancelación con confirmación | 3 | Luis Aquije | Done |
+| TS03 | Integración IoT ESP32 | T9.1 | Comunicación bidireccional | Implementar MQTT/WebSocket para envío de eventos ESP32 ↔ backend | 10 | Luciano Ruiz | Done |
+| TS03 | Integración IoT ESP32 | T9.2 | Protocolo de mensajes | Diseñar y documentar payloads JSON para llegada, salida y estado | 4 | Leonardo Linares | Done |
+| US09 | Monitoreo Estado Espacios | T9.3 | Dashboard en tiempo real | Vista en tiempo real de espacios libres/ocupados | 8 | Luis Aquije | Done |
+| US09 | Monitoreo Estado Espacios | T9.4 | Servicio de actualización | Implementar suscripción a MQTT/WebSocket para cambios instantáneos | 4 | Carlos Chávez | Done |
+| US07 | Confirmación Automática Llegada | T9.5 | Simulación llegada | Simular evento “vehículo detectado” desde ESP32 | 8 | Luciano Ruiz | Done |
+| US07 | Confirmación Automática Llegada | T9.6 | Validación de llegada | Backend debe validar reserva activa y marcar inicio de sesión | 4 | Fernando Salgado | Done |
+| US08 | Finalización Automática Sesión | T9.7 | Simulación salida | Simular evento IoT de retiro del vehículo | 6 | Luis Aquije | Done |
+| US08 | Finalización Automática Sesión | T9.8 | Liberar espacio | Actualizar backend y liberar espacio automáticamente | 4 | Carlos Chávez | Done |
+| US10 | Indicación Visual Espacio | T9.9 | Encendido LED | Encender LED correspondiente desde el backend mediante IoT | 4 | Luciano Ruiz | Done |
+| US10 | Indicación Visual Espacio | T9.10 | Manejo de error LED | Reportar si el LED no responde o el dispositivo falla | 3 | Leonardo Linares | Done |
+| US12 | Visualización Tiempo en Vivo | T10.1 | Temporizador UI | Mostrar tiempo en vivo de la sesión | 5 | Fernando Salgado | Done |
+| US12 | Visualización Tiempo en Vivo | T10.2 | Resync tiempo | Recalcular tiempo si se pierde conexión o se refresca pantalla | 3 | Luis Aquije | Done |
+| US11 | Cronometraje Automático | T10.3 | Lógica cronómetro | Activar cronómetro al detectar evento de llegada IoT | 5 | Leonardo Linares | Done |
+| US11 | Cronometraje Automático | T10.4 | Fin automático | Detener cronómetro al recibir evento de salida y registrar duración | 3 | Carlos Chávez | Done |
+| US14 | Registro Automático Ausencias | T11.1 | Detección de ausencia | Detectar ausencia si el usuario no llega en el tiempo límite | 6 | Luciano Ruiz | Done |
+| US14 | Registro Automático Ausencias | T11.2 | Registro penalización | Registrar penalización automática en backend | 3 | Fernando Salgado | Done |
+| TS04 | Sistema Notificaciones | T12.1 | Servicio push backend | Configurar Firebase/OneSignal para notificaciones automáticas | 8 | Carlos Chávez | Done |
+| TS04 | Sistema Notificaciones | T12.2 | Colas de reintento | Implementar cola para reintentos si falla una notificación | 4 | Leonardo Linares | Done |
+| US22 | Notificaciones Reserva | T12.3 | UI notificaciones | Mostrar notificaciones relacionadas a la reserva | 5 | Luis Aquije | Done |
+| US22 | Notificaciones Reserva | T12.4 | Envío eventos reserva | Backend envía aviso al crear/modificar/cancelar reserva | 4 | Luciano Ruiz | Done |
+| US23 | Notificaciones Sesión | T12.5 | Inicio/fin sesión | Enviar notificaciones automáticas al iniciar y finalizar sesión | 4 | Leonardo Linares | Done |
+| US23 | Notificaciones Sesión | T12.6 | Alertas de tiempo | Generar alerta cuando queda poco tiempo de sesión | 3 | Carlos Chávez | Done |
+| US24 | Notificaciones Penalizaciones | T12.7 | Envío penalizaciones | Notificar penalizaciones por ausencia o tardanza | 4 | Carlos Chávez | Done |
+| US24 | Notificaciones Penalizaciones | T12.8 | Registro historial penalizaciones | Guardar historial de penalizaciones notificadas | 3 | Luciano Ruiz | Done |
+| US18 | Dashboard Administrativo | T13.1 | Vista admin | Ver métricas de uso, reservas, usuarios y ocupación | 10 | Fernando Salgado | Done |
+| US18 | Dashboard Administrativo | T13.2 | Widgets gráficos | Agregar gráficos de uso por día/semana | 4 | Luis Aquije | Done |
+| US19 | Gestión Usuarios | T13.3 | CRUD usuarios | Crear endpoints y vistas para CRUD de usuarios | 8 | Leonardo Linares | Done |
+| US19 | Gestión Usuarios | T13.4 | Suspensiones | Implementar suspensión/reactivación de usuarios | 4 | Carlos Chávez | Done |
+| US21 | Reportes y Métricas | T13.5 | Generador reportes | Generar reportes de uso de espacios y penalizaciones | 6 | Carlos Chávez | Done |
+| US21 | Reportes y Métricas | T13.6 | Exportación PDF/CSV | Implementar exportación en PDF o CSV | 4 | Luciano Ruiz | Done |
+| US25 | Configuración Preferencias | T14.1 | UI preferencias | Configurar preferencias de alertas y notificaciones | 5 | Luis Aquije | Done |
+| US25 | Configuración Preferencias | T14.2 | Guardado preferencias | Guardar preferencias en backend y sincronizar | 3 | Fernando Salgado | Done |
 
 
 #### 6.2.2.4. Development Evidence for Sprint Review
