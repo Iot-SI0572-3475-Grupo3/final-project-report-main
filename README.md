@@ -6248,10 +6248,165 @@ En esta entrega, el equipo se enfoco en el desarrollo e implementacion del front
 <img src="https://i.imgur.com/dNZSmsK.png" width="75%" />
 
 ## 6.3. Validation Interviews.
-
 ### 6.3.1. Diseño de Entrevistas.
+En el diseño de entrevistas, se incluyen las preguntas generales que se usarán para ambos segmentos objetivos, y preguntas específicas hacía cada segmento.
+
+**Preguntas de Validación – Segmento 1: Estudiante y Docentes Universitarios**
+
+**Landing Page**
+- ¿La información presentada en la landing page fue clara para comprender el valor que ofrece SmartParking dentro del campus?
+- ¿El diseño del sitio te transmitió confianza y profesionalismo como para registrar tu cuenta y empezar a usar el sistema?
+- ¿Faltó alguna información clave que te hubiera gustado ver antes de decidir si SmartParking era útil para ti?
+
+**Aplicación Web**
+- ¿La interfaz web te permitió visualizar con claridad tus reservas activas, historial y penalizaciones desde el dashboard?
+- ¿Pudiste crear, modificar o cancelar reservas de manera sencilla desde la plataforma?
+- ¿La sección de métricas y reportes te brindó información útil sobre tus tiempos de uso, frecuencia o comportamiento dentro del estacionamiento?
+- ¿Encontraste fácilmente las opciones para gestionar tus preferencias, revisar notificaciones y acceder a tu información personal?
+- ¿Hubo alguna funcionalidad que esperabas encontrar en la aplicación web y no estuvo disponible o no fue fácil de ubicar?
+
+**Aplicación Móvil**
+- ¿Te resultó cómoda y práctica la experiencia de usar la app móvil para reservar espacios o monitorear tu sesión en tiempo real?
+- ¿Pudiste revisar sin dificultades el estado de los estacionamientos (libre/ocupado) antes de llegar al campus?
+- ¿Qué tan útiles te parecieron las notificaciones automáticas sobre llegada, salida, penalizaciones o recordatorios de tiempo?
+- ¿Te sentiste en control al administrar tus reservas desde el celular sin necesidad de entrar a la versión web?
+
+**Preguntas de Validación – Segmento 2: Personal Administrativo / Seguridad**
+
+**Landing Page**
+- ¿La landing page te permitió comprender cómo SmartParking facilita la supervisión y control del estacionamiento en tiempo real?
+- ¿El contenido del sitio reflejó bien los beneficios operativos, como reducción de congestión y automatización de tareas de control?
+- ¿Hubieras preferido ver información adicional, casos reales o demostraciones más claras de cómo funcionan los sensores IoT y su integración con el sistema?
+
+**Aplicación Web**
+- ¿El dashboard administrativo te permitió visualizar rápidamente el estado de todos los espacios de estacionamiento?
+- ¿Pudiste gestionar usuarios, aplicar sanciones o revisar reportes con claridad y sin dificultades?
+- ¿La información en tiempo real proveniente de los dispositivos IoT (llegadas, salidas, ocupación) fue precisa y útil para tus tareas diarias?
+- ¿Te resultó fácil acceder a la sección de reportes y métricas para entender el uso general del estacionamiento a lo largo del día o la semana?
+- ¿Hay alguna funcionalidad que consideres importante para la supervisión o control operativo que no estaba disponible o era difícil de ubicar?
+
+**Aplicación Móvil**
+- ¿Te fue sencillo usar la app móvil para monitorear la ocupación del estacionamiento mientras realizabas tus labores en el campus?
+- ¿Pudiste identificar sin dificultad alertas o eventos importantes, como ausencias, penalizaciones o detección IoT de llegada/salida de vehículos?
+- ¿Las notificaciones en tiempo real contribuyeron a mejorar tu capacidad de respuesta ante incidencias o comportamientos inusuales?
+- ¿La experiencia general fue fluida o hubo partes que dificultaron o ralentizaron tu trabajo operativo desde el celular?
 
 ### 6.3.2. Registro de Entrevistas.
+
+A continuación, se registraron todas las entrevistas realizadas para nuestra solución, categorizadas según su segmento objetivo, y con un resumen que destaca las características y críticas realizadas sobre nuestro proyecto.
+
+URL de video: 
+
+**Entrevista 01 (Conductores Universitarios)**
+
+Nombres:   
+Apellidos:   
+Edad: 
+Sexo:   
+Carrera:   
+Universidad:   
+Lugar de residencia:   
+Duración de la entrevista: 00:00 – XX:XX
+
+Personalidad: 
+
+<div style="text-align: center;">
+  <img src="" width="100%" />
+</div><br>
+
+En resumen,
+
+**Entrevista 02 (Conductores Universitarios)**
+
+Nombres:   
+Apellidos:   
+Edad: 
+Sexo:   
+Carrera:   
+Universidad:   
+Lugar de residencia:   
+Duración de la entrevista: XX:XX – XX:XX
+
+Personalidad: 
+
+<div style="text-align: center;">
+  <img src="" width="100%" />
+</div><br>
+
+En resumen,
+
+**Entrevista 03 (Conductores Universitarios)**
+
+Nombres:   
+Apellidos:   
+Edad: 
+Sexo:   
+Carrera:   
+Universidad:   
+Lugar de residencia:   
+Duración de la entrevista: XX:XX – XX:XX
+
+Personalidad: 
+
+<div style="text-align: center;">
+  <img src="" width="100%" />
+</div><br>
+
+En resumen,
+
+**Entrevista 01 (Administradores)**
+
+Nombres: Maricarmen  
+Apellidos: Tejada  
+Edad: 60  
+Sexo: Femenino  
+Ocupación: Administradora de Servicios Generales – Gestión de Estacionamientos  
+Lugar donde vive: San Miguel, Lima  
+Duración de la entrevista: XX:XX – XX:XX
+
+Personalidad: Responsable, organizada y práctica.
+
+<div style="text-align: center;">
+  <img src="" width="100%" />
+</div><br>
+
+En resumen,
+
+**Entrevista 02 (Administradores)**
+
+Nombres:   
+Apellidos:   
+Edad: 
+Sexo:   
+Ocupación:  
+Lugar donde vive:   
+Duración de la entrevista: XX:XX – XX:XX
+
+Personalidad:
+
+<div style="text-align: center;">
+  <img src="" width="100%" />
+</div><br>
+
+En resumen,
+
+**Entrevista 03 (Administradores)**
+
+Nombres:   
+Apellidos:   
+Edad: 
+Sexo:   
+Ocupación:  
+Lugar donde vive:   
+Duración de la entrevista: XX:XX – XX:XX
+
+Personalidad:
+
+<div style="text-align: center;">
+  <img src="" width="100%" />
+</div><br>
+
+En resumen,
 
 ### 6.3.3. Evaluaciones según heurísticas.
 
