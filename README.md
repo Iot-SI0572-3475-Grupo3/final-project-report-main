@@ -102,14 +102,12 @@
       </td>
     </tr>
     <tr>
-      <td>xx</td>
-      <td>xx</td>
+      <td>29/11/2025</td>
+      <td>Leonardo Linares</td>
       <td>
         <ul>
-          <li>xx</li>
-          <li>xx</li>
-          <li>xx</li>
-          <li>xx</li>
+          <li>Capítulo VI: Sprint 3</li>
+          <li>Modificaciones finales en el Frontend, Backend y Dispositivo IoT</li>
         </ul>
       </td>
     </tr>
@@ -142,7 +140,7 @@ En esta sección, regirstraremos los cambios y logros que se completaron en cada
          - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
          - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
    * [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-- [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation-analysis)
+- [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
    * [2.1. Competidores](#21-competidores)
       + [2.1.1. Análisis competitivo](#211-análisis-competitivo)
       + [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
@@ -283,6 +281,16 @@ En esta sección, regirstraremos los cambios y logros que se completaron en cada
          - [6.2.2.7. Services Documentation Evidence for Sprint Review](#6227-services-documentation-evidence-for-sprint-review)
          - [6.2.2.8. Software Deployment Evidence for Sprint Review](#6228-software-deployment-evidence-for-sprint-review)
          - [6.2.2.9. Team Collaboration Insights during Sprint](#6229-team-collaboration-insights-during-sprint)
+      + [6.2.3. Sprint 3](#623-sprint-3)
+         - [6.2.3.1. Sprint Planning 3](#6231-sprint-planning-3)
+         - [6.2.3.2. Aspect Leaders and Collaborators](#6232-aspect-leaders-and-collaborators)
+         - [6.2.3.3. Sprint Backlog 3](#6233-sprint-backlog-3)
+         - [6.2.3.4. Development Evidence for Sprint Review](#6234-development-evidence-for-sprint-review)
+         - [6.2.3.5. Testing Suite Evidence for Sprint Review](#6235-testing-suite-evidence-for-sprint-review)
+         - [6.2.3.6. Execution Evidence for Sprint Review](#6236-execution-evidence-for-sprint-review)
+         - [6.2.3.7. Services Documentation Evidence for Sprint Review](#6237-services-documentation-evidence-for-sprint-review)
+         - [6.2.3.8. Software Deployment Evidence for Sprint Review](#6238-software-deployment-evidence-for-sprint-review)
+         - [6.2.3.9. Team Collaboration Insights during Sprint](#6239-team-collaboration-insights-during-sprint)
    * [6.3. Validation Interviews](#63-validation-interviews)
       + [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
       + [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
@@ -310,96 +318,77 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
   <tr>
     <td>Trabaja en equipo para proporcionar liderazgo en forma conjunta</td>
     <td>
-        <p>
-        TB1:
-        <p/>
-        Luciano Ruiz: Distribui tareas equitativas y por fortalezas de cada miembro del equipo. Además, proporcione apoyo a mis companeros de equipo en sus tareas para un mejor desenvolvimiento.
-        <p/>
-        Fernando: Colaboré en el desarrollo de los Bounded Contexts de Identity & Access Management y Parking Management, además de participar activamente en la planificación y coordinación del equipo para asegurar el cumplimiento de los objetivos del proyecto.
-        <p/>
-        Leonardo: A partir de la reunion de equipo, logre hacer mis partes del los capitulos I-III, además de explayar a fondo los Bounded Contexts de Time Tracking y Penalty Management.
-        <p/>
-        Carlos: Contribuí en el desarrollo de los Bounded Contexts de Analytics & Reporting y Notification, además de participar en la elaboración de los diagramas C4 y la arquitectura del sistema para garantizar una solución robusta y escalable.
-        <p/>
-        Luis Aquije: Participé en el desarrollo de los Bounded Contexts de Reservation Management y Parking Management, además de colaborar en la definición de la arquitectura del sistema y la integración de los componentes IoT.
-        <p/>
-        TP1:
-        <p/>
-        Luciano Ruiz: Distribui las tareas nuevamente para esta nueva entrega, de manera justa y que favorezca las habilidades del equipo. Además de aportar ayuda en todo momento.
-        <p/>
-        Fernando: A partir de la delegación de equipo, me encargue de la creación de las vistas de Notifications y History.
-        <p/>
-        Leonardo: A partir de la reunion de equipo, logre hacer mis partes del los capitulos V-VI, corregir a fondo el documento, y la creación de los wireframes y mockups.
-        <p/>
-        Carlos: Elaboré los diagramas de despliegue y contribuí a la documentación técnica del sprint, asegurando la coherencia entre los repositorios y la arquitectura del proyecto.
-        <p/>
-        Luis Aquije: Apoyé en la validación funcional del Landing Page, y las diferentes vistas para el Sprint 1.
-        </p>
-        TB2:
-        <p/>
-        Luciano Ruiz: Estableci los sprints, y participe en el desarrollo de la simulación wokwi y backend.
-        <p/>
-        Fernando: Establecí las bases del frontend, para que sea compatible con los servicios desarrollados en el backend.
-        <p/>
-        Leonardo: Ayude en la elaboración del capitulo VI con la documentación del Sprint 2.
-        <p/>
-        Carlos: Estructuré la arquitectura de datos y los sistemas de reportes para el funcionamiento completo del backend.
-        <p/>
-        Luis Aquije: Realicé pruebas funcionales para el funcionamiento de la simulación wokwi.</p>
+        <b><p>TB1:</p></b>
+        <p>Luciano Ruiz: Distribuí tareas equitativas y por fortalezas de cada miembro del equipo. Además, proporcioné apoyo continuo para el correcto desenvolvimiento de cada integrante.</p>
+        <p>Fernando Salgado: Colaboré en el desarrollo de los Bounded Contexts de Identity & Access Management y Parking Management, además de participar activamente en la planificación.</p>
+        <p>Leonardo Linares: Elaboré los capítulos I-III y desarrollé los Bounded Contexts de Time Tracking y Penalty Management.</p>
+        <p>Carlos Chávez: Contribuí en los Bounded Contexts de Analytics & Reporting y Notification, además de apoyar en los diagramas C4.</p>
+        <p>Luis Aquije: Desarrollé los Bounded Contexts de Reservation Management y Parking Management y apoyé la integración IoT.</p>
+        <b><p>TP1:</p></b>
+        <p>Luciano Ruiz: Redistribuí tareas priorizando habilidades técnicas del equipo.</p>
+        <p>Fernando Salgado: Implementé vistas de Notifications y History.</p>
+        <p>Leonardo Linares: Redacté capítulos V-VI, realicé correcciones generales y diseñé wireframes.</p>
+        <p>Carlos Chávez: Elaboré diagramas de despliegue y consolidé documentación técnica.</p>
+        <p>Luis Aquije: Realicé validación funcional del Landing Page.</p>
+        <b><p>TB2:</p></b>
+        <p>Luciano Ruiz: Definí sprints y desarrollé la simulación en Wokwi junto al backend.</p>
+        <p>Fernando Salgado: Establecí base estructural del frontend.</p>
+        <p>Leonardo Linares: Documenté el Sprint 2.</p>
+        <p>Carlos Chávez: Estructuré arquitectura de datos y sistemas de reportes.</p>
+        <p>Luis Aquije: Realicé pruebas funcionales dese simulación IoT.</p>
+        <b><p>TF:</p></b>
+        <p>Luciano Ruiz: Lideró la integración definitiva entre backend, Edge API e IoT, consolidando la arquitectura funcional.</p>
+        <p>Fernando Salgado: Finalizó el desarrollo del Frontend Web y Mobile, asegurando una experiencia de usuario consistente.</p>
+        <p>Leonardo Linares: Se encargó de la documentación final, revisión del código y organización de versiones.</p>
+        <p>Carlos Chávez: Apoyó en los últimos ajustes visuales del frontend móvil y documentación funcional.</p>
+        <p>Luis Aquije: Desarrolló y consolidó la lógica completa del backend.</p>
     </td>
     <td>
-        TB1: En esta entrega logramos trabajar en equipo, apoyándonos mutuamente y colaborando en la redacción del informe. Cada uno de los integrantes participó activamente en el desarrollo de las secciones asignadas, lo que permitió un avance significativo en el proyecto. La comunicación constante y la disposición para ayudar a los demás fueron clave para el éxito de esta entrega.</p>
-        TP1: En esta entrega, el equipo demostró un liderazgo compartido sólido. Cada miembro asumió responsabilidades específicas para la realización de las vistas del Sprint 1, contribuyendo desde su especialidad para culminar con un producto funcional y documentado.</p>
-        TB2: En esta entrega, el equipo demostro una buena delegación de tareas, para el desarrollo de las metas propuestas para el Sprint 2, donde cada miembro se apoyaba cuando necesitaban ayuda.</p>
+        <p>TB1: Se evidenció trabajo colaborativo eficaz a través de una correcta asignación de funciones y comunicación constante.</p>
+        <p>TP1: Se consolidó el liderazgo compartido con resultados funcionales visibles en el Sprint 1.</p>
+        <p>TB2: Se fortaleció la coordinación técnica para cumplir eficientemente objetivos del Sprint 2.</p>
+        <p>TF: En el Trabajo Final, el equipo demostró liderazgo colaborativo integral logrando integrar frontend, backend e IoT como un solo sistema operativo.</p>
      </td>
   </tr>
+
   <tr>
-    <td>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.</td>
+    <td>Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</td>
     <td>
-      <p>
-        TB1:
-        <p/>
-        Luciano Ruiz: Estableci los sprints, participe en el capitulo IV apoyando en la planificación de nuestra solución.
-        <p/>
-        Fernando: Establecí las bases para el desarrollo de la interfaz de usuario y la experiencia móvil, además de coordinar las tareas de frontend y backend para asegurar una integración fluida entre los componentes del sistema.
-        <p/>
-        Leonardo: Ayude en la elaboración del capitulo IV con los Bounded Contexts de Time Tracking y Penalty Management, y delimite el analisis competitivo, los journey e impact mappings y analisis de entrevistas
-        <p/>
-        Carlos: Planifiqué y estructuré la arquitectura de datos y los sistemas de reportes, además de establecer las métricas y KPIs necesarios para el monitoreo y análisis del rendimiento del sistema.
-        <p/>
-        Luis Aquije: Coordiné la integración de los sensores IoT con la plataforma, además de establecer los protocolos de comunicación y las interfaces necesarias para el funcionamiento del sistema de estacionamiento inteligente.</p>
-    <p>
-        TP1:
-        <p/>
-        Luciano Ruiz: Lideré la planificación del sprint 1, estableciendo prioridades y gestionando la carga de trabajo de forma equitativa. Garantizamos que todos los módulos estuvieran alineados con los objetivos del proyecto.
-        <p/>
-        Fernando: Coordiné la integración entre los módulos frontend para el Sprint 1, participando en la revisión de commits y pruebas realizadas antes del despliegue.
-        <p/>
-        Leonardo: Ayude en la elaboración de los capitulos V-VI con la cración de los wireframes, mockups y user flows.
-        <p/>
-        Carlos: Contribuí a la organización de las tareas en GitHub Projects y a la verificación de los user goals para el Sprint 1.
-        <p/>
-        Luis Aquije: Realicé pruebas funcionales para la revisión del sprint, validando el cumplimiento de las metas técnicas.
-    <p>
-        TB2:
-        <p/>
-        Luciano Ruiz: Estableci los sprints, y participe en el desarrollo de la simulación wokwi y backend.
-        <p/>
-        Fernando: Establecí las bases del frontend, para que sea compatible con los servicios desarrollados en el backend.
-        <p/>
-        Leonardo: Ayude en la elaboración del capitulo VI con la documentación del Sprint 2.
-        <p/>
-        Carlos: Estructuré la arquitectura de datos y los sistemas de reportes para el funcionamiento completo del backend.
-        <p/>
-        Luis Aquije: Realicé pruebas funcionales para el funcionamiento de la simulación wokwi.</p>
-    <p>
+        <b><p>TB1:</p></b>
+        <p>Luciano Ruiz: Apoyó planificación inicial del proyecto.</p>
+        <p>Fernando Salgado: Diseñó interfaces en web y móvil.</p>
+        <p>Leonardo Linares: Desarrolló análisis competitivo y entrevistas.</p>
+        <p>Carlos Chávez: Planificó arquitectura y métricas.</p>
+        <p>Luis Aquije: Coordinó la integración IoT.</p>
+        <b><p>TP1:</p></b>
+        <p>Luciano Ruiz: Lideró planificación Sprint 1.</p>
+        <p>Fernando Salgado: Coordinó integración frontend.</p>
+        <p>Leonardo Linares: Diseñó user flows y prototipos.</p>
+        <p>Carlos Chávez: Organizó tareas en GitHub Projects.</p>
+        <p>Luis Aquije: Validó cumplimiento técnico.</p>
+        <b><p>TB2:</p></b>
+        <p>Luciano Ruiz: Desarrolló simulación y backend.</p>
+        <p>Fernando Salgado: Ajustó frontend.</p>
+        <p>Leonardo Linares: Documentó Sprint 2.</p>
+        <p>Carlos Chávez: Desarrolló reportes.</p>
+        <p>Luis Aquije: Validó pruebas.</p>
+        <b><p>TF:</p></b>
+        <p>Luciano Ruiz: Planificó etapas finales del proyecto.</p>
+        <p>Fernando Salgado: Cerró desarrollo Frontend.</p>
+        <p>Leonardo Linares: Consolidó documentación final.</p>
+        <p>Carlos Chávez: Validó estructura de arquitectura.</p>
+        <p>Luis Aquije: Garantizó estabilidad backend.</p>
+    </td>
     <td>
-    TB1: En esta entrega, logramos establecer un entorno colaborativo e inclusivo, donde cada miembro del equipo pudo expresar sus ideas y contribuir al desarrollo del proyecto. La planificación de tareas y el cumplimiento de objetivos fueron fundamentales para avanzar en la redacción del informe y en la elaboración de los diagramas y documentos requeridos. La comunicación constante y el uso del tablero Kanban facilitaron la organización y el seguimiento de las tareas asignadas.</p>
-    TP1: En esta etapa final, el equipo consolidó su dinámica de trabajo ágil, logrando un flujo de comunicación eficiente y una ejecución ordenada de las tareas para el Sprint 1 de Landing Page y presentar un avance del Frontend.</p>
-    TB2: En esta entrega, las tareas fueron delegadas según las experiencias de los miembros, por lo que se establecieron las metas a partir de las necesidades del Sprint 2, para poder cumplir con sus objetivos.</p>
-  </td>
+        <p>TB1: Se estableció un ambiente cooperativo desde el inicio.</p>
+        <p>TP1: Organización efectiva bajo metodología ágil.</p>
+        <p>TB2: Cumplimiento oportuno del Sprint 2.</p>
+        <p>TF: El equipo ejecutó el proyecto final de forma organizada cumpliendo objetivos técnicos y documentales.</p>
+    </td>
   </tr>
+
 </table>
+
 
 # Capítulo I: Introducción
 
@@ -6246,6 +6235,56 @@ En esta entrega, el equipo se enfoco en el desarrollo e implementacion del front
 <img src="https://i.imgur.com/R6WoKOq.png" width="70%" />
 <img src="https://i.imgur.com/QW8BZbU.png" width="75%" />
 <img src="https://i.imgur.com/dNZSmsK.png" width="75%" />
+
+### 6.2.3. Sprint 3
+
+#### 6.2.3.1. Sprint Planning 3
+
+| **Sprint #** | Sprint 3 |
+|--------------|----------|
+| **Sprint Planning Background** | Luego del Sprint 2, donde se logró la implementación base del Frontend, Backend e integración inicial con IoT, este tercer sprint se orienta al cierre funcional del sistema, fortaleciendo la integración completa entre la web, el backend y el prototipo IoT, además de implementar notificaciones, penalizaciones automáticas y el dashboard administrativo. |
+| **Date** | 2025-11-26 |
+| **Time** | 07:00 PM |
+| **Location** | Reunión virtual vía Discord |
+| **Prepared By** | Luciano Ruiz |
+| **Attendees (to planning meeting)** | Todos los miembros del equipo |
+| **Sprint Goal & User Stories** | Consolidar completamente la solución integrando dispositivos IoT, backend y frontend, implementando los servicios finales pendientes y asegurando estabilidad del sistema. |
+| **Sprint 3 Goal** | Finalizar la integración completa del sistema SmartParking, asegurando la comunicación funcional entre frontend, backend y sensores IoT, además de implementar notificaciones en tiempo real, penalizaciones automáticas y un dashboard administrativo funcional. |
+| **Sprint 3 Velocity** | 110 story points |
+| **Sum of Story Points** | 110 story points |
+
+#### 6.2.3.2. Aspect Leaders and Collaborators
+
+A continuación, se presenta la organización del equipo durante el Sprint 3 considerando los aspectos Frontend, Backend e IoT, de acuerdo a las responsabilidades asumidas por cada integrante, tomando en cuenta que Leonardo estuvo enfocado principalmente en documentación y revisiones finales del código, Fernando y Carlos en frontend, Luis en backend y Luciano como Team Leader e integrador con IoT.
+
+| Team Member (Last Name, First Name) | GitHub Username | Frontend | Backend | IOT |
+|------------------------------------|-----------------|----------|---------|-----|
+| Salgado Luna, Fernando Brian | fersalgado26 | L | C | C |
+| Ruiz Blas, Luciano Stefano | LucianRuiz | C | L | L |
+| Linares Tejada, Leonardo Félix Jesús | LeoShadic345 | C | C | C |
+| Chávez Rojas, Carlos Raúl Guillermo | CarlosChavez19 | C | C | C |
+| Aquije Quiroga, Luis Enrique | LuisAquije123 | C | L | C |
+
+**Leyenda:** L = Leader, C = Collaborator
+
+#### 6.2.3.3. Sprint Backlog 3
+
+El Sprint 3 se enfoca en culminar el desarrollo del sistema, implementando funcionalidades administrativas, automatización de penalizaciones, historial de usuario y configuración del sistema.
+
+| User Story | | Work-Item / Task | | | | | |
+|------------|--|------------------|--|--|--|--|--|
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| US13 | Historial Tiempos Uso | T15.1 | Backend historial | Crear endpoint GET /api/history para listar sesiones de usuario | 5 | Luis Aquije | Done |
+| US13 | Historial Tiempos Uso | T15.2 | UI historial | Diseñar vista de historial con gráficos básicos | 4 | Leonardo Linares | Done |
+| US15 | Advertencias Progresivas | T16.1 | Lógica advertencias | Implementar lógica automática de advertencias por ausencias | 4 | Luciano Ruiz | Done |
+| US15 | Advertencias Progresivas | T16.2 | UI advertencias | Mostrar nivel de advertencia en perfil de usuario | 3 | Carlos Chávez | Done |
+| US16 | Suspensión Automática | T17.1 | Validación ausencias | Contabilizar ausencias automáticamente | 4 | Luis Aquije | Done |
+| US16 | Suspensión Automática | T17.2 | Suspensión backend | Implementar bloqueo automático tras 3 ausencias | 5 | Luciano Ruiz | Done |
+| US17 | Reactivación Automática | T18.1 | Lógica reactivación | Programar reactivación luego del tiempo definido | 3 | Luciano Ruiz | Done |
+| US17 | Reactivación Automática | T18.2 | Confirmación usuario | Notificar reactivación automática | 2 | Carlos Chávez | Done |
+| US20 | Configuración Sistema | T19.1 | Endpoints configuración | Crear API para editar parámetros del sistema | 5 | Luis Aquije | Done |
+| US20 | Configuración Sistema | T19.2 | UI configuración | Interfaz administrativa para configurar reglas | 5 | Fernando Salgado | Done |
+
 
 ## 6.3. Validation Interviews.
 ### 6.3.1. Diseño de Entrevistas.
