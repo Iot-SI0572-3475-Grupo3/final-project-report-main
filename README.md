@@ -5385,31 +5385,31 @@ Adjuntamos los enlaces para visualizar los repositorios de la organización Smar
 
 - **Repositorio de Landing Page**:
   
-  https://github.com/SmartParking-UPC/landing-page.git
+  https://github.com/Iot-SI0572-3475-Grupo3/landing-page
   
   Elaborado con HTML5, CSS3 y JavaScript.
 
 - **Repositorio de Web Application**:
   
-  https://github.com/SmartParking-UPC/web-application.git
+  https://github.com/Iot-SI0572-3475-Grupo3/smartparking-frontend
   
   Elaborado con Angular Framework, TypeScript y Tailwind CSS.
 
 - **Repositorio de Web Services (RESTful API)**:
   
-  https://github.com/SmartParking-UPC/web-services.git
+  https://github.com/Iot-SI0572-3475-Grupo3/smartparking-backend
   
   Elaborado con Spring Boot y Java.
 
 - **Repositorio de Mobile Application**:
   
-  https://github.com/SmartParking-UPC/mobile-application.git
+  https://github.com/Iot-SI0572-3475-Grupo3/smartparking-mobile
   
   Elaborado con Flutter y Dart.
 
 - **Repositorio del Documento del Proyecto**:
   
-  https://github.com/SmartParking-UPC/project-report.git
+  https://github.com/Iot-SI0572-3475-Grupo3/final-project-report-main
   
   Elaborado en Markdown.
 
