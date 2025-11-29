@@ -6347,8 +6347,6 @@ Universidad:
 Lugar de residencia:   
 Duración de la entrevista: 00:00 – XX:XX
 
-Personalidad: 
-
 <div style="text-align: center;">
   <img src="" width="100%" />
 </div><br>
@@ -6365,8 +6363,6 @@ Carrera:
 Universidad:   
 Lugar de residencia:   
 Duración de la entrevista: XX:XX – XX:XX
-
-Personalidad: 
 
 <div style="text-align: center;">
   <img src="" width="100%" />
@@ -6385,8 +6381,6 @@ Universidad:
 Lugar de residencia:   
 Duración de la entrevista: XX:XX – XX:XX
 
-Personalidad: 
-
 <div style="text-align: center;">
   <img src="" width="100%" />
 </div><br>
@@ -6403,13 +6397,12 @@ Ocupación: Administradora de Servicios Generales – Gestión de Estacionamient
 Lugar donde vive: San Miguel, Lima  
 Duración de la entrevista: XX:XX – XX:XX
 
-Personalidad: Responsable, organizada y práctica.
-
 <div style="text-align: center;">
-  <img src="" width="100%" />
+  <img src="https://i.imgur.com/x3iN0FY.png" width="100%" />
 </div><br>
 
-En resumen,
+En resumen, la administradora consideró que la información de la landing page fue clara para comprender el propósito y valor de SmartParking, y que el diseño transmite confianza y profesionalismo. Sin embargo, mencionó que sería útil incluir ejemplos visuales del panel administrativo o reportes para reforzar la transparencia del sistema. Respecto a la aplicación web, destacó que el dashboard ofrece una visión en tiempo real muy efectiva de la ocupación de los estacionamientos y que las funciones de gestión de usuarios, sanciones y reportes están bien organizadas y resultan sencillas de usar. También valoró la precisión de los sensores IoT y la automatización en la detección de llegada y salida. Como mejora, sugirió agregar alertas configurables para anticipar escenarios de alta ocupación.
+En cuanto a la aplicación móvil, resaltó que la experiencia es práctica y útil para supervisar mientras se desplaza por el campus, y que las notificaciones automáticas aportan agilidad en la toma de decisiones. No reportó dificultades de uso, aunque recomendó mejorar la visibilidad de los indicadores en exteriores. En general, la entrevistada considera que SmartParking reduce la carga operativa, mejora la rotación de espacios y ofrece información confiable para tomar decisiones más rápidas y efectivas.
 
 **Entrevista 02 (Administradores)**
 
@@ -6420,8 +6413,6 @@ Sexo:
 Ocupación:  
 Lugar donde vive:   
 Duración de la entrevista: XX:XX – XX:XX
-
-Personalidad:
 
 <div style="text-align: center;">
   <img src="" width="100%" />
@@ -6438,8 +6429,6 @@ Sexo:
 Ocupación:  
 Lugar donde vive:   
 Duración de la entrevista: XX:XX – XX:XX
-
-Personalidad:
 
 <div style="text-align: center;">
   <img src="" width="100%" />
