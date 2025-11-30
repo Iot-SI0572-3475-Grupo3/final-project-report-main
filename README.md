@@ -6285,6 +6285,320 @@ El Sprint 3 se enfoca en culminar el desarrollo del sistema, implementando funci
 | US20 | Configuración Sistema | T19.1 | Endpoints configuración | Crear API para editar parámetros del sistema | 5 | Luis Aquije | Done |
 | US20 | Configuración Sistema | T19.2 | UI configuración | Interfaz administrativa para configurar reglas | 5 | Fernando Salgado | Done |
 
+#### 6.2.3.4. Development Evidence for Sprint Review
+
+**Repository: smartparking-frontend**
+
+**Repository: smartparking-backend**
+
+**Repository: smartparking-mobile**
+
+#### 6.2.3.5. Testing Suite Evidence for Sprint Review
+
+#### 6.2.3.6. Execution Evidence for Sprint Review
+
+Para esta última entrega, el equipo **SuiteTech Team** centró sus esfuerzos en la implementación, despliegue y validación de todos los componentes del sistema **SmartParking**, incluyendo la Landing Page, la Aplicación Web, el Sistema Backend, la Base de Datos en la nube y el Sistema Embebido (IoT Devices + Edge Services).
+
+A continuación, se presenta la evidencia de ejecución correspondiente a cada módulo del sistema:
+
+**Landing Page**
+
+La Landing Page se encuentra desplegada y accesible públicamente, proporcionando información general del proyecto, sus beneficios, arquitectura y enlaces a las aplicaciones.
+
+**Link:** https://iot-si0572-3475-grupo3.github.io/landing-page/
+
+**Evidencia:**
+
+<img src="https://i.imgur.com/0Niv3Hu.png" width="75%" />
+
+**Aplicación Web (Frontend)**
+
+El Frontend Web se encuentra desplegado en la nube, permitiendo a los usuarios autenticarse, realizar reservas, recibir notificaciones y visualizar el estado del sistema en tiempo real.
+
+**Link:** https://smart-parking-iot-3475.netlify.app/
+
+**Evidencia:**
+
+<img src="https://i.imgur.com/XKvYaqn.png" width="75%" />
+
+**Aplicación Movil**
+Para la aplicación móvil se validó el funcionamiento de las vistas principales:
+
+<img src="https://i.imgur.com/Et4dv0a.png" width="75%" />
+<img src="https://i.imgur.com/DOVKTbp.png" width="75%" />
+
+Se verificó:
+- Registro correcto.
+- Inicio de sesión funcional.
+- Recepción de notificaciones.
+- Visualización de reservas activas.
+- Control de tiempo en ejecución.
+- Integración con backend.
+
+**Sistema Embebido (IoT Devices + Edge Services)**
+
+Para el prototipo IoT se utilizó la simulación de dispositivos mediante la plataforma Wokwi, donde se reprodujo el comportamiento real de los sensores de llegada y salida de vehículos, además del control de LEDs indicadores.
+
+**Simulación IoT en Wokwi:** https://wokwi.com/projects/447022276595124225
+
+Durante la ejecución se validó:
+
+- Simulación de ingreso de vehículo.
+- Simulación de salida.
+- Activación de LEDs según espacio asignado.
+- Envío de eventos al backend.
+- Recepción de comandos desde el servidor.
+- Sincronización en tiempo real con el frontend.
+
+**Evidencia:**
+
+<img src="https://i.imgur.com/9sCK7qF.png" width="75%" />
+
+#### 6.2.3.7. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 3, se llevó a cabo el refinamiento, documentación y validación final de los servicios del **Backend** y de la **Base de Datos**, con el objetivo de garantizar una correcta integración entre la aplicación web, los dispositivos IoT (ESP32) y los servicios de notificación, así como la persistencia adecuada de la información.
+
+Los dispositivos fueron simulados mediante Wokwi y posteriormente integrados lógicamente con el Backend desplegado en la nube, validando la correcta comunicación de extremo a extremo desde los sensores hasta los servicios REST.
+
+Se ejecutaron pruebas funcionales que permitieron verificar:
+
+- Comunicación bidireccional entre IoT y backend.
+- Registro de llegada y salida de vehículos.
+- Gestión automática de reservas.
+- Aplicación de penalizaciones.
+- Envío de notificaciones.
+- Administración de usuarios.
+- Persistencia y consulta de datos en la base de datos.
+
+**Web Service (Backend)**
+
+El Backend del sistema SmartParking fue desplegado en entorno productivo en la plataforma **Railway**, exponiendo una API REST documentada mediante Swagger UI.
+
+**Link:** https://smartparking-backend-production-5f3c.up.railway.app/swagger-ui.html
+
+**Evidencia en imagen:**
+
+<img src="https://i.imgur.com/sDSn4lK.png" width="75%" />
+<img src="https://i.imgur.com/LdUUzsF.png" width="75%" />
+<img src="https://i.imgur.com/vc7ZD0k.png" width="75%" />
+
+**Listado de Endpoints del Backend:**
+
+**User Profile**
+- GET /api/v1/user-profiles/{userId}: Obtiene el perfil del usuario (nombre, correo, imagen, preferencias).
+- PUT /api/v1/user-profiles/{userId}: Actualiza la información del perfil del usuario autenticado.
+- POST /api/v1/user-profiles/{userId}: Crea datos adicionales del perfil al momento del registro.
+- DELETE /api/v1/user-profiles/{userId}: Elimina el perfil del usuario de forma lógica.
+
+**Space IoT**
+- PUT /api/v1/space-iot/parking-spaces/{spaceId}: (IOT) Actualiza el estado del espacio: `available`, `reserved`, `occupied`, `maintenance`.
+- GET /api/v1/space-iot/parking-spaces: Lista todos los espacios con su estado actual.
+- POST /api/v1/space-iot/parking-spaces: (ADMIN) Registra un nuevo espacio de estacionamiento (sensor físico).
+- GET /api/v1/space-iot/parking-spaces/status/{status}: Filtra espacios por estado (`available`, `occupied`, etc.).
+- POST /api/v1/reservation/activate/{spaceId}: (IOT) Detecta vehículo y activa la reserva asociada al espacio.
+
+**Notification**
+- GET /api/v1/notifications/preferences: Obtiene preferencias del usuario (push, email, in-app).
+- PUT /api/v1/notifications/preferences: Actualiza preferencias de notificación.
+- POST /api/v1/notifications/token: Registra o actualiza el token FCM del dispositivo.
+- POST /api/v1/notifications/broadcast: (ADMIN) Envía una notificación masiva por rol.
+- PATCH /api/v1/notifications/{notificationId}/read: Marca una notificación como leída.
+- GET /api/v1/notifications: Lista todas las notificaciones del usuario.
+
+**User Management (IAM)**
+- GET /api/v1/auth/users/{userId}: (ADMIN) Obtiene datos completos del usuario.
+- PUT /api/v1/auth/users/{userId}: (ADMIN) Actualiza rol, estado y strikes.
+- DELETE /api/v1/auth/users/{userId}: (ADMIN) Elimina completamente un usuario.
+- GET /api/v1/auth/users: (ADMIN) Lista todos los usuarios.
+- POST /api/v1/auth/users: (ADMIN) Crea un usuario manualmente.
+- POST /api/v1/auth/users/register/university-member: Registro de miembro UPC (`@upc.edu.pe`).
+- POST /api/v1/auth/users/register/administrator: (SUPERADMIN) Crea administrador.
+- POST /api/v1/auth/users/logout/{sessionId}: Cierra sesión e invalida el token.
+- POST /api/v1/auth/users/login: Inicia sesión y retorna JWT.
+
+**User Sessions**
+- POST /api/v1/user-sessions/{userId}: Crea una sesión activa.
+- GET /api/v1/user-sessions/token/{tokenHash}: Retorna información de sesión.
+- GET /api/v1/user-sessions/active/{userId}: Verifica si el usuario tiene sesión activa.
+- DELETE /api/v1/user-sessions/{sessionId}: Cierra la sesión.
+
+**Reservations**
+- POST /api/v1/reservation: Crea una nueva reserva.
+- POST /api/v1/reservation/{reservationId}/activate: Activa reserva para ingreso.
+- POST /api/v1/reservation/{reservationId}/confirm: Confirma llegada del usuario.
+- POST /api/v1/reservation/{reservationId}/complete: Finaliza sesión.
+- POST /api/v1/reservation/{reservationId}/cancel: Cancela reserva.
+- POST /api/v1/reservation/{reservationId}/expire: Marca reserva como expirada.
+- GET /api/v1/reservation/parking-spaces-reservations/{code}: Retorna reservas asociadas a un espacio.
+- GET /api/v1/reservation/history: Historial del usuario.
+- GET /api/v1/reservation/all-history: (ADMIN) Historial global.
+- GET /api/v1/reservation/active: Obtiene reserva activa.
+
+**IoT Activation**
+- POST /api/v1/reservation/activate/{spaceId}: (IOT) Activa reserva vinculada al espacio cuando se detecta presencia física.
+
+**Admin Dashboard**
+- GET /api/v1/reservation/dashboard: (ADMIN) Métricas del sistema: ocupación, sesiones, ausencias y uso.
+
+**Base de Datos**
+
+La base de datos del sistema SmartParking fue desplegada utilizando la plataforma **Neon**, basada en PostgreSQL Serverless.
+
+**Proveedor:** https://neon.com/
+
+**Evidencia en imagen:**
+
+<img src="https://i.imgur.com/Acx9831.png" width="75%" />
+
+**Funciones principales de la Base de Datos:**
+
+Durante el Sprint 3 se validó el correcto funcionamiento de la base de datos para:
+
+- Almacenar información de usuarios.
+- Registrar reservas y sesiones.
+- Gestionar penalizaciones.
+- Guardar notificaciones.
+- Persistir configuraciones.
+- Almacenar métricas administrativas.
+- Controlar estados de espacios.
+- Almacenar tokens y sesiones.
+
+#### 6.2.3.8. Software Deployment Evidence for Sprint Review
+
+A continuación, se presenta la evidencia de despliegue correspondiente a los productos desarrollados durante el último sprint del proyecto. Este Sprint 3 marcó la fase final de desarrollo, abarcando múltiples componentes del sistema, incluyendo Backend, Base de Datos, Aplicación Web, Aplicación Móvil, Sistema IoT y Landing Page.
+
+**Landing Page**
+
+**Proveedor de Hosting:** GitHub Pages  
+
+**Link:**
+https://iot-si0572-3475-grupo3.github.io/landing-page/  
+
+**Repositorio:** GitHub  
+
+**Integración Continua:** GitHub Actions  
+
+**Proceso:**
+- El proyecto fue configurado en un repositorio público en GitHub.
+- Se implementaron workflows automáticos con GitHub Actions.
+- Cada push a la rama principal ejecuta un despliegue automático en GitHub Pages.
+- El sitio web refleja inmediatamente los cambios realizados en el repositorio.
+
+<img src="https://i.imgur.com/NRdwibc.png" width="75%" />
+
+**Aplicación Web (Frontend)**
+
+**Proveedor de Hosting:** Netlify  
+
+**Link:** https://smart-parking-iot-3475.netlify.app  
+
+**Repositorio:** GitHub  
+
+**Integración Continua:** Netlify CI  
+
+**Proceso:**
+- El despliegue se automatizó mediante la integración continua proporcionada por Netlify.
+- Cada push a la rama principal dispara un proceso de build automático que valida, compila y publica la aplicación.
+- Se configuraron reglas de validación para asegurar estabilidad antes del despliegue.
+- El frontend se mantiene sincronizado con el backend productivo.
+
+<img src="https://i.imgur.com/FGFbe0J.png" width="75%" />
+<img src="https://i.imgur.com/FGgmLeL.png" width="75%" />
+
+**Web Services (Backend)**
+
+**Proveedor de Hosting:** Railway  
+
+**Link del proveedor:** https://railway.com  
+
+**Repositorio:** GitHub  
+
+**Documentación Swagger:**  
+https://smartparking-backend-production-5f3c.up.railway.app/swagger-ui.html  
+
+**Integración Continua:** Railway CI/CD  
+
+**Proceso:**
+- El backend fue desplegado automáticamente desde GitHub usando Railway.
+- Cada commit genera una nueva compilación y publicación.
+- Se administraron variables de entorno directamente en la plataforma.
+- El servicio se expone mediante HTTPS, permitiendo acceso seguro.
+- Se validó el estado del backend luego de cada despliegue.
+
+<img src="https://i.imgur.com/vS9F3wO.png" width="75%" />
+<img src="https://i.imgur.com/IwS6md4.png" width="75%" />
+<img src="https://i.imgur.com/QEFwydL.png" width="75%" />
+<img src="https://i.imgur.com/pfptSpR.png" width="75%" />
+
+**Base de Datos**
+
+**Proveedor:** Neon (PostgreSQL Serverless)
+
+**Link del proveedor:** https://neon.com/  
+
+**Repositorio:** No aplica  
+
+**Integración Continua:** Administración por plataforma  
+
+**Proceso:**
+- Se creó un clúster serverless PostgreSQL.
+- El backend se conecta mediante una cadena segura.
+- Neon gestiona backups y escalado automático.
+- Se configuraron tablas relacionales según el modelo lógico.
+- El acceso está restringido por políticas de seguridad.
+
+<img src="https://i.imgur.com/Acx9831.png" width="75%" />
+
+**Aplicación Móvil**
+
+**Proveedor de Hosting:** GitHub Releases  
+
+**Repositorio:** GitHub
+
+**Proceso:**
+- Se realizaron pruebas en dispositivos físicos.
+- La distribución fue interna para validación.
+
+<img src="https://i.imgur.com/Et4dv0a.png" width="75%" />
+
+**Sistema Embebido (IoT + Simulación)**
+
+**Simulación:** Wokwi  
+
+**Link:** https://wokwi.com/projects/447022276595124225
+
+**Repositorio:** GitHub  
+
+**Integración Continua:** Manual  
+
+**Proceso:**
+- Se desarrolló y configuró la simulación en Wokwi.
+- Los eventos de llegada y salida se ejecutan sobre ESP32 virtual.
+- Se valida la comunicación con el backend.
+- La información se refleja en tiempo real en el frontend.
+- Se simulan luces LED según el estado del espacio.
+
+<img src="https://i.imgur.com/9sCK7qF.png" width="75%" />
+
+#### 6.2.3.9. Team Collaboration Insights during Sprint
+
+En esta última entrega, el equipo se enfoco en el desarrollo y últimos toques al landing page, frontend, app móvil y backend.
+
+**Landing Page:**
+
+<img src="https://i.imgur.com/KI8QmcM.png" width="75%" />
+
+**Frontend:**
+
+<img src="https://i.imgur.com/YU7Ely9.png" width="75%" />
+
+**App Móvil:**
+
+<img src="https://i.imgur.com/1PlIj9b.png" width="75%" />
+
+**Backend:**
+
+<img src="https://i.imgur.com/aCzSkxP.png" width="75%" />
 
 ## 6.3. Validation Interviews.
 ### 6.3.1. Diseño de Entrevistas.
